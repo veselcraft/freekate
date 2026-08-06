@@ -1362,7 +1362,8 @@ Size %2$s"</string>
     <string name="label_wg_mini_name">Kate Mobile 1x1</string>
     <string name="more_link">D7dMsqtX</string>
     <string name="account_name">com.perm.kate.pro.account</string>
-    <string name="app_name">Kate Mobile Pro</string>
+    <!-- TODO: Let user change the name of app -->
+    <string name="app_name">FreeKate</string>
     <string name="appbar_scrolling_view_behavior">android.support.design.widget.AppBarLayout$ScrollingViewBehavior</string>
     <string name="character_counter_pattern">%1$d / %2$d</string>
     <string name="key_always_unblock">key_always_unblock</string>
