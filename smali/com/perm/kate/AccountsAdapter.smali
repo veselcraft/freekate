@@ -113,6 +113,7 @@
 
     .line 43
     .local v7, "account":Lcom/perm/kate/account/Account;
+    # ACCOUNT NAME
     const v0, 0x7f0e0065
 
     invoke-virtual {v11, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
@@ -129,7 +130,22 @@
 
     invoke-virtual {v8, v0}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
+    # INSTANCE DOMAIN
+    const v0, 0x7f0e03aa
+
+    invoke-virtual {v11, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
+
+    move-result-object v4
+    
+    check-cast v4, Landroid/widget/TextView;
+    .local v4, "instance_domain":Landroid/widget/TextView;
+
+    iget-object v0, v7, Lcom/perm/kate/account/Account;->instance_domain:Ljava/lang/String;
+
+    invoke-virtual {v4, v0}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
+
     .line 45
+    # AVATAR
     const v0, 0x7f0e0064
 
     invoke-virtual {v11, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
@@ -205,6 +221,7 @@
 
     .line 62
     .end local v2    # "img_user_photo":Landroid/widget/ImageView;
+    .end local v4    # "account":Lcom/perm/kate/account/Account;
     .end local v7    # "account":Lcom/perm/kate/account/Account;
     .end local v8    # "name":Landroid/widget/TextView;
     .end local v10    # "tv_online":Landroid/widget/TextView;

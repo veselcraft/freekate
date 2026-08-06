@@ -30,6 +30,9 @@
 
 .field public user_name:Ljava/lang/String;
 
+.field public instance_domain:Ljava/lang/String;
+
+.field public use_tls:Z
 
 # direct methods
 .method public constructor <init>()V
@@ -144,6 +147,23 @@
     invoke-virtual {p0, v7}, Lorg/json/JSONObject;->optJSONArray(Ljava/lang/String;)Lorg/json/JSONArray;
 
     move-result-object v1
+
+    # parse instance and tls settings
+    const-string v7, "instance_domain"
+
+    invoke-virtual {p0, v7}, Lorg/json/JSONObject;->optString(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v7
+
+    iput-object v7, v0, Lcom/perm/kate/account/Account;->instance_domain:Ljava/lang/String;
+
+    const-string v7, "use_tls"
+
+    invoke-virtual {p0, v7}, Lorg/json/JSONObject;->optBoolean(Ljava/lang/String;)Z
+
+    move-result v7
+
+    iput-boolean v7, v0, Lcom/perm/kate/account/Account;->use_tls:Z
 
     .line 59
     .local v1, "array":Lorg/json/JSONArray;
@@ -275,6 +295,19 @@
     new-instance v0, Lorg/json/JSONArray;
 
     invoke-direct {v0}, Lorg/json/JSONArray;-><init>()V
+
+    # save instance and tls settings
+    const-string v4, "instance_domain"
+
+    iget-object v5, p0, Lcom/perm/kate/account/Account;->instance_domain:Ljava/lang/String;
+
+    invoke-virtual {v1, v4, v5}, Lorg/json/JSONObject;->put(Ljava/lang/String;Ljava/lang/Object;)Lorg/json/JSONObject;
+
+    const-string v4, "use_tls"
+
+    iget-boolean v5, p0, Lcom/perm/kate/account/Account;->use_tls:Z
+
+    invoke-virtual {v1, v4, v5}, Lorg/json/JSONObject;->put(Ljava/lang/String;Z)Lorg/json/JSONObject;
 
     .line 38
     .local v0, "array":Lorg/json/JSONArray;

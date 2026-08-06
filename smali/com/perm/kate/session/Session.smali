@@ -15,7 +15,7 @@
 
 # direct methods
 .method public constructor <init>(Landroid/content/Context;Lcom/perm/kate/account/Account;)V
-    .locals 3
+    .locals 6
     .param p1, "c"    # Landroid/content/Context;
     .param p2, "a"    # Lcom/perm/kate/account/Account;
 
@@ -39,11 +39,15 @@
 
     iget-object v1, p0, Lcom/perm/kate/session/Session;->account:Lcom/perm/kate/account/Account;
 
-    iget-object v1, v1, Lcom/perm/kate/account/Account;->access_token:Ljava/lang/String;
+    iget-object v2, v1, Lcom/perm/kate/account/Account;->access_token:Ljava/lang/String;
 
-    sget-object v2, Lcom/perm/kate/KateConstants;->API_ID:Ljava/lang/String;
+    sget-object v3, Lcom/perm/kate/KateConstants;->API_ID:Ljava/lang/String;
 
-    invoke-direct {v0, v1, v2}, Lcom/perm/kate/api/Api;-><init>(Ljava/lang/String;Ljava/lang/String;)V
+    iget-object v4, v1, Lcom/perm/kate/account/Account;->instance_domain:Ljava/lang/String;
+    
+    iget-boolean v5, v1, Lcom/perm/kate/account/Account;->use_tls:Z
+
+    invoke-direct {v0, v2, v3, v4, v5}, Lcom/perm/kate/api/Api;-><init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Z)V
 
     iput-object v0, p0, Lcom/perm/kate/session/Session;->api:Lcom/perm/kate/api/Api;
 

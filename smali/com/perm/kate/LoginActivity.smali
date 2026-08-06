@@ -241,9 +241,9 @@
 
     if-nez v5, :cond_3
 
-    const-string v5, "http://api.vk.com/blank.html"
+    const-string v5, "/blank.html"
 
-    invoke-virtual {p1, v5}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
+    invoke-virtual {p1, v5}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
 
     move-result v5
 

@@ -669,6 +669,8 @@
     <string name="label_unsure_members">Возможные участники</string>
     <string name="label_user">Пользователь</string>
     <string name="label_user_to_ban">Заблокировать</string>
+    <string name="label_instance">Домен инстанса</string>
+    <string name="label_use_tls">Включить HTTPS</string>
     <string name="label_username">Email или телефон</string>
     <string name="label_video_description">Описание</string>
     <string name="label_video_download">Загрузка видео</string>

@@ -669,6 +669,8 @@ Please keep in mind this directory will be removed on application uninstall."</s
     <string name="label_unsure_members">Unsure members</string>
     <string name="label_user">User</string>
     <string name="label_user_to_ban">Block</string>
+    <string name="label_instance">Instance domain</string>
+    <string name="label_use_tls">Turn on HTTPS</string>
     <string name="label_username">E-mail or phone</string>
     <string name="label_video_description">Description</string>
     <string name="label_video_download">Video download</string>

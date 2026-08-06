@@ -16,6 +16,10 @@
 
 .field api_id:Ljava/lang/String;
 
+.field instance_domain:Ljava/lang/String;
+
+.field use_tls:Z
+
 
 # direct methods
 .method static constructor <clinit>()V
@@ -40,10 +44,12 @@
     return-void
 .end method
 
-.method public constructor <init>(Ljava/lang/String;Ljava/lang/String;)V
+.method public constructor <init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Z)V
     .locals 0
     .param p1, "access_token"    # Ljava/lang/String;
     .param p2, "api_id"    # Ljava/lang/String;
+    .param p3, "instance_domain"    # Ljava/lang/String;
+    .param p4, "use_tls"    # Z
 
     .prologue
     .line 27
@@ -54,6 +60,10 @@
 
     .line 29
     iput-object p2, p0, Lcom/perm/kate/api/Api;->api_id:Ljava/lang/String;
+
+    iput-object p3, p0, Lcom/perm/kate/api/Api;->instance_domain:Ljava/lang/String;
+
+    iput-boolean p4, p0, Lcom/perm/kate/api/Api;->use_tls:Z
 
     .line 30
     return-void
@@ -449,7 +459,7 @@
 .end method
 
 .method private getSignedUrl(Lcom/perm/kate/api/Params;Z)Ljava/lang/String;
-    .locals 3
+    .locals 5
     .param p1, "params"    # Lcom/perm/kate/api/Params;
     .param p2, "is_post"    # Z
 
@@ -500,8 +510,33 @@
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+    
+    iget-boolean v2, p0, Lcom/perm/kate/api/Api;->use_tls:Z
 
-    const-string v2, "https://api.vk.com/method/"
+    if-eqz v2, :cond_http
+    const-string v2, "https://"
+    goto :cond_https
+
+    :cond_http
+    const-string v2, "http://"
+
+    :cond_https
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget-object v2, p0, Lcom/perm/kate/api/Api;->instance_domain:Ljava/lang/String;
+
+    if-eqz v2, :cond_fallback
+
+    goto :cond_next
+
+    :cond_fallback
+    const-string v2, "openvk.xyz"
+
+    :cond_next
+    
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const-string v2, "/method/"
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 

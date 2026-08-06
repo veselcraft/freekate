@@ -2697,6 +2697,8 @@
     <public type="string" name="key_vibration_length" id="0x7f07054f" />
     <public type="string" name="key_wifi" id="0x7f070550" />
     <public type="string" name="package_name" id="0x7f070551" />
+    <public type="string" name="label_use_tls" id="0x7f070552" />
+    <public type="string" name="label_instance" id="0x7f070553" />
     <public type="bool" name="abc_allow_stacked_button_bar" id="0x7f080000" />
     <public type="bool" name="abc_action_bar_embed_tabs_pre_jb" id="0x7f080001" />
     <public type="bool" name="abc_config_allowActionMenuItemTextWithIcon" id="0x7f080002" />
@@ -3577,6 +3579,7 @@
     <public type="id" name="privacy" id="0x7f0e0063" />
     <public type="id" name="img_user_photo" id="0x7f0e0064" />
     <public type="id" name="tv_user_name" id="0x7f0e0065" />
+    <public type="id" name="instance_domain" id="0x7f0e03aa" />
     <public type="id" name="online" id="0x7f0e0066" />
     <public type="id" name="accounts" id="0x7f0e0067" />
     <public type="id" name="fl_button_bg" id="0x7f0e0068" />
@@ -4413,6 +4416,8 @@
     <public type="id" name="album_comments" id="0x7f0e03a7" />
     <public type="id" name="create_topic" id="0x7f0e03a8" />
     <public type="id" name="video_cache" id="0x7f0e03a9" />
+    <public type="id" name="instance" id="0x7f0e03ab" />
+    <public type="id" name="useTlsCheckBox" id="0x7f0e03ac" />
     <public type="menu" name="albums_menu" id="0x7f0f0000" />
     <public type="menu" name="audio_menu" id="0x7f0f0001" />
     <public type="menu" name="docs_menu" id="0x7f0f0002" />

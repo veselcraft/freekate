@@ -62,13 +62,15 @@
 
 
 # virtual methods
-.method public logInDirect(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)[Ljava/lang/Object;
+.method public logInDirect(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Z)[Ljava/lang/Object;
     .locals 16
     .param p1, "login1"    # Ljava/lang/String;
     .param p2, "password"    # Ljava/lang/String;
     .param p3, "captcha_sid"    # Ljava/lang/String;
     .param p4, "captcha_user_input"    # Ljava/lang/String;
     .param p5, "user_agent"    # Ljava/lang/String;
+    .param p6, "instance_domain"    # Ljava/lang/String;
+    .param p7, "use_tls"    # Z
 
     .prologue
     .line 32
@@ -81,7 +83,32 @@
 
     invoke-direct {v13}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v14, "https://oauth.vk.com/token?grant_type=password&client_id="
+    # http or https
+    if-eqz p7, :cond_http
+
+    const-string v14, "https://"
+    goto :cond_next
+
+    :cond_http
+
+    const-string v14, "http://"
+
+    :cond_next
+
+    invoke-virtual {v13, v14}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v13
+
+    # add domain
+    invoke-static/range {p6 .. p6}, Ljava/net/URLEncoder;->encode(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v14
+
+    invoke-virtual {v13, v14}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v13
+
+    const-string v14, "/token?grant_type=password&client_id="
 
     invoke-virtual {v13, v14}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 

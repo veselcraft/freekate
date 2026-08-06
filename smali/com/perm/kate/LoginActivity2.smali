@@ -30,6 +30,14 @@
 
 .field progressView:Landroid/view/View;
 
+.field instance:Landroid/widget/EditText;
+
+.field instanceDomain:Ljava/lang/String;
+
+.field useTlsCheckBox:Landroid/widget/CheckBox;
+
+.field use_tls:Z
+
 .field private startReserveClick:Landroid/content/DialogInterface$OnClickListener;
 
 
@@ -332,6 +340,28 @@
 
     iput-object v1, v0, Lcom/perm/kate/account/Account;->remixsid:Ljava/lang/String;
 
+    # get domain
+    iget-object v1, p0, Lcom/perm/kate/LoginActivity2;->instance:Landroid/widget/EditText;
+
+    invoke-virtual {v1}, Landroid/widget/EditText;->getText()Landroid/text/Editable;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Ljava/lang/Object;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    iput-object v1, v0, Lcom/perm/kate/account/Account;->instance_domain:Ljava/lang/String;
+
+    # get tls toggle
+    iget-object v1, p0, Lcom/perm/kate/LoginActivity2;->useTlsCheckBox:Landroid/widget/CheckBox;
+
+    invoke-virtual {v1}, Landroid/widget/CheckBox;->isChecked()Z
+
+    move-result v1
+
+    iput-boolean v1, v0, Lcom/perm/kate/account/Account;->use_tls:Z
+
     .line 150
     invoke-static {v0}, Lcom/perm/kate/KApplication;->addAccount(Lcom/perm/kate/account/Account;)V
 
@@ -426,6 +456,29 @@
     move-result-object v0
 
     iput-object v0, p0, Lcom/perm/kate/LoginActivity2;->password:Ljava/lang/String;
+    
+    .line 200000
+    # get domain
+    iget-object v0, p0, Lcom/perm/kate/LoginActivity2;->instance:Landroid/widget/EditText;
+
+    invoke-virtual {v0}, Landroid/widget/EditText;->getText()Landroid/text/Editable;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljava/lang/Object;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    iput-object v0, p0, Lcom/perm/kate/LoginActivity2;->instanceDomain:Ljava/lang/String;
+
+    # get tls toggle
+    iget-object v0, p0, Lcom/perm/kate/LoginActivity2;->useTlsCheckBox:Landroid/widget/CheckBox;
+
+    invoke-virtual {v0}, Landroid/widget/CheckBox;->isChecked()Z
+
+    move-result v0
+
+    iput-boolean v0, p0, Lcom/perm/kate/LoginActivity2;->use_tls:Z
 
     .line 158
     if-eqz p3, :cond_0
@@ -460,7 +513,11 @@
 
     move-object v4, p2
 
-    invoke-virtual/range {v0 .. v5}, Lcom/perm/kate/api/LoginLogic;->logInDirect(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)[Ljava/lang/Object;
+    iget-object v6, p0, Lcom/perm/kate/LoginActivity2;->instanceDomain:Ljava/lang/String;
+
+    iget-boolean v7, p0, Lcom/perm/kate/LoginActivity2;->use_tls:Z
+
+    invoke-virtual/range {v0 .. v7}, Lcom/perm/kate/api/LoginLogic;->logInDirect(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Z)[Ljava/lang/Object;
 
     move-result-object v6
 
@@ -784,7 +841,8 @@
     .line 282
     .local v3, "connection":Ljava/net/HttpURLConnection;
     :try_start_0
-    const-string v8, "https://api.vk.com/method/utils.getServerTime"
+    const-string v8, "http://openvk.xyz/method/utils.getServerTime"
+    # FIXME: Hard-coded (temporary, maybe)
 
     .line 283
     .local v8, "url":Ljava/lang/String;
@@ -1073,6 +1131,26 @@
     check-cast v2, Landroid/widget/EditText;
 
     iput-object v2, p0, Lcom/perm/kate/LoginActivity2;->login:Landroid/widget/EditText;
+
+    const v2, 0x7f0e03ab
+
+    invoke-virtual {p0, v2}, Lcom/perm/kate/LoginActivity2;->findViewById(I)Landroid/view/View;
+
+    move-result-object v2
+
+    check-cast v2, Landroid/widget/EditText;
+
+    iput-object v2, p0, Lcom/perm/kate/LoginActivity2;->instance:Landroid/widget/EditText;
+
+    const v2, 0x7f0e03ac
+
+    invoke-virtual {p0, v2}, Lcom/perm/kate/LoginActivity2;->findViewById(I)Landroid/view/View;
+
+    move-result-object v2
+
+    check-cast v2, Landroid/widget/CheckBox;
+
+    iput-object v2, p0, Lcom/perm/kate/LoginActivity2;->useTlsCheckBox:Landroid/widget/CheckBox;
 
     .line 59
     const v2, 0x7f0e024f

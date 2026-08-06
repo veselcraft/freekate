@@ -13,7 +13,7 @@
 
     .prologue
     .line 11
-    const-string v0, "https://oauth.vk.com/blank.html"
+    const-string v0, "http://oauth.vk.com/blank.html"
 
     sput-object v0, Lcom/perm/kate/api/Auth;->redirect_url:Ljava/lang/String;
 
@@ -222,7 +222,7 @@
 .end method
 
 .method public static parseRedirectUrl(Ljava/lang/String;)[Ljava/lang/String;
-    .locals 5
+    .locals 7
     .param p0, "url"    # Ljava/lang/String;
     .annotation system Ldalvik/annotation/Throws;
         value = {
@@ -266,9 +266,50 @@
     move-result-object v3
 
     invoke-static {v2, v3}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
+    
+    :cond_0
+    # parse domain
+    const-string v2, "\\/\\/([a-zA-Z0-9-.]+)\\/"
+
+    invoke-static {p0, v2}, Lcom/perm/utils/Utils;->extractPattern(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v5
+
+    .local v5, "domain":Ljava/lang/String;
+
+    const-string v2, "Kate.Auth"
+
+    new-instance v3, Ljava/lang/StringBuilder;
+
+    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v4, "domain="
+
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    invoke-virtual {v3, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-static {v2, v3}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
+    # end pasring domain
+
+    # check if http or not
+    const-string v2, "https:"
+
+    invoke-virtual {p0, v2}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
+
+    move-result v6
+    .local v6, "is_tls":Z
+    # end
 
     .line 29
-    :cond_0
     const-string v2, "user_id=(\\d*)"
 
     invoke-static {p0, v2}, Lcom/perm/utils/Utils;->extractPattern(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
@@ -300,6 +341,7 @@
     invoke-static {v2, v3}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
     .line 31
+    # access token check
     if-eqz v1, :cond_1
 
     invoke-virtual {v1}, Ljava/lang/String;->length()I
@@ -308,9 +350,19 @@
 
     if-eqz v2, :cond_1
 
+    # user id check
     if-eqz v0, :cond_1
 
     invoke-virtual {v0}, Ljava/lang/String;->length()I
+
+    move-result v2
+
+    if-nez v2, :cond_2
+
+    # domain check
+    if-eqz v5, :cond_1
+
+    invoke-virtual {v5}, Ljava/lang/String;->length()I
 
     move-result v2
 
@@ -348,7 +400,7 @@
 
     .line 33
     :cond_2
-    const/4 v2, 0x2
+    const/4 v2, 0x4
 
     new-array v2, v2, [Ljava/lang/String;
 
@@ -359,6 +411,16 @@
     const/4 v3, 0x1
 
     aput-object v1, v2, v3
+
+    const/4 v3, 0x2
+
+    aput-object v5, v2, v3
+
+    const/4 v3, 0x3
+
+    invoke-static {v6}, Ljava/lang/Boolean;->toString(Z)Ljava/lang/String;
+    move-result-object v6
+    aput-object v6, v2, v3
 
     return-object v2
 .end method
