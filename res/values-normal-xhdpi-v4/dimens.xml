@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="header_button_width">45.0dip</dimen>
+    <dimen name="header_text_size">20.0dip</dimen>
+    <dimen name="header_button_icon_size_small">27.0dip</dimen>
+    <dimen name="header_layout_height">45.0dip</dimen>
+    <dimen name="header_progress_size">19.0dip</dimen>
+    <dimen name="tab_height">43.0dip</dimen>
+</resources>

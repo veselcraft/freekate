@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout android:layout_gravity="center" android:id="@id/colorPicker_dialogView" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <RelativeLayout android:layout_gravity="center" android:id="@id/colorPicker_viewContainer" android:paddingLeft="@dimen/colorPicker_spacer" android:paddingTop="@dimen/colorPicker_spacer" android:paddingRight="@dimen/colorPicker_spacer" android:paddingBottom="@dimen/colorPicker_spacer" android:clipToPadding="false" android:layout_width="wrap_content" android:layout_height="wrap_content">
+        <com.perm.kate.color_picker.ColorPickerBox android:id="@id/colorPicker_viewSatBri" android:layout_width="@dimen/colorPicker_hsvWidth" android:layout_height="@dimen/colorPicker_hsvHeight" />
+        <ImageView android:id="@id/colorPicker_viewHue" android:layout_width="@dimen/colorPicker_hueWidth" android:layout_height="@dimen/colorPicker_hsvHeight" android:layout_marginLeft="@dimen/colorPicker_spacer" android:src="@drawable/color_picker_hue" android:scaleType="fitXY" android:layout_toRightOf="@id/colorPicker_viewSatBri" />
+        <ImageView android:id="@id/colorPicker_cursor" android:layout_width="9.0dip" android:layout_height="9.0dip" android:src="@drawable/color_picker_cursor" android:scaleType="matrix" />
+        <ImageView android:id="@id/colorPicker_target" android:layout_width="15.0dip" android:layout_height="15.0dip" android:src="@drawable/color_picker_target" android:scaleType="matrix" />
+        <LinearLayout android:gravity="center" android:orientation="horizontal" android:id="@id/colorPicker_state" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/colorPicker_spacer" android:layout_below="@id/colorPicker_viewSatBri" android:layout_centerHorizontal="true">
+            <View android:id="@id/colorPicker_warnaLama" android:background="#ffffaaaa" android:layout_width="60.0dip" android:layout_height="30.0dip" />
+            <ImageView android:paddingLeft="@dimen/colorPicker_spacer" android:paddingRight="@dimen/colorPicker_spacer" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/color_picker_arrow_right" />
+            <View android:id="@id/colorPicker_warnaBaru" android:background="#ffaaaaff" android:layout_width="60.0dip" android:layout_height="30.0dip" />
+        </LinearLayout>
+    </RelativeLayout>
+</FrameLayout>

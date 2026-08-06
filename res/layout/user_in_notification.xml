@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <ImageView android:id="@id/user1" android:layout_width="41.0dip" android:layout_height="41.0dip" android:layout_marginTop="5.0dip" android:layout_marginRight="5.0dip" android:layout_marginBottom="5.0dip" android:scaleType="centerCrop" android:contentDescription="@string/label_photo" />
+    <com.perm.kate.ScaleTextView android:textSize="@dimen/text_size_small" android:textColor="?attr_cs_item_title" android:id="@id/tv_posts_news_user_name" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_marginRight="5.0dip" android:layout_weight="1.0" />
+</LinearLayout>

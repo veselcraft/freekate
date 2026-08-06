@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:background="?activity_background" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <include layout="@layout/header" />
+    <GridView android:gravity="center" android:id="@id/gv_photos" android:focusable="true" android:layout_width="fill_parent" android:layout_height="0.0dip" android:layout_margin="1.0dip" android:drawSelectorOnTop="true" android:horizontalSpacing="1.0dip" android:verticalSpacing="1.0dip" android:stretchMode="columnWidth" android:columnWidth="75.0dip" android:numColumns="auto_fit" android:layout_weight="1.0" />
+    <include layout="@layout/ad_container" />
+    <include android:id="@id/footer2_include" android:visibility="gone" layout="@layout/footer" />
+</LinearLayout>

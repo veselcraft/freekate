@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="horizontal" android:background="?attr_item_bg" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <ImageView android:id="@id/left_icon" android:layout_width="41.0dip" android:layout_height="41.0dip" android:layout_margin="5.0dip" android:src="@drawable/heart_icon" android:scaleType="center" android:contentDescription="@string/label_photo" />
+    <LinearLayout android:orientation="vertical" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_marginBottom="5.0dip" android:layout_weight="1.0">
+        <com.perm.kate.ScaleTextView android:textSize="@dimen/text_size_small" android:textColor="?attr_item_text_color" android:textColorLink="?attr_item_link_color" android:linksClickable="false" android:id="@id/notification_type" android:layout_width="fill_parent" android:layout_height="wrap_content" />
+        <com.perm.kate.ScaleTextView android:textSize="@dimen/text_size_small" android:textColor="?attr_item_ago_color" android:textColorLink="?attr_item_link_color" android:id="@id/tv_posts_news_text" android:layout_width="fill_parent" android:layout_height="wrap_content" />
+        <LinearLayout android:orientation="vertical" android:id="@id/user_container" android:layout_width="fill_parent" android:layout_height="wrap_content" />
+        <com.perm.kate.ScaleTextView android:textSize="@dimen/text_size_smaller" android:textColor="?attr_item_ago_color" android:id="@id/tv_posts_news_ago" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="5.0dip" />
+    </LinearLayout>
+    <ImageView android:id="@id/photo" android:layout_width="75.0dip" android:layout_height="45.0dip" android:layout_margin="5.0dip" android:scaleType="centerInside" android:contentDescription="@string/label_photo" />
+</LinearLayout>

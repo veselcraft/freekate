@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:background="?activity_background" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <include layout="@layout/header" />
+    <ListView android:id="@id/list" android:layout_width="fill_parent" android:layout_height="0.0dip" android:cacheColorHint="#00000000" android:layout_weight="1.0" />
+    <ImageView android:layout_width="fill_parent" android:layout_height="1.0px" android:src="?attr_compose_footer_hor_divider" android:scaleType="fitXY" />
+    <LinearLayout android:orientation="horizontal" android:id="@id/ll_text_region" android:background="?attr_holo_compose_bg" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <TextView android:textSize="@dimen/text_size_normal" android:textColor="?attr_item_text_color" android:layout_gravity="center_vertical" android:id="@id/tv_path" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/label_marginLeft" android:layout_marginTop="5.0dip" android:layout_marginRight="@dimen/label_marginLeft" android:layout_marginBottom="6.0dip" />
+    </LinearLayout>
+    <include layout="@layout/ad_container" />
+    <include android:id="@id/footer2_include" android:visibility="gone" layout="@layout/footer2" />
+</LinearLayout>

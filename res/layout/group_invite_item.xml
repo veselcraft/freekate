@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:background="?attr_item_bg" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <ImageView android:id="@id/img_user_photo" android:layout_width="60.0dip" android:layout_height="60.0dip" android:layout_marginLeft="7.0dip" android:layout_marginTop="7.0dip" android:layout_marginRight="5.0dip" android:layout_marginBottom="7.0dip" android:scaleType="centerCrop" />
+        <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginRight="2.0dip">
+            <com.perm.kate.ScaleTextView android:textSize="@dimen/text_size_normal" android:textColor="?attr_cs_item_title" android:id="@id/tv_group_name" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="2.0dip" />
+            <com.perm.kate.ScaleTextView android:textSize="@dimen/text_size_normal" android:textColor="?attr_item_subtitle" android:id="@id/tv_user_name" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginBottom="2.0dip" />
+        </LinearLayout>
+    </LinearLayout>
+    <LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="5.0dip" android:layout_marginTop="0.0dip" android:layout_marginRight="5.0dip" android:layout_marginBottom="7.0dip" android:baselineAligned="false">
+        <FrameLayout android:id="@id/fl_button_bg" android:background="?attr_button_bg" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="2.0dip" android:layout_marginRight="3.0dip" android:layout_weight="1.0">
+            <Button android:textColor="@color/solid_white" android:ellipsize="end" android:id="@id/btn_accept" android:background="@drawable/ds_button_bg" android:focusable="false" android:layout_width="fill_parent" android:layout_height="wrap_content" android:minHeight="32.0dip" android:text="@string/label_accept" android:singleLine="true" />
+        </FrameLayout>
+        <FrameLayout android:id="@id/fl_button_bg2" android:background="?attr_button_bg" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="3.0dip" android:layout_marginRight="2.0dip" android:layout_weight="1.0">
+            <Button android:textColor="@color/solid_white" android:ellipsize="end" android:id="@id/btn_cancel" android:background="@drawable/ds_button_bg" android:focusable="false" android:layout_width="fill_parent" android:layout_height="wrap_content" android:minHeight="32.0dip" android:text="@string/label_cancel" android:singleLine="true" />
+        </FrameLayout>
+    </LinearLayout>
+</LinearLayout>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:background="?activity_background" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <include layout="@layout/header" />
+    <ScrollView android:layout_width="fill_parent" android:layout_height="0.0dip" android:layout_weight="1.0">
+        <TextView android:textSize="@dimen/text_size_normal" android:textColor="?attr_item_text_color" android:id="@id/tv_lyrics_text" android:paddingLeft="@dimen/label_marginLeft" android:paddingTop="@dimen/label_marginLeft" android:paddingRight="@dimen/label_marginLeft" android:paddingBottom="@dimen/label_marginLeft" android:layout_width="fill_parent" android:layout_height="wrap_content" />
+    </ScrollView>
+    <include layout="@layout/ad_container" />
+</LinearLayout>

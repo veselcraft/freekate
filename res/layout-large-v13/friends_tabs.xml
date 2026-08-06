@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <HorizontalScrollView android:id="@id/horizontalScrollView" android:scrollbars="none" android:fadingEdge="none" android:layout_width="fill_parent" android:layout_height="wrap_content" android:fillViewport="true" android:overScrollMode="never">
+        <LinearLayout android:orientation="horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content" android:baselineAligned="false">
+            <LinearLayout android:gravity="center" android:orientation="vertical" android:id="@id/action_all" android:background="?attr_tab_bg" android:paddingLeft="3.0dip" android:paddingRight="3.0dip" android:layout_width="wrap_content" android:layout_height="@dimen/tab_height">
+                <TextView android:textSize="14.0sp" android:textColor="?attr_tab_text_color" android:id="@id/all_text" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="10.0dip" android:layout_marginRight="10.0dip" android:text="@string/label_menu_friends" android:singleLine="true" android:textAllCaps="true" />
+            </LinearLayout>
+            <LinearLayout android:gravity="center" android:orientation="vertical" android:id="@id/action_online" android:background="?attr_tab_bg" android:paddingLeft="3.0dip" android:paddingRight="3.0dip" android:layout_width="wrap_content" android:layout_height="@dimen/tab_height">
+                <TextView android:textSize="14.0sp" android:textColor="?attr_tab_text_color" android:id="@id/online_text" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="10.0dip" android:layout_marginRight="10.0dip" android:text="@string/online" android:singleLine="true" android:textAllCaps="true" />
+            </LinearLayout>
+            <LinearLayout android:gravity="center" android:orientation="vertical" android:id="@id/action_mutual" android:background="?attr_tab_bg" android:paddingLeft="3.0dip" android:paddingRight="3.0dip" android:layout_width="wrap_content" android:layout_height="@dimen/tab_height">
+                <TextView android:textSize="14.0sp" android:textColor="?attr_tab_text_color" android:id="@id/mutual_text" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="10.0dip" android:layout_marginRight="10.0dip" android:text="@string/mutual" android:singleLine="true" android:textAllCaps="true" />
+            </LinearLayout>
+            <LinearLayout android:gravity="center" android:orientation="vertical" android:id="@id/action_requests" android:background="?attr_tab_bg" android:paddingLeft="3.0dip" android:paddingRight="3.0dip" android:layout_width="wrap_content" android:layout_height="@dimen/tab_height">
+                <TextView android:textSize="14.0sp" android:textColor="?attr_tab_text_color" android:id="@id/requests_text" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="10.0dip" android:layout_marginRight="10.0dip" android:text="@string/label_requests" android:singleLine="true" android:textAllCaps="true" />
+            </LinearLayout>
+            <LinearLayout android:gravity="center" android:orientation="vertical" android:id="@id/action_requests_outgoing" android:background="?attr_tab_bg" android:paddingLeft="3.0dip" android:paddingRight="3.0dip" android:layout_width="wrap_content" android:layout_height="@dimen/tab_height">
+                <TextView android:textSize="14.0sp" android:textColor="?attr_tab_text_color" android:id="@id/requests_text_outgoing" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="10.0dip" android:layout_marginRight="10.0dip" android:text="@string/outgoing_friend_requests" android:singleLine="true" android:textAllCaps="true" />
+            </LinearLayout>
+            <LinearLayout android:gravity="center" android:orientation="vertical" android:id="@id/action_suggestions" android:background="?attr_tab_bg" android:paddingLeft="3.0dip" android:paddingRight="3.0dip" android:layout_width="wrap_content" android:layout_height="@dimen/tab_height">
+                <TextView android:textSize="14.0sp" android:textColor="?attr_tab_text_color" android:id="@id/suggestions_text" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="10.0dip" android:layout_marginRight="10.0dip" android:text="@string/label_suggestions" android:singleLine="true" android:textAllCaps="true" />
+            </LinearLayout>
+            <FrameLayout android:id="@id/stub" android:background="?attr_tab_bg" android:layout_width="fill_parent" android:layout_height="@dimen/tab_height" />
+        </LinearLayout>
+    </HorizontalScrollView>
+    <ImageView android:background="?attr_tabs_hor_divider" android:layout_width="fill_parent" android:layout_height="1.0px" />
+    <ImageView android:background="?attr_tabs_shadow" android:layout_width="fill_parent" android:layout_height="3.0px" />
+</LinearLayout>

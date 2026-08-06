@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <com.google.android.maps.MapView android:id="@id/mapview" android:clickable="true" android:layout_width="fill_parent" android:layout_height="0.0dip" android:layout_weight="1.0" android:apiKey="0pIq29EgGBNAfjXhD0dWEV73_lsMY2SNztQsT3w" />
+    <LinearLayout android:orientation="vertical" android:id="@id/ll_bottom" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <ImageView android:background="@drawable/d_search_divider" android:layout_width="fill_parent" android:layout_height="1.0px" />
+        <LinearLayout android:background="@drawable/d_bottom_bg" android:layout_width="fill_parent" android:layout_height="wrap_content">
+            <Button android:textStyle="bold" android:id="@id/btn_choose_location" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="5.0dip" android:layout_marginTop="7.0dip" android:layout_marginRight="5.0dip" android:layout_marginBottom="3.0dip" android:text="@string/str_choose_location" />
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

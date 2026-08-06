@@ -1,0 +1,83 @@
+.class Lcom/perm/kate/PlaybackService$4;
+.super Ljava/lang/Object;
+.source "PlaybackService.java"
+
+# interfaces
+.implements Ljava/lang/Runnable;
+
+
+# annotations
+.annotation system Ldalvik/annotation/EnclosingClass;
+    value = Lcom/perm/kate/PlaybackService;
+.end annotation
+
+.annotation system Ldalvik/annotation/InnerClass;
+    accessFlags = 0x0
+    name = null
+.end annotation
+
+
+# instance fields
+.field final synthetic this$0:Lcom/perm/kate/PlaybackService;
+
+
+# direct methods
+.method constructor <init>(Lcom/perm/kate/PlaybackService;)V
+    .locals 0
+    .param p1, "this$0"    # Lcom/perm/kate/PlaybackService;
+
+    .prologue
+    .line 914
+    iput-object p1, p0, Lcom/perm/kate/PlaybackService$4;->this$0:Lcom/perm/kate/PlaybackService;
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    return-void
+.end method
+
+
+# virtual methods
+.method public run()V
+    .locals 2
+
+    .prologue
+    .line 917
+    const-string v0, "Kate.PlaybackService"
+
+    const-string v1, "message received"
+
+    invoke-static {v0, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
+
+    .line 919
+    sget-object v0, Lcom/perm/kate/PlaybackService;->player:Lcom/perm/kate/Player;
+
+    iget v0, v0, Lcom/perm/kate/Player;->state:I
+
+    if-eqz v0, :cond_0
+
+    sget-object v0, Lcom/perm/kate/PlaybackService;->player:Lcom/perm/kate/Player;
+
+    iget v0, v0, Lcom/perm/kate/Player;->state:I
+
+    const/4 v1, 0x3
+
+    if-ne v0, v1, :cond_1
+
+    .line 923
+    :cond_0
+    :goto_0
+    return-void
+
+    .line 921
+    :cond_1
+    const/4 v0, 0x0
+
+    invoke-static {v0}, Lcom/perm/kate/PlaybackService;->trackAudioPlay(Ljava/lang/Long;)V
+
+    .line 922
+    iget-object v0, p0, Lcom/perm/kate/PlaybackService$4;->this$0:Lcom/perm/kate/PlaybackService;
+
+    invoke-virtual {v0}, Lcom/perm/kate/PlaybackService;->stopSelf()V
+
+    goto :goto_0
+.end method

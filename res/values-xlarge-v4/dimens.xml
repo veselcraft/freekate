@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="header_button_width">48.0dip</dimen>
+    <dimen name="header_text_size">22.0dip</dimen>
+    <item type="dimen" name="abc_dialog_fixed_height_major">60.000004%</item>
+    <item type="dimen" name="abc_dialog_fixed_height_minor">90.0%</item>
+    <item type="dimen" name="abc_dialog_fixed_width_major">50.0%</item>
+    <item type="dimen" name="abc_dialog_fixed_width_minor">69.99999%</item>
+    <item type="dimen" name="abc_dialog_min_width_major">45.000004%</item>
+    <item type="dimen" name="abc_dialog_min_width_minor">72.0%</item>
+    <dimen name="abc_search_view_text_min_width">192.0dip</dimen>
+    <dimen name="header_button_icon_size_small">30.0dip</dimen>
+    <dimen name="header_layout_height">48.0dip</dimen>
+    <dimen name="header_progress_size">20.0dip</dimen>
+    <dimen name="tab_height">48.0dip</dimen>
+    <dimen name="text_size_large">24.0sp</dimen>
+    <dimen name="text_size_large_1">28.0sp</dimen>
+    <dimen name="text_size_normal">22.0sp</dimen>
+    <dimen name="text_size_small">20.0sp</dimen>
+    <dimen name="text_size_small1">21.0sp</dimen>
+    <dimen name="text_size_smaller">18.0sp</dimen>
+</resources>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:icon="@drawable/ic_action_edit" android:id="@id/edit_chat" android:title="@string/label_edit_chat" />
+    <item android:icon="@drawable/ic_action_edit" android:id="@id/new_message" android:title="@string/label_menu_new_message" />
+    <item android:id="@id/delete_thread" android:title="@string/delete_thread" />
+    <item android:id="@id/save" android:title="@string/label_save" />
+    <item android:id="@id/search_by_user" android:title="@string/label_menu_search" />
+    <item android:id="@id/messages_on_date" android:title="@string/search_by_date" />
+    <item android:id="@id/attachments" android:title="@string/dialog_attachments" />
+    <item android:id="@id/make_screenshot" android:title="@string/label_make_screenshot" />
+    <item android:id="@id/leave_conversation" android:title="@string/label_leave_conversation" />
+    <item android:id="@id/set_background" android:title="@string/title_chat_background" />
+    <item android:id="@id/disable_notifications" android:title="@string/label_disable_notification_this_chat" />
+    <item android:id="@id/thread_start" android:title="@string/thread_start" />
+    <item android:id="@id/close_thread" android:title="@string/label_close_unread" />
+</menu>

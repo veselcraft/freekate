@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.widget.NestedScrollView android:layout_width="fill_parent" android:layout_height="fill_parent" android:fillViewport="true"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content">
+            <ImageView android:id="@id/imv_profile_info_user_photo" android:layout_width="120.0dip" android:layout_height="120.0dip" android:scaleType="centerCrop" android:contentDescription="@string/label_photo" />
+            <LinearLayout android:orientation="vertical" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_marginLeft="10.0dip" android:layout_marginTop="6.0dip" android:layout_marginRight="6.0dip" android:layout_weight="1.0">
+                <com.perm.kate.ScaleTextView android:textSize="@dimen/text_size_large" android:textColor="?attr_item_title" android:id="@id/tv_profile_info_user_name" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+                <LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content" android:baselineAligned="false">
+                    <LinearLayout android:orientation="vertical" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_weight="1.0">
+                        <LinearLayout android:orientation="horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content">
+                            <TextView android:textColor="?attr_profile_text_color" android:layout_gravity="center_vertical" android:id="@id/online" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+                            <ImageView android:layout_gravity="top" android:id="@id/bullet" android:padding="2.0dip" android:visibility="gone" android:layout_width="14.0dip" android:layout_height="14.0dip" android:layout_marginLeft="3.0dip" android:layout_marginTop="3.0dip" android:src="@drawable/green" android:scaleType="centerInside" />
+                            <ImageView android:layout_gravity="center_vertical" android:id="@id/mobile_online" android:background="@drawable/mobile_online" android:visibility="gone" android:layout_width="10.0dip" android:layout_height="16.0dip" android:layout_marginLeft="3.0dip" android:scaleType="fitXY" />
+                        </LinearLayout>
+                        <LinearLayout android:orientation="vertical" android:id="@id/ll_profile_place_region" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_weight="1.0">
+                            <TextView android:textColor="?attr_profile_text_color" android:ellipsize="end" android:id="@id/tv_profile_info_country" android:layout_width="wrap_content" android:layout_height="wrap_content" android:singleLine="true" />
+                        </LinearLayout>
+                        <LinearLayout android:layout_gravity="center_vertical" android:orientation="vertical" android:id="@id/ll_profile_education_region" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_weight="1.0">
+                            <TextView android:textColor="?attr_profile_text_color" android:ellipsize="end" android:id="@id/tv_profile_info_university" android:layout_width="wrap_content" android:layout_height="wrap_content" android:singleLine="true" />
+                        </LinearLayout>
+                        <TextView android:textColor="?attr_profile_text_color" android:ellipsize="end" android:id="@id/tv_profile_friends_status" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content" android:singleLine="true" />
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+        <ImageView android:background="?attr_profile_divider" android:layout_width="fill_parent" android:layout_height="1.0px" />
+        <LinearLayout android:orientation="vertical" android:id="@id/ll_profile_status_region" android:background="?attr_item_bg" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content">
+            <LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content">
+                <ImageView android:layout_gravity="center_vertical" android:id="@id/iv_status_audio_icon" android:visibility="gone" android:layout_width="24.0dip" android:layout_height="24.0dip" android:layout_marginLeft="20.0dip" android:src="?attr_profile_audio_icon" />
+                <com.perm.kate.ScaleTextView android:textSize="@dimen/text_size_large" android:textColor="?attr_profile_text_color" android:id="@id/label_status" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="20.0dip" android:layout_marginTop="10.0dip" android:layout_marginRight="5.0dip" android:layout_marginBottom="10.0dip" />
+            </LinearLayout>
+            <ImageView android:background="?attr_profile_divider" android:layout_width="fill_parent" android:layout_height="1.0px" />
+        </LinearLayout>
+        <LinearLayout android:orientation="vertical" android:id="@id/add_friend_region" android:background="?attr_item_bg" android:layout_width="fill_parent" android:layout_height="wrap_content">
+            <LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="48.0dip" android:layout_weight="1.0">
+                <ImageView android:layout_gravity="center_vertical" android:id="@id/iv_add_friend_icon" android:layout_width="24.0dip" android:layout_height="24.0dip" android:layout_marginLeft="20.0dip" android:src="?attr_profile_add_friend_icon" />
+                <com.perm.kate.ScaleTextView android:textSize="@dimen/text_size_large" android:textColor="?attr_profile_text_color" android:ellipsize="end" android:layout_gravity="center_vertical" android:id="@id/add_friend_text" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="20.0dip" android:layout_marginRight="5.0dip" android:layout_marginBottom="2.0dip" android:text="@string/label_add_friend" android:singleLine="true" />
+            </LinearLayout>
+            <ImageView android:background="?attr_profile_divider" android:layout_width="fill_parent" android:layout_height="1.0px" />
+        </LinearLayout>
+        <LinearLayout android:orientation="vertical" android:id="@id/replies_region" android:background="?attr_item_bg" android:layout_width="fill_parent" android:layout_height="wrap_content">
+            <LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="48.0dip" android:layout_weight="1.0">
+                <ImageView android:layout_gravity="center_vertical" android:layout_width="24.0dip" android:layout_height="24.0dip" android:layout_marginLeft="20.0dip" android:src="?attr_profile_messages_icon" />
+                <com.perm.kate.ScaleTextView android:textSize="@dimen/text_size_large" android:textColor="?attr_profile_text_color" android:ellipsize="end" android:layout_gravity="center_vertical" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="20.0dip" android:layout_marginRight="5.0dip" android:layout_marginBottom="2.0dip" android:text="@string/label_replies" android:singleLine="true" />
+            </LinearLayout>
+            <ImageView android:background="?attr_profile_divider" android:layout_width="fill_parent" android:layout_height="1.0px" />
+        </LinearLayout>
+        <LinearLayout android:orientation="vertical" android:id="@id/ll_profile_wall_region" android:background="?attr_item_bg" android:layout_width="fill_parent" android:layout_height="48.0dip">
+            <LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="0.0dip" android:layout_weight="1.0">
+                <ImageView android:layout_gravity="center_vertical" android:layout_width="24.0dip" android:layout_height="24.0dip" android:layout_marginLeft="20.0dip" android:src="?attr_profile_wall_icon" />
+                <com.perm.kate.ScaleTextView android:textSize="@dimen/text_size_large" android:textColor="?attr_profile_text_color" android:ellipsize="end" android:layout_gravity="center_vertical" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="20.0dip" android:layout_marginRight="5.0dip" android:layout_marginBottom="0.0dip" android:text="@string/title_wall_info" android:layout_weight="1.0" />
+                <LinearLayout android:layout_gravity="center_vertical" android:orientation="vertical" android:background="?attr_count_bg" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="5.0dip" android:minWidth="42.0dip">
+                    <com.perm.kate.ScaleTextView android:textSize="@dimen/text_size_large" android:textColor="?attr_profile_text_color" android:layout_gravity="center_horizontal" android:id="@id/tv_wall_count" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="3.0dip" android:layout_marginRight="3.0dip" android:text="∞" />
+                </LinearLayout>
+            </LinearLayout>
+            <ImageView android:background="?attr_profile_divider" android:layout_width="fill_parent" android:layout_height="1.0px" />
+        </LinearLayout>
+        <LinearLayout android:orientation="vertical" android:id="@id/ll_profile_friends_region" android:background="?attr_item_bg" android:layout_width="fill_parent" android:layout_height="48.0dip">
+            <LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="0.0dip" android:layout_weight="1.0">
+                <ImageView android:layout_gravity="center_vertical" android:layout_width="24.0dip" android:layout_height="24.0dip" android:layout_marginLeft="20.0dip" android:src="?attr_profile_friends_icon" />
+                <com.perm.kate.ScaleTextView android:textSize="@dimen/text_size_large" android:textColor="?attr_profile_text_color" android:ellipsize="end" android:layout_gravity="center_vertical" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="20.0dip" android:layout_marginRight="20.0dip" android:layout_marginBottom="0.0dip" android:text="@string/label_menu_friends" android:layout_weight="1.0" />
+                <LinearLayout android:layout_gravity="center_vertical" android:orientation="vertical" android:background="?attr_count_bg" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="5.0dip" android:minWidth="42.0dip">
+                    <com.perm.kate.ScaleTextView android:textSize="@dimen/text_size_large" android:textColor="?attr_profile_text_color" android:layout_gravity="center_horizontal" android:id="@id/tv_friends_count" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="3.0dip" android:layout_marginRight="3.0dip" android:text="0" />
+                </LinearLayout>
+            </LinearLayout>
+            <ImageView android:background="?attr_profile_divider" android:layout_width="fill_parent" android:layout_height="1.0px" />
+        </LinearLayout>
+        <LinearLayout android:orientation="vertical" android:id="@id/ll_profile_groups_region" android:background="?attr_item_bg" android:layout_width="fill_parent" android:layout_height="48.0dip">
+            <LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="0.0dip" android:layout_weight="1.0">
+                <ImageView android:layout_gravity="center_vertical" android:layout_width="24.0dip" android:layout_height="24.0dip" android:layout_marginLeft="20.0dip" android:src="?attr_profile_groups_icon" />
+                <com.perm.kate.ScaleTextView android:textSize="@dimen/text_size_large" android:textColor="?attr_profile_text_color" android:ellipsize="end" android:layout_gravity="center_vertical" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="20.0dip" android:layout_marginRight="5.0dip" android:layout_marginBottom="0.0dip" android:text="@string/groups" android:layout_weight="1.0" />
+                <LinearLayout android:layout_gravity="center_vertical" android:orientation="vertical" android:background="?attr_count_bg" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="5.0dip" android:minWidth="42.0dip">
+                    <com.perm.kate.ScaleTextView android:textSize="@dimen/text_size_large" android:textColor="?attr_profile_text_color" android:layout_gravity="center_horizontal" android:id="@id/tv_groups_count" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="3.0dip" android:layout_marginRight="3.0dip" android:text="0" />
+                </LinearLayout>
+            </LinearLayout>
+            <ImageView android:background="?attr_profile_divider" android:layout_width="fill_parent" android:layout_height="1.0px" />
+        </LinearLayout>
+        <LinearLayout android:orientation="vertical" android:id="@id/ll_profile_all_photos_region" android:background="?attr_item_bg" android:layout_width="fill_parent" android:layout_height="48.0dip">
+            <LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="0.0dip" android:layout_weight="1.0">
+                <ImageView android:layout_gravity="center_vertical" android:layout_width="24.0dip" android:layout_height="24.0dip" android:layout_marginLeft="20.0dip" android:src="?attr_profile_photos_icon" />
+                <com.perm.kate.ScaleTextView android:textSize="@dimen/text_size_large" android:textColor="?attr_profile_text_color" android:ellipsize="end" android:layout_gravity="center_vertical" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="20.0dip" android:layout_marginRight="5.0dip" android:layout_marginBottom="0.0dip" android:text="@string/all_photos" android:singleLine="true" />
+            </LinearLayout>
+            <ImageView android:background="?attr_profile_divider" android:layout_width="fill_parent" android:layout_height="1.0px" />
+        </LinearLayout>
+        <LinearLayout android:orientation="vertical" android:id="@id/ll_profile_photos_region" android:background="?attr_item_bg" android:layout_width="fill_parent" android:layout_height="48.0dip">
+            <LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="0.0dip" android:layout_weight="1.0">
+                <ImageView android:layout_gravity="center_vertical" android:layout_width="24.0dip" android:layout_height="24.0dip" android:layout_marginLeft="20.0dip" android:src="?attr_profile_photos_icon" />
+                <com.perm.kate.ScaleTextView android:textSize="@dimen/text_size_large" android:textColor="?attr_profile_text_color" android:ellipsize="end" android:layout_gravity="center_vertical" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="20.0dip" android:layout_marginRight="5.0dip" android:layout_marginBottom="0.0dip" android:text="@string/title_photos_info" android:layout_weight="1.0" />
+                <LinearLayout android:layout_gravity="center_vertical" android:orientation="vertical" android:background="?attr_count_bg" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="5.0dip" android:minWidth="42.0dip">
+                    <com.perm.kate.ScaleTextView android:textSize="@dimen/text_size_large" android:textColor="?attr_profile_text_color" android:layout_gravity="center_horizontal" android:id="@id/tv_albums_count" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="3.0dip" android:layout_marginRight="3.0dip" android:text="0" />
+                </LinearLayout>
+            </LinearLayout>
+            <ImageView android:background="?attr_profile_divider" android:layout_width="fill_parent" android:layout_height="1.0px" />
+        </LinearLayout>
+        <LinearLayout android:orientation="vertical" android:id="@id/ll_profile_user_photos_region" android:background="?attr_item_bg" android:layout_width="fill_parent" android:layout_height="48.0dip">
+            <LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="0.0dip" android:layout_weight="1.0">
+                <ImageView android:layout_gravity="center_vertical" android:layout_width="24.0dip" android:layout_height="24.0dip" android:layout_marginLeft="20.0dip" android:src="?attr_profile_photos_icon" /> android:layout_gravity="center_vertical">
+<com.perm.kate.ScaleTextView android:textSize="@dimen/text_size_large" android:textColor="?attr_profile_text_color" android:ellipsize="end" android:layout_gravity="center_vertical" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="20.0dip" android:layout_marginRight="5.0dip" android:layout_marginBottom="0.0dip" android:text="@string/title_user_photos_info" android:singleLine="true" android:layout_weight="1.0" />
+                <LinearLayout android:layout_gravity="center_vertical" android:orientation="vertical" android:background="?attr_count_bg" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="5.0dip" android:minWidth="42.0dip">
+                    <com.perm.kate.ScaleTextView android:textSize="@dimen/text_size_large" android:textColor="?attr_profile_text_color" android:layout_gravity="center_horizontal" android:id="@id/tv_photos_count" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="3.0dip" android:layout_marginRight="3.0dip" android:text="0" />
+                </LinearLayout>
+            </LinearLayout>
+            <ImageView android:background="?attr_profile_divider" android:layout_width="fill_parent" android:layout_height="1.0px" />
+        </LinearLayout>
+        <LinearLayout android:orientation="vertical" android:id="@id/ll_profile_audio_region" android:background="?attr_item_bg" android:layout_width="fill_parent" android:layout_height="48.0dip">
+            <LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="0.0dip" android:layout_weight="1.0">
+                <ImageView android:layout_gravity="center_vertical" android:layout_width="24.0dip" android:layout_height="24.0dip" android:layout_marginLeft="20.0dip" android:src="?attr_profile_audio_icon" />
+                <com.perm.kate.ScaleTextView android:textSize="@dimen/text_size_large" android:textColor="?attr_profile_text_color" android:ellipsize="end" android:layout_gravity="center_vertical" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="20.0dip" android:layout_marginRight="5.0dip" android:layout_marginBottom="0.0dip" android:text="@string/title_audio_info" android:layout_weight="1.0" />
+                <LinearLayout android:layout_gravity="center_vertical" android:orientation="vertical" android:background="?attr_count_bg" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="5.0dip" android:minWidth="42.0dip">
+                    <com.perm.kate.ScaleTextView android:textSize="@dimen/text_size_large" android:textColor="?attr_profile_text_color" android:layout_gravity="center_horizontal" android:id="@id/tv_audios_count" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="3.0dip" android:layout_marginRight="3.0dip" android:text="0" />
+                </LinearLayout>
+            </LinearLayout>
+            <ImageView android:background="?attr_profile_divider" android:layout_width="fill_parent" android:layout_height="1.0px" />
+        </LinearLayout>
+        <LinearLayout android:orientation="vertical" android:id="@id/ll_profile_videos_region" android:background="?attr_item_bg" android:layout_width="fill_parent" android:layout_height="48.0dip">
+            <LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="0.0dip" android:layout_weight="1.0">
+                <ImageView android:layout_gravity="center_vertical" android:layout_width="24.0dip" android:layout_height="24.0dip" android:layout_marginLeft="20.0dip" android:src="?attr_profile_video_icon" />
+                <com.perm.kate.ScaleTextView android:textSize="@dimen/text_size_large" android:textColor="?attr_profile_text_color" android:ellipsize="end" android:layout_gravity="center_vertical" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="20.0dip" android:layout_marginRight="5.0dip" android:layout_marginBottom="0.0dip" android:text="@string/title_videos_info" android:layout_weight="1.0" />
+                <LinearLayout android:layout_gravity="center_vertical" android:orientation="vertical" android:background="?attr_count_bg" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="5.0dip" android:minWidth="42.0dip">
+                    <com.perm.kate.ScaleTextView android:textSize="@dimen/text_size_large" android:textColor="?attr_profile_text_color" android:layout_gravity="center_horizontal" android:id="@id/tv_videos_count" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="3.0dip" android:layout_marginRight="3.0dip" android:text="0" />
+                </LinearLayout>
+            </LinearLayout>
+            <ImageView android:background="?attr_profile_divider" android:layout_width="fill_parent" android:layout_height="1.0px" />
+        </LinearLayout>
+        <LinearLayout android:orientation="vertical" android:id="@id/ll_profile_user_videos_region" android:background="?attr_item_bg" android:layout_width="fill_parent" android:layout_height="48.0dip">
+            <LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="0.0dip" android:layout_weight="1.0">
+                <ImageView android:layout_gravity="center_vertical" android:layout_width="24.0dip" android:layout_height="24.0dip" android:layout_marginLeft="20.0dip" android:src="?attr_profile_video_icon" />
+                <com.perm.kate.ScaleTextView android:textSize="@dimen/text_size_large" android:textColor="?attr_profile_text_color" android:ellipsize="end" android:layout_gravity="center_vertical" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="20.0dip" android:layout_marginRight="5.0dip" android:layout_marginBottom="0.0dip" android:text="@string/title_user_videos_info" android:singleLine="true" android:layout_weight="1.0" />
+                <LinearLayout android:layout_gravity="center_vertical" android:orientation="vertical" android:background="?attr_count_bg" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="5.0dip" android:minWidth="42.0dip">
+                    <com.perm.kate.ScaleTextView android:textSize="@dimen/text_size_large" android:textColor="?attr_profile_text_color" android:layout_gravity="center_horizontal" android:id="@id/tv_user_videos_count" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="3.0dip" android:layout_marginRight="3.0dip" android:text="0" />
+                </LinearLayout>
+            </LinearLayout>
+            <ImageView android:background="?attr_profile_divider" android:layout_width="fill_parent" android:layout_height="1.0px" />
+        </LinearLayout>
+        <LinearLayout android:orientation="vertical" android:id="@id/ll_profile_faves_region" android:background="?attr_item_bg" android:layout_width="fill_parent" android:layout_height="48.0dip">
+            <LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="0.0dip" android:layout_weight="1.0">
+                <ImageView android:layout_gravity="center_vertical" android:layout_width="24.0dip" android:layout_height="24.0dip" android:layout_marginLeft="20.0dip" android:src="?attr_profile_fave_icon" />
+                <com.perm.kate.ScaleTextView android:textSize="@dimen/text_size_large" android:textColor="?attr_profile_text_color" android:ellipsize="end" android:layout_gravity="center_vertical" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="20.0dip" android:layout_marginRight="5.0dip" android:layout_marginBottom="0.0dip" android:text="@string/label_faves" />
+            </LinearLayout>
+            <ImageView android:background="?attr_profile_divider" android:layout_width="fill_parent" android:layout_height="1.0px" />
+        </LinearLayout>
+        <LinearLayout android:orientation="horizontal" android:id="@id/ll_profile_docs_region" android:background="?attr_item_bg" android:layout_width="fill_parent" android:layout_height="48.0dip">
+            <ImageView android:layout_gravity="center_vertical" android:layout_width="24.0dip" android:layout_height="24.0dip" android:layout_marginLeft="20.0dip" android:src="?attr_profile_folder_icon" />
+            <com.perm.kate.ScaleTextView android:textSize="@dimen/text_size_large" android:textColor="?attr_profile_text_color" android:ellipsize="end" android:layout_gravity="center_vertical" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="20.0dip" android:layout_marginRight="5.0dip" android:layout_marginBottom="0.0dip" android:text="@string/docs" />
+        </LinearLayout>
+        <ImageView android:id="@id/docs_separator" android:background="?attr_profile_divider" android:layout_width="fill_parent" android:layout_height="1.0px" />
+        <LinearLayout android:orientation="vertical" android:id="@id/ll_profile_notes_region" android:background="?attr_item_bg" android:layout_width="fill_parent" android:layout_height="48.0dip">
+            <LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="0.0dip" android:layout_weight="1.0">
+                <ImageView android:layout_gravity="center_vertical" android:layout_width="24.0dip" android:layout_height="24.0dip" android:layout_marginLeft="20.0dip" android:src="?attr_profile_note_icon" />
+                <com.perm.kate.ScaleTextView android:textSize="@dimen/text_size_large" android:textColor="?attr_profile_text_color" android:ellipsize="end" android:layout_gravity="center_vertical" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="20.0dip" android:layout_marginRight="5.0dip" android:layout_marginBottom="0.0dip" android:text="@string/notes" android:layout_weight="1.0" />
+                <LinearLayout android:layout_gravity="center_vertical" android:orientation="vertical" android:background="?attr_count_bg" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="5.0dip" android:minWidth="42.0dip">
+                    <com.perm.kate.ScaleTextView android:textSize="@dimen/text_size_large" android:textColor="?attr_profile_text_color" android:layout_gravity="center_horizontal" android:id="@id/tv_notes_count" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="3.0dip" android:layout_marginRight="3.0dip" android:text="0" />
+                </LinearLayout>
+            </LinearLayout>
+            <ImageView android:background="?attr_profile_divider" android:layout_width="fill_parent" android:layout_height="1.0px" />
+        </LinearLayout>
+        <LinearLayout android:orientation="vertical" android:id="@id/ll_profile_gifts_region" android:background="?attr_item_bg" android:layout_width="fill_parent" android:layout_height="48.0dip">
+            <LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="0.0dip" android:layout_weight="1.0">
+                <ImageView android:layout_gravity="center_vertical" android:layout_width="24.0dip" android:layout_height="24.0dip" android:layout_marginLeft="20.0dip" android:src="?attr_profile_gift_icon" />
+                <com.perm.kate.ScaleTextView android:textSize="@dimen/text_size_large" android:textColor="?attr_profile_text_color" android:ellipsize="end" android:layout_gravity="center_vertical" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="20.0dip" android:layout_marginRight="5.0dip" android:layout_marginBottom="0.0dip" android:text="@string/label_gifts" android:layout_weight="1.0" />
+                <LinearLayout android:layout_gravity="center_vertical" android:orientation="vertical" android:background="?attr_count_bg" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="5.0dip" android:minWidth="42.0dip">
+                    <com.perm.kate.ScaleTextView android:textSize="@dimen/text_size_large" android:textColor="?attr_profile_text_color" android:layout_gravity="center_horizontal" android:id="@id/tv_gifts_count" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="3.0dip" android:layout_marginRight="3.0dip" android:text="0" />
+                </LinearLayout>
+            </LinearLayout>
+            <ImageView android:background="?attr_profile_divider" android:layout_width="fill_parent" android:layout_height="1.0px" />
+        </LinearLayout>
+        <LinearLayout android:orientation="vertical" android:id="@id/ll_subscriptions_region" android:background="?attr_item_bg" android:layout_width="fill_parent" android:layout_height="wrap_content">
+            <LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="48.0dip">
+                <ImageView android:layout_gravity="center_vertical" android:layout_width="24.0dip" android:layout_height="24.0dip" android:layout_marginLeft="20.0dip" android:src="?attr_profile_follow_icon" />
+                <com.perm.kate.ScaleTextView android:textSize="@dimen/text_size_large" android:textColor="?attr_profile_text_color" android:ellipsize="end" android:layout_gravity="center_vertical" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="20.0dip" android:layout_marginRight="5.0dip" android:layout_marginBottom="2.0dip" android:text="@string/label_subscribers" />
+            </LinearLayout>
+            <ImageView android:background="?attr_profile_divider" android:layout_width="fill_parent" android:layout_height="1.0px" />
+        </LinearLayout>
+        <LinearLayout android:orientation="vertical" android:id="@id/ll_followers_region" android:background="?attr_item_bg" android:layout_width="fill_parent" android:layout_height="wrap_content">
+            <LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="48.0dip">
+                <ImageView android:layout_gravity="center_vertical" android:layout_width="24.0dip" android:layout_height="24.0dip" android:layout_marginLeft="20.0dip" android:src="?attr_profile_follow_icon" />
+                <com.perm.kate.ScaleTextView android:textSize="@dimen/text_size_large" android:textColor="?attr_profile_text_color" android:ellipsize="end" android:layout_gravity="center_vertical" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="20.0dip" android:layout_marginRight="5.0dip" android:layout_marginBottom="2.0dip" android:text="@string/label_followers" android:layout_weight="1.0" />
+                <LinearLayout android:layout_gravity="center_vertical" android:orientation="vertical" android:background="?attr_count_bg" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="5.0dip" android:minWidth="42.0dip">
+                    <com.perm.kate.ScaleTextView android:textSize="@dimen/text_size_large" android:textColor="?attr_profile_text_color" android:layout_gravity="center_horizontal" android:id="@id/tv_followers_count" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="3.0dip" android:layout_marginRight="3.0dip" android:text="0" />
+                </LinearLayout>
+            </LinearLayout>
+            <ImageView android:background="?attr_profile_divider" android:layout_width="fill_parent" android:layout_height="1.0px" />
+        </LinearLayout>
+        <LinearLayout android:orientation="vertical" android:id="@id/ll_profile_additional_info" android:background="?attr_item_bg" android:layout_width="fill_parent" android:layout_height="48.0dip">
+            <LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="0.0dip" android:layout_weight="1.0">
+                <ImageView android:layout_gravity="center_vertical" android:layout_width="24.0dip" android:layout_height="24.0dip" android:layout_marginLeft="20.0dip" android:src="?attr_profile_info_icon" />
+                <LinearLayout android:layout_gravity="center_vertical" android:orientation="horizontal" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_weight="1.0">
+                    <com.perm.kate.ScaleTextView android:textSize="@dimen/text_size_large" android:textColor="?attr_profile_text_color" android:ellipsize="end" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="20.0dip" android:layout_marginRight="5.0dip" android:layout_marginBottom="0.0dip" android:text="@string/label_additional_profile_info" />
+                </LinearLayout>
+            </LinearLayout>
+            <ImageView android:background="?attr_profile_divider" android:layout_width="fill_parent" android:layout_height="1.0px" />
+        </LinearLayout>
+        <LinearLayout android:orientation="horizontal" android:background="?attr_item_bg" android:layout_width="fill_parent" android:layout_height="wrap_content">
+            <ImageView android:layout_width="24.0dip" android:layout_height="24.0dip" android:layout_marginLeft="20.0dip" android:layout_marginTop="10.0dip" android:src="?attr_profile_info_icon" />
+            <LinearLayout android:layout_gravity="center_vertical" android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content">
+                <com.perm.kate.ScaleTextView android:textSize="@dimen/text_size_normal" android:textColor="?attr_profile_text_color" android:id="@id/tv_profile_info_sex" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="20.0dip" android:layout_marginTop="10.0dip" android:layout_marginRight="5.0dip" />
+                <com.perm.kate.ScaleTextView android:textSize="@dimen/text_size_normal" android:textColor="?attr_profile_text_color" android:textColorLink="?attr_cs_item_title" android:id="@id/tv_profile_info_relation" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="20.0dip" />
+                <com.perm.kate.ScaleTextView android:textSize="@dimen/text_size_normal" android:textColor="?attr_profile_text_color" android:id="@id/tv_profile_info_rate" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="10.0dip" />
+                <com.perm.kate.ScaleTextView android:textSize="@dimen/text_size_normal" android:textColor="?attr_profile_text_color" android:id="@id/tv_profile_info_birthday" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="20.0dip" />
+                <com.perm.kate.ScaleTextView android:textSize="@dimen/text_size_normal" android:textColor="?attr_profile_text_color" android:id="@id/tv_profile_info_id" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="20.0dip" android:layout_marginBottom="5.0dip" />
+                <com.perm.kate.ScaleTextView android:textSize="@dimen/text_size_normal" android:textColor="?attr_profile_text_color" android:id="@id/tv_profile_info_last_seen" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="20.0dip" android:layout_marginTop="-5.0dip" android:layout_marginBottom="5.0dip" />
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+</android.support.v4.widget.NestedScrollView>

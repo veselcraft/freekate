@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="solid_captcha_text_color">#ff317dc3</color>
+    <color name="solid_item_menu_coffee">#ffe9d8d8</color>
+    <color name="solid_item_menu_holo">#ffe1e1e1</color>
+    <color name="solid_item_menu_metal">#ffe1ebec</color>
+    <color name="text_color_about_dialog">#ff000000</color>
+    <color name="text_color_about_dialog_coffee">#ffffffff</color>
+    <color name="text_color_about_dialog_holo">#ffffffff</color>
+    <color name="text_color_about_dialog_metal">#ffffffff</color>
+</resources>

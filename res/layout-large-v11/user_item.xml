@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="horizontal" android:background="?attr_item_bg" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <ImageView android:id="@id/img_user_photo" android:layout_width="60.0dip" android:layout_height="60.0dip" android:layout_marginRight="15.0dip" android:scaleType="centerCrop" />
+    <LinearLayout android:layout_gravity="center_vertical" android:orientation="horizontal" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_weight="1.0">
+        <com.perm.kate.ScaleTextView android:textSize="@dimen/text_size_normal" android:textColor="?attr_cs_item_title" android:id="@id/tv_user_name" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="22.0dip" />
+        <LinearLayout android:layout_gravity="center_vertical" android:orientation="horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="-15.0dip">
+            <ImageView android:layout_gravity="center_vertical" android:id="@id/bullet" android:padding="2.0dip" android:visibility="gone" android:layout_width="14.0dip" android:layout_height="14.0dip" android:layout_marginTop="2.0dip" android:src="@drawable/green" android:scaleType="fitXY" android:contentDescription="@string/online" />
+            <ImageView android:layout_gravity="center_vertical" android:id="@id/mobile_online" android:background="@drawable/mobile_online" android:visibility="gone" android:layout_width="10.0dip" android:layout_height="16.0dip" android:layout_marginLeft="5.0dip" android:scaleType="fitXY" android:contentDescription="@string/online" />
+        </LinearLayout>
+    </LinearLayout>
+    <CheckBox android:layout_gravity="center_vertical" android:id="@id/checkbox" android:focusable="false" android:focusableInTouchMode="false" android:visibility="gone" android:clickable="false" android:layout_width="60.0dip" android:layout_height="60.0dip" />
+    <ImageView android:layout_gravity="center_vertical" android:id="@id/img_menu_item" android:background="?attr_item_bg" android:padding="8.0dip" android:visibility="gone" android:layout_width="42.0dip" android:layout_height="42.0dip" android:layout_marginRight="4.0dip" android:src="?attr_menu_button" android:scaleType="centerInside" android:contentDescription="@string/menu" />
+</LinearLayout>

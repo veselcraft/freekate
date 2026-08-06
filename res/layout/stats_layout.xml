@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:background="?activity_background" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <include layout="@layout/header" />
+    <ScrollView android:layout_width="fill_parent" android:layout_height="0.0dip" android:fillViewport="true" android:layout_weight="1.0">
+        <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content">
+            <com.perm.kate.ScaleTextView android:textSize="@dimen/text_size_normal" android:textColor="?attr_profile_text_color" android:gravity="center_horizontal" android:id="@id/tv_loading_data" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="10.0dip" android:layout_marginTop="10.0dip" android:layout_marginRight="10.0dip" android:text="@string/label_loading_data" />
+            <FrameLayout android:id="@id/fl_button_bg" android:background="?attr_button_bg" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="44.0dip" android:layout_marginLeft="20.0dip" android:layout_marginTop="20.0dip" android:layout_marginRight="20.0dip" android:layout_marginBottom="0.0dip">
+                <Button android:textColor="@color/cs_button_text_white" android:id="@id/btn_date_from" android:background="@drawable/ds_button_bg" android:paddingBottom="2.0dip" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+            </FrameLayout>
+            <FrameLayout android:id="@id/fl_button_bg2" android:background="?attr_button_bg" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="44.0dip" android:layout_marginLeft="20.0dip" android:layout_marginTop="20.0dip" android:layout_marginRight="20.0dip" android:layout_marginBottom="0.0dip">
+                <Button android:textColor="@color/cs_button_text_white" android:id="@id/btn_date_to" android:background="@drawable/ds_button_bg" android:paddingBottom="2.0dip" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+            </FrameLayout>
+            <com.perm.kate.ScaleTextView android:textSize="@dimen/text_size_normal" android:textColor="?attr_profile_text_color" android:gravity="center_horizontal" android:id="@id/tv_info" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="10.0dip" android:layout_marginTop="20.0dip" android:layout_marginRight="10.0dip" />
+            <LinearLayout android:orientation="vertical" android:id="@id/ll_visitors_views" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content">
+                <com.perm.kate.ScaleTextView android:textSize="@dimen/text_size_normal" android:textColor="?attr_profile_text_color" android:gravity="center_horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="10.0dip" android:layout_marginTop="20.0dip" android:layout_marginRight="10.0dip" android:text="@string/label_visitors_views" />
+                <com.perm.kate.chartview.ChartView android:id="@id/visitors_views_chart_view" android:layout_width="fill_parent" android:layout_height="240.0dip" />
+                <LinearLayout android:layout_gravity="center_horizontal" android:orientation="vertical" android:layout_width="wrap_content" android:layout_height="wrap_content">
+                    <LinearLayout android:orientation="horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="10.0dip" android:layout_marginTop="5.0dip" android:layout_marginRight="10.0dip">
+                        <View android:layout_gravity="center_vertical" android:background="@color/solid_color_chart_line1" android:layout_width="50.0dip" android:layout_height="2.0dip" android:layout_marginTop="2.0dip" android:layout_marginRight="5.0dip" />
+                        <com.perm.kate.ScaleTextView android:textSize="@dimen/text_size_normal" android:textColor="@color/solid_color_chart_line1" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="5.0dip" android:text="@string/label_pageviews" />
+                    </LinearLayout>
+                    <LinearLayout android:orientation="horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="10.0dip" android:layout_marginRight="10.0dip">
+                        <View android:layout_gravity="center_vertical" android:background="@color/solid_color_chart_line2" android:layout_width="50.0dip" android:layout_height="2.0dip" android:layout_marginTop="2.0dip" android:layout_marginRight="5.0dip" />
+                        <com.perm.kate.ScaleTextView android:textSize="@dimen/text_size_normal" android:textColor="@color/solid_color_chart_line2" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="5.0dip" android:text="@string/label_unique_visitors" />
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+            <LinearLayout android:orientation="vertical" android:id="@id/ll_sex" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content">
+                <com.perm.kate.ScaleTextView android:textSize="@dimen/text_size_normal" android:textColor="?attr_profile_text_color" android:gravity="center_horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="10.0dip" android:layout_marginTop="20.0dip" android:layout_marginRight="10.0dip" android:text="@string/label_sex0" />
+                <com.perm.kate.chartview.ChartView android:id="@id/sex_chart_view" android:layout_width="fill_parent" android:layout_height="240.0dip" />
+                <LinearLayout android:layout_gravity="center_horizontal" android:orientation="vertical" android:layout_width="wrap_content" android:layout_height="wrap_content">
+                    <LinearLayout android:orientation="horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="10.0dip" android:layout_marginTop="5.0dip" android:layout_marginRight="10.0dip">
+                        <View android:layout_gravity="center_vertical" android:background="@color/solid_color_chart_line1" android:layout_width="50.0dip" android:layout_height="2.0dip" android:layout_marginTop="2.0dip" android:layout_marginRight="5.0dip" />
+                        <com.perm.kate.ScaleTextView android:textSize="@dimen/text_size_normal" android:textColor="@color/solid_color_chart_line1" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="5.0dip" android:text="@string/label_sex_2" />
+                    </LinearLayout>
+                    <LinearLayout android:orientation="horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="10.0dip" android:layout_marginRight="10.0dip">
+                        <View android:layout_gravity="center_vertical" android:background="@color/solid_color_chart_line2" android:layout_width="50.0dip" android:layout_height="2.0dip" android:layout_marginTop="2.0dip" android:layout_marginRight="5.0dip" />
+                        <com.perm.kate.ScaleTextView android:textSize="@dimen/text_size_normal" android:textColor="@color/solid_color_chart_line2" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="5.0dip" android:text="@string/label_sex_1" />
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+            <LinearLayout android:orientation="vertical" android:id="@id/ll_age" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content">
+                <com.perm.kate.ScaleTextView android:textSize="@dimen/text_size_normal" android:textColor="?attr_profile_text_color" android:gravity="center_horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="10.0dip" android:layout_marginTop="20.0dip" android:layout_marginRight="10.0dip" android:text="@string/label_age" />
+                <com.perm.kate.chartview.ChartView android:id="@id/age_chart_view" android:layout_width="fill_parent" android:layout_height="240.0dip" />
+                <LinearLayout android:layout_gravity="center_horizontal" android:orientation="vertical" android:layout_width="wrap_content" android:layout_height="wrap_content">
+                    <LinearLayout android:orientation="horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="10.0dip" android:layout_marginTop="5.0dip" android:layout_marginRight="10.0dip">
+                        <View android:layout_gravity="center_vertical" android:background="@color/solid_color_chart_line1" android:layout_width="50.0dip" android:layout_height="2.0dip" android:layout_marginTop="2.0dip" android:layout_marginRight="5.0dip" />
+                        <com.perm.kate.ScaleTextView android:textSize="@dimen/text_size_normal" android:textColor="@color/solid_color_chart_line1" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="5.0dip" android:text="@string/label_age_under_18" />
+                    </LinearLayout>
+                    <LinearLayout android:orientation="horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="10.0dip" android:layout_marginRight="10.0dip">
+                        <View android:layout_gravity="center_vertical" android:background="@color/solid_color_chart_line2" android:layout_width="50.0dip" android:layout_height="2.0dip" android:layout_marginTop="2.0dip" android:layout_marginRight="5.0dip" />
+                        <com.perm.kate.ScaleTextView android:textSize="@dimen/text_size_normal" android:textColor="@color/solid_color_chart_line2" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="5.0dip" android:text="@string/label_age_18_21" />
+                    </LinearLayout>
+                    <LinearLayout android:orientation="horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="10.0dip" android:layout_marginRight="10.0dip">
+                        <View android:layout_gravity="center_vertical" android:background="@color/solid_color_chart_line3" android:layout_width="50.0dip" android:layout_height="2.0dip" android:layout_marginTop="2.0dip" android:layout_marginRight="5.0dip" />
+                        <com.perm.kate.ScaleTextView android:textSize="@dimen/text_size_normal" android:textColor="@color/solid_color_chart_line3" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="5.0dip" android:text="@string/label_age_21_24" />
+                    </LinearLayout>
+                    <LinearLayout android:orientation="horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="10.0dip" android:layout_marginRight="10.0dip">
+                        <View android:layout_gravity="center_vertical" android:background="@color/solid_color_chart_line4" android:layout_width="50.0dip" android:layout_height="2.0dip" android:layout_marginTop="2.0dip" android:layout_marginRight="5.0dip" />
+                        <com.perm.kate.ScaleTextView android:textSize="@dimen/text_size_normal" android:textColor="@color/solid_color_chart_line4" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="5.0dip" android:text="@string/label_age_24_27" />
+                    </LinearLayout>
+                    <LinearLayout android:orientation="horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="10.0dip" android:layout_marginRight="10.0dip">
+                        <View android:layout_gravity="center_vertical" android:background="@color/solid_color_chart_line5" android:layout_width="50.0dip" android:layout_height="2.0dip" android:layout_marginTop="2.0dip" android:layout_marginRight="5.0dip" />
+                        <com.perm.kate.ScaleTextView android:textSize="@dimen/text_size_normal" android:textColor="@color/solid_color_chart_line5" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="5.0dip" android:text="@string/label_age_27_30" />
+                    </LinearLayout>
+                    <LinearLayout android:orientation="horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="10.0dip" android:layout_marginRight="10.0dip">
+                        <View android:layout_gravity="center_vertical" android:background="@color/solid_color_chart_line6" android:layout_width="50.0dip" android:layout_height="2.0dip" android:layout_marginTop="2.0dip" android:layout_marginRight="5.0dip" />
+                        <com.perm.kate.ScaleTextView android:textSize="@dimen/text_size_normal" android:textColor="@color/solid_color_chart_line6" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="5.0dip" android:text="@string/label_age_30_35" />
+                    </LinearLayout>
+                    <LinearLayout android:orientation="horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="10.0dip" android:layout_marginRight="10.0dip">
+                        <View android:layout_gravity="center_vertical" android:background="@color/solid_color_chart_line7" android:layout_width="50.0dip" android:layout_height="2.0dip" android:layout_marginTop="2.0dip" android:layout_marginRight="5.0dip" />
+                        <com.perm.kate.ScaleTextView android:textSize="@dimen/text_size_normal" android:textColor="@color/solid_color_chart_line7" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="5.0dip" android:text="@string/label_age_35_45" />
+                    </LinearLayout>
+                    <LinearLayout android:orientation="horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="10.0dip" android:layout_marginRight="10.0dip">
+                        <View android:layout_gravity="center_vertical" android:background="@color/solid_color_chart_line8" android:layout_width="50.0dip" android:layout_height="2.0dip" android:layout_marginTop="2.0dip" android:layout_marginRight="5.0dip" />
+                        <com.perm.kate.ScaleTextView android:textSize="@dimen/text_size_normal" android:textColor="@color/solid_color_chart_line8" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="5.0dip" android:text="@string/label_age_over_45" />
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+    <include layout="@layout/ad_container" />
+</LinearLayout>

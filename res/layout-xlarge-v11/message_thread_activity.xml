@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:id="@id/list_parent" android:background="?activity_background" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <include layout="@layout/messages_header" />
+    <LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_weight="1.0">
+        <FrameLayout android:id="@id/dialogs_container" android:background="?activity_background_tablet" android:layout_width="300.0dip" android:layout_height="fill_parent">
+            <fragment android:name="com.perm.kate.MessagesFragment" android:id="@id/dialogs" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+            <ImageView android:layout_gravity="right" android:layout_width="8.0dip" android:layout_height="fill_parent" android:src="?attr_left_vertical_shadow" android:scaleType="fitXY" />
+        </FrameLayout>
+        <LinearLayout android:orientation="horizontal" android:id="@id/container" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+    </LinearLayout>
+    <LinearLayout android:id="@id/footer_for_emoticons" android:background="@android:color/transparent" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="230.0dip" />
+</LinearLayout>

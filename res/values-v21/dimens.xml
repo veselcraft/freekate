@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="label_marginLeft">16.0dip</dimen>
+    <dimen name="spinner_marginLeft">8.0dip</dimen>
+    <dimen name="design_navigation_padding_top_default">24.0dip</dimen>
+    <dimen name="edittext_marginLeft">11.0dip</dimen>
+</resources>

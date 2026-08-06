@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="label_marginLeft">19.0dip</dimen>
+    <dimen name="label_marginLeft2">41.0dip</dimen>
+    <dimen name="spinner_marginLeft">12.0dip</dimen>
+</resources>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:background="?activity_background" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <include layout="@layout/header" />
+    <ScrollView android:padding="5.0dip" android:layout_width="fill_parent" android:layout_height="fill_parent" android:fillViewport="true">
+        <FrameLayout android:layout_width="fill_parent" android:layout_height="fill_parent">
+            <RelativeLayout android:id="@id/view1" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="fill_parent">
+                <TextView android:textSize="@dimen/text_size_small" android:id="@id/info" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/message_save_hint" />
+                <TextView android:textSize="@dimen/text_size_small" android:id="@id/path_text" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="10.0dip" android:text="@string/message_save_directory" android:layout_below="@id/info" />
+                <EditText android:id="@id/path" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_below="@id/path_text" />
+                <TextView android:textSize="@dimen/text_size_small" android:id="@id/textView1" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="10.0dip" android:text="@string/message_save_file" android:layout_below="@id/path" android:layout_alignParentLeft="true" />
+                <EditText android:id="@id/filename" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_below="@id/textView1" android:layout_alignParentLeft="true" />
+                <Button android:id="@id/start" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/label_save" android:layout_alignParentBottom="true" />
+            </RelativeLayout>
+            <RelativeLayout android:id="@id/view2" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="fill_parent">
+                <ProgressBar android:id="@id/progress1" android:layout_width="wrap_content" android:layout_height="wrap_content" android:max="10000" android:layout_centerHorizontal="true" android:layout_centerVertical="true" />
+                <TextView android:textSize="@dimen/text_size_small" android:id="@id/progress_text" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_below="@id/progress1" android:layout_centerHorizontal="true" />
+            </RelativeLayout>
+            <RelativeLayout android:id="@id/view3" android:layout_width="fill_parent" android:layout_height="fill_parent">
+                <Button android:id="@id/close" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/close" android:layout_alignParentLeft="true" android:layout_alignParentBottom="true" />
+                <TextView android:textAppearance="?android:textAppearanceLarge" android:gravity="center_horizontal" android:id="@id/ready" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/done" android:layout_centerHorizontal="true" android:layout_centerVertical="true" />
+                <TextView android:textSize="@dimen/text_size_small" android:id="@id/progress_text_2" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_below="@id/ready" android:layout_centerHorizontal="true" />
+            </RelativeLayout>
+        </FrameLayout>
+    </ScrollView>
+    <include layout="@layout/ad_container" />
+</LinearLayout>

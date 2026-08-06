@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content" android:minHeight="48.0dip"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <View android:id="@id/top_empty" android:visibility="visible" android:layout_width="fill_parent" android:layout_height="8.0dip" />
+    <TextView android:ellipsize="marquee" android:id="@id/tv_title" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="4.0dip" android:singleLine="true" style="?android:attr/spinnerDropDownItemStyle" />
+    <TextView android:textSize="13.0sp" android:textColor="?android:textColorSecondary" android:id="@id/tv_region" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginBottom="4.0dip" style="?android:attr/spinnerDropDownItemStyle" />
+</LinearLayout>

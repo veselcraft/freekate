@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:id="@id/list_parent" android:background="?activity_background" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <ScrollView android:layout_width="fill_parent" android:layout_height="0.0dip" android:fillViewport="true" android:layout_weight="1.0">
+        <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content">
+            <include layout="@layout/header" />
+            <EditText android:textColor="?attr_item_text_color" android:gravity="left|top" android:id="@id/tb_new_comment_text" android:background="?edittext_background" android:layout_width="fill_parent" android:layout_height="0.0dip" android:layout_marginLeft="7.0dip" android:layout_marginTop="5.0dip" android:layout_marginRight="7.0dip" android:layout_marginBottom="4.0dip" android:layout_weight="1.0" android:inputType="textCapSentences|textMultiLine" />
+        </LinearLayout>
+    </ScrollView>
+    <ImageView android:layout_width="fill_parent" android:layout_height="1.0px" android:src="?attr_compose_footer_hor_divider" android:scaleType="fitXY" />
+    <LinearLayout android:orientation="horizontal" android:background="?attr_holo_compose_bg" android:layout_width="fill_parent" android:layout_height="48.0dip">
+        <ImageButton android:id="@id/btn_add_attachment" android:background="?attr_holo_button_bg" android:visibility="gone" android:layout_width="48.0dip" android:layout_height="48.0dip" android:src="?attr_add_attachment_icon" android:scaleType="centerInside" android:contentDescription="@string/attach" />
+        <ImageButton android:id="@id/add_smile" android:background="?attr_holo_button_bg" android:layout_width="48.0dip" android:layout_height="48.0dip" android:src="?attr_smile_icon" android:scaleType="centerInside" android:contentDescription="@string/smiles" />
+        <LinearLayout android:orientation="horizontal" android:id="@id/ff_attachments_count_placeholder" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="48.0dip">
+            <FrameLayout android:layout_width="48.0dip" android:layout_height="48.0dip">
+                <ImageButton android:id="@id/btn_attachments" android:background="?attr_holo_button_bg" android:layout_width="48.0dip" android:layout_height="48.0dip" android:src="?attr_footer_attachments_icon" android:scaleType="centerInside" android:contentDescription="@string/title_attachments" />
+                <TextView android:textSize="12.0dip" android:textColor="?attr_footer_text_color" android:layout_gravity="right|top" android:id="@id/tv_attachments_count" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="3.0dip" android:layout_marginRight="13.0dip" android:text="0" />
+            </FrameLayout>
+        </LinearLayout>
+        <ImageButton android:id="@id/btn_post_settings" android:background="?attr_holo_button_bg" android:visibility="gone" android:layout_width="48.0dip" android:layout_height="48.0dip" android:src="?attr_footer_settings_icon" android:scaleType="centerInside" android:contentDescription="@string/title_options" />
+        <Button android:textSize="@dimen/text_size_small" android:textStyle="bold" android:textColor="?attr_footer_text_color" android:ellipsize="end" android:id="@id/btn_new_comment_save" android:background="?attr_holo_button_bg" android:layout_width="fill_parent" android:layout_height="48.0dip" android:text="@string/label_save" />
+    </LinearLayout>
+    <LinearLayout android:id="@id/footer_for_emoticons" android:background="@android:color/transparent" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="230.0dip" />
+</LinearLayout>

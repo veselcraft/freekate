@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:background="?activity_background" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <include layout="@layout/header" />
+    <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="0.0dip" android:layout_weight="1.0">
+        <RadioGroup android:orientation="vertical" android:id="@id/rg_radiobuttons_placeholder" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="5.0dip" android:layout_marginTop="5.0dip">
+            <RadioButton android:id="@id/rb_all_friends" android:layout_width="wrap_content" android:layout_height="wrap_content" android:checked="true" android:text="@string/label_all_friends" />
+            <RadioButton android:id="@id/rb_friends_groups" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/label_select_friends_lists" />
+        </RadioGroup>
+        <ScrollView android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_marginLeft="5.0dip" android:layout_marginTop="5.0dip">
+            <LinearLayout android:orientation="vertical" android:id="@id/ll_checkgroups_placeholder" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content" />
+        </ScrollView>
+    </LinearLayout>
+    <include layout="@layout/ad_container" />
+    <include layout="@layout/footer" />
+</LinearLayout>

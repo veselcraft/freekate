@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:background="?activity_background" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <include layout="@layout/header" />
+    <com.felipecsl.gifimageview.library.GifImageView android:id="@id/gifView" android:layout_width="fill_parent" android:layout_height="fill_parent" android:scaleType="fitStart" />
+    <TextView android:textSize="18.0sp" android:layout_gravity="center_horizontal" android:id="@id/tv_gif" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="10.0dip" android:text="@string/please_wait" />
+    <SurfaceView android:id="@id/surface_view" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+</LinearLayout>

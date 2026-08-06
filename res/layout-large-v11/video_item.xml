@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="horizontal" android:background="?attr_item_bg" android:layout_width="fill_parent" android:layout_height="wrap_content" android:baselineAligned="false"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <FrameLayout android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="10.0dip" android:layout_marginTop="10.0dip" android:layout_marginRight="10.0dip" android:layout_marginBottom="10.0dip">
+        <ImageView android:id="@id/iv_video_pic" android:layout_width="130.0dip" android:layout_height="100.0dip" android:scaleType="centerCrop" android:contentDescription="@string/play_video" />
+        <ImageView android:layout_gravity="center" android:layout_width="20.0dip" android:layout_height="20.0dip" android:src="@drawable/video_play" android:scaleType="fitXY" />
+    </FrameLayout>
+    <LinearLayout android:orientation="vertical" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_marginTop="5.0dip" android:layout_marginBottom="5.0dip" android:layout_weight="1.0">
+        <com.perm.kate.ScaleTextView android:textSize="@dimen/text_size_small" android:textColor="?attr_cs_item_title" android:ellipsize="end" android:id="@id/tv_video_title" android:layout_width="wrap_content" android:layout_height="wrap_content" android:maxLines="3" />
+        <com.perm.kate.ScaleTextView android:textSize="@dimen/text_size_small" android:textColor="?attr_item_subtitle" android:ellipsize="end" android:id="@id/tv_video_artist" android:layout_width="wrap_content" android:layout_height="wrap_content" android:maxLines="2" />
+        <com.perm.kate.ScaleTextView android:textSize="@dimen/text_size_small" android:textColor="?attr_item_subtitle" android:id="@id/tv_video_views" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+    </LinearLayout>
+    <LinearLayout android:gravity="right" android:orientation="vertical" android:layout_width="wrap_content" android:layout_height="fill_parent">
+        <com.perm.kate.ScaleTextView android:textSize="@dimen/text_size_small" android:textColor="?attr_item_subtitle" android:id="@id/tv_video_duration" android:layout_width="wrap_content" android:layout_height="0.0dip" android:layout_marginLeft="5.0dip" android:layout_marginTop="5.0dip" android:layout_marginRight="7.0dip" android:layout_marginBottom="5.0dip" android:layout_weight="1.0" />
+        <ImageView android:id="@id/cached" android:visibility="gone" android:layout_width="24.0dip" android:layout_height="24.0dip" android:layout_marginLeft="5.0dip" android:layout_marginTop="2.0dip" android:layout_marginRight="7.0dip" android:layout_marginBottom="5.0dip" android:src="?attr_sd_mark_icon" android:scaleType="fitXY" />
+        <LinearLayout android:orientation="horizontal" android:id="@id/likes_view" android:paddingLeft="5.0dip" android:paddingTop="4.0dip" android:paddingRight="7.0dip" android:paddingBottom="8.0dip" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content">
+            <ImageView android:layout_gravity="center_vertical" android:id="@id/likes_heart" android:layout_width="16.0dip" android:layout_height="16.0dip" android:src="@drawable/heart_icon" android:scaleType="centerInside" android:contentDescription="@string/likes" />
+            <com.perm.kate.ScaleTextView android:textSize="@dimen/text_size_small" android:textColor="@color/solid_like_count_color" android:layout_gravity="center_vertical" android:id="@id/tv_like_count" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="5.0dip" />
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:background="?activity_background" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <include layout="@layout/header" />
+    <FrameLayout android:layout_width="fill_parent" android:layout_height="0.0dip" android:layout_weight="1.0">
+        <android.support.v4.view.ViewPager android:id="@id/pager" android:layout_width="fill_parent" android:layout_height="fill_parent">
+            <android.support.v4.view.PagerTitleStrip android:layout_gravity="top" android:id="@id/pagerTitleStrip" android:background="?attr_tab_bg" android:layout_width="wrap_content" android:layout_height="38.0dip" />
+        </android.support.v4.view.ViewPager>
+        <ImageView android:layout_gravity="top" android:id="@id/img1" android:background="?attr_tabs_shadow" android:layout_width="fill_parent" android:layout_height="4.0px" android:layout_marginTop="38.0dip" />
+        <ImageView android:layout_gravity="top" android:id="@id/img2" android:background="?attr_tabs_hor_divider" android:layout_width="fill_parent" android:layout_height="1.0px" android:layout_marginTop="38.0dip" />
+    </FrameLayout>
+    <include layout="@layout/ad_container" />
+</LinearLayout>

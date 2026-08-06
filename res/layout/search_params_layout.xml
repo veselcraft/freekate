@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:background="?activity_background" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <include layout="@layout/header" />
+    <ScrollView android:layout_width="fill_parent" android:layout_height="0.0dip" android:fillViewport="true" android:layout_weight="1.0">
+        <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content">
+            <LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="16.0dip">
+                <TextView android:textSize="17.0sp" android:textColor="?attr_profile_text_color" android:layout_gravity="center_vertical" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="16.0dip" android:text="@string/label_sort" />
+                <Spinner android:entries="@array/str_sort_values" android:id="@id/sp_sort" android:layout_width="fill_parent" android:layout_height="48.0dip" android:layout_marginLeft="6.0dip" android:layout_marginRight="@dimen/spinner_marginLeft" />
+            </LinearLayout>
+            <LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="6.0dip">
+                <TextView android:textSize="17.0sp" android:textColor="?attr_profile_text_color" android:layout_gravity="center_vertical" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="16.0dip" android:text="@string/label_country" />
+                <Spinner android:entries="@array/str_countries_base_values" android:id="@id/sp_country" android:layout_width="fill_parent" android:layout_height="48.0dip" android:layout_marginLeft="6.0dip" android:layout_marginRight="@dimen/spinner_marginLeft" android:contentDescription="@string/label_country" />
+            </LinearLayout>
+            <LinearLayout android:focusable="true" android:focusableInTouchMode="true" android:layout_width="0.0px" android:layout_height="0.0px" />
+            <AutoCompleteTextView android:textColor="?attr_edittext_color" android:id="@id/ed_hometown" android:layout_width="fill_parent" android:layout_height="48.0dip" android:layout_marginLeft="@dimen/edittext_marginLeft" android:layout_marginTop="6.0dip" android:layout_marginRight="@dimen/edittext_marginLeft" android:layout_marginBottom="0.0dip" android:hint="@string/hint_str_hometown" android:singleLine="true" android:inputType="text" android:imeOptions="actionSearch" />
+            <LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="6.0dip">
+                <TextView android:textSize="17.0sp" android:textColor="?attr_profile_text_color" android:layout_gravity="center_vertical" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="16.0dip" android:text="@string/label_sex" />
+                <Spinner android:entries="@array/str_sex_values" android:id="@id/sp_sex" android:layout_width="fill_parent" android:layout_height="48.0dip" android:layout_marginLeft="6.0dip" android:layout_marginRight="@dimen/spinner_marginLeft" />
+            </LinearLayout>
+            <LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="6.0dip">
+                <TextView android:textSize="17.0sp" android:textColor="?attr_profile_text_color" android:layout_gravity="center_vertical" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="16.0dip" android:text="@string/label_relation" />
+                <Spinner android:entries="@array/search_status_values" android:id="@id/sp_status" android:layout_width="fill_parent" android:layout_height="48.0dip" android:layout_marginLeft="6.0dip" android:layout_marginRight="@dimen/spinner_marginLeft" android:contentDescription="@string/label_relation" />
+            </LinearLayout>
+            <LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="6.0dip">
+                <TextView android:textSize="17.0sp" android:textColor="?attr_profile_text_color" android:layout_gravity="center_vertical" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="16.0dip" android:text="@string/label_ago" />
+                <TextView android:textSize="17.0sp" android:textColor="?attr_profile_text_color" android:layout_gravity="center_vertical" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="6.0dip" android:text="@string/label_from" />
+                <Spinner android:id="@id/sp_from_ago" android:layout_width="fill_parent" android:layout_height="48.0dip" android:layout_marginLeft="6.0dip" android:layout_weight="1.0" android:contentDescription="@string/label_from" />
+                <TextView android:textSize="17.0sp" android:textColor="?attr_profile_text_color" android:layout_gravity="center_vertical" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="6.0dip" android:text="@string/label_to" />
+                <Spinner android:id="@id/sp_to_ago" android:layout_width="fill_parent" android:layout_height="48.0dip" android:layout_marginLeft="6.0dip" android:layout_marginRight="@dimen/spinner_marginLeft" android:layout_weight="1.0" android:contentDescription="@string/label_to" />
+            </LinearLayout>
+            <LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="6.0dip">
+                <TextView android:textSize="17.0sp" android:textColor="?attr_profile_text_color" android:layout_gravity="center_vertical" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="16.0dip" android:text="@string/label_only_online" />
+                <CheckBox android:id="@id/cb_only_online" android:layout_width="wrap_content" android:layout_height="48.0dip" android:layout_marginLeft="6.0dip" android:layout_marginRight="@dimen/edittext_marginLeft" />
+            </LinearLayout>
+            <LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="6.0dip">
+                <TextView android:textSize="17.0sp" android:textColor="?attr_profile_text_color" android:layout_gravity="center_vertical" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="16.0dip" android:text="@string/label_only_with_photo" />
+                <CheckBox android:id="@id/cb_only_photo" android:layout_width="wrap_content" android:layout_height="48.0dip" android:layout_marginLeft="6.0dip" android:layout_marginRight="@dimen/edittext_marginLeft" />
+            </LinearLayout>
+            <EditText android:id="@id/ed_interests" android:layout_width="fill_parent" android:layout_height="48.0dip" android:layout_marginLeft="@dimen/edittext_marginLeft" android:layout_marginTop="6.0dip" android:layout_marginRight="@dimen/edittext_marginLeft" android:layout_marginBottom="0.0dip" android:hint="@string/hint_str_interests" android:singleLine="true" />
+            <EditText android:id="@id/ed_company" android:layout_width="fill_parent" android:layout_height="48.0dip" android:layout_marginLeft="@dimen/edittext_marginLeft" android:layout_marginTop="6.0dip" android:layout_marginRight="@dimen/edittext_marginLeft" android:layout_marginBottom="0.0dip" android:hint="@string/hint_str_company" android:singleLine="true" />
+            <EditText android:id="@id/ed_position" android:layout_width="fill_parent" android:layout_height="48.0dip" android:layout_marginLeft="@dimen/edittext_marginLeft" android:layout_marginTop="6.0dip" android:layout_marginRight="@dimen/edittext_marginLeft" android:layout_marginBottom="0.0dip" android:hint="@string/hint_str_position" android:singleLine="true" />
+            <EditText android:id="@id/ed_religion" android:layout_width="fill_parent" android:layout_height="48.0dip" android:layout_marginLeft="@dimen/edittext_marginLeft" android:layout_marginTop="6.0dip" android:layout_marginRight="@dimen/edittext_marginLeft" android:layout_marginBottom="0.0dip" android:hint="@string/hint_str_religion" android:singleLine="true" />
+            <LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="6.0dip">
+                <TextView android:textSize="17.0sp" android:textColor="?attr_profile_text_color" android:layout_gravity="center_vertical" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="16.0dip" android:text="@string/label_birth_day" />
+                <Spinner android:id="@id/sp_birth_day" android:layout_width="fill_parent" android:layout_height="48.0dip" android:layout_marginLeft="6.0dip" android:layout_marginRight="@dimen/spinner_marginLeft" android:contentDescription="@string/label_birth_day" />
+            </LinearLayout>
+            <LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="6.0dip">
+                <TextView android:textSize="17.0sp" android:textColor="?attr_profile_text_color" android:layout_gravity="center_vertical" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="16.0dip" android:text="@string/label_birth_month" />
+                <Spinner android:id="@id/sp_birth_month" android:layout_width="fill_parent" android:layout_height="48.0dip" android:layout_marginRight="@dimen/spinner_marginLeft" android:contentDescription="@string/label_birth_month" />
+            </LinearLayout>
+            <LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="6.0dip" android:layout_marginBottom="6.0dip">
+                <TextView android:textSize="17.0sp" android:textColor="?attr_profile_text_color" android:layout_gravity="center_vertical" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="16.0dip" android:text="@string/label_birth_year" />
+                <Spinner android:id="@id/sp_birth_year" android:layout_width="fill_parent" android:layout_height="48.0dip" android:layout_marginLeft="6.0dip" android:layout_marginRight="@dimen/spinner_marginLeft" android:contentDescription="@string/label_birth_year" />
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+    <include layout="@layout/ad_container" />
+    <include layout="@layout/footer_search_params" />
+</LinearLayout>

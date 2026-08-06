@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:background="?activity_background" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <include layout="@layout/header" />
+    <ScrollView android:layout_width="fill_parent" android:layout_height="0.0dip" android:fillViewport="true" android:layout_weight="1.0">
+        <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content">
+            <CheckBox android:textSize="17.0sp" android:textColor="?attr_profile_text_color" android:layout_gravity="center_vertical" android:id="@id/cb_performer_only" android:paddingLeft="10.0dip" android:layout_width="fill_parent" android:layout_height="48.0dip" android:layout_marginLeft="@dimen/edittext_marginLeft" android:layout_marginTop="6.0dip" android:layout_marginRight="16.0dip" android:checked="false" android:text="@string/label_performer_only" />
+        </LinearLayout>
+    </ScrollView>
+    <include layout="@layout/ad_container" />
+    <include layout="@layout/footer_search_params" />
+</LinearLayout>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <fragment android:name="com.perm.kate.FriendsTabsFragment" android:id="@id/tabs" android:layout_width="fill_parent" android:layout_height="wrap_content" />
+    <ImageView android:background="?attr_tabs_hor_divider" android:layout_width="fill_parent" android:layout_height="1.0px" />
+    <FrameLayout android:layout_width="fill_parent" android:layout_height="0.0dip" android:layout_weight="1.0">
+        <android.support.v4.view.ViewPager android:id="@id/pager1" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+        <ImageView android:background="?attr_tabs_shadow" android:layout_width="fill_parent" android:layout_height="3.0px" />
+    </FrameLayout>
+</LinearLayout>

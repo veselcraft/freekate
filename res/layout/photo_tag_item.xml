@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:layout_width="wrap_content" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <ImageView android:id="@id/iv_ph_tag_border" android:layout_width="40.0px" android:layout_height="40.0px" android:src="@drawable/ph_tag_border" android:scaleType="fitXY" />
+    <TextView android:textSize="12.0dip" android:textColor="@color/solid_white" android:ellipsize="end" android:id="@id/tv_ph_tag_name" android:background="@drawable/tv_ph_tag_bg" android:paddingLeft="2.0dip" android:paddingTop="0.0dip" android:paddingRight="2.0dip" android:paddingBottom="0.0dip" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="5.0dip" android:text="Full Name" android:singleLine="true" />
+</LinearLayout>

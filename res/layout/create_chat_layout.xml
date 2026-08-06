@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:background="?activity_background" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <include layout="@layout/header" />
+    <EditText android:textColor="?attr_item_text_color" android:gravity="left|top" android:id="@id/et_chat_name" android:background="?edittext_background" android:layout_width="fill_parent" android:layout_height="0.0dip" android:layout_margin="@dimen/edittext_marginLeft" android:layout_weight="1.0" android:inputType="textCapSentences|textMultiLine" />
+    <include layout="@layout/ad_container" />
+    <include layout="@layout/footer2" />
+</LinearLayout>

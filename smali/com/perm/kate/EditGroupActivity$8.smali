@@ -1,0 +1,68 @@
+.class Lcom/perm/kate/EditGroupActivity$8;
+.super Ljava/lang/Thread;
+.source "EditGroupActivity.java"
+
+
+# annotations
+.annotation system Ldalvik/annotation/EnclosingMethod;
+    value = Lcom/perm/kate/EditGroupActivity;->saveSettingsGroup()V
+.end annotation
+
+.annotation system Ldalvik/annotation/InnerClass;
+    accessFlags = 0x0
+    name = null
+.end annotation
+
+
+# instance fields
+.field final synthetic this$0:Lcom/perm/kate/EditGroupActivity;
+
+
+# direct methods
+.method constructor <init>(Lcom/perm/kate/EditGroupActivity;)V
+    .locals 0
+    .param p1, "this$0"    # Lcom/perm/kate/EditGroupActivity;
+
+    .prologue
+    .line 541
+    iput-object p1, p0, Lcom/perm/kate/EditGroupActivity$8;->this$0:Lcom/perm/kate/EditGroupActivity;
+
+    invoke-direct {p0}, Ljava/lang/Thread;-><init>()V
+
+    return-void
+.end method
+
+
+# virtual methods
+.method public run()V
+    .locals 7
+
+    .prologue
+    .line 544
+    sget-object v1, Lcom/perm/kate/KApplication;->session:Lcom/perm/kate/session/Session;
+
+    iget-object v0, p0, Lcom/perm/kate/EditGroupActivity$8;->this$0:Lcom/perm/kate/EditGroupActivity;
+
+    invoke-static {v0}, Lcom/perm/kate/EditGroupActivity;->access$700(Lcom/perm/kate/EditGroupActivity;)J
+
+    move-result-wide v2
+
+    iget-object v0, p0, Lcom/perm/kate/EditGroupActivity$8;->this$0:Lcom/perm/kate/EditGroupActivity;
+
+    invoke-static {v0}, Lcom/perm/kate/EditGroupActivity;->access$600(Lcom/perm/kate/EditGroupActivity;)Lcom/perm/kate/api/GroupSettings;
+
+    move-result-object v4
+
+    iget-object v0, p0, Lcom/perm/kate/EditGroupActivity$8;->this$0:Lcom/perm/kate/EditGroupActivity;
+
+    invoke-static {v0}, Lcom/perm/kate/EditGroupActivity;->access$1500(Lcom/perm/kate/EditGroupActivity;)Lcom/perm/kate/session/Callback;
+
+    move-result-object v5
+
+    iget-object v6, p0, Lcom/perm/kate/EditGroupActivity$8;->this$0:Lcom/perm/kate/EditGroupActivity;
+
+    invoke-virtual/range {v1 .. v6}, Lcom/perm/kate/session/Session;->editGroupSettings(JLcom/perm/kate/api/GroupSettings;Lcom/perm/kate/session/Callback;Landroid/app/Activity;)V
+
+    .line 545
+    return-void
+.end method

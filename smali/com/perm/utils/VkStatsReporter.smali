@@ -1,0 +1,22 @@
+.class public Lcom/perm/utils/VkStatsReporter;
+.super Ljava/lang/Object;
+.source "VkStatsReporter.java"
+
+
+# direct methods
+.method public static report(Ljava/lang/String;)V
+    .locals 1
+    .param p0, "event"    # Ljava/lang/String;
+
+    .prologue
+    .line 10
+    new-instance v0, Lcom/perm/utils/VkStatsReporter$1;
+
+    invoke-direct {v0, p0}, Lcom/perm/utils/VkStatsReporter$1;-><init>(Ljava/lang/String;)V
+
+    .line 20
+    invoke-virtual {v0}, Lcom/perm/utils/VkStatsReporter$1;->start()V
+
+    .line 21
+    return-void
+.end method

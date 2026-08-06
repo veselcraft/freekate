@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:background="?activity_background" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <include layout="@layout/header" />
+    <ScrollView android:layout_width="fill_parent" android:layout_height="0.0dip" android:layout_weight="1.0">
+        <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content">
+            <TextView android:textSize="14.0sp" android:textColor="?attr_item_subtitle" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="16.0dip" android:layout_marginTop="16.0dip" android:layout_marginRight="16.0dip" android:layout_marginBottom="0.0dip" android:text="@string/label_video_name" />
+            <EditText android:id="@id/et_video_name" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/edittext_marginLeft" android:layout_marginTop="6.0dip" android:layout_marginRight="@dimen/edittext_marginLeft" />
+            <TextView android:textSize="14.0sp" android:textColor="?attr_item_subtitle" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="16.0dip" android:layout_marginTop="16.0dip" android:layout_marginRight="16.0dip" android:layout_marginBottom="0.0dip" android:text="@string/label_video_description" />
+            <EditText android:id="@id/et_video_description" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/edittext_marginLeft" android:layout_marginTop="6.0dip" android:layout_marginRight="@dimen/edittext_marginLeft" />
+            <TextView android:textSize="14.0sp" android:textColor="?attr_item_subtitle" android:id="@id/tv_who_look_video" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="16.0dip" android:layout_marginTop="16.0dip" android:layout_marginRight="16.0dip" android:layout_marginBottom="0.0dip" android:text="@string/label_who_look_video" />
+            <Spinner android:entries="@array/privacy_values" android:id="@id/spinner_who_look" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/spinner_marginLeft" android:layout_marginTop="6.0dip" android:layout_marginRight="@dimen/spinner_marginLeft" android:layout_marginBottom="0.0dip" />
+            <TextView android:textSize="14.0sp" android:textColor="?attr_item_subtitle" android:id="@id/tv_who_make_comments" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="16.0dip" android:layout_marginTop="16.0dip" android:layout_marginRight="16.0dip" android:layout_marginBottom="0.0dip" android:text="@string/label_who_make_comments_video" />
+            <Spinner android:entries="@array/privacy_values" android:id="@id/spinner_who_make_comments" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/spinner_marginLeft" android:layout_marginTop="6.0dip" android:layout_marginRight="@dimen/spinner_marginLeft" android:layout_marginBottom="0.0dip" />
+        </LinearLayout>
+    </ScrollView>
+    <include layout="@layout/ad_container" />
+    <include layout="@layout/footer" />
+</LinearLayout>

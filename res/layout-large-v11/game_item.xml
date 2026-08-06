@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="horizontal" android:background="?attr_item_bg" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <ImageView android:id="@id/img_game_icon" android:layout_width="120.0dip" android:layout_height="120.0dip" android:layout_marginLeft="10.0dip" android:layout_marginTop="10.0dip" android:layout_marginRight="10.0dip" android:layout_marginBottom="10.0dip" android:scaleType="centerCrop" />
+    <LinearLayout android:layout_gravity="top" android:orientation="vertical" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_marginLeft="0.0dip" android:layout_marginTop="5.0dip" android:layout_marginRight="10.0dip" android:layout_marginBottom="5.0dip" android:layout_weight="1.0">
+        <com.perm.kate.ScaleTextView android:textSize="@dimen/text_size_large" android:textColor="?attr_item_title" android:id="@id/tv_title" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+        <com.perm.kate.ScaleTextView android:textSize="@dimen/text_size_normal" android:textColor="?attr_item_subtitle" android:id="@id/tv_genre" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+        <com.perm.kate.ScaleTextView android:textSize="@dimen/text_size_normal" android:textColor="?attr_item_subtitle" android:id="@id/tv_members" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+        <com.perm.kate.ScaleTextView android:textSize="@dimen/text_size_normal" android:textColor="?attr_item_subtitle" android:id="@id/tv_friends" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+    </LinearLayout>
+</LinearLayout>

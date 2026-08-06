@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:background="?activity_background" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <include layout="@layout/header" />
+    <ScrollView android:layout_width="fill_parent" android:layout_height="0.0dip" android:fillViewport="true" android:layout_weight="1.0">
+        <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content">
+            <TextView android:textSize="@dimen/text_size_small" android:textColor="?attr_item_subtitle" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/label_marginLeft" android:layout_marginTop="18.0dip" android:layout_marginRight="@dimen/label_marginLeft" android:layout_marginBottom="0.0dip" android:text="@string/label_audio_artist" />
+            <EditText android:id="@id/tb_audio_artist" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="7.0dip" android:layout_marginTop="3.0dip" android:layout_marginRight="7.0dip" android:layout_marginBottom="3.0dip" android:inputType="text" />
+            <TextView android:textSize="@dimen/text_size_small" android:textColor="?attr_item_subtitle" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/label_marginLeft" android:layout_marginTop="12.0dip" android:layout_marginRight="@dimen/label_marginLeft" android:layout_marginBottom="0.0dip" android:text="@string/label_audio_title" />
+            <EditText android:id="@id/tb_audio_title" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="7.0dip" android:layout_marginTop="3.0dip" android:layout_marginRight="7.0dip" android:layout_marginBottom="3.0dip" android:inputType="text" />
+            <TextView android:textSize="@dimen/text_size_small" android:textColor="?attr_item_subtitle" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/label_marginLeft" android:layout_marginTop="12.0dip" android:layout_marginRight="@dimen/label_marginLeft" android:layout_marginBottom="0.0dip" android:text="@string/title_audio_text" />
+            <EditText android:gravity="left|top" android:id="@id/tb_audio_text" android:layout_width="fill_parent" android:layout_height="0.0dip" android:layout_marginLeft="7.0dip" android:layout_marginTop="3.0dip" android:layout_marginRight="7.0dip" android:layout_marginBottom="12.0dip" android:layout_weight="1.0" android:inputType="textMultiLine" />
+        </LinearLayout>
+    </ScrollView>
+    <include layout="@layout/ad_container" />
+    <include layout="@layout/footer" />
+</LinearLayout>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:background="?attr_item_bg" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <com.perm.kate.ScaleTextView android:textSize="@dimen/text_size_normal" android:textColor="?attr_cs_item_title" android:id="@id/title" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="10.0dip" android:layout_marginTop="5.0dip" />
+    <com.perm.kate.ScaleTextView android:textSize="@dimen/text_size_smaller" android:textColor="?attr_item_ago_color" android:id="@id/tv_last_user" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="10.0dip" />
+    <LinearLayout android:orientation="horizontal" android:id="@id/comments_view" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="10.0dip">
+        <ImageView android:layout_gravity="center_vertical" android:layout_width="14.0dip" android:layout_height="16.0dip" android:src="@drawable/icon_comments_count" android:scaleType="centerInside" />
+        <com.perm.kate.ScaleTextView android:textSize="@dimen/text_size_small" android:textColor="?attr_item_ago_color" android:layout_gravity="center_vertical" android:id="@id/tv_comments_count" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="5.0dip" android:text="0" />
+    </LinearLayout>
+</LinearLayout>

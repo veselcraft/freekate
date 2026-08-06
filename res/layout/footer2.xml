@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <View android:background="?attr_footer_divider_color" android:layout_width="fill_parent" android:layout_height="1.0px" />
+    <LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="@dimen/footer_layout_height">
+        <ImageButton android:id="@id/btn_settings" android:background="?attr_holo_button_bg" android:visibility="gone" android:layout_width="48.0dip" android:layout_height="48.0dip" android:src="?attr_footer_settings_icon" android:scaleType="centerInside" android:contentDescription="@string/title_options" />
+        <Button android:textSize="17.0sp" android:textStyle="bold" android:textColor="?attr_footer_text_color" android:ellipsize="end" android:id="@id/btn_save" android:background="?attr_holo_button_bg" android:layout_width="fill_parent" android:layout_height="@dimen/footer_layout_height" android:text="@string/label_save" />
+    </LinearLayout>
+</LinearLayout>

@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView android:background="?activity_background_tablet" android:layout_width="fill_parent" android:layout_height="fill_parent" android:fillViewport="true"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <FrameLayout android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content">
+            <LinearLayout android:orientation="vertical" android:id="@id/ll_profile_info_region" android:layout_width="fill_parent" android:layout_height="wrap_content">
+                <com.perm.kate.ScaleTextView android:textSize="@dimen/text_size_normal" android:textColor="?attr_item_text_color" android:ellipsize="end" android:id="@id/tv_profile_info_user_name" android:background="?attr_main_menu_list_item" android:paddingLeft="10.0dip" android:paddingTop="11.0dip" android:paddingBottom="11.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" android:singleLine="true" />
+                <ImageView android:background="?attr_profile_divider" android:layout_width="fill_parent" android:layout_height="1.0px" />
+            </LinearLayout>
+            <LinearLayout android:orientation="vertical" android:id="@id/ll_profile_wall_region" android:background="?attr_main_menu_list_item" android:layout_width="fill_parent" android:layout_height="48.0dip">
+                <LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="0.0dip" android:layout_weight="1.0">
+                    <com.perm.kate.ScaleTextView android:textSize="@dimen/text_size_small" android:ellipsize="end" android:layout_gravity="center_vertical" android:id="@id/tv_profile_wall" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_marginLeft="10.0dip" android:layout_marginRight="5.0dip" android:text="@string/title_wall_info" android:singleLine="true" android:layout_weight="1.0" />
+                    <LinearLayout android:layout_gravity="center_vertical" android:orientation="vertical" android:id="@id/ll_wall_count" android:background="?attr_count_bg" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="5.0dip" android:minWidth="42.0dip">
+                        <com.perm.kate.ScaleTextView android:textSize="@dimen/text_size_small" android:layout_gravity="center_horizontal" android:id="@id/tv_wall_count" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="3.0dip" android:layout_marginRight="3.0dip" android:text="0" />
+                    </LinearLayout>
+                </LinearLayout>
+                <ImageView android:background="?attr_profile_divider" android:layout_width="fill_parent" android:layout_height="1.0px" />
+            </LinearLayout>
+            <LinearLayout android:orientation="vertical" android:id="@id/ll_profile_friends_region" android:background="?attr_main_menu_list_item" android:layout_width="fill_parent" android:layout_height="48.0dip">
+                <LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="0.0dip" android:baselineAligned="false" android:layout_weight="1.0">
+                    <LinearLayout android:layout_gravity="center_vertical" android:orientation="horizontal" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_weight="1.0">
+                        <com.perm.kate.ScaleTextView android:textSize="@dimen/text_size_small" android:ellipsize="end" android:id="@id/tv_profile_friends" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="10.0dip" android:layout_marginRight="5.0dip" android:text="@string/label_menu_friends" android:singleLine="true" />
+                    </LinearLayout>
+                    <LinearLayout android:layout_gravity="center_vertical" android:orientation="vertical" android:background="?attr_count_bg" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="5.0dip" android:minWidth="42.0dip">
+                        <com.perm.kate.ScaleTextView android:textSize="@dimen/text_size_small" android:layout_gravity="center_horizontal" android:id="@id/tv_friends_count" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="3.0dip" android:layout_marginRight="3.0dip" android:text="0" />
+                    </LinearLayout>
+                </LinearLayout>
+                <ImageView android:background="?attr_profile_divider" android:layout_width="fill_parent" android:layout_height="1.0px" />
+            </LinearLayout>
+            <LinearLayout android:orientation="vertical" android:id="@id/ll_profile_groups_region" android:background="?attr_main_menu_list_item" android:layout_width="fill_parent" android:layout_height="48.0dip">
+                <LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="0.0dip" android:baselineAligned="false" android:layout_weight="1.0">
+                    <LinearLayout android:layout_gravity="center_vertical" android:orientation="horizontal" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_weight="1.0">
+                        <com.perm.kate.ScaleTextView android:textSize="@dimen/text_size_small" android:ellipsize="end" android:id="@id/tv_profile_groups" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="10.0dip" android:layout_marginRight="5.0dip" android:layout_marginBottom="0.0dip" android:text="@string/groups" android:singleLine="true" />
+                    </LinearLayout>
+                    <LinearLayout android:layout_gravity="center_vertical" android:orientation="vertical" android:background="?attr_count_bg" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="5.0dip" android:minWidth="42.0dip">
+                        <com.perm.kate.ScaleTextView android:textSize="@dimen/text_size_small" android:layout_gravity="center_horizontal" android:id="@id/tv_groups_count" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="3.0dip" android:layout_marginRight="3.0dip" android:text="0" />
+                    </LinearLayout>
+                </LinearLayout>
+                <ImageView android:background="?attr_profile_divider" android:layout_width="fill_parent" android:layout_height="1.0px" />
+            </LinearLayout>
+            <LinearLayout android:orientation="vertical" android:id="@id/ll_profile_photos_region" android:background="?attr_main_menu_list_item" android:layout_width="fill_parent" android:layout_height="48.0dip">
+                <LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="0.0dip" android:baselineAligned="false" android:layout_weight="1.0">
+                    <LinearLayout android:layout_gravity="center_vertical" android:orientation="horizontal" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_weight="1.0">
+                        <com.perm.kate.ScaleTextView android:textSize="@dimen/text_size_small" android:ellipsize="end" android:id="@id/tv_profile_photos" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="10.0dip" android:layout_marginRight="5.0dip" android:layout_marginBottom="0.0dip" android:text="@string/title_photos_info" android:singleLine="true" />
+                    </LinearLayout>
+                    <LinearLayout android:layout_gravity="center_vertical" android:orientation="vertical" android:background="?attr_count_bg" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="5.0dip" android:minWidth="42.0dip">
+                        <com.perm.kate.ScaleTextView android:textSize="@dimen/text_size_small" android:layout_gravity="center_horizontal" android:id="@id/tv_albums_count" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="3.0dip" android:layout_marginRight="3.0dip" android:text="0" />
+                    </LinearLayout>
+                </LinearLayout>
+                <ImageView android:background="?attr_profile_divider" android:layout_width="fill_parent" android:layout_height="1.0px" />
+            </LinearLayout>
+            <LinearLayout android:orientation="vertical" android:id="@id/ll_profile_audio_region" android:background="?attr_main_menu_list_item" android:layout_width="fill_parent" android:layout_height="48.0dip">
+                <LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="0.0dip" android:baselineAligned="false" android:layout_weight="1.0">
+                    <LinearLayout android:layout_gravity="center_vertical" android:orientation="horizontal" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_weight="1.0">
+                        <com.perm.kate.ScaleTextView android:textSize="@dimen/text_size_small" android:ellipsize="end" android:id="@id/tv_profile_audio" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="10.0dip" android:layout_marginRight="5.0dip" android:layout_marginBottom="0.0dip" android:text="@string/title_audio_info" android:singleLine="true" />
+                    </LinearLayout>
+                    <LinearLayout android:layout_gravity="center_vertical" android:orientation="vertical" android:background="?attr_count_bg" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="5.0dip" android:minWidth="42.0dip">
+                        <com.perm.kate.ScaleTextView android:textSize="@dimen/text_size_small" android:layout_gravity="center_horizontal" android:id="@id/tv_audios_count" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="3.0dip" android:layout_marginRight="3.0dip" android:text="0" />
+                    </LinearLayout>
+                </LinearLayout>
+                <ImageView android:background="?attr_profile_divider" android:layout_width="fill_parent" android:layout_height="1.0px" />
+            </LinearLayout>
+            <LinearLayout android:orientation="vertical" android:id="@id/ll_profile_videos_region" android:background="?attr_main_menu_list_item" android:layout_width="fill_parent" android:layout_height="48.0dip">
+                <LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="0.0dip" android:baselineAligned="false" android:layout_weight="1.0">
+                    <LinearLayout android:layout_gravity="center_vertical" android:orientation="horizontal" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_weight="1.0">
+                        <com.perm.kate.ScaleTextView android:textSize="@dimen/text_size_small" android:ellipsize="end" android:id="@id/tv_profile_videos" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="10.0dip" android:layout_marginRight="5.0dip" android:layout_marginBottom="0.0dip" android:text="@string/title_videos_info" android:singleLine="true" />
+                    </LinearLayout>
+                    <LinearLayout android:layout_gravity="center_vertical" android:orientation="vertical" android:background="?attr_count_bg" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="5.0dip" android:minWidth="42.0dip">
+                        <com.perm.kate.ScaleTextView android:textSize="@dimen/text_size_small" android:layout_gravity="center_horizontal" android:id="@id/tv_videos_count" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="3.0dip" android:layout_marginRight="3.0dip" android:text="0" />
+                    </LinearLayout>
+                </LinearLayout>
+                <ImageView android:background="?attr_profile_divider" android:layout_width="fill_parent" android:layout_height="1.0px" />
+            </LinearLayout>
+            <LinearLayout android:orientation="vertical" android:id="@id/ll_profile_user_videos_region" android:background="?attr_main_menu_list_item" android:layout_width="fill_parent" android:layout_height="48.0dip">
+                <LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="0.0dip" android:baselineAligned="false" android:layout_weight="1.0">
+                    <LinearLayout android:layout_gravity="center_vertical" android:orientation="horizontal" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_weight="1.0">
+                        <com.perm.kate.ScaleTextView android:textSize="@dimen/text_size_small" android:ellipsize="end" android:id="@id/tv_profile_user_videos" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="10.0dip" android:layout_marginRight="5.0dip" android:layout_marginBottom="0.0dip" android:text="@string/title_user_videos_info" android:singleLine="true" />
+                    </LinearLayout>
+                    <LinearLayout android:layout_gravity="center_vertical" android:orientation="vertical" android:background="?attr_count_bg" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="5.0dip" android:minWidth="42.0dip">
+                        <com.perm.kate.ScaleTextView android:textSize="@dimen/text_size_small" android:layout_gravity="center_horizontal" android:id="@id/tv_user_videos_count" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="3.0dip" android:layout_marginRight="3.0dip" android:text="0" />
+                    </LinearLayout>
+                </LinearLayout>
+                <ImageView android:background="?attr_profile_divider" android:layout_width="fill_parent" android:layout_height="1.0px" />
+            </LinearLayout>
+            <LinearLayout android:orientation="horizontal" android:id="@id/ll_profile_docs_region" android:background="?attr_main_menu_list_item" android:layout_width="fill_parent" android:layout_height="48.0dip">
+                <com.perm.kate.ScaleTextView android:textSize="@dimen/text_size_small" android:ellipsize="end" android:layout_gravity="center_vertical" android:id="@id/tv_profile_docs" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="10.0dip" android:layout_marginRight="5.0dip" android:layout_marginBottom="0.0dip" android:text="@string/docs" android:singleLine="true" />
+            </LinearLayout>
+            <ImageView android:id="@id/docs_separator" android:background="?attr_profile_divider" android:layout_width="fill_parent" android:layout_height="1.0px" />
+            <LinearLayout android:orientation="vertical" android:id="@id/ll_profile_notes_region" android:background="?attr_main_menu_list_item" android:layout_width="fill_parent" android:layout_height="48.0dip">
+                <LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="0.0dip" android:baselineAligned="false" android:layout_weight="1.0">
+                    <LinearLayout android:layout_gravity="center_vertical" android:orientation="horizontal" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_weight="1.0">
+                        <com.perm.kate.ScaleTextView android:textSize="@dimen/text_size_small" android:ellipsize="end" android:id="@id/tv_profile_notes" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="10.0dip" android:layout_marginRight="5.0dip" android:layout_marginBottom="0.0dip" android:text="@string/notes" android:singleLine="true" />
+                    </LinearLayout>
+                    <LinearLayout android:layout_gravity="center_vertical" android:orientation="vertical" android:background="?attr_count_bg" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="5.0dip" android:minWidth="42.0dip">
+                        <com.perm.kate.ScaleTextView android:textSize="@dimen/text_size_small" android:layout_gravity="center_horizontal" android:id="@id/tv_notes_count" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="3.0dip" android:layout_marginRight="3.0dip" android:text="0" />
+                    </LinearLayout>
+                </LinearLayout>
+                <ImageView android:background="?attr_profile_divider" android:layout_width="fill_parent" android:layout_height="1.0px" />
+            </LinearLayout>
+            <LinearLayout android:orientation="vertical" android:id="@id/ll_profile_gifts_region" android:background="?attr_main_menu_list_item" android:layout_width="fill_parent" android:layout_height="48.0dip">
+                <LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="0.0dip" android:baselineAligned="false" android:layout_weight="1.0">
+                    <LinearLayout android:layout_gravity="center_vertical" android:orientation="horizontal" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_weight="1.0">
+                        <com.perm.kate.ScaleTextView android:textSize="@dimen/text_size_small" android:ellipsize="end" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="10.0dip" android:layout_marginRight="5.0dip" android:layout_marginBottom="0.0dip" android:text="@string/label_gifts" android:singleLine="true" />
+                    </LinearLayout>
+                    <LinearLayout android:layout_gravity="center_vertical" android:orientation="vertical" android:background="?attr_count_bg" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="5.0dip" android:minWidth="42.0dip">
+                        <com.perm.kate.ScaleTextView android:textSize="@dimen/text_size_small" android:layout_gravity="center_horizontal" android:id="@id/tv_gifts_count" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="3.0dip" android:layout_marginRight="3.0dip" android:text="0" />
+                    </LinearLayout>
+                </LinearLayout>
+                <ImageView android:background="?attr_profile_divider" android:layout_width="fill_parent" android:layout_height="1.0px" />
+            </LinearLayout>
+            <LinearLayout android:orientation="horizontal" android:id="@id/ll_subscriptions_region" android:background="?attr_main_menu_list_item" android:layout_width="fill_parent" android:layout_height="48.0dip">
+                <com.perm.kate.ScaleTextView android:textSize="@dimen/text_size_small" android:ellipsize="end" android:layout_gravity="center_vertical" android:id="@id/tv_profile_subscribes" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="10.0dip" android:layout_marginRight="5.0dip" android:layout_marginBottom="0.0dip" android:text="@string/label_subscribers" />
+            </LinearLayout>
+            <ImageView android:background="?attr_profile_divider" android:layout_width="fill_parent" android:layout_height="1.0px" />
+            <LinearLayout android:orientation="horizontal" android:id="@id/ll_followers_region" android:background="?attr_main_menu_list_item" android:layout_width="fill_parent" android:layout_height="48.0dip" android:baselineAligned="false">
+                <LinearLayout android:layout_gravity="center_vertical" android:orientation="horizontal" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_weight="1.0">
+                    <com.perm.kate.ScaleTextView android:textSize="@dimen/text_size_small" android:ellipsize="end" android:layout_gravity="center_vertical" android:id="@id/tv_profile_followers" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="10.0dip" android:layout_marginRight="5.0dip" android:layout_marginBottom="0.0dip" android:text="@string/label_followers" android:singleLine="true" />
+                </LinearLayout>
+                <LinearLayout android:layout_gravity="center_vertical" android:orientation="vertical" android:background="?attr_count_bg" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="5.0dip" android:minWidth="42.0dip">
+                    <com.perm.kate.ScaleTextView android:textSize="@dimen/text_size_small" android:layout_gravity="center_horizontal" android:id="@id/tv_followers_count" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="3.0dip" android:layout_marginRight="3.0dip" android:text="0" />
+                </LinearLayout>
+            </LinearLayout>
+            <ImageView android:background="?attr_profile_divider" android:layout_width="fill_parent" android:layout_height="1.0px" />
+            <LinearLayout android:orientation="vertical" android:id="@id/ll_profile_additional_info" android:background="?attr_main_menu_list_item" android:layout_width="fill_parent" android:layout_height="wrap_content">
+                <com.perm.kate.ScaleTextView android:textSize="@dimen/text_size_small" android:ellipsize="end" android:id="@id/tv_profile_additional_info" android:paddingLeft="10.0dip" android:paddingTop="11.0dip" android:paddingBottom="11.0dip" android:layout_width="fill_parent" android:layout_height="48.0dip" android:layout_marginBottom="0.0dip" android:text="@string/label_additional_profile_info" android:singleLine="true" />
+                <ImageView android:background="?attr_profile_divider" android:layout_width="fill_parent" android:layout_height="1.0px" />
+            </LinearLayout>
+        </LinearLayout>
+        <ImageView android:layout_gravity="right" android:layout_width="8.0dip" android:layout_height="fill_parent" android:src="?attr_left_vertical_shadow" android:scaleType="fitXY" />
+    </FrameLayout>
+</ScrollView>

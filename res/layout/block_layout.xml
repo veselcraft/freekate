@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:background="?activity_background" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <include layout="@layout/header" />
+    <LinearLayout android:orientation="vertical" android:id="@id/unblock_region" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <TextView android:textSize="@dimen/text_size_smaller" android:gravity="center_horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="10.0dip" android:layout_marginTop="15.0dip" android:layout_marginRight="10.0dip" android:text="@string/label_blocked_text" />
+        <EditText android:id="@id/unblock_password" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="12.0dip" android:layout_marginTop="10.0dip" android:layout_marginRight="12.0dip" android:hint="@string/label_password" android:height="20.0dip" android:singleLine="true" android:inputType="numberPassword" />
+        <FrameLayout android:id="@id/fl_button_bg" android:background="?attr_button_bg" android:layout_width="fill_parent" android:layout_height="44.0dip" android:layout_marginLeft="12.0dip" android:layout_marginTop="10.0dip" android:layout_marginRight="12.0dip">
+            <Button android:textStyle="bold" android:textColor="@color/cs_button_text_white" android:id="@id/unblock_btn" android:background="@drawable/ds_button_bg" android:paddingBottom="2.0dip" android:layout_width="fill_parent" android:layout_height="fill_parent" android:text="@string/label_unblock" />
+        </FrameLayout>
+        <TextView android:textSize="@dimen/text_size_smaller" android:gravity="center_horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="15.0dip" android:layout_marginTop="15.0dip" android:layout_marginRight="15.0dip" android:text="@string/label_blocked_hint" />
+    </LinearLayout>
+    <LinearLayout android:orientation="vertical" android:id="@id/block_region" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <TextView android:textSize="@dimen/text_size_smaller" android:gravity="center_horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="10.0dip" android:layout_marginTop="15.0dip" android:layout_marginRight="10.0dip" android:text="@string/label_block_password_text" />
+        <EditText android:id="@id/block_password1" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="12.0dip" android:layout_marginTop="10.0dip" android:layout_marginRight="12.0dip" android:hint="@string/label_password" android:height="20.0dip" android:singleLine="true" android:inputType="number" />
+        <EditText android:id="@id/block_password2" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="12.0dip" android:layout_marginTop="10.0dip" android:layout_marginRight="12.0dip" android:hint="@string/label_repeat_password" android:height="20.0dip" android:singleLine="true" android:inputType="number" />
+        <FrameLayout android:id="@id/fl_button_bg2" android:background="?attr_button_bg" android:layout_width="fill_parent" android:layout_height="44.0dip" android:layout_marginLeft="12.0dip" android:layout_marginTop="10.0dip" android:layout_marginRight="12.0dip">
+            <Button android:textStyle="bold" android:textColor="@color/cs_button_text_white" android:id="@id/block_btn" android:background="@drawable/ds_button_bg" android:paddingBottom="2.0dip" android:layout_width="fill_parent" android:layout_height="fill_parent" android:text="@string/label_block" />
+        </FrameLayout>
+        <TextView android:textSize="@dimen/text_size_smaller" android:gravity="center_horizontal" android:id="@id/tv_block_hint" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="15.0dip" android:layout_marginTop="15.0dip" android:layout_marginRight="15.0dip" android:text="@string/label_block_password_hint" />
+    </LinearLayout>
+</LinearLayout>
