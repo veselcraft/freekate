@@ -38,7 +38,7 @@
 
 # virtual methods
 .method public onItemClick(Landroid/widget/AdapterView;Landroid/view/View;IJ)V
-    .locals 2
+    .locals 4
     .param p2, "view"    # Landroid/view/View;
     .param p3, "position"    # I
     .param p4, "id"    # J
@@ -65,6 +65,10 @@
     invoke-virtual {v0}, Lcom/perm/kate/session/Session;->getMid()Ljava/lang/String;
 
     move-result-object v1
+    
+    invoke-virtual {v0}, Lcom/perm/kate/session/Session;->getDomain()Ljava/lang/String;
+
+    move-result-object v2
 
     sget-object v0, Lcom/perm/kate/KApplication;->accountManager:Lcom/perm/kate/account/AccountManager;
 
@@ -76,13 +80,21 @@
 
     check-cast v0, Lcom/perm/kate/account/Account;
 
-    iget-object v0, v0, Lcom/perm/kate/account/Account;->mid:Ljava/lang/String;
+    iget-object v3, v0, Lcom/perm/kate/account/Account;->mid:Ljava/lang/String;
 
-    invoke-virtual {v1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v1, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    move-result v0
+    move-result v3
 
-    if-eqz v0, :cond_0
+    if-eqz v3, :cond_0
+    
+    iget-object v3, v0, Lcom/perm/kate/account/Account;->instance_domain:Ljava/lang/String;
+
+    invoke-virtual {v2, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v3
+
+    if-eqz v3, :cond_0
 
     .line 108
     iget-object v0, p0, Lcom/perm/kate/AccountsActivity$3;->this$0:Lcom/perm/kate/AccountsActivity;

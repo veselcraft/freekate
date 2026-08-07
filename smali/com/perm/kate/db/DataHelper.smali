@@ -16,6 +16,8 @@
 
 .field private mDbHelper:Lcom/perm/kate/db/DataHelper$OpenHelper;
 
+.field private mDbName:Ljava/lang/String;
+
 
 # direct methods
 .method public constructor <init>(Landroid/content/Context;)V
@@ -26308,7 +26310,7 @@
 .end method
 
 .method public open()V
-    .locals 2
+    .locals 3
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/database/SQLException;
@@ -26317,11 +26319,17 @@
 
     .prologue
     .line 1837
+    invoke-static {}, Lcom/perm/kate/db/DataHelper;->getDbName()Ljava/lang/String;
+
+    move-result-object v2   
+
+    iput-object v2, p0, Lcom/perm/kate/db/DataHelper;->mDbName:Ljava/lang/String;
+
     new-instance v0, Lcom/perm/kate/db/DataHelper$OpenHelper;
 
     iget-object v1, p0, Lcom/perm/kate/db/DataHelper;->mCtx:Landroid/content/Context;
 
-    invoke-direct {v0, v1}, Lcom/perm/kate/db/DataHelper$OpenHelper;-><init>(Landroid/content/Context;)V
+    invoke-direct {v0, v1, v2}, Lcom/perm/kate/db/DataHelper$OpenHelper;-><init>(Landroid/content/Context;Ljava/lang/String;)V
 
     iput-object v0, p0, Lcom/perm/kate/db/DataHelper;->mDbHelper:Lcom/perm/kate/db/DataHelper$OpenHelper;
 
@@ -31476,4 +31484,65 @@
 
     .line 5338
     goto :goto_0
+.end method
+
+.method public static getDbName()Ljava/lang/String;
+    .locals 3
+
+    sget-object v0, Lcom/perm/kate/KApplication;->session:Lcom/perm/kate/session/Session;
+    if-eqz v0, :cond_default
+
+    invoke-virtual {v0}, Lcom/perm/kate/session/Session;->getDomain()Ljava/lang/String;
+    move-result-object v0
+
+    invoke-static {v0}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
+    move-result v1
+    if-nez v1, :cond_default
+
+    sget-object v1, Ljava/util/Locale;->ENGLISH:Ljava/util/Locale;
+    invoke-virtual {v0, v1}, Ljava/lang/String;->toLowerCase(Ljava/util/Locale;)Ljava/lang/String;
+    move-result-object v0
+
+    const-string v1, "[^a-z0-9]"
+    const-string v2, "_"
+    invoke-virtual {v0, v1, v2}, Ljava/lang/String;->replaceAll(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    move-result-object v1
+
+    const-string v2, "_kate.db"
+
+    invoke-virtual {v1, v2}, Ljava/lang/String;->concat(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v0
+
+    return-object v0
+
+    # fallback
+    :cond_default
+    const-string v0, "kate.db"
+    return-object v0
+.end method
+
+.method public reopenIfNeeded()V
+    .locals 2
+
+    invoke-static {}, Lcom/perm/kate/db/DataHelper;->getDbName()Ljava/lang/String;
+    move-result-object v0
+
+    iget-object v1, p0, Lcom/perm/kate/db/DataHelper;->mDbName:Ljava/lang/String;
+    invoke-static {v1, v0}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
+    move-result v1
+    if-eqz v1, :cond_0
+
+    return-void
+
+    :cond_0
+    iget-object v1, p0, Lcom/perm/kate/db/DataHelper;->mDbHelper:Lcom/perm/kate/db/DataHelper$OpenHelper;
+    if-eqz v1, :cond_1
+
+    invoke-virtual {p0}, Lcom/perm/kate/db/DataHelper;->close()V
+
+    :cond_1
+    invoke-virtual {p0}, Lcom/perm/kate/db/DataHelper;->open()V
+
+    return-void
 .end method

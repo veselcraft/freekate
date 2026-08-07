@@ -24280,6 +24280,30 @@
     return-void
 .end method
 
+.method public setDomain(Ljava/lang/String;)V
+    .locals 0
+    .param p1, "instance_domain"    # Ljava/lang/String;
+
+    .prologue
+    .line 33
+    iput-object p1, p0, Lcom/perm/kate/api/Api;->instance_domain:Ljava/lang/String;
+
+    .line 34
+    return-void
+.end method
+
+.method public setTLS(Z)V
+    .locals 0
+    .param p1, "use_tls"    # Z
+
+    .prologue
+    .line 33
+    iput-boolean p1, p0, Lcom/perm/kate/api/Api;->use_tls:Z
+
+    .line 34
+    return-void
+.end method
+
 .method public setChatPhoto(Ljava/lang/String;)Ljava/lang/Long;
     .locals 6
     .param p1, "file"    # Ljava/lang/String;

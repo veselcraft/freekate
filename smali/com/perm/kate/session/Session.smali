@@ -5607,6 +5607,18 @@
     return-object v0
 .end method
 
+.method public getDomain()Ljava/lang/String;
+    .locals 1
+
+    .prologue
+    .line 42
+    iget-object v0, p0, Lcom/perm/kate/session/Session;->account:Lcom/perm/kate/account/Account;
+
+    iget-object v0, v0, Lcom/perm/kate/account/Account;->instance_domain:Ljava/lang/String;
+
+    return-object v0
+.end method
+
 .method public getMutual(Ljava/lang/Long;Ljava/lang/Long;Lcom/perm/kate/session/Callback;Landroid/app/Activity;)V
     .locals 6
     .param p1, "target_uid"    # Ljava/lang/Long;
@@ -9292,6 +9304,44 @@
     iget-object v0, p0, Lcom/perm/kate/session/Session;->api:Lcom/perm/kate/api/Api;
 
     invoke-virtual {v0, p1}, Lcom/perm/kate/api/Api;->setAccessToken(Ljava/lang/String;)V
+
+    .line 52
+    return-void
+.end method
+
+.method public setDomain(Ljava/lang/String;)V
+    .locals 1
+    .param p1, "string"    # Ljava/lang/String;
+
+    .prologue
+    .line 50
+    iget-object v0, p0, Lcom/perm/kate/session/Session;->account:Lcom/perm/kate/account/Account;
+
+    iput-object p1, v0, Lcom/perm/kate/account/Account;->instance_domain:Ljava/lang/String;
+
+    .line 51
+    iget-object v0, p0, Lcom/perm/kate/session/Session;->api:Lcom/perm/kate/api/Api;
+
+    invoke-virtual {v0, p1}, Lcom/perm/kate/api/Api;->setDomain(Ljava/lang/String;)V
+
+    .line 52
+    return-void
+.end method
+
+.method public setTLS(Z)V
+    .locals 1
+    .param p1, "use_tls"    # Ljava/lang/String;
+
+    .prologue
+    .line 50
+    iget-object v0, p0, Lcom/perm/kate/session/Session;->account:Lcom/perm/kate/account/Account;
+
+    iput-boolean p1, v0, Lcom/perm/kate/account/Account;->use_tls:Z
+
+    .line 51
+    iget-object v0, p0, Lcom/perm/kate/session/Session;->api:Lcom/perm/kate/api/Api;
+
+    invoke-virtual {v0, p1}, Lcom/perm/kate/api/Api;->setTLS(Z)V
 
     .line 52
     return-void

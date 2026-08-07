@@ -205,6 +205,20 @@
 
     if-eqz v0, :cond_1
 
+    iget-object v0, v7, Lcom/perm/kate/account/Account;->instance_domain:Ljava/lang/String;
+
+    sget-object v1, Lcom/perm/kate/KApplication;->session:Lcom/perm/kate/session/Session;
+
+    invoke-virtual {v1}, Lcom/perm/kate/session/Session;->getDomain()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-virtual {v0, v1},  Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_1
+
     .line 51
     const v0, 0x7f07001b
 

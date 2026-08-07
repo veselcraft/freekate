@@ -352,6 +352,50 @@
     aget-object v6, v1, v6
 
     invoke-virtual {v5, v6}, Lcom/perm/kate/session/Session;->setAccessToken(Ljava/lang/String;)V
+    # domain
+    const/4 v5, 0x2
+
+    aget-object v5, v1, v5
+
+    invoke-static {v5}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
+
+    move-result v5
+
+    if-nez v5, :cond_5
+
+    sget-object v5, Lcom/perm/kate/KApplication;->session:Lcom/perm/kate/session/Session;
+
+    const/4 v6, 0x2
+
+    aget-object v6, v1, v6
+
+    invoke-virtual {v5, v6}, Lcom/perm/kate/session/Session;->setDomain(Ljava/lang/String;)V
+    # tls
+    const/4 v5, 0x3
+
+    aget-object v5, v1, v5
+
+    const-string v6, "true"
+
+    invoke-static {v5, v6}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
+
+    move-result v5
+
+    if-eqz v5, :cond_notls
+
+    const/4 v6, 0x1
+    goto :cont
+
+    :cond_notls
+    const/4 v6, 0x0
+
+    :cont
+
+    sget-object v5, Lcom/perm/kate/KApplication;->session:Lcom/perm/kate/session/Session;
+
+    #aget-object v6, v1, v6
+
+    invoke-virtual {v5, v6}, Lcom/perm/kate/session/Session;->setTLS(Z)V
 
     .line 152
     sget-object v5, Lcom/perm/kate/KApplication;->accountManager:Lcom/perm/kate/account/AccountManager;
@@ -474,6 +518,34 @@
 
     iput-object v5, v0, Lcom/perm/kate/account/Account;->mid:Ljava/lang/String;
 
+    const/4 v5, 0x2
+
+    aget-object v5, v1, v5
+
+    iput-object v5, v0, Lcom/perm/kate/account/Account;->instance_domain:Ljava/lang/String;
+
+    const/4 v5, 0x3
+
+    aget-object v5, v1, v5
+
+    const-string v6, "true"
+
+    invoke-static {v5, v6}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
+
+    move-result v5
+
+    if-eqz v5, :no_tls_again
+
+    const/4 v5, 0x1
+    goto :tls_again
+
+    :no_tls_again
+    const/4 v5, 0x0
+
+    :tls_again
+
+    iput-boolean v5, v0, Lcom/perm/kate/account/Account;->use_tls:Z
+
     .line 134
     invoke-static {v0}, Lcom/perm/kate/KApplication;->addAccount(Lcom/perm/kate/account/Account;)V
 
@@ -500,6 +572,34 @@
     aget-object v5, v1, v5
 
     iput-object v5, v0, Lcom/perm/kate/account/Account;->mid:Ljava/lang/String;
+
+    const/4 v5, 0x2
+
+    aget-object v5, v1, v5
+
+    iput-object v5, v0, Lcom/perm/kate/account/Account;->instance_domain:Ljava/lang/String;
+
+    const/4 v5, 0x3
+
+    aget-object v5, v1, v5
+
+    const-string v6, "true"
+
+    invoke-static {v5, v6}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
+
+    move-result v5
+
+    if-eqz v5, :no_tls_again2
+
+    const/4 v5, 0x1
+    goto :tls_again2
+
+    :no_tls_again2
+    const/4 v5, 0x0
+
+    :tls_again2
+
+    iput-boolean v5, v0, Lcom/perm/kate/account/Account;->use_tls:Z
 
     .line 159
     invoke-static {v0}, Lcom/perm/kate/KApplication;->addAccount(Lcom/perm/kate/account/Account;)V

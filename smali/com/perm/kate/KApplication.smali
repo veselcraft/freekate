@@ -248,7 +248,9 @@
     .line 369
     iget-object v1, p0, Lcom/perm/kate/account/Account;->mid:Ljava/lang/String;
 
-    invoke-static {v1}, Lcom/perm/kate/KApplication;->removeOldAccountIfExists(Ljava/lang/String;)V
+    iget-object v2, p0, Lcom/perm/kate/account/Account;->instance_domain:Ljava/lang/String;
+
+    invoke-static {v1, v2}, Lcom/perm/kate/KApplication;->removeOldAccountIfExists(Ljava/lang/String;Ljava/lang/String;)V
 
     .line 370
     sget-object v1, Lcom/perm/kate/KApplication;->accountManager:Lcom/perm/kate/account/AccountManager;
@@ -588,7 +590,7 @@
 .end method
 
 .method private findActiveSession()V
-    .locals 5
+    .locals 6
 
     .prologue
     .line 288
@@ -609,6 +611,17 @@
     .line 290
     .local v0, "current_account":Ljava/lang/String;
     if-eqz v0, :cond_1
+
+    const-string v3, "current_instance"
+
+    const/4 v4, 0x0
+
+    invoke-interface {v2, v3, v4}, Landroid/content/SharedPreferences;->getString(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v5
+
+    .local v5, "current_instance":Ljava/lang/String;
+    if-eqz v5, :cond_1
 
     .line 291
     sget-object v3, Lcom/perm/kate/KApplication;->sessions:Ljava/util/ArrayList;
@@ -637,6 +650,16 @@
     move-result-object v4
 
     invoke-virtual {v4, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v4
+
+    if-eqz v4, :cond_0
+
+    invoke-virtual {v1}, Lcom/perm/kate/session/Session;->getDomain()Ljava/lang/String;
+
+    move-result-object v4
+
+    invoke-virtual {v4, v5}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v4
 
@@ -1503,9 +1526,10 @@
     return-void
 .end method
 
-.method private static removeOldAccountIfExists(Ljava/lang/String;)V
+.method private static removeOldAccountIfExists(Ljava/lang/String;Ljava/lang/String;)V
     .locals 5
     .param p0, "mid"    # Ljava/lang/String;
+    .param p1, "instance"    # Ljava/lang/String;
 
     .prologue
     .line 384
@@ -1540,6 +1564,15 @@
     iget-object v4, v0, Lcom/perm/kate/account/Account;->mid:Ljava/lang/String;
 
     invoke-virtual {v4, p0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v4
+
+    if-eqz v4, :cond_1
+
+    .local v0, "a":Lcom/perm/kate/account/Account;
+    iget-object v4, v0, Lcom/perm/kate/account/Account;->instance_domain:Ljava/lang/String;
+
+    invoke-virtual {v4, p1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v4
 
@@ -1635,6 +1668,16 @@
     sget-object v3, Lcom/perm/kate/KApplication;->session:Lcom/perm/kate/session/Session;
 
     invoke-virtual {v3}, Lcom/perm/kate/session/Session;->getMid()Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-interface {v0, v2, v3}, Landroid/content/SharedPreferences$Editor;->putString(Ljava/lang/String;Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;
+
+    const-string v2, "current_instance"
+
+    sget-object v3, Lcom/perm/kate/KApplication;->session:Lcom/perm/kate/session/Session;
+
+    invoke-virtual {v3}, Lcom/perm/kate/session/Session;->getDomain()Ljava/lang/String;
 
     move-result-object v3
 
@@ -1834,20 +1877,7 @@
     .line 177
     invoke-virtual {p0}, Lcom/perm/kate/KApplication;->disableSSLValidation()V
 
-    .line 178
     :cond_0
-    new-instance v2, Lcom/perm/kate/db/DataHelper;
-
-    invoke-direct {v2, p0}, Lcom/perm/kate/db/DataHelper;-><init>(Landroid/content/Context;)V
-
-    sput-object v2, Lcom/perm/kate/KApplication;->db:Lcom/perm/kate/db/DataHelper;
-
-    .line 179
-    sget-object v2, Lcom/perm/kate/KApplication;->db:Lcom/perm/kate/db/DataHelper;
-
-    invoke-virtual {v2}, Lcom/perm/kate/db/DataHelper;->open()V
-
-    .line 180
     sget-object v2, Lcom/perm/kate/KApplication;->accountManager:Lcom/perm/kate/account/AccountManager;
 
     invoke-virtual {v2, p0}, Lcom/perm/kate/account/AccountManager;->loadAccounts(Landroid/content/Context;)V
@@ -1941,6 +1971,17 @@
     .end local v1    # "x":Ljava/util/Map$Entry;, "Ljava/util/Map$Entry<Ljava/lang/Long;Ljava/lang/String;>;"
     :cond_2
     invoke-direct {p0}, Lcom/perm/kate/KApplication;->findActiveSession()V
+    
+    new-instance v2, Lcom/perm/kate/db/DataHelper;
+
+    invoke-direct {v2, p0}, Lcom/perm/kate/db/DataHelper;-><init>(Landroid/content/Context;)V
+
+    sput-object v2, Lcom/perm/kate/KApplication;->db:Lcom/perm/kate/db/DataHelper;
+
+    .line 179
+    sget-object v2, Lcom/perm/kate/KApplication;->db:Lcom/perm/kate/db/DataHelper;
+
+    invoke-virtual {v2}, Lcom/perm/kate/db/DataHelper;->open()V
 
     .line 188
     invoke-direct {p0}, Lcom/perm/kate/KApplication;->enableOkHttp()V
