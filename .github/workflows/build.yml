@@ -59,6 +59,25 @@ jobs:
           echo "VERSION_CODE=${VERSION_CODE}" >> "$GITHUB_ENV"
           echo "APK_NAME=FreeKate-${VERSION_NAME}-${VERSION_CODE}-${GITHUB_SHA::7}" >> "$GITHUB_ENV"
 
+      # apktool assembles dangling class references without a word — they only blow up at
+      # runtime as NoClassDefFoundError. Catch them here instead.
+      - name: Check for dangling references
+        run: |
+          fail=0
+
+          grep -rhoE 'Lcom/perm/[A-Za-z0-9_$/]+;' smali/com/perm/ \
+            | sed 's/^L//; s/;$//' | sort -u \
+            | while read -r c; do [ -f "smali/$c.smali" ] || echo "$c"; done > dangling.txt
+          if [ -s dangling.txt ]; then
+            echo "::error::These classes doesn't exist and might crash the app:"
+            sed 's/^/  /' dangling.txt
+            fail=1
+          fi
+
+          rm -f dangling.txt
+          [ "$fail" = 0 ] || exit 1
+          echo "OK"
+
       - name: Build with apktool
         run: |
           java -jar "$APKTOOL_JAR" build . -o "dist/${APK_NAME}-unsigned.apk"
