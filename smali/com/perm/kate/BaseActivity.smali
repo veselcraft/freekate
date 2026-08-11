@@ -6,10 +6,7 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
-        Lcom/perm/kate/BaseActivity$inMobiAdListener;,
-        Lcom/perm/kate/BaseActivity$MenuOnClickListener;,
-        Lcom/perm/kate/BaseActivity$TargetingParams;,
-        Lcom/perm/kate/BaseActivity$MyAdListener;
+        Lcom/perm/kate/BaseActivity$TargetingParams;
     }
 .end annotation
 
@@ -19,28 +16,14 @@
 
 .field public static Theme:I
 
-.field private static inmobi_inited:Z
-
 .field private static longPollStopper:Ljava/lang/Runnable;
 
 .field private static showMenuButton:Ljava/lang/Boolean;
-
-.field private static targeting_params_cache:Lcom/perm/kate/BaseActivity$TargetingParams;
 
 .field public static theme_id:Ljava/lang/String;
 
 
 # instance fields
-.field adInMobi:Lcom/inmobi/ads/InMobiBanner;
-
-.field private adViewYandex:Lcom/yandex/mobile/ads/AdView;
-
-.field adman:Lcom/my/target/ads/MyTargetView;
-
-.field private admanListener:Lcom/my/target/ads/MyTargetView$MyTargetViewListener;
-
-.field private begunAd:Lru/begun/adlib/AdView;
-
 .field blocked:Z
 
 .field private fl_refresh_button:Landroid/view/View;
@@ -90,9 +73,6 @@
     const/4 v0, 0x0
 
     sput-object v0, Lcom/perm/kate/BaseActivity;->showMenuButton:Ljava/lang/Boolean;
-
-    .line 441
-    sput-boolean v1, Lcom/perm/kate/BaseActivity;->inmobi_inited:Z
 
     .line 748
     new-instance v0, Lcom/perm/kate/BaseActivity$3;
@@ -158,13 +138,6 @@
     invoke-direct {v0, p0}, Lcom/perm/kate/BaseActivity$11;-><init>(Lcom/perm/kate/BaseActivity;)V
 
     iput-object v0, p0, Lcom/perm/kate/BaseActivity;->playerClick:Landroid/view/View$OnClickListener;
-
-    .line 1314
-    new-instance v0, Lcom/perm/kate/BaseActivity$12;
-
-    invoke-direct {v0, p0}, Lcom/perm/kate/BaseActivity$12;-><init>(Lcom/perm/kate/BaseActivity;)V
-
-    iput-object v0, p0, Lcom/perm/kate/BaseActivity;->admanListener:Lcom/my/target/ads/MyTargetView$MyTargetViewListener;
 
     return-void
 .end method
@@ -362,17 +335,6 @@
     .end packed-switch
 .end method
 
-.method static synthetic access$000(Lcom/perm/kate/BaseActivity;)Lru/begun/adlib/AdView;
-    .locals 1
-    .param p0, "x0"    # Lcom/perm/kate/BaseActivity;
-
-    .prologue
-    .line 78
-    iget-object v0, p0, Lcom/perm/kate/BaseActivity;->begunAd:Lru/begun/adlib/AdView;
-
-    return-object v0
-.end method
-
 .method static synthetic access$100(Lcom/perm/kate/BaseActivity;)V
     .locals 0
     .param p0, "x0"    # Lcom/perm/kate/BaseActivity;
@@ -419,30 +381,8 @@
 .end method
 
 .method private destroyWebViewInsideBegun()V
-    .locals 2
-
-    .prologue
-    .line 887
-    :try_start_0
-    iget-object v1, p0, Lcom/perm/kate/BaseActivity;->begunAd:Lru/begun/adlib/AdView;
-
-    invoke-virtual {v1}, Lru/begun/adlib/AdView;->destroy()V
-    :try_end_0
-    .catch Ljava/lang/Throwable; {:try_start_0 .. :try_end_0} :catch_0
-
-    .line 891
-    :goto_0
+    .locals 1
     return-void
-
-    .line 888
-    :catch_0
-    move-exception v0
-
-    .line 889
-    .local v0, "th":Ljava/lang/Throwable;
-    invoke-virtual {v0}, Ljava/lang/Throwable;->printStackTrace()V
-
-    goto :goto_0
 .end method
 
 .method public static displayToast(Ljava/lang/CharSequence;Landroid/app/Activity;)V
@@ -1673,24 +1613,7 @@
 
     .prologue
     const/4 v3, 0x0
-
-    .line 823
-    :try_start_0
-    iget-object v1, p0, Lcom/perm/kate/BaseActivity;->adViewYandex:Lcom/yandex/mobile/ads/AdView;
-
-    if-eqz v1, :cond_0
-
-    .line 827
-    iget-object v1, p0, Lcom/perm/kate/BaseActivity;->adViewYandex:Lcom/yandex/mobile/ads/AdView;
-
-    invoke-virtual {v1}, Lcom/yandex/mobile/ads/AdView;->destroy()V
-
-    .line 828
     const/4 v1, 0x0
-
-    iput-object v1, p0, Lcom/perm/kate/BaseActivity;->adViewYandex:Lcom/yandex/mobile/ads/AdView;
-    :try_end_0
-    .catch Ljava/lang/Throwable; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 846
     :cond_0
@@ -1702,20 +1625,8 @@
 
     .line 853
     :goto_1
-    iget-object v1, p0, Lcom/perm/kate/BaseActivity;->begunAd:Lru/begun/adlib/AdView;
-
-    if-eqz v1, :cond_1
-
-    .line 854
-    invoke-direct {p0}, Lcom/perm/kate/BaseActivity;->destroyWebViewInsideBegun()V
-
     .line 863
     :cond_1
-    iput-object v3, p0, Lcom/perm/kate/BaseActivity;->begunAd:Lru/begun/adlib/AdView;
-
-    .line 870
-    iput-object v3, p0, Lcom/perm/kate/BaseActivity;->adInMobi:Lcom/inmobi/ads/InMobiBanner;
-
     .line 872
     iget-object v1, p0, Lcom/perm/kate/BaseActivity;->smileKeyboard:Lcom/perm/kate/smile/SmileKeyboard;
 
@@ -1730,20 +1641,8 @@
     :cond_2
     iput-object v3, p0, Lcom/perm/kate/BaseActivity;->smileKeyboard:Lcom/perm/kate/smile/SmileKeyboard;
 
-    .line 876
-    iget-object v1, p0, Lcom/perm/kate/BaseActivity;->adman:Lcom/my/target/ads/MyTargetView;
-
-    if-eqz v1, :cond_3
-
-    .line 877
-    iget-object v1, p0, Lcom/perm/kate/BaseActivity;->adman:Lcom/my/target/ads/MyTargetView;
-
-    invoke-virtual {v1}, Lcom/my/target/ads/MyTargetView;->destroy()V
-
     .line 878
     :cond_3
-    iput-object v3, p0, Lcom/perm/kate/BaseActivity;->adman:Lcom/my/target/ads/MyTargetView;
-
     .line 881
     iget-object v1, p0, Lcom/perm/kate/BaseActivity;->handler:Landroid/os/Handler;
 
@@ -1860,55 +1759,15 @@
 
     .prologue
     .line 946
-    :try_start_0
-    iget-object v1, p0, Lcom/perm/kate/BaseActivity;->adViewYandex:Lcom/yandex/mobile/ads/AdView;
-
-    if-eqz v1, :cond_0
-
-    .line 949
-    iget-object v1, p0, Lcom/perm/kate/BaseActivity;->adViewYandex:Lcom/yandex/mobile/ads/AdView;
-
-    invoke-virtual {v1}, Lcom/yandex/mobile/ads/AdView;->pause()V
-    :try_end_0
-    .catch Ljava/lang/Throwable; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 955
     :cond_0
     :goto_0
     invoke-super {p0}, Landroid/support/v7/app/AppCompatActivity;->onPause()V
 
-    .line 966
-    :try_start_1
-    iget-object v1, p0, Lcom/perm/kate/BaseActivity;->adman:Lcom/my/target/ads/MyTargetView;
-
-    if-eqz v1, :cond_1
-
-    .line 967
-    iget-object v1, p0, Lcom/perm/kate/BaseActivity;->adman:Lcom/my/target/ads/MyTargetView;
-
-    invoke-virtual {v1}, Lcom/my/target/ads/MyTargetView;->pause()V
-    :try_end_1
-    .catch Ljava/lang/Throwable; {:try_start_1 .. :try_end_1} :catch_1
-
     .line 974
     :cond_1
     :goto_1
-    :try_start_2
-    sget-boolean v1, Lcom/perm/kate/KApplication;->yandex_metrica_inited:Z
-
-    if-eqz v1, :cond_2
-
-    .line 976
-    sget v1, Landroid/os/Build$VERSION;->SDK_INT:I
-
-    const/16 v2, 0x8
-
-    if-lt v1, v2, :cond_2
-
-    .line 977
-    invoke-static {p0}, Lcom/yandex/metrica/YandexMetrica;->onPauseActivity(Landroid/app/Activity;)V
-    :try_end_2
-    .catch Ljava/lang/Throwable; {:try_start_2 .. :try_end_2} :catch_2
 
     .line 982
     :cond_2
@@ -1972,63 +1831,7 @@
     .line 913
     invoke-super {p0}, Landroid/support/v7/app/AppCompatActivity;->onResume()V
 
-    .line 923
-    iget-object v1, p0, Lcom/perm/kate/BaseActivity;->adman:Lcom/my/target/ads/MyTargetView;
-
-    if-eqz v1, :cond_0
-
-    .line 924
-    iget-object v1, p0, Lcom/perm/kate/BaseActivity;->adman:Lcom/my/target/ads/MyTargetView;
-
-    invoke-virtual {v1}, Lcom/my/target/ads/MyTargetView;->resume()V
-
-    .line 927
-    :cond_0
-    :try_start_0
-    sget-boolean v1, Lcom/perm/kate/KApplication;->yandex_metrica_inited:Z
-
-    if-eqz v1, :cond_1
-
-    .line 929
-    sget v1, Landroid/os/Build$VERSION;->SDK_INT:I
-
-    const/16 v2, 0x8
-
-    if-lt v1, v2, :cond_1
-
-    .line 930
-    invoke-static {p0}, Lcom/yandex/metrica/YandexMetrica;->onResumeActivity(Landroid/app/Activity;)V
-
-    .line 932
-    :cond_1
-    iget-object v1, p0, Lcom/perm/kate/BaseActivity;->adViewYandex:Lcom/yandex/mobile/ads/AdView;
-
-    if-eqz v1, :cond_2
-
-    .line 935
-    iget-object v1, p0, Lcom/perm/kate/BaseActivity;->adViewYandex:Lcom/yandex/mobile/ads/AdView;
-
-    invoke-virtual {v1}, Lcom/yandex/mobile/ads/AdView;->resume()V
-    :try_end_0
-    .catch Ljava/lang/Throwable; {:try_start_0 .. :try_end_0} :catch_0
-
-    .line 941
-    :cond_2
-    :goto_0
     return-void
-
-    .line 937
-    :catch_0
-    move-exception v0
-
-    .line 938
-    .local v0, "th":Ljava/lang/Throwable;
-    invoke-virtual {v0}, Ljava/lang/Throwable;->printStackTrace()V
-
-    .line 939
-    invoke-static {v0}, Lcom/perm/kate/Helper;->reportError(Ljava/lang/Throwable;)V
-
-    goto :goto_0
 .end method
 
 .method protected onSearchButton()V

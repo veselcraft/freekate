@@ -1279,64 +1279,7 @@
     .locals 3
 
     .prologue
-    .line 474
-    sget v1, Landroid/os/Build$VERSION;->SDK_INT:I
-
-    const/16 v2, 0x8
-
-    if-ge v1, v2, :cond_0
-
-    .line 486
-    .local v0, "th":Ljava/lang/Throwable;
-    :goto_0
     return-void
-
-    .line 477
-    .end local v0    # "th":Ljava/lang/Throwable;
-    :cond_0
-    :try_start_0
-    sget-object v1, Lcom/perm/kate/KApplication;->current:Landroid/app/Application;
-
-    const-string v2, "08a4d03d-78aa-4505-aa70-51753d4bf666"
-
-    invoke-static {v1, v2}, Lcom/yandex/metrica/YandexMetrica;->activate(Landroid/content/Context;Ljava/lang/String;)V
-
-    .line 478
-    const/4 v1, 0x1
-
-    sput-boolean v1, Lcom/perm/kate/KApplication;->yandex_metrica_inited:Z
-
-    .line 479
-    const/4 v1, 0x0
-
-    invoke-static {v1}, Lcom/yandex/metrica/YandexMetrica;->setReportCrashesEnabled(Z)V
-
-    .line 480
-    const/4 v1, 0x0
-
-    invoke-static {v1}, Lcom/yandex/metrica/YandexMetrica;->setReportNativeCrashesEnabled(Z)V
-
-    .line 481
-    const/4 v1, 0x0
-
-    invoke-static {v1}, Lcom/yandex/metrica/YandexMetrica;->setTrackLocationEnabled(Z)V
-    :try_end_0
-    .catch Ljava/lang/Throwable; {:try_start_0 .. :try_end_0} :catch_0
-
-    goto :goto_0
-
-    .line 482
-    :catch_0
-    move-exception v0
-
-    .line 483
-    .restart local v0    # "th":Ljava/lang/Throwable;
-    invoke-virtual {v0}, Ljava/lang/Throwable;->printStackTrace()V
-
-    .line 484
-    invoke-static {v0}, Lcom/perm/kate/Helper;->reportError(Ljava/lang/Throwable;)V
-
-    goto :goto_0
 .end method
 
 .method static isPackageNew()Z

@@ -45,21 +45,7 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 831
-    sget-boolean v1, Lcom/perm/kate/PlaybackService;->ad_playing:Z
-
-    if-eqz v1, :cond_0
-
-    .line 832
-    iget-object v1, p0, Lcom/perm/kate/PlaybackService$3;->this$0:Lcom/perm/kate/PlaybackService;
-
-    iget-object v1, v1, Lcom/perm/kate/PlaybackService;->adPlayerListener:Lcom/my/target/ads/instream/InstreamAudioAdPlayer$AdPlayerListener;
-
-    invoke-interface {v1}, Lcom/my/target/ads/instream/InstreamAudioAdPlayer$AdPlayerListener;->onAdAudioCompleted()V
-
     .line 846
-    :goto_0
-    return-void
 
     .line 835
     :cond_0
@@ -151,29 +137,16 @@
     invoke-static {v1}, Lcom/perm/kate/PlaybackService;->access$700(Lcom/perm/kate/PlaybackService;)V
 
     goto :goto_0
+    
+    :goto_0
+    return-void
 .end method
 
 .method public onError()V
     .locals 3
 
     .prologue
-    .line 850
-    sget-boolean v1, Lcom/perm/kate/PlaybackService;->ad_playing:Z
-
-    if-eqz v1, :cond_0
-
-    .line 851
-    iget-object v1, p0, Lcom/perm/kate/PlaybackService$3;->this$0:Lcom/perm/kate/PlaybackService;
-
-    iget-object v1, v1, Lcom/perm/kate/PlaybackService;->adPlayerListener:Lcom/my/target/ads/instream/InstreamAudioAdPlayer$AdPlayerListener;
-
-    const-string v2, "Some error"
-
-    invoke-interface {v1, v2}, Lcom/my/target/ads/instream/InstreamAudioAdPlayer$AdPlayerListener;->onAdAudioError(Ljava/lang/String;)V
-
     .line 862
-    :goto_0
-    return-void
 
     .line 854
     :cond_0
@@ -235,7 +208,7 @@
 
     invoke-virtual {v1}, Lcom/perm/kate/PlaybackService;->giveUpAudioFocus()V
 
-    goto :goto_0
+    return-void
 .end method
 
 .method public onNextEpisode()V
