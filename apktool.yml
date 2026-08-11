@@ -5,7 +5,7 @@ usesFramework:
   - 1
 sdkInfo:
   minSdkVersion: 7
-  targetSdkVersion: 22
+  targetSdkVersion: 23
 packageInfo:
   forcedPackageId: 127
 versionInfo:
