@@ -1719,6 +1719,11 @@
 
     invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
 
+    const-string v6, ""
+
+    invoke-static {v6}, Lcom/perm/kate/KApplication;->instanceLink(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v6
 
     invoke-virtual {v3, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -4515,6 +4520,11 @@
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
+    const-string v1, "topic-"
+
+    invoke-static {v1}, Lcom/perm/kate/KApplication;->instanceLink(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v1
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -4556,6 +4566,11 @@
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
+    const-string v1, "wall"
+
+    invoke-static {v1}, Lcom/perm/kate/KApplication;->instanceLink(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v1
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 

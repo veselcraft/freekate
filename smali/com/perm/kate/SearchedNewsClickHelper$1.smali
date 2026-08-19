@@ -79,6 +79,11 @@
 
     invoke-direct {p1}, Ljava/lang/StringBuilder;-><init>()V
 
+    const-string p2, "wall"
+
+    invoke-static {p2}, Lcom/perm/kate/KApplication;->instanceLink(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object p2
 
     invoke-virtual {p1, p2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 

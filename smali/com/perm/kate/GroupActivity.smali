@@ -5254,6 +5254,11 @@
 
     invoke-direct {p1}, Ljava/lang/StringBuilder;-><init>()V
 
+    const-string v0, "club"
+
+    invoke-static {v0}, Lcom/perm/kate/KApplication;->instanceLink(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v0
 
     invoke-virtual {p1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 

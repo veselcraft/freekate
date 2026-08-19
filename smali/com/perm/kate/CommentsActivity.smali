@@ -2172,6 +2172,11 @@
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
 
+    const-string v3, ""
+
+    invoke-static {v3}, Lcom/perm/kate/KApplication;->instanceLink(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v3
 
     invoke-virtual {v1, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 

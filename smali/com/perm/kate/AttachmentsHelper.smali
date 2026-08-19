@@ -5233,6 +5233,11 @@
 
     invoke-direct {p3}, Ljava/lang/StringBuilder;-><init>()V
 
+    const-string v0, "page-"
+
+    invoke-static {v0}, Lcom/perm/kate/KApplication;->instanceLink(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v0
 
     invoke-virtual {p3, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 

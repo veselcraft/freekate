@@ -826,6 +826,11 @@
     move-object/from16 v24, v3
 
     :try_start_26
+    const-string v3, "market"
+
+    invoke-static {v3}, Lcom/perm/kate/KApplication;->instanceLink(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v3
 
     invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
     :try_end_26
@@ -1009,6 +1014,11 @@
     move-object/from16 v17, v3
 
     :try_start_2b
+    const-string v3, "product"
+
+    invoke-static {v3}, Lcom/perm/kate/KApplication;->instanceLink(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v3
 
     invoke-virtual {v9, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
     :try_end_2b
@@ -1172,6 +1182,11 @@
 
     invoke-direct {v8}, Ljava/lang/StringBuilder;-><init>()V
 
+    const-string v11, "club"
+
+    invoke-static {v11}, Lcom/perm/kate/KApplication;->instanceLink(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v11
 
     invoke-virtual {v8, v11}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -1253,6 +1268,11 @@
     move-object/from16 p4, v5
 
     :try_start_32
+    const-string v5, "story"
+
+    invoke-static {v5}, Lcom/perm/kate/KApplication;->instanceLink(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v5
 
     invoke-virtual {v3, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
     :try_end_32
