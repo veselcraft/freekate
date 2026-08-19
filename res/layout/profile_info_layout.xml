@@ -81,7 +81,7 @@
         <LinearLayout android:orientation="horizontal" android:id="@id/ll_profile_docs_region" android:background="?attr_item_bg" android:focusable="true" android:layout_width="fill_parent" android:layout_height="48.0dip">
             <com.perm.kate.ScaleTextView android:textSize="@dimen/text_size_large" android:textColor="?attr_profile_text_color" android:ellipsize="end" android:layout_gravity="center_vertical" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="16.0dip" android:layout_marginRight="5.0dip" android:layout_marginBottom="0.0dip" android:text="@string/docs" />
         </LinearLayout>
-        <LinearLayout android:orientation="horizontal" android:id="@id/stories" android:background="?attr_item_bg" android:focusable="true" android:layout_width="fill_parent" android:layout_height="48.0dip">
+        <LinearLayout android:orientation="horizontal" android:id="@id/stories" android:background="?attr_item_bg" android:focusable="true" android:layout_width="fill_parent" android:layout_height="48.0dip" android:visibility="gone">
             <com.perm.kate.ScaleTextView android:textSize="@dimen/text_size_large" android:textColor="?attr_profile_text_color" android:ellipsize="end" android:layout_gravity="center_vertical" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="16.0dip" android:layout_marginRight="5.0dip" android:layout_marginBottom="0.0dip" android:text="@string/stories" />
         </LinearLayout>
         <LinearLayout android:orientation="horizontal" android:id="@id/ll_profile_notes_region" android:background="?attr_item_bg" android:focusable="true" android:layout_width="fill_parent" android:layout_height="48.0dip">
