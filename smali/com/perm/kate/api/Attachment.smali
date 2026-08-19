@@ -826,7 +826,6 @@
     move-object/from16 v24, v3
 
     :try_start_26
-    const-string v3, "https://m.vk.com/market"
 
     invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
     :try_end_26
@@ -1010,7 +1009,6 @@
     move-object/from16 v17, v3
 
     :try_start_2b
-    const-string v3, "http://m.vk.com/product"
 
     invoke-virtual {v9, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
     :try_end_2b
@@ -1174,7 +1172,6 @@
 
     invoke-direct {v8}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v11, "http://m.vk.com/club"
 
     invoke-virtual {v8, v11}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -1256,7 +1253,6 @@
     move-object/from16 p4, v5
 
     :try_start_32
-    const-string v5, "http://m.vk.com/story"
 
     invoke-virtual {v3, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
     :try_end_32

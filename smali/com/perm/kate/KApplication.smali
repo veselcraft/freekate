@@ -40,6 +40,17 @@
 
 .field public static longPoll:Lcom/perm/kate/LongPoll;
 
+.field public static mirrors:Ljava/util/ArrayList;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Ljava/util/ArrayList",
+            "<",
+            "Ljava/lang/String;",
+            ">;"
+        }
+    .end annotation
+.end field
+
 .field public static newMessageCounter:Lcom/perm/kate/Counter;
 
 .field public static online:Lcom/perm/kate/Online;
@@ -924,6 +935,65 @@
     return p0
 .end method
 
+.method public static getInstanceUrl()Ljava/lang/String;
+    .locals 2
+
+    sget-object v0, Lcom/perm/kate/KApplication;->session:Lcom/perm/kate/session/Session;
+
+    if-eqz v0, :cond_fallback
+
+    iget-object v1, v0, Lcom/perm/kate/session/Session;->api:Lcom/perm/kate/api/Api;
+
+    if-eqz v1, :cond_fallback
+
+    invoke-virtual {v1}, Lcom/perm/kate/api/Api;->getInstanceUrl()Ljava/lang/String;
+
+    move-result-object v0
+
+    new-instance v1, Ljava/lang/StringBuilder;
+
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
+    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const-string v0, "/"
+
+    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    return-object v0
+
+    :cond_fallback
+    const-string v0, "https://api.openvk.org/"
+
+    return-object v0
+.end method
+
+.method public static instanceLink(Ljava/lang/String;)Ljava/lang/String;
+    .locals 2
+
+    new-instance v0, Ljava/lang/StringBuilder;
+
+    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
+
+    invoke-static {}, Lcom/perm/kate/KApplication;->getInstanceUrl()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    return-object v1
+.end method
+
 .method public static getSession(J)Lcom/perm/kate/session/Session;
     .locals 3
 
@@ -1430,6 +1500,8 @@
     :cond_0
     invoke-interface {v0}, Landroid/content/SharedPreferences$Editor;->apply()V
 
+    invoke-static {}, Lcom/perm/utils/MirrorsHelper;->refresh()V
+
     return-void
 .end method
 
@@ -1609,6 +1681,8 @@
     .line 196
     :cond_1
     invoke-direct {p0}, Lcom/perm/kate/KApplication;->findActiveSession()V
+
+    invoke-static {}, Lcom/perm/utils/MirrorsHelper;->refresh()V
 
     .line 184
     new-instance v0, Lcom/perm/kate/db/DataHelper;

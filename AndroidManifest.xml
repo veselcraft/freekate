@@ -263,11 +263,11 @@
                 <category android:name="android.intent.category.BROWSABLE"/>
                 <data android:scheme="http"/>
                 <data android:scheme="https"/>
-                <data android:host="vk.com"/>
-                <data android:host="vkontakte.ru"/>
-                <data android:host="m.vk.com"/>
-                <data android:host="new.vk.com"/>
-                <data android:host="vk.me"/>
+                <data android:host="openvk.org"/>
+                <data android:host="api.openvk.org"/>
+                <data android:host="openvk.uk"/>
+                <data android:host="openvk.co"/>
+                <data android:host="ovk.to"/>
             </intent-filter>
         </activity>
         <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.perm.kate.PublishDateActivity"/>

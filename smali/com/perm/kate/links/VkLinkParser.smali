@@ -4,6 +4,17 @@
 
 
 # static fields
+.field private static built_from:Ljava/util/ArrayList;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Ljava/util/ArrayList",
+            "<",
+            "Ljava/lang/String;",
+            ">;"
+        }
+    .end annotation
+.end field
+
 .field private static pattern_album:Ljava/util/regex/Pattern;
 
 .field private static pattern_albums:Ljava/util/regex/Pattern;
@@ -68,6 +79,8 @@
 
 .field private static pattern_string_page2:Ljava/lang/String;
 
+.field private static pattern_string_photo:Ljava/lang/String;
+
 .field private static pattern_string_photos:Ljava/lang/String;
 
 .field private static pattern_string_playlist:Ljava/lang/String;
@@ -103,301 +116,635 @@
 .method static constructor <clinit>()V
     .locals 1
 
-    const-string v0, "(vk)?(vkontakte)?\\.(com)?(ru)?/(\\w)*(\\-)?(\\d)*(\\?z=)?photo(-?\\d*_\\d*)"
+    const-string v0, "(?:%D%)()/album(\\-)?(\\d*)_(\\d*)"
 
-    .line 207
-    invoke-static {v0}, Ljava/util/regex/Pattern;->compile(Ljava/lang/String;)Ljava/util/regex/Pattern;
-
-    move-result-object v0
-
-    sput-object v0, Lcom/perm/kate/links/VkLinkParser;->pattern_photo:Ljava/util/regex/Pattern;
-
-    const-string v0, "(vk.com|vkontakte.ru)/album(\\-)?(\\d*)_(\\d*)"
-
-    .line 219
     sput-object v0, Lcom/perm/kate/links/VkLinkParser;->pattern_string_album:Ljava/lang/String;
 
-    .line 220
-    invoke-static {v0}, Ljava/util/regex/Pattern;->compile(Ljava/lang/String;)Ljava/util/regex/Pattern;
+    const-string v0, "(?:%D%)/albums(\\-?\\d+)"
 
-    move-result-object v0
-
-    sput-object v0, Lcom/perm/kate/links/VkLinkParser;->pattern_album:Ljava/util/regex/Pattern;
-
-    const-string v0, "(?:vk.com|vkontakte.ru)/photos(-?\\d*)"
-
-    .line 241
-    sput-object v0, Lcom/perm/kate/links/VkLinkParser;->pattern_string_photos:Ljava/lang/String;
-
-    .line 242
-    invoke-static {v0}, Ljava/util/regex/Pattern;->compile(Ljava/lang/String;)Ljava/util/regex/Pattern;
-
-    move-result-object v0
-
-    sput-object v0, Lcom/perm/kate/links/VkLinkParser;->pattern_photos:Ljava/util/regex/Pattern;
-
-    const-string v0, "^(?:https?://)?(?:www\\.)?(?:m\\.)?(?:new\\.)?(?:vk.com|vkontakte.ru)/id(\\d+)$"
-
-    .line 267
-    sput-object v0, Lcom/perm/kate/links/VkLinkParser;->pattern_string_profile_id:Ljava/lang/String;
-
-    .line 269
-    invoke-static {v0}, Ljava/util/regex/Pattern;->compile(Ljava/lang/String;)Ljava/util/regex/Pattern;
-
-    move-result-object v0
-
-    sput-object v0, Lcom/perm/kate/links/VkLinkParser;->pattern_profile_id:Ljava/util/regex/Pattern;
-
-    const-string v0, "(vk)?(vkontakte)?\\.(com)?(ru)?/(club|event|public)(\\d+)$"
-
-    .line 279
-    sput-object v0, Lcom/perm/kate/links/VkLinkParser;->pattern_string_group_id:Ljava/lang/String;
-
-    .line 281
-    invoke-static {v0}, Ljava/util/regex/Pattern;->compile(Ljava/lang/String;)Ljava/util/regex/Pattern;
-
-    move-result-object v0
-
-    sput-object v0, Lcom/perm/kate/links/VkLinkParser;->pattern_group_id:Ljava/util/regex/Pattern;
-
-    const-string v0, "(vk.com|vkontakte.ru)/topic\\-(\\d*)_(\\d*)(?:\\?post=(\\d*))?"
-
-    .line 291
-    sput-object v0, Lcom/perm/kate/links/VkLinkParser;->pattern_string_topic:Ljava/lang/String;
-
-    .line 292
-    invoke-static {v0}, Ljava/util/regex/Pattern;->compile(Ljava/lang/String;)Ljava/util/regex/Pattern;
-
-    move-result-object v0
-
-    sput-object v0, Lcom/perm/kate/links/VkLinkParser;->pattern_topic:Ljava/util/regex/Pattern;
-
-    const-string v0, "^(?:https?://)?(?:www\\.)?(?:m\\.)?(?:new\\.)?(?:vk.com|vkontakte.ru)/([\\w\\.]+)"
-
-    .line 309
-    sput-object v0, Lcom/perm/kate/links/VkLinkParser;->pattern_string_domain:Ljava/lang/String;
-
-    .line 310
-    invoke-static {v0}, Ljava/util/regex/Pattern;->compile(Ljava/lang/String;)Ljava/util/regex/Pattern;
-
-    move-result-object v0
-
-    sput-object v0, Lcom/perm/kate/links/VkLinkParser;->pattern_domain:Ljava/util/regex/Pattern;
-
-    const-string v0, "^(?:https?://)?vk.me/([\\w\\.]+)"
-
-    .line 322
-    sput-object v0, Lcom/perm/kate/links/VkLinkParser;->pattern_string_me:Ljava/lang/String;
-
-    .line 323
-    invoke-static {v0}, Ljava/util/regex/Pattern;->compile(Ljava/lang/String;)Ljava/util/regex/Pattern;
-
-    move-result-object v0
-
-    sput-object v0, Lcom/perm/kate/links/VkLinkParser;->pattern_me:Ljava/util/regex/Pattern;
-
-    const-string v0, "(?:vk.com|vkontakte.ru)/(?:[\\w\\.\\d]+\\?(?:[\\w=&]+)?w=)?wall(\\-?\\d*)_(\\d*)(?:\\?reply=(\\d*))?"
-
-    .line 339
-    sput-object v0, Lcom/perm/kate/links/VkLinkParser;->pattern_string_wall_post:Ljava/lang/String;
-
-    .line 340
-    invoke-static {v0}, Ljava/util/regex/Pattern;->compile(Ljava/lang/String;)Ljava/util/regex/Pattern;
-
-    move-result-object v0
-
-    sput-object v0, Lcom/perm/kate/links/VkLinkParser;->pattern_wall_post:Ljava/util/regex/Pattern;
-
-    const-string v0, "(vk.com|vkontakte.ru)/(\\w+\\?w=)?page(\\-\\d+)_(\\d+)"
-
-    .line 358
-    sput-object v0, Lcom/perm/kate/links/VkLinkParser;->pattern_string_page1:Ljava/lang/String;
-
-    .line 359
-    invoke-static {v0}, Ljava/util/regex/Pattern;->compile(Ljava/lang/String;)Ljava/util/regex/Pattern;
-
-    move-result-object v0
-
-    sput-object v0, Lcom/perm/kate/links/VkLinkParser;->pattern_page1:Ljava/util/regex/Pattern;
-
-    const-string v0, "(vk.com|vkontakte.ru)/pages\\?oid=(\\-\\d+)&p=(.+)"
-
-    .line 362
-    sput-object v0, Lcom/perm/kate/links/VkLinkParser;->pattern_string_page2:Ljava/lang/String;
-
-    .line 363
-    invoke-static {v0}, Ljava/util/regex/Pattern;->compile(Ljava/lang/String;)Ljava/util/regex/Pattern;
-
-    move-result-object v0
-
-    sput-object v0, Lcom/perm/kate/links/VkLinkParser;->pattern_page2:Ljava/util/regex/Pattern;
-
-    const-string v0, "vk\\.com/away(\\.php)?\\?(.*)to=(.+)"
-
-    .line 383
-    sput-object v0, Lcom/perm/kate/links/VkLinkParser;->pattern_string_away:Ljava/lang/String;
-
-    .line 384
-    invoke-static {v0}, Ljava/util/regex/Pattern;->compile(Ljava/lang/String;)Ljava/util/regex/Pattern;
-
-    move-result-object v0
-
-    sput-object v0, Lcom/perm/kate/links/VkLinkParser;->pattern_away:Ljava/util/regex/Pattern;
-
-    const-string v0, "(vk)?(vkontakte)?\\.(com)?(ru)?/im\\?sel=(-?\\d+)"
-
-    .line 402
-    sput-object v0, Lcom/perm/kate/links/VkLinkParser;->pattern_string_dialog:Ljava/lang/String;
-
-    .line 403
-    invoke-static {v0}, Ljava/util/regex/Pattern;->compile(Ljava/lang/String;)Ljava/util/regex/Pattern;
-
-    move-result-object v0
-
-    sput-object v0, Lcom/perm/kate/links/VkLinkParser;->pattern_dialog:Ljava/util/regex/Pattern;
-
-    const-string v0, "vk\\.com/albums(\\-?\\d+)"
-
-    .line 414
     sput-object v0, Lcom/perm/kate/links/VkLinkParser;->pattern_string_albums:Ljava/lang/String;
 
-    .line 415
-    invoke-static {v0}, Ljava/util/regex/Pattern;->compile(Ljava/lang/String;)Ljava/util/regex/Pattern;
+    const-string v0, "(?:%D%)/away(\\.php)?\\?(.*)to=(.+)"
 
-    move-result-object v0
+    sput-object v0, Lcom/perm/kate/links/VkLinkParser;->pattern_string_away:Ljava/lang/String;
 
-    sput-object v0, Lcom/perm/kate/links/VkLinkParser;->pattern_albums:Ljava/util/regex/Pattern;
+    const-string v0, "(?:%D%)()()()()/im\\?sel=(-?\\d+)"
 
-    const-string v0, "(?:vk.com|vkontakte.ru)/wall(\\-?\\d+)"
+    sput-object v0, Lcom/perm/kate/links/VkLinkParser;->pattern_string_dialog:Ljava/lang/String;
 
-    .line 429
-    sput-object v0, Lcom/perm/kate/links/VkLinkParser;->pattern_string_wall:Ljava/lang/String;
+    const-string v0, "^(?:https?://)?(?:www\\.)?(?:m\\.)?(?:new\\.)?(?:%D%)/([\\w\\.]+)"
 
-    .line 430
-    invoke-static {v0}, Ljava/util/regex/Pattern;->compile(Ljava/lang/String;)Ljava/util/regex/Pattern;
+    sput-object v0, Lcom/perm/kate/links/VkLinkParser;->pattern_string_domain:Ljava/lang/String;
 
-    move-result-object v0
+    const-string v0, "(?:%D%)()()()()/(club|event|public)(\\d+)$"
 
-    sput-object v0, Lcom/perm/kate/links/VkLinkParser;->pattern_wall:Ljava/util/regex/Pattern;
+    sput-object v0, Lcom/perm/kate/links/VkLinkParser;->pattern_string_group_id:Ljava/lang/String;
 
-    const-string v0, "(?:m\\.)?(?:vk.com|vkontakte.ru)/video(\\-?\\d*)_(\\d*)"
+    const-string v0, "(?:m\\.)?(?:%D%)/market-(\\d*)"
 
-    .line 441
-    sput-object v0, Lcom/perm/kate/links/VkLinkParser;->pattern_string_video:Ljava/lang/String;
-
-    .line 442
-    invoke-static {v0}, Ljava/util/regex/Pattern;->compile(Ljava/lang/String;)Ljava/util/regex/Pattern;
-
-    move-result-object v0
-
-    sput-object v0, Lcom/perm/kate/links/VkLinkParser;->pattern_video:Ljava/util/regex/Pattern;
-
-    const-string v0, "(?:m\\.)?(?:vk.com|vkontakte.ru)/(?:[a-z0-9-_=?&]+)?product(\\-?\\d*)_(\\d*)"
-
-    .line 458
-    sput-object v0, Lcom/perm/kate/links/VkLinkParser;->pattern_string_market_item:Ljava/lang/String;
-
-    .line 459
-    invoke-static {v0}, Ljava/util/regex/Pattern;->compile(Ljava/lang/String;)Ljava/util/regex/Pattern;
-
-    move-result-object v0
-
-    sput-object v0, Lcom/perm/kate/links/VkLinkParser;->pattern_market_item:Ljava/util/regex/Pattern;
-
-    const-string v0, "(?:m\\.)?(?:vk.com|vkontakte.ru)/market-(\\d*)[?]section=album_(\\d*)"
-
-    .line 471
-    sput-object v0, Lcom/perm/kate/links/VkLinkParser;->pattern_string_market_album:Ljava/lang/String;
-
-    .line 472
-    invoke-static {v0}, Ljava/util/regex/Pattern;->compile(Ljava/lang/String;)Ljava/util/regex/Pattern;
-
-    move-result-object v0
-
-    sput-object v0, Lcom/perm/kate/links/VkLinkParser;->pattern_market_album:Ljava/util/regex/Pattern;
-
-    const-string v0, "(?:m\\.)?(?:vk.com|vkontakte.ru)/market-(\\d*)"
-
-    .line 484
     sput-object v0, Lcom/perm/kate/links/VkLinkParser;->pattern_string_market:Ljava/lang/String;
 
-    .line 485
-    invoke-static {v0}, Ljava/util/regex/Pattern;->compile(Ljava/lang/String;)Ljava/util/regex/Pattern;
+    const-string v0, "(?:m\\.)?(?:%D%)/market-(\\d*)[?]section=album_(\\d*)"
 
-    move-result-object v0
+    sput-object v0, Lcom/perm/kate/links/VkLinkParser;->pattern_string_market_album:Ljava/lang/String;
 
-    sput-object v0, Lcom/perm/kate/links/VkLinkParser;->pattern_market:Ljava/util/regex/Pattern;
+    const-string v0, "(?:m\\.)?(?:%D%)/(?:[a-z0-9-_=?&]+)?product(\\-?\\d*)_(\\d*)"
 
-    const-string v0, "(?:vk\\.com)/.+(?:act=|z=)audio_playlist(\\-?\\d*)_(\\d*)(?:&access_hash=(\\w+))?"
+    sput-object v0, Lcom/perm/kate/links/VkLinkParser;->pattern_string_market_item:Ljava/lang/String;
 
-    .line 506
+    const-string v0, "(?:%D%)()/(\\w+\\?w=)?page(\\-\\d+)_(\\d+)"
+
+    sput-object v0, Lcom/perm/kate/links/VkLinkParser;->pattern_string_page1:Ljava/lang/String;
+
+    const-string v0, "(?:%D%)()/pages\\?oid=(\\-\\d+)&p=(.+)"
+
+    sput-object v0, Lcom/perm/kate/links/VkLinkParser;->pattern_string_page2:Ljava/lang/String;
+
+    const-string v0, "(?:%D%)()()()()/(\\w)*(\\-)?(\\d)*(\\?z=)?photo(-?\\d*_\\d*)"
+
+    sput-object v0, Lcom/perm/kate/links/VkLinkParser;->pattern_string_photo:Ljava/lang/String;
+
+    const-string v0, "(?:%D%)/photos(-?\\d*)"
+
+    sput-object v0, Lcom/perm/kate/links/VkLinkParser;->pattern_string_photos:Ljava/lang/String;
+
+    const-string v0, "(?:%D%)/.+(?:act=|z=)audio_playlist(\\-?\\d*)_(\\d*)(?:&access_hash=(\\w+))?"
+
     sput-object v0, Lcom/perm/kate/links/VkLinkParser;->pattern_string_playlist:Ljava/lang/String;
 
-    .line 507
-    invoke-static {v0}, Ljava/util/regex/Pattern;->compile(Ljava/lang/String;)Ljava/util/regex/Pattern;
+    const-string v0, "(?:m\\.)?(?:%D%)/poll(\\-?\\d*)_(\\d*)"
 
-    move-result-object v0
-
-    sput-object v0, Lcom/perm/kate/links/VkLinkParser;->pattern_playlist:Ljava/util/regex/Pattern;
-
-    const-string v0, "(?:m\\.)?(?:vk.com|vkontakte.ru)/poll(\\-?\\d*)_(\\d*)"
-
-    .line 520
     sput-object v0, Lcom/perm/kate/links/VkLinkParser;->pattern_string_poll:Ljava/lang/String;
 
-    .line 521
-    invoke-static {v0}, Ljava/util/regex/Pattern;->compile(Ljava/lang/String;)Ljava/util/regex/Pattern;
+    const-string v0, "^(?:https?://)?(?:www\\.)?(?:m\\.)?(?:new\\.)?(?:%D%)/id(\\d+)$"
 
-    move-result-object v0
+    sput-object v0, Lcom/perm/kate/links/VkLinkParser;->pattern_string_profile_id:Ljava/lang/String;
 
-    sput-object v0, Lcom/perm/kate/links/VkLinkParser;->pattern_poll:Ljava/util/regex/Pattern;
+    const-string v0, "(?:m\\.)?(?:%D%)/story(\\-?\\d*)_(\\d*)"
+
+    sput-object v0, Lcom/perm/kate/links/VkLinkParser;->pattern_string_story:Ljava/lang/String;
+
+    const-string v0, "(?:%D%)()/topic\\-(\\d*)_(\\d*)(?:\\?post=(\\d*))?"
+
+    sput-object v0, Lcom/perm/kate/links/VkLinkParser;->pattern_string_topic:Ljava/lang/String;
+
+    const-string v0, "(?:m\\.)?(?:%D%)/video(\\-?\\d*)_(\\d*)"
+
+    sput-object v0, Lcom/perm/kate/links/VkLinkParser;->pattern_string_video:Ljava/lang/String;
+
+    const-string v0, "(?:m\\.)?(?:%D%)/videos(\\-?\\d*)[?]section=album_(\\d*)"
+
+    sput-object v0, Lcom/perm/kate/links/VkLinkParser;->pattern_string_video_album:Ljava/lang/String;
+
+    const-string v0, "(?:%D%)/wall(\\-?\\d+)"
+
+    sput-object v0, Lcom/perm/kate/links/VkLinkParser;->pattern_string_wall:Ljava/lang/String;
+
+    const-string v0, "(?:%D%)/(?:[\\w\\.\\d]+\\?(?:[\\w=&]+)?w=)?wall(\\-?\\d*)_(\\d*)(?:\\?reply=(\\d*))?"
+
+    sput-object v0, Lcom/perm/kate/links/VkLinkParser;->pattern_string_wall_post:Ljava/lang/String;
 
     const-string v0, "(?:https?://)?vk.me/join/[\\w]+"
 
-    .line 533
     sput-object v0, Lcom/perm/kate/links/VkLinkParser;->pattern_string_chat_invite:Ljava/lang/String;
 
-    .line 534
     invoke-static {v0}, Ljava/util/regex/Pattern;->compile(Ljava/lang/String;)Ljava/util/regex/Pattern;
 
     move-result-object v0
 
     sput-object v0, Lcom/perm/kate/links/VkLinkParser;->pattern_chat_invite:Ljava/util/regex/Pattern;
 
-    const-string v0, "(?:m\\.)?vk.com/story(\\-?\\d*)_(\\d*)"
+    const-string v0, "^(?:https?://)?vk.me/([\\w\\.]+)"
 
-    .line 545
-    sput-object v0, Lcom/perm/kate/links/VkLinkParser;->pattern_string_story:Ljava/lang/String;
+    sput-object v0, Lcom/perm/kate/links/VkLinkParser;->pattern_string_me:Ljava/lang/String;
 
-    .line 546
     invoke-static {v0}, Ljava/util/regex/Pattern;->compile(Ljava/lang/String;)Ljava/util/regex/Pattern;
 
     move-result-object v0
 
-    sput-object v0, Lcom/perm/kate/links/VkLinkParser;->pattern_story:Ljava/util/regex/Pattern;
-
-    const-string v0, "(?:m\\.)?(?:vk.com|vkontakte.ru)/videos(\\-?\\d*)[?]section=album_(\\d*)"
-
-    .line 558
-    sput-object v0, Lcom/perm/kate/links/VkLinkParser;->pattern_string_video_album:Ljava/lang/String;
-
-    .line 559
-    invoke-static {v0}, Ljava/util/regex/Pattern;->compile(Ljava/lang/String;)Ljava/util/regex/Pattern;
-
-    move-result-object v0
-
-    sput-object v0, Lcom/perm/kate/links/VkLinkParser;->pattern_video_album:Ljava/util/regex/Pattern;
+    sput-object v0, Lcom/perm/kate/links/VkLinkParser;->pattern_me:Ljava/util/regex/Pattern;
 
     return-void
+.end method
+
+.method private static buildDomains(Ljava/util/ArrayList;)Ljava/lang/String;
+    .locals 7
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Ljava/util/ArrayList",
+            "<",
+            "Ljava/lang/String;",
+            ">;)",
+            "Ljava/lang/String;"
+        }
+    .end annotation
+
+    new-instance v0, Ljava/lang/StringBuilder;
+
+    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
+
+    invoke-virtual {p0}, Ljava/util/ArrayList;->size()I
+
+    move-result v2
+
+    const/4 v3, 0x0
+
+    :goto_0
+    if-ge v3, v2, :cond_1
+
+    if-lez v3, :cond_0
+
+    const-string v1, "|"
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    :cond_0
+    invoke-virtual {p0, v3}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+
+    move-result-object v4
+
+    check-cast v4, Ljava/lang/String;
+
+    const-string v5, "."
+
+    const-string v6, "\\."
+
+    invoke-virtual {v4, v5, v6}, Ljava/lang/String;->replace(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Ljava/lang/String;
+
+    move-result-object v4
+
+    invoke-virtual {v0, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    add-int/lit8 v3, v3, 0x1
+
+    goto :goto_0
+
+    :cond_1
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    return-object v1
+.end method
+
+.method private static compile(Ljava/lang/String;Ljava/lang/String;)Ljava/util/regex/Pattern;
+    .locals 2
+
+    const-string v0, "%D%"
+
+    invoke-virtual {p0, v0, p1}, Ljava/lang/String;->replace(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-static {v0}, Ljava/util/regex/Pattern;->compile(Ljava/lang/String;)Ljava/util/regex/Pattern;
+
+    move-result-object v1
+
+    return-object v1
+.end method
+
+.method private static ensurePatterns()Z
+    .locals 4
+
+    sget-object v0, Lcom/perm/kate/KApplication;->mirrors:Ljava/util/ArrayList;
+
+    if-eqz v0, :cond_none
+
+    invoke-virtual {v0}, Ljava/util/ArrayList;->isEmpty()Z
+
+    move-result v1
+
+    if-nez v1, :cond_none
+
+    sget-object v1, Lcom/perm/kate/links/VkLinkParser;->built_from:Ljava/util/ArrayList;
+
+    if-eq v0, v1, :cond_done
+
+    invoke-static {v0}, Lcom/perm/kate/links/VkLinkParser;->buildDomains(Ljava/util/ArrayList;)Ljava/lang/String;
+
+    move-result-object v2
+
+    sget-object v3, Lcom/perm/kate/links/VkLinkParser;->pattern_string_album:Ljava/lang/String;
+
+    invoke-static {v3, v2}, Lcom/perm/kate/links/VkLinkParser;->compile(Ljava/lang/String;Ljava/lang/String;)Ljava/util/regex/Pattern;
+
+    move-result-object v3
+
+    sput-object v3, Lcom/perm/kate/links/VkLinkParser;->pattern_album:Ljava/util/regex/Pattern;
+
+    sget-object v3, Lcom/perm/kate/links/VkLinkParser;->pattern_string_albums:Ljava/lang/String;
+
+    invoke-static {v3, v2}, Lcom/perm/kate/links/VkLinkParser;->compile(Ljava/lang/String;Ljava/lang/String;)Ljava/util/regex/Pattern;
+
+    move-result-object v3
+
+    sput-object v3, Lcom/perm/kate/links/VkLinkParser;->pattern_albums:Ljava/util/regex/Pattern;
+
+    sget-object v3, Lcom/perm/kate/links/VkLinkParser;->pattern_string_away:Ljava/lang/String;
+
+    invoke-static {v3, v2}, Lcom/perm/kate/links/VkLinkParser;->compile(Ljava/lang/String;Ljava/lang/String;)Ljava/util/regex/Pattern;
+
+    move-result-object v3
+
+    sput-object v3, Lcom/perm/kate/links/VkLinkParser;->pattern_away:Ljava/util/regex/Pattern;
+
+    sget-object v3, Lcom/perm/kate/links/VkLinkParser;->pattern_string_dialog:Ljava/lang/String;
+
+    invoke-static {v3, v2}, Lcom/perm/kate/links/VkLinkParser;->compile(Ljava/lang/String;Ljava/lang/String;)Ljava/util/regex/Pattern;
+
+    move-result-object v3
+
+    sput-object v3, Lcom/perm/kate/links/VkLinkParser;->pattern_dialog:Ljava/util/regex/Pattern;
+
+    sget-object v3, Lcom/perm/kate/links/VkLinkParser;->pattern_string_domain:Ljava/lang/String;
+
+    invoke-static {v3, v2}, Lcom/perm/kate/links/VkLinkParser;->compile(Ljava/lang/String;Ljava/lang/String;)Ljava/util/regex/Pattern;
+
+    move-result-object v3
+
+    sput-object v3, Lcom/perm/kate/links/VkLinkParser;->pattern_domain:Ljava/util/regex/Pattern;
+
+    sget-object v3, Lcom/perm/kate/links/VkLinkParser;->pattern_string_group_id:Ljava/lang/String;
+
+    invoke-static {v3, v2}, Lcom/perm/kate/links/VkLinkParser;->compile(Ljava/lang/String;Ljava/lang/String;)Ljava/util/regex/Pattern;
+
+    move-result-object v3
+
+    sput-object v3, Lcom/perm/kate/links/VkLinkParser;->pattern_group_id:Ljava/util/regex/Pattern;
+
+    sget-object v3, Lcom/perm/kate/links/VkLinkParser;->pattern_string_market:Ljava/lang/String;
+
+    invoke-static {v3, v2}, Lcom/perm/kate/links/VkLinkParser;->compile(Ljava/lang/String;Ljava/lang/String;)Ljava/util/regex/Pattern;
+
+    move-result-object v3
+
+    sput-object v3, Lcom/perm/kate/links/VkLinkParser;->pattern_market:Ljava/util/regex/Pattern;
+
+    sget-object v3, Lcom/perm/kate/links/VkLinkParser;->pattern_string_market_album:Ljava/lang/String;
+
+    invoke-static {v3, v2}, Lcom/perm/kate/links/VkLinkParser;->compile(Ljava/lang/String;Ljava/lang/String;)Ljava/util/regex/Pattern;
+
+    move-result-object v3
+
+    sput-object v3, Lcom/perm/kate/links/VkLinkParser;->pattern_market_album:Ljava/util/regex/Pattern;
+
+    sget-object v3, Lcom/perm/kate/links/VkLinkParser;->pattern_string_market_item:Ljava/lang/String;
+
+    invoke-static {v3, v2}, Lcom/perm/kate/links/VkLinkParser;->compile(Ljava/lang/String;Ljava/lang/String;)Ljava/util/regex/Pattern;
+
+    move-result-object v3
+
+    sput-object v3, Lcom/perm/kate/links/VkLinkParser;->pattern_market_item:Ljava/util/regex/Pattern;
+
+    sget-object v3, Lcom/perm/kate/links/VkLinkParser;->pattern_string_page1:Ljava/lang/String;
+
+    invoke-static {v3, v2}, Lcom/perm/kate/links/VkLinkParser;->compile(Ljava/lang/String;Ljava/lang/String;)Ljava/util/regex/Pattern;
+
+    move-result-object v3
+
+    sput-object v3, Lcom/perm/kate/links/VkLinkParser;->pattern_page1:Ljava/util/regex/Pattern;
+
+    sget-object v3, Lcom/perm/kate/links/VkLinkParser;->pattern_string_page2:Ljava/lang/String;
+
+    invoke-static {v3, v2}, Lcom/perm/kate/links/VkLinkParser;->compile(Ljava/lang/String;Ljava/lang/String;)Ljava/util/regex/Pattern;
+
+    move-result-object v3
+
+    sput-object v3, Lcom/perm/kate/links/VkLinkParser;->pattern_page2:Ljava/util/regex/Pattern;
+
+    sget-object v3, Lcom/perm/kate/links/VkLinkParser;->pattern_string_photo:Ljava/lang/String;
+
+    invoke-static {v3, v2}, Lcom/perm/kate/links/VkLinkParser;->compile(Ljava/lang/String;Ljava/lang/String;)Ljava/util/regex/Pattern;
+
+    move-result-object v3
+
+    sput-object v3, Lcom/perm/kate/links/VkLinkParser;->pattern_photo:Ljava/util/regex/Pattern;
+
+    sget-object v3, Lcom/perm/kate/links/VkLinkParser;->pattern_string_photos:Ljava/lang/String;
+
+    invoke-static {v3, v2}, Lcom/perm/kate/links/VkLinkParser;->compile(Ljava/lang/String;Ljava/lang/String;)Ljava/util/regex/Pattern;
+
+    move-result-object v3
+
+    sput-object v3, Lcom/perm/kate/links/VkLinkParser;->pattern_photos:Ljava/util/regex/Pattern;
+
+    sget-object v3, Lcom/perm/kate/links/VkLinkParser;->pattern_string_playlist:Ljava/lang/String;
+
+    invoke-static {v3, v2}, Lcom/perm/kate/links/VkLinkParser;->compile(Ljava/lang/String;Ljava/lang/String;)Ljava/util/regex/Pattern;
+
+    move-result-object v3
+
+    sput-object v3, Lcom/perm/kate/links/VkLinkParser;->pattern_playlist:Ljava/util/regex/Pattern;
+
+    sget-object v3, Lcom/perm/kate/links/VkLinkParser;->pattern_string_poll:Ljava/lang/String;
+
+    invoke-static {v3, v2}, Lcom/perm/kate/links/VkLinkParser;->compile(Ljava/lang/String;Ljava/lang/String;)Ljava/util/regex/Pattern;
+
+    move-result-object v3
+
+    sput-object v3, Lcom/perm/kate/links/VkLinkParser;->pattern_poll:Ljava/util/regex/Pattern;
+
+    sget-object v3, Lcom/perm/kate/links/VkLinkParser;->pattern_string_profile_id:Ljava/lang/String;
+
+    invoke-static {v3, v2}, Lcom/perm/kate/links/VkLinkParser;->compile(Ljava/lang/String;Ljava/lang/String;)Ljava/util/regex/Pattern;
+
+    move-result-object v3
+
+    sput-object v3, Lcom/perm/kate/links/VkLinkParser;->pattern_profile_id:Ljava/util/regex/Pattern;
+
+    sget-object v3, Lcom/perm/kate/links/VkLinkParser;->pattern_string_story:Ljava/lang/String;
+
+    invoke-static {v3, v2}, Lcom/perm/kate/links/VkLinkParser;->compile(Ljava/lang/String;Ljava/lang/String;)Ljava/util/regex/Pattern;
+
+    move-result-object v3
+
+    sput-object v3, Lcom/perm/kate/links/VkLinkParser;->pattern_story:Ljava/util/regex/Pattern;
+
+    sget-object v3, Lcom/perm/kate/links/VkLinkParser;->pattern_string_topic:Ljava/lang/String;
+
+    invoke-static {v3, v2}, Lcom/perm/kate/links/VkLinkParser;->compile(Ljava/lang/String;Ljava/lang/String;)Ljava/util/regex/Pattern;
+
+    move-result-object v3
+
+    sput-object v3, Lcom/perm/kate/links/VkLinkParser;->pattern_topic:Ljava/util/regex/Pattern;
+
+    sget-object v3, Lcom/perm/kate/links/VkLinkParser;->pattern_string_video:Ljava/lang/String;
+
+    invoke-static {v3, v2}, Lcom/perm/kate/links/VkLinkParser;->compile(Ljava/lang/String;Ljava/lang/String;)Ljava/util/regex/Pattern;
+
+    move-result-object v3
+
+    sput-object v3, Lcom/perm/kate/links/VkLinkParser;->pattern_video:Ljava/util/regex/Pattern;
+
+    sget-object v3, Lcom/perm/kate/links/VkLinkParser;->pattern_string_video_album:Ljava/lang/String;
+
+    invoke-static {v3, v2}, Lcom/perm/kate/links/VkLinkParser;->compile(Ljava/lang/String;Ljava/lang/String;)Ljava/util/regex/Pattern;
+
+    move-result-object v3
+
+    sput-object v3, Lcom/perm/kate/links/VkLinkParser;->pattern_video_album:Ljava/util/regex/Pattern;
+
+    sget-object v3, Lcom/perm/kate/links/VkLinkParser;->pattern_string_wall:Ljava/lang/String;
+
+    invoke-static {v3, v2}, Lcom/perm/kate/links/VkLinkParser;->compile(Ljava/lang/String;Ljava/lang/String;)Ljava/util/regex/Pattern;
+
+    move-result-object v3
+
+    sput-object v3, Lcom/perm/kate/links/VkLinkParser;->pattern_wall:Ljava/util/regex/Pattern;
+
+    sget-object v3, Lcom/perm/kate/links/VkLinkParser;->pattern_string_wall_post:Ljava/lang/String;
+
+    invoke-static {v3, v2}, Lcom/perm/kate/links/VkLinkParser;->compile(Ljava/lang/String;Ljava/lang/String;)Ljava/util/regex/Pattern;
+
+    move-result-object v3
+
+    sput-object v3, Lcom/perm/kate/links/VkLinkParser;->pattern_wall_post:Ljava/util/regex/Pattern;
+
+    sput-object v0, Lcom/perm/kate/links/VkLinkParser;->built_from:Ljava/util/ArrayList;
+
+    :cond_done
+    const/4 v0, 0x1
+
+    return v0
+
+    :cond_none
+    const/4 v0, 0x0
+
+    return v0
+.end method
+
+.method private static hasPath(Ljava/lang/String;Ljava/lang/String;)Z
+    .locals 5
+
+    sget-object v0, Lcom/perm/kate/KApplication;->mirrors:Ljava/util/ArrayList;
+
+    if-eqz v0, :cond_no
+
+    invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
+
+    move-result v1
+
+    const/4 v2, 0x0
+
+    :goto_0
+    if-ge v2, v1, :cond_no
+
+    new-instance v3, Ljava/lang/StringBuilder;
+
+    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
+
+    invoke-virtual {v0, v2}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+
+    move-result-object v4
+
+    check-cast v4, Ljava/lang/String;
+
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v3, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v4
+
+    invoke-virtual {p0, v4}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
+
+    move-result v4
+
+    if-eqz v4, :cond_next
+
+    const/4 v0, 0x1
+
+    return v0
+
+    :cond_next
+    add-int/lit8 v2, v2, 0x1
+
+    goto :goto_0
+
+    :cond_no
+    const/4 v0, 0x0
+
+    return v0
+.end method
+
+.method private static endsWithPath(Ljava/lang/String;Ljava/lang/String;)Z
+    .locals 5
+
+    sget-object v0, Lcom/perm/kate/KApplication;->mirrors:Ljava/util/ArrayList;
+
+    if-eqz v0, :cond_no
+
+    invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
+
+    move-result v1
+
+    const/4 v2, 0x0
+
+    :goto_0
+    if-ge v2, v1, :cond_no
+
+    new-instance v3, Ljava/lang/StringBuilder;
+
+    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
+
+    invoke-virtual {v0, v2}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+
+    move-result-object v4
+
+    check-cast v4, Ljava/lang/String;
+
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v3, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v4
+
+    invoke-virtual {p0, v4}, Ljava/lang/String;->endsWith(Ljava/lang/String;)Z
+
+    move-result v4
+
+    if-eqz v4, :cond_next
+
+    const/4 v0, 0x1
+
+    return v0
+
+    :cond_next
+    add-int/lit8 v2, v2, 0x1
+
+    goto :goto_0
+
+    :cond_no
+    const/4 v0, 0x0
+
+    return v0
+.end method
+
+.method private static matchesPath(Ljava/lang/String;Ljava/lang/String;)Z
+    .locals 4
+
+    sget-object v0, Lcom/perm/kate/KApplication;->mirrors:Ljava/util/ArrayList;
+
+    if-eqz v0, :cond_no
+
+    invoke-virtual {v0}, Ljava/util/ArrayList;->isEmpty()Z
+
+    move-result v1
+
+    if-nez v1, :cond_no
+
+    invoke-static {v0}, Lcom/perm/kate/links/VkLinkParser;->buildDomains(Ljava/util/ArrayList;)Ljava/lang/String;
+
+    move-result-object v1
+
+    new-instance v2, Ljava/lang/StringBuilder;
+
+    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v3, ".*(?:"
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const-string v3, ")/"
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v2, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const-string v3, ".*"
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-static {v3, p0}, Ljava/util/regex/Pattern;->matches(Ljava/lang/String;Ljava/lang/CharSequence;)Z
+
+    move-result v3
+
+    return v3
+
+    :cond_no
+    const/4 v0, 0x0
+
+    return v0
+.end method
+
+.method public static qualify(Ljava/lang/String;)Ljava/lang/String;
+    .locals 4
+
+    if-nez p0, :cond_0
+
+    return-object p0
+
+    :cond_0
+    invoke-virtual {p0}, Ljava/lang/String;->toLowerCase()Ljava/lang/String;
+
+    move-result-object v0
+
+    const-string v1, ""
+
+    invoke-static {v0, v1}, Lcom/perm/kate/links/VkLinkParser;->hasPath(Ljava/lang/String;Ljava/lang/String;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_1
+
+    return-object p0
+
+    :cond_1
+    sget-object v0, Lcom/perm/kate/KApplication;->session:Lcom/perm/kate/session/Session;
+
+    if-eqz v0, :cond_2
+
+    invoke-virtual {v0}, Lcom/perm/kate/session/Session;->getDomain()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-static {v1}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
+
+    move-result v2
+
+    if-nez v2, :cond_2
+
+    new-instance v2, Ljava/lang/StringBuilder;
+
+    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
+
+    invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const-string v3, "/"
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v2, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v3
+
+    return-object v3
+
+    :cond_2
+    return-object p0
 .end method
 
 .method public static parse(Ljava/lang/String;)Lcom/perm/kate/links/VkLink;
     .locals 2
 
-    const-string v0, "vk.com"
+    invoke-static {}, Lcom/perm/kate/links/VkLinkParser;->ensurePatterns()Z
+
+    const-string v0, ""
 
     .line 13
-    invoke-virtual {p0, v0}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
+    invoke-static {p0, v0}, Lcom/perm/kate/links/VkLinkParser;->hasPath(Ljava/lang/String;Ljava/lang/String;)Z
 
     move-result v0
 
@@ -432,10 +779,10 @@
     return-object v1
 
     :cond_0
-    const-string v0, "vk.com/images"
+    const-string v0, "/images"
 
     .line 17
-    invoke-virtual {p0, v0}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
+    invoke-static {p0, v0}, Lcom/perm/kate/links/VkLinkParser;->hasPath(Ljava/lang/String;Ljava/lang/String;)Z
 
     move-result v0
 
@@ -444,10 +791,10 @@
     return-object v1
 
     :cond_1
-    const-string v0, "vk.com/search"
+    const-string v0, "/search"
 
     .line 21
-    invoke-virtual {p0, v0}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
+    invoke-static {p0, v0}, Lcom/perm/kate/links/VkLinkParser;->hasPath(Ljava/lang/String;Ljava/lang/String;)Z
 
     move-result v0
 
@@ -456,10 +803,10 @@
     return-object v1
 
     :cond_2
-    const-string v0, "vk.com/feed"
+    const-string v0, "/feed"
 
     .line 25
-    invoke-virtual {p0, v0}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
+    invoke-static {p0, v0}, Lcom/perm/kate/links/VkLinkParser;->hasPath(Ljava/lang/String;Ljava/lang/String;)Z
 
     move-result v0
 
@@ -492,10 +839,10 @@
     return-object v1
 
     :cond_3
-    const-string v0, "vk.com/audio"
+    const-string v0, "/audio"
 
     .line 27
-    invoke-virtual {p0, v0}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
+    invoke-static {p0, v0}, Lcom/perm/kate/links/VkLinkParser;->hasPath(Ljava/lang/String;Ljava/lang/String;)Z
 
     move-result v0
 
@@ -512,10 +859,10 @@
     return-object v1
 
     :cond_4
-    const-string v0, "vk.com/friends"
+    const-string v0, "/friends"
 
     .line 29
-    invoke-virtual {p0, v0}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
+    invoke-static {p0, v0}, Lcom/perm/kate/links/VkLinkParser;->hasPath(Ljava/lang/String;Ljava/lang/String;)Z
 
     move-result v0
 
@@ -524,10 +871,10 @@
     return-object v1
 
     :cond_5
-    const-string v0, "vk.com/blog/"
+    const-string v0, "/blog/"
 
     .line 31
-    invoke-virtual {p0, v0}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
+    invoke-static {p0, v0}, Lcom/perm/kate/links/VkLinkParser;->hasPath(Ljava/lang/String;Ljava/lang/String;)Z
 
     move-result v0
 
@@ -536,10 +883,10 @@
     return-object v1
 
     :cond_6
-    const-string v0, "vk.com/settings"
+    const-string v0, "/settings"
 
     .line 33
-    invoke-virtual {p0, v0}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
+    invoke-static {p0, v0}, Lcom/perm/kate/links/VkLinkParser;->hasPath(Ljava/lang/String;Ljava/lang/String;)Z
 
     move-result v0
 
@@ -548,10 +895,10 @@
     return-object v1
 
     :cond_7
-    const-string v0, "vk.com/artist/"
+    const-string v0, "/artist/"
 
     .line 35
-    invoke-virtual {p0, v0}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
+    invoke-static {p0, v0}, Lcom/perm/kate/links/VkLinkParser;->hasPath(Ljava/lang/String;Ljava/lang/String;)Z
 
     move-result v0
 
@@ -560,10 +907,10 @@
     return-object v1
 
     :cond_8
-    const-string v0, ".*vk.com/app\\d.*"
+    const-string v0, "app\\d.*"
 
     .line 40
-    invoke-static {v0, p0}, Ljava/util/regex/Pattern;->matches(Ljava/lang/String;Ljava/lang/CharSequence;)Z
+    invoke-static {p0, v0}, Lcom/perm/kate/links/VkLinkParser;->matchesPath(Ljava/lang/String;Ljava/lang/String;)Z
 
     move-result v0
 
@@ -572,10 +919,10 @@
     return-object v1
 
     :cond_9
-    const-string v0, ".*vk.com/doc-?\\d.*"
+    const-string v0, "doc-?\\d.*"
 
     .line 46
-    invoke-static {v0, p0}, Ljava/util/regex/Pattern;->matches(Ljava/lang/String;Ljava/lang/CharSequence;)Z
+    invoke-static {p0, v0}, Lcom/perm/kate/links/VkLinkParser;->matchesPath(Ljava/lang/String;Ljava/lang/String;)Z
 
     move-result v0
 
@@ -584,10 +931,10 @@
     return-object v1
 
     :cond_a
-    const-string v0, "vk.com/support"
+    const-string v0, "/support"
 
     .line 48
-    invoke-virtual {p0, v0}, Ljava/lang/String;->endsWith(Ljava/lang/String;)Z
+    invoke-static {p0, v0}, Lcom/perm/kate/links/VkLinkParser;->endsWithPath(Ljava/lang/String;Ljava/lang/String;)Z
 
     move-result v0
 
@@ -596,18 +943,18 @@
     return-object v1
 
     :cond_b
-    const-string v0, "vk.com/restore"
+    const-string v0, "/restore"
 
     .line 50
-    invoke-virtual {p0, v0}, Ljava/lang/String;->endsWith(Ljava/lang/String;)Z
+    invoke-static {p0, v0}, Lcom/perm/kate/links/VkLinkParser;->endsWithPath(Ljava/lang/String;Ljava/lang/String;)Z
 
     move-result v0
 
     if-nez v0, :cond_34
 
-    const-string v0, "vk.com/restore?"
+    const-string v0, "/restore?"
 
-    invoke-virtual {p0, v0}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
+    invoke-static {p0, v0}, Lcom/perm/kate/links/VkLinkParser;->hasPath(Ljava/lang/String;Ljava/lang/String;)Z
 
     move-result v0
 
@@ -616,10 +963,10 @@
     goto/16 :goto_1
 
     :cond_c
-    const-string v0, "vk.com/page"
+    const-string v0, "/page"
 
     .line 52
-    invoke-virtual {p0, v0}, Ljava/lang/String;->endsWith(Ljava/lang/String;)Z
+    invoke-static {p0, v0}, Lcom/perm/kate/links/VkLinkParser;->endsWithPath(Ljava/lang/String;Ljava/lang/String;)Z
 
     move-result v0
 
@@ -628,10 +975,10 @@
     return-object v1
 
     :cond_d
-    const-string v0, "vk.com/board"
+    const-string v0, "/board"
 
     .line 56
-    invoke-virtual {p0, v0}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
+    invoke-static {p0, v0}, Lcom/perm/kate/links/VkLinkParser;->hasPath(Ljava/lang/String;Ljava/lang/String;)Z
 
     move-result v0
 
@@ -640,10 +987,10 @@
     return-object v1
 
     :cond_e
-    const-string v0, "vk.com/login"
+    const-string v0, "/login"
 
     .line 58
-    invoke-virtual {p0, v0}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
+    invoke-static {p0, v0}, Lcom/perm/kate/links/VkLinkParser;->hasPath(Ljava/lang/String;Ljava/lang/String;)Z
 
     move-result v0
 
@@ -652,10 +999,10 @@
     return-object v1
 
     :cond_f
-    const-string v0, "vk.com/fave"
+    const-string v0, "/fave"
 
     .line 61
-    invoke-virtual {p0, v0}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
+    invoke-static {p0, v0}, Lcom/perm/kate/links/VkLinkParser;->hasPath(Ljava/lang/String;Ljava/lang/String;)Z
 
     move-result v0
 
@@ -664,18 +1011,18 @@
     return-object v1
 
     :cond_10
-    const-string v0, "vk.com/bugs?"
+    const-string v0, "/bugs?"
 
     .line 63
-    invoke-virtual {p0, v0}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
+    invoke-static {p0, v0}, Lcom/perm/kate/links/VkLinkParser;->hasPath(Ljava/lang/String;Ljava/lang/String;)Z
 
     move-result v0
 
     if-nez v0, :cond_34
 
-    const-string v0, "vk.com/bugs"
+    const-string v0, "/bugs"
 
-    invoke-virtual {p0, v0}, Ljava/lang/String;->endsWith(Ljava/lang/String;)Z
+    invoke-static {p0, v0}, Lcom/perm/kate/links/VkLinkParser;->endsWithPath(Ljava/lang/String;Ljava/lang/String;)Z
 
     move-result v0
 
@@ -684,18 +1031,18 @@
     goto/16 :goto_1
 
     :cond_11
-    const-string v0, "vk.com/bugtracker?"
+    const-string v0, "/bugtracker?"
 
     .line 65
-    invoke-virtual {p0, v0}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
+    invoke-static {p0, v0}, Lcom/perm/kate/links/VkLinkParser;->hasPath(Ljava/lang/String;Ljava/lang/String;)Z
 
     move-result v0
 
     if-nez v0, :cond_34
 
-    const-string v0, "vk.com/bugtracker"
+    const-string v0, "/bugtracker"
 
-    invoke-virtual {p0, v0}, Ljava/lang/String;->endsWith(Ljava/lang/String;)Z
+    invoke-static {p0, v0}, Lcom/perm/kate/links/VkLinkParser;->endsWithPath(Ljava/lang/String;Ljava/lang/String;)Z
 
     move-result v0
 
@@ -704,10 +1051,10 @@
     goto/16 :goto_1
 
     :cond_12
-    const-string v0, ".*vk.com/note\\d.*"
+    const-string v0, "note\\d.*"
 
     .line 69
-    invoke-static {v0, p0}, Ljava/util/regex/Pattern;->matches(Ljava/lang/String;Ljava/lang/CharSequence;)Z
+    invoke-static {p0, v0}, Lcom/perm/kate/links/VkLinkParser;->matchesPath(Ljava/lang/String;Ljava/lang/String;)Z
 
     move-result v0
 
@@ -716,10 +1063,10 @@
     return-object v1
 
     :cond_13
-    const-string v0, "vk.com/dev/"
+    const-string v0, "/dev/"
 
     .line 72
-    invoke-virtual {p0, v0}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
+    invoke-static {p0, v0}, Lcom/perm/kate/links/VkLinkParser;->hasPath(Ljava/lang/String;Ljava/lang/String;)Z
 
     move-result v0
 
@@ -748,18 +1095,18 @@
     return-object v1
 
     :cond_15
-    const-string v0, "vk.com/stickers"
+    const-string v0, "/stickers"
 
     .line 81
-    invoke-virtual {p0, v0}, Ljava/lang/String;->endsWith(Ljava/lang/String;)Z
+    invoke-static {p0, v0}, Lcom/perm/kate/links/VkLinkParser;->endsWithPath(Ljava/lang/String;Ljava/lang/String;)Z
 
     move-result v0
 
     if-nez v0, :cond_34
 
-    const-string v0, "vk.com/stickers?tab="
+    const-string v0, "/stickers?tab="
 
-    invoke-virtual {p0, v0}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
+    invoke-static {p0, v0}, Lcom/perm/kate/links/VkLinkParser;->hasPath(Ljava/lang/String;Ljava/lang/String;)Z
 
     move-result v0
 
@@ -768,10 +1115,10 @@
     goto/16 :goto_1
 
     :cond_16
-    const-string v0, "vk.com/video_ext.php"
+    const-string v0, "/video_ext.php"
 
     .line 84
-    invoke-virtual {p0, v0}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
+    invoke-static {p0, v0}, Lcom/perm/kate/links/VkLinkParser;->hasPath(Ljava/lang/String;Ljava/lang/String;)Z
 
     move-result v0
 
@@ -780,10 +1127,10 @@
     return-object v1
 
     :cond_17
-    const-string v0, "vk.com/mail"
+    const-string v0, "/mail"
 
     .line 89
-    invoke-virtual {p0, v0}, Ljava/lang/String;->endsWith(Ljava/lang/String;)Z
+    invoke-static {p0, v0}, Lcom/perm/kate/links/VkLinkParser;->endsWithPath(Ljava/lang/String;Ljava/lang/String;)Z
 
     move-result v0
 
@@ -799,18 +1146,18 @@
     return-object p0
 
     :cond_18
-    const-string v0, "vk.com/im"
+    const-string v0, "/im"
 
     .line 91
-    invoke-virtual {p0, v0}, Ljava/lang/String;->endsWith(Ljava/lang/String;)Z
+    invoke-static {p0, v0}, Lcom/perm/kate/links/VkLinkParser;->endsWithPath(Ljava/lang/String;Ljava/lang/String;)Z
 
     move-result v0
 
     if-nez v0, :cond_33
 
-    const-string v0, "vkontakte.ru/im"
+    const-string v0, "/im"
 
-    invoke-virtual {p0, v0}, Ljava/lang/String;->endsWith(Ljava/lang/String;)Z
+    invoke-static {p0, v0}, Lcom/perm/kate/links/VkLinkParser;->endsWithPath(Ljava/lang/String;Ljava/lang/String;)Z
 
     move-result v0
 
