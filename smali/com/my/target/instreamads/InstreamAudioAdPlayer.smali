@@ -1,17 +1,6 @@
 .class public interface abstract Lcom/my/target/instreamads/InstreamAudioAdPlayer;
 .super Ljava/lang/Object;
-.source "InstreamAudioAdPlayer.java"
 
-
-# annotations
-.annotation system Ldalvik/annotation/MemberClasses;
-    value = {
-        Lcom/my/target/instreamads/InstreamAudioAdPlayer$AdPlayerListener;
-    }
-.end annotation
-
-
-# virtual methods
 .method public abstract getAdAudioDuration()F
 .end method
 

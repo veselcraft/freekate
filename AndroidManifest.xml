@@ -328,7 +328,6 @@
             </intent-filter>
         </service>
         <uses-library android:name="org.apache.http.legacy" android:required="false"/>
-        <activity android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize" android:name="com.my.target.common.MyTargetActivity"/>
         <service android:exported="false" android:name="com.google.firebase.components.ComponentDiscoveryService">
             <meta-data android:name="com.google.firebase.components:com.google.firebase.iid.Registrar" android:value="com.google.firebase.components.ComponentRegistrar"/>
         </service>
