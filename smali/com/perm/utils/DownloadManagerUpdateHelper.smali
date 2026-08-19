@@ -74,7 +74,7 @@
     .line 86
     sget-object p1, Lcom/perm/kate/KApplication;->current:Landroid/app/Application;
 
-    const-string v1, "com.perm.kate.provider"
+    const-string v1, "cc.veselcraft.freekate.provider"
 
     invoke-static {p1, v1, v0}, Landroidx/core/content/FileProvider;->getUriForFile(Landroid/content/Context;Ljava/lang/String;Ljava/io/File;)Landroid/net/Uri;
 

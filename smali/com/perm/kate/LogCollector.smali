@@ -888,7 +888,7 @@
     .line 186
     iget-object v1, p0, Lcom/perm/kate/LogCollector;->context:Landroid/content/Context;
 
-    const-string v4, "com.perm.kate.provider"
+    const-string v4, "cc.veselcraft.freekate.provider"
 
     invoke-static {v1, v4, p1}, Landroidx/core/content/FileProvider;->getUriForFile(Landroid/content/Context;Ljava/lang/String;Ljava/io/File;)Landroid/net/Uri;
 

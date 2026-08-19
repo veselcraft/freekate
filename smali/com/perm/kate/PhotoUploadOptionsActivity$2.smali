@@ -81,7 +81,7 @@
     .line 122
     iget-object v1, p0, Lcom/perm/kate/PhotoUploadOptionsActivity$2;->this$0:Lcom/perm/kate/PhotoUploadOptionsActivity;
 
-    const-string v2, "com.perm.kate.provider"
+    const-string v2, "cc.veselcraft.freekate.provider"
 
     new-instance v3, Ljava/io/File;
 

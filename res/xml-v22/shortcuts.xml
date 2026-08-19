@@ -2,15 +2,15 @@
 <shortcuts
   xmlns:android="http://schemas.android.com/apk/res/android">
     <shortcut android:icon="@drawable/ic_audio_v" android:enabled="true" android:shortcutId="quickStart1" android:shortcutShortLabel="@string/title_audio_info" android:shortcutLongLabel="@string/title_audio_info">
-        <intent android:targetPackage="com.perm.kate" android:action="com.your.app.QUICKSTART" android:targetClass="com.perm.kate.AudioActivity2" />
+        <intent android:targetPackage="cc.veselcraft.freekate" android:action="com.your.app.QUICKSTART" android:targetClass="com.perm.kate.AudioActivity2" />
     </shortcut>
     <shortcut android:icon="@drawable/ic_messages_v" android:enabled="true" android:shortcutId="quickStart2" android:shortcutShortLabel="@string/label_menu_messages" android:shortcutLongLabel="@string/label_menu_messages">
-        <intent android:targetPackage="com.perm.kate" android:action="com.your.app.QUICKSTART" android:targetClass="com.perm.kate.DialogsActivity" />
+        <intent android:targetPackage="cc.veselcraft.freekate" android:action="com.your.app.QUICKSTART" android:targetClass="com.perm.kate.DialogsActivity" />
     </shortcut>
     <shortcut android:icon="@drawable/ic_friends_v" android:enabled="true" android:shortcutId="quickStart3" android:shortcutShortLabel="@string/label_menu_friends" android:shortcutLongLabel="@string/label_menu_friends">
-        <intent android:targetPackage="com.perm.kate" android:action="com.your.app.QUICKSTART" android:targetClass="com.perm.kate.FriendsActivity2" />
+        <intent android:targetPackage="cc.veselcraft.freekate" android:action="com.your.app.QUICKSTART" android:targetClass="com.perm.kate.FriendsActivity2" />
     </shortcut>
     <shortcut android:icon="@drawable/ic_groups_v" android:enabled="true" android:shortcutId="quickStart4" android:shortcutShortLabel="@string/groups" android:shortcutLongLabel="@string/groups">
-        <intent android:targetPackage="com.perm.kate" android:action="com.your.app.QUICKSTART" android:targetClass="com.perm.kate.GroupsActivity2" />
+        <intent android:targetPackage="cc.veselcraft.freekate" android:action="com.your.app.QUICKSTART" android:targetClass="com.perm.kate.GroupsActivity2" />
     </shortcut>
 </shortcuts>

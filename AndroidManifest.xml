@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns:android="http://schemas.android.com/apk/res/android" android:compileSdkVersion="30" android:compileSdkVersionCodename="11" android:installLocation="auto" package="com.perm.kate" platformBuildVersionCode="30" platformBuildVersionName="11">
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" android:compileSdkVersion="30" android:compileSdkVersionCodename="11" android:installLocation="auto" package="cc.veselcraft.freekate" platformBuildVersionCode="30" platformBuildVersionName="11">
     <uses-permission android:name="android.permission.INTERNET"/>
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
     <uses-permission android:name="android.permission.VIBRATE"/>
@@ -65,7 +65,7 @@
             <intent-filter>
                 <action android:name="android.intent.action.VIEW"/>
                 <category android:name="android.intent.category.DEFAULT"/>
-                <data android:mimeType="vnd.android.cursor.item/vnd.com.perm.kate.profile"/>
+                <data android:mimeType="vnd.android.cursor.item/vnd.cc.veselcraft.freekate.profile"/>
             </intent-filter>
         </activity>
         <activity android:configChanges="keyboardHidden|orientation|screenSize" android:exported="true" android:name="com.perm.kate.FriendsActivity2" android:windowSoftInputMode="stateHidden"/>
@@ -318,7 +318,7 @@
         <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.perm.kate.ProxyActivity" android:windowSoftInputMode="stateHidden"/>
         <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.perm.kate.PhotoChooserPreviewActivity"/>
         <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.perm.kate.PodcastsActivity" android:windowSoftInputMode="stateHidden"/>
-        <provider android:authorities="com.perm.kate.provider" android:exported="false" android:grantUriPermissions="true" android:name="androidx.core.content.FileProvider">
+        <provider android:authorities="cc.veselcraft.freekate.provider" android:exported="false" android:grantUriPermissions="true" android:name="androidx.core.content.FileProvider">
             <meta-data android:name="android.support.FILE_PROVIDER_PATHS" android:resource="@xml/provider_paths"/>
         </provider>
         <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.perm.kate.ChatInviteActivity"/>
@@ -336,7 +336,7 @@
                 <action android:name="com.google.android.c2dm.intent.RECEIVE"/>
             </intent-filter>
         </receiver>
-        <provider android:authorities="com.perm.kate.firebaseinitprovider" android:exported="false" android:initOrder="100" android:name="com.google.firebase.provider.FirebaseInitProvider"/>
+        <provider android:authorities="cc.veselcraft.freekate.firebaseinitprovider" android:exported="false" android:initOrder="100" android:name="com.google.firebase.provider.FirebaseInitProvider"/>
         <activity android:exported="false" android:name="com.google.android.gms.common.api.GoogleApiActivity" android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
     </application>
 </manifest>

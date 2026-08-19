@@ -378,7 +378,7 @@
 
     if-lt v3, v4, :cond_0
 
-    const-string v2, "com.perm.kate.provider"
+    const-string v2, "cc.veselcraft.freekate.provider"
 
     .line 1285
     invoke-static {p0, v2, v1}, Landroidx/core/content/FileProvider;->getUriForFile(Landroid/content/Context;Ljava/lang/String;Ljava/io/File;)Landroid/net/Uri;
@@ -3938,7 +3938,7 @@
 
     if-lt v2, v3, :cond_0
 
-    const-string v1, "com.perm.kate.provider"
+    const-string v1, "cc.veselcraft.freekate.provider"
 
     .line 1314
     invoke-static {p0, v1, v0}, Landroidx/core/content/FileProvider;->getUriForFile(Landroid/content/Context;Ljava/lang/String;Ljava/io/File;)Landroid/net/Uri;

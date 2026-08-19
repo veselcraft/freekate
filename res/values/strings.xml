@@ -43,7 +43,7 @@
     <string name="access_denied">Access denied</string>
     <string name="account_deactivated">Your account is deactivated</string>
     <string name="account_deactivated_message">Your account is deactivated. To activate it back please login to vk.com web site.</string>
-    <string name="account_name">com.perm.kate.account</string>
+    <string name="account_name">cc.veselcraft.freekate.account</string>
     <string name="account_settings">Account Settings</string>
     <string name="accounts">Accounts</string>
     <string name="active">Active</string>
@@ -959,7 +959,7 @@ Please keep in mind this directory will be removed on application uninstall."</s
     <string name="our_group">Our group</string>
     <string name="our_group_summary">You can discuss all about Kate here</string>
     <string name="outgoing_friend_requests">Outgoing requests</string>
-    <string name="package_name">com.perm.kate</string>
+    <string name="package_name">cc.veselcraft.freekate</string>
     <string name="page">Page</string>
     <string name="paint_confirm">Are you sure you want to close the Editor? Graffiti will be discarded.</string>
     <string name="parents">Parents:</string>

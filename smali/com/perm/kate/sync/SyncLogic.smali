@@ -150,7 +150,7 @@
 
     const-string v2, "account_type"
 
-    const-string v3, "com.perm.kate.account"
+    const-string v3, "cc.veselcraft.freekate.account"
 
     .line 257
     invoke-virtual {v1, v2, v3}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/String;)V
@@ -218,7 +218,7 @@
 
     const-string p2, "mimetype"
 
-    const-string p3, "vnd.android.cursor.item/vnd.com.perm.kate.profile"
+    const-string p3, "vnd.android.cursor.item/vnd.cc.veselcraft.freekate.profile"
 
     .line 267
     invoke-virtual {p0, p2, p3}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/String;)V
@@ -708,7 +708,7 @@
     :cond_0
     new-instance v1, Landroid/accounts/Account;
 
-    const-string v5, "com.perm.kate.account"
+    const-string v5, "cc.veselcraft.freekate.account"
 
     invoke-direct {v1, p2, v5}, Landroid/accounts/Account;-><init>(Ljava/lang/String;Ljava/lang/String;)V
 
@@ -919,7 +919,7 @@
 .method private static findAccount(Landroid/accounts/AccountManager;Ljava/lang/String;)Landroid/accounts/Account;
     .locals 5
 
-    const-string v0, "com.perm.kate.account"
+    const-string v0, "cc.veselcraft.freekate.account"
 
     .line 95
     invoke-virtual {p0, v0}, Landroid/accounts/AccountManager;->getAccountsByType(Ljava/lang/String;)[Landroid/accounts/Account;
