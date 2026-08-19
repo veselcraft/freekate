@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content" android:baselineAligned="false"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:gravity="center" android:orientation="vertical" android:id="@id/action_all" android:background="?attr_tab_bg" android:paddingLeft="3.0dip" android:paddingRight="3.0dip" android:layout_width="fill_parent" android:layout_height="@dimen/tab_height" android:layout_weight="1.0">
+        <TextView android:textSize="13.0sp" android:textColor="?attr_tab_text_color" android:ellipsize="end" android:id="@id/replies_text" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/replies" android:singleLine="true" android:textAllCaps="true" android:fontFamily="sans-serif-medium" />
+    </LinearLayout>
+    <LinearLayout android:gravity="center" android:orientation="vertical" android:id="@id/action_online" android:background="?attr_tab_bg" android:paddingLeft="3.0dip" android:paddingRight="3.0dip" android:layout_width="fill_parent" android:layout_height="@dimen/tab_height" android:layout_weight="1.0">
+        <TextView android:textSize="13.0sp" android:textColor="?attr_tab_text_color" android:ellipsize="end" android:id="@id/comments_text" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/label_menu_comments" android:singleLine="true" android:textAllCaps="true" android:fontFamily="sans-serif-medium" />
+    </LinearLayout>
+</LinearLayout>

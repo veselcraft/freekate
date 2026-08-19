@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <View android:background="?attr_footer_divider_color" android:layout_width="fill_parent" android:layout_height="1.0px" />
+    <LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="@dimen/footer_layout_height">
+        <Button android:textColor="?attr_footer_text_color" android:id="@id/btn_cancel" android:background="?attr_holo_button_bg" android:layout_width="0.0dip" android:layout_height="@dimen/footer_layout_height" android:text="@string/label_cancel" android:layout_weight="1.0" />
+        <View android:background="?attr_footer_divider_color" android:layout_width="1.0px" android:layout_height="fill_parent" android:layout_marginTop="0.0dip" android:layout_marginBottom="0.0dip" />
+        <Button android:textColor="?attr_footer_text_color" android:id="@id/btn_clear" android:background="?attr_holo_button_bg" android:layout_width="0.0dip" android:layout_height="@dimen/footer_layout_height" android:text="@string/label_reset" android:layout_weight="1.0" />
+        <View android:background="?attr_footer_divider_color" android:layout_width="1.0px" android:layout_height="fill_parent" android:layout_marginTop="0.0dip" android:layout_marginBottom="0.0dip" />
+        <Button android:textColor="?attr_footer_text_color" android:id="@id/btn_search" android:background="?attr_holo_button_bg" android:layout_width="0.0dip" android:layout_height="@dimen/footer_layout_height" android:text="@string/label_menu_search" android:layout_weight="1.0" />
+    </LinearLayout>
+</LinearLayout>

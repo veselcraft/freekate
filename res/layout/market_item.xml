@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <ScrollView android:layout_width="fill_parent" android:layout_height="0.0dip" android:layout_weight="1.0">
+        <LinearLayout android:orientation="vertical" android:id="@id/lv_wall_message_list" android:layout_width="fill_parent" android:layout_height="wrap_content">
+            <ImageView android:id="@id/photo" android:layout_width="fill_parent" android:layout_height="265.0dip" android:scaleType="fitCenter" android:contentDescription="@string/label_photo" />
+            <HorizontalScrollView android:id="@id/photos_scroll" android:layout_width="fill_parent" android:layout_height="80.0dip" android:layout_marginLeft="4.0dip" android:layout_marginTop="4.0dip" android:layout_marginRight="4.0dip">
+                <LinearLayout android:orientation="horizontal" android:id="@id/photos" android:layout_width="wrap_content" android:layout_height="80.0dip" />
+            </HorizontalScrollView>
+            <TextView android:textSize="@dimen/text_size_large" android:textColor="?attr_item_text_color" android:id="@id/title" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="16.0dip" android:layout_marginTop="8.0dip" android:layout_marginRight="16.0dip" android:layout_marginBottom="8.0dip" />
+            <TextView android:textSize="@dimen/text_size_large" android:textColor="?attr_item_ago_color" android:id="@id/price" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="16.0dip" android:layout_marginRight="16.0dip" android:layout_marginBottom="8.0dip" />
+            <TextView android:textSize="@dimen/text_size_small" android:textColor="?attr_item_text_color" android:id="@id/description" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="16.0dip" android:layout_marginRight="16.0dip" android:layout_marginBottom="8.0dip" />
+            <FrameLayout android:id="@id/message_layout" android:background="?attr_button_bg" android:visibility="gone" android:layout_width="300.0dip" android:layout_height="40.0dip" android:layout_marginLeft="16.0dip" android:layout_marginRight="16.0dip">
+                <Button android:textSize="@dimen/text_size_small" android:textColor="@color/cs_button_text_white" android:ellipsize="end" android:id="@id/message" android:background="@drawable/ds_button_bg" android:paddingLeft="2.0dip" android:paddingRight="2.0dip" android:paddingBottom="2.0dip" android:layout_width="fill_parent" android:layout_height="fill_parent" android:text="@string/contact_seller" android:singleLine="true" />
+            </FrameLayout>
+            <TextView android:textSize="@dimen/text_size_normal" android:textColor="?attr_item_link_color" android:id="@id/wiki" android:paddingTop="8.0dip" android:paddingBottom="8.0dip" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="16.0dip" android:layout_marginRight="16.0dip" />
+        </LinearLayout>
+    </ScrollView>
+    <ImageView android:id="@id/iv_bottom_buttons_divider" android:layout_width="fill_parent" android:layout_height="1.0px" android:src="?attr_compose_footer_hor_divider" android:scaleType="fitXY" />
+    <LinearLayout android:orientation="horizontal" android:id="@id/ll_footer_placeholder_transparent" android:layout_width="fill_parent" android:layout_height="48.0dip" android:baselineAligned="false">
+        <FrameLayout android:layout_width="fill_parent" android:layout_height="48.0dip" android:layout_weight="1.0">
+            <ImageButton android:id="@id/btn_likes" android:background="?attr_holo_button_bg" android:layout_width="fill_parent" android:layout_height="48.0dip" android:contentDescription="@string/likes" />
+            <LinearLayout android:layout_gravity="center" android:orientation="horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content">
+                <ImageView android:id="@id/iv_liked_marker" android:layout_width="wrap_content" android:layout_height="48.0dip" android:layout_marginLeft="2.0dip" android:layout_marginRight="0.0dip" android:src="@drawable/footer_likes_icon2" android:scaleType="centerInside" />
+                <TextView android:textSize="18.0sp" android:textColor="@color/solid_like_count_color" android:layout_gravity="center_vertical" android:id="@id/tv_likes_count" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="0.0dip" android:layout_marginRight="2.0dip" android:text="0" />
+            </LinearLayout>
+        </FrameLayout>
+        <FrameLayout android:layout_width="fill_parent" android:layout_height="48.0dip" android:layout_weight="1.0">
+            <ImageButton android:id="@id/btn_comments" android:background="?attr_holo_button_bg" android:layout_width="fill_parent" android:layout_height="48.0dip" android:contentDescription="@string/label_menu_comments" />
+            <LinearLayout android:layout_gravity="center" android:orientation="horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content">
+                <ImageView android:layout_width="wrap_content" android:layout_height="48.0dip" android:layout_marginLeft="2.0dip" android:layout_marginRight="0.0dip" android:src="@drawable/footer_comments_icon2" android:scaleType="centerInside" />
+            </LinearLayout>
+        </FrameLayout>
+    </LinearLayout>
+</LinearLayout>

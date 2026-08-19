@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="KateTransparentBase" parent="@style/Theme.AppCompat.NoActionBar">
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:colorBackgroundCacheHint">@null</item>
+        <item name="android:windowActionBar">false</item>
+        <item name="android:windowTranslucentStatus">false</item>
+        <item name="attr_color_about_dialog">@color/text_color_about_dialog_holo</item>
+        <item name="attr_edittext_color">@color/solid_foreground_dark</item>
+        <item name="attr_left_vertical_shadow">@drawable/d_empty</item>
+        <item name="attr_menu_item">@color/solid_item_menu_holo</item>
+        <item name="colorAccent">#ffffffff</item>
+        <item name="colorPrimaryDark">@color/indigo_dark</item>
+    </style>
+</resources>

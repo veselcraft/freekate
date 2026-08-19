@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:background="?activity_background" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <LinearLayout android:orientation="horizontal" android:background="?attr_tab_bg_smiles" android:layout_width="fill_parent" android:layout_height="38.0dip">
+        <ImageButton android:id="@id/im_my_stickers" android:background="?attr_holo_button_bg" android:visibility="gone" android:layout_width="48.0dip" android:layout_height="38.0dip" android:src="@drawable/ic_stikers_shop" android:scaleType="centerInside" android:contentDescription="@string/title_my_stickers" />
+        <com.google.android.material.tabs.TabLayout android:id="@id/titlePageIndicator" android:layout_width="0.0dip" android:layout_height="38.0dip" android:layout_weight="1.0" app:tabMode="scrollable" />
+        <ImageButton android:id="@id/im_backspace" android:background="?attr_holo_button_bg" android:layout_width="48.0dip" android:layout_height="38.0dip" android:src="@drawable/ic_backspace" android:scaleType="centerInside" android:contentDescription="@string/delete" />
+    </LinearLayout>
+    <androidx.viewpager.widget.ViewPager android:id="@id/emoticons_pager" android:layout_width="fill_parent" android:layout_height="0.0dip" android:layout_weight="1.0" />
+</LinearLayout>

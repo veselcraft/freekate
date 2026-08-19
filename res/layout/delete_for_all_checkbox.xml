@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:paddingLeft="@dimen/label_marginLeft" android:paddingTop="@dimen/label_marginLeft" android:paddingRight="@dimen/label_marginLeft" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <CheckBox android:textSize="16.0sp" android:id="@id/cb_delete_for_all" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginBottom="10.0dip" android:text="@string/delete_for_all" />
+    <CheckBox android:textSize="16.0sp" android:id="@id/report_spam" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/label_ban_reason1" />
+</LinearLayout>

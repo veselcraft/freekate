@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="horizontal" android:background="?attr_item_bg" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <ImageView android:id="@id/img_comment_photo" android:layout_width="60.0dip" android:layout_height="60.0dip" android:layout_margin="5.0dip" android:scaleType="centerCrop" android:contentDescription="@string/label_photo" />
+    <LinearLayout android:orientation="vertical" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_marginTop="5.0dip" android:layout_marginRight="5.0dip" android:layout_marginBottom="5.0dip" android:layout_weight="1.0">
+        <com.perm.kate.ScaleTextView android:textSize="@dimen/text_size_normal" android:textColor="?attr_cs_item_title" android:id="@id/tv_comment_name" android:layout_width="fill_parent" android:layout_height="wrap_content" />
+        <com.perm.kate.ScaleTextView android:textSize="@dimen/text_size_small" android:textColor="?attr_item_text_color" android:textColorLink="?attr_item_link_color" android:linksClickable="false" android:id="@id/tv_comment_message" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+        <com.perm.kate.ScaleTextView android:textSize="@dimen/text_size_small" android:textColor="@color/solid_item_ago" android:id="@id/reply" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content" />
+        <include android:layout_width="wrap_content" android:layout_height="wrap_content" layout="@layout/attachment_links" />
+        <LinearLayout android:orientation="horizontal" android:id="@id/likes_view" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content">
+            <ImageView android:layout_gravity="center_vertical" android:id="@id/likes_heart" android:layout_width="16.0dip" android:layout_height="16.0dip" android:src="@drawable/heart_icon" android:scaleType="centerInside" />
+            <com.perm.kate.ScaleTextView android:textSize="@dimen/text_size_small" android:textColor="@color/solid_like_count_color" android:layout_gravity="center_vertical" android:id="@id/tv_posts_news_like_count" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="5.0dip" />
+        </LinearLayout>
+        <com.perm.kate.ScaleTextView android:textSize="@dimen/text_size_smaller" android:textColor="@color/solid_item_ago" android:id="@id/tv_message_ago" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="2.0dip" />
+    </LinearLayout>
+    <ImageView android:id="@id/photo" android:layout_width="140.0dip" android:layout_height="100.0dip" android:layout_margin="5.0dip" android:scaleType="centerCrop" android:contentDescription="@string/label_photo" />
+</LinearLayout>

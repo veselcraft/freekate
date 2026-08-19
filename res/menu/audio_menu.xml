@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item android:icon="@drawable/ic_action_search" android:id="@id/search" android:orderInCategory="1000" android:title="@string/label_menu_search" app:showAsAction="ifRoom" />
+    <item android:icon="@android:drawable/ic_menu_upload" android:id="@id/upload" android:title="@string/upload" />
+    <item android:icon="@android:drawable/ic_menu_add" android:id="@id/add_audio" android:visible="false" android:title="@string/label_add_audio" />
+    <item android:icon="@drawable/ic_action_albums" android:id="@id/albums" android:title="@string/albums" app:showAsAction="ifRoom|withText" />
+</menu>

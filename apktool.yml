@@ -1,0 +1,18 @@
+version: 2.12.1
+apkFileName: Kate_81.apk
+usesFramework:
+  ids:
+  - 1
+sdkInfo:
+  minSdkVersion: 16
+  targetSdkVersion: 30
+packageInfo:
+  forcedPackageId: 127
+versionInfo:
+  versionCode: 503
+  versionName: 81
+doNotCompress:
+- arsc
+- mp3
+- png
+- webp

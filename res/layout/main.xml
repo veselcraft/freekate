@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout android:background="?activity_background" android:layout_width="fill_parent" android:layout_height="fill_parent" xmlns:app="http://schemas.android.com/apk/res-auto"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <com.google.android.material.appbar.AppBarLayout android:background="@null" android:layout_width="fill_parent" android:layout_height="wrap_content" app:elevation="0.0dip">
+        <include layout="@layout/header" />
+        <FrameLayout android:id="@id/tabs_container" android:layout_width="fill_parent" android:layout_height="wrap_content">
+            <fragment android:name="com.perm.kate.MainPhoneTabsFragment" android:id="@id/tabs" android:layout_width="fill_parent" android:layout_height="wrap_content" />
+        </FrameLayout>
+        <ImageView android:id="@id/iv_tabs_hor_divider" android:background="?attr_tabs_hor_divider" android:layout_width="fill_parent" android:layout_height="1.0px" />
+    </com.google.android.material.appbar.AppBarLayout>
+    <androidx.viewpager.widget.ViewPager android:id="@id/pager" android:layout_width="fill_parent" android:layout_height="fill_parent" app:layout_behavior="com.perm.kate.FixedBottomBehavior" />
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:layout_width="140.0dip" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <ImageView android:layout_gravity="center_horizontal" android:id="@id/img_captcha" android:layout_width="130.0dip" android:layout_height="50.0dip" android:layout_margin="5.0dip" android:scaleType="centerCrop" />
+    <EditText android:textColor="@color/solid_captcha_text_color" android:id="@id/et_captcha" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_margin="5.0dip" />
+</LinearLayout>

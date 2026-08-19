@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:background="?attr_item_bg" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content" android:baselineAligned="false">
+        <FrameLayout android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="10.0dip" android:layout_marginTop="10.0dip" android:layout_marginRight="10.0dip" android:layout_marginBottom="7.0dip">
+            <ImageView android:id="@id/iv_video_pic" android:layout_width="130.0dip" android:layout_height="98.0dip" android:scaleType="centerCrop" android:contentDescription="@string/play_video" />
+            <ImageView android:layout_gravity="center" android:layout_width="20.0dip" android:layout_height="20.0dip" android:src="@drawable/video_play" android:scaleType="fitXY" />
+        </FrameLayout>
+        <LinearLayout android:orientation="vertical" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_marginTop="5.0dip" android:layout_marginBottom="5.0dip" android:layout_weight="1.0">
+            <com.perm.kate.ScaleTextView android:textSize="@dimen/text_size_small" android:textColor="?attr_cs_item_title" android:ellipsize="end" android:id="@id/tv_video_title" android:layout_width="wrap_content" android:layout_height="wrap_content" android:maxLines="3" />
+            <com.perm.kate.ScaleTextView android:textSize="@dimen/text_size_small" android:textColor="?attr_item_subtitle" android:ellipsize="end" android:id="@id/tv_video_artist" android:layout_width="wrap_content" android:layout_height="wrap_content" android:maxLines="2" />
+        </LinearLayout>
+        <LinearLayout android:gravity="right" android:orientation="vertical" android:layout_width="wrap_content" android:layout_height="fill_parent">
+            <com.perm.kate.ScaleTextView android:textSize="@dimen/text_size_small" android:textColor="?attr_item_subtitle" android:id="@id/tv_video_duration" android:layout_width="wrap_content" android:layout_height="0.0dip" android:layout_marginLeft="5.0dip" android:layout_marginTop="5.0dip" android:layout_marginRight="7.0dip" android:layout_marginBottom="5.0dip" android:layout_weight="1.0" />
+            <ImageView android:id="@id/cached" android:visibility="gone" android:layout_width="24.0dip" android:layout_height="24.0dip" android:layout_marginLeft="5.0dip" android:layout_marginTop="2.0dip" android:layout_marginRight="7.0dip" android:layout_marginBottom="5.0dip" android:src="?attr_sd_mark_icon" android:scaleType="fitXY" />
+        </LinearLayout>
+    </LinearLayout>
+    <ProgressBar android:id="@id/progress" android:visibility="gone" android:clickable="false" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="10.0dip" android:layout_marginTop="5.0dip" android:layout_marginRight="10.0dip" style="?android:progressBarStyleHorizontal" />
+    <LinearLayout android:orientation="horizontal" android:id="@id/progress_details" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="10.0dip" android:layout_marginRight="10.0dip" android:layout_marginBottom="8.0dip">
+        <com.perm.kate.ScaleTextView android:textColor="?attr_item_text_color" android:id="@id/progress_current" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_weight="1.0" />
+        <com.perm.kate.ScaleTextView android:textColor="?attr_item_text_color" android:id="@id/progress_persent" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+    </LinearLayout>
+    <com.perm.kate.ScaleTextView android:textColor="?attr_item_text_color" android:id="@id/status" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="61.0dip" android:layout_marginRight="10.0dip" />
+</LinearLayout>

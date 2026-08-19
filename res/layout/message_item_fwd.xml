@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <FrameLayout android:background="#ffb9c7d5" android:layout_width="2.0dip" android:layout_height="fill_parent" />
+    <ImageView android:id="@id/photo_fwd" android:layout_width="41.0dip" android:layout_height="41.0dip" android:layout_marginLeft="6.0dip" android:layout_marginTop="4.0dip" android:scaleType="centerCrop" />
+    <LinearLayout android:orientation="vertical" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="6.0dip">
+        <com.perm.kate.ScaleTextView android:textSize="@dimen/text_size_small" android:textColor="?attr_item_text_color" android:id="@id/text" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+        <com.perm.kate.ScaleTextView android:textSize="@dimen/text_size_smaller" android:textColor="?attr_item_ago_color" android:id="@id/time" android:layout_width="wrap_content" android:layout_height="wrap_content" android:maxLines="1" android:singleLine="true" />
+    </LinearLayout>
+</LinearLayout>

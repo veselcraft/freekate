@@ -1,0 +1,22 @@
+.class public Lcom/perm/kate/BirthdayHelper$DateInfo;
+.super Ljava/lang/Object;
+.source "BirthdayHelper.java"
+
+
+# instance fields
+.field public day:I
+
+.field public month:I
+
+.field public year:Ljava/lang/Integer;
+
+
+# direct methods
+.method public constructor <init>()V
+    .locals 0
+
+    .line 218
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    return-void
+.end method

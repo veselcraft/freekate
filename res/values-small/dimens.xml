@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="header_button_width">38.0dip</dimen>
+    <dimen name="header_layout_height">38.0dip</dimen>
+    <dimen name="header_progress_size">18.0dip</dimen>
+    <dimen name="header_text_size">16.0sp</dimen>
+</resources>

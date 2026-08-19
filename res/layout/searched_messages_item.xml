@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="horizontal" android:background="?attr_item_bg" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <ImageView android:id="@id/img_message_photo" android:layout_width="41.0dip" android:layout_height="41.0dip" android:layout_margin="5.0dip" android:scaleType="centerCrop" />
+    <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginBottom="5.0dip">
+        <LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content">
+            <ImageView android:layout_gravity="center_vertical" android:id="@id/bullet" android:layout_width="10.0dip" android:layout_height="10.0dip" android:layout_marginLeft="3.0dip" android:src="@drawable/green" android:scaleType="centerInside" />
+            <com.perm.kate.ScaleTextView android:textSize="@dimen/text_size_small" android:textColor="?attr_cs_item_title" android:ellipsize="end" android:id="@id/tv_message_name" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_marginLeft="3.0dip" android:layout_marginRight="10.0dip" android:singleLine="true" android:layout_weight="1.0" />
+            <com.perm.kate.ScaleTextView android:textSize="@dimen/text_size_smaller" android:textColor="?attr_item_ago_color" android:id="@id/tv_message_ago" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="5.0dip" />
+        </LinearLayout>
+        <LinearLayout android:orientation="horizontal" android:id="@id/me_layout" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginRight="5.0dip">
+            <ImageView android:id="@id/me_photo" android:layout_width="33.0dip" android:layout_height="33.0dip" android:layout_marginLeft="3.0dip" android:layout_marginTop="4.0dip" android:layout_marginRight="5.0dip" android:layout_marginBottom="5.0dip" android:scaleType="centerCrop" />
+            <LinearLayout android:gravity="center_vertical" android:layout_gravity="center_vertical" android:orientation="vertical" android:id="@id/me_text" android:layout_width="fill_parent" android:layout_height="wrap_content" android:minHeight="33.0dip">
+                <com.perm.kate.ScaleTextView android:textSize="@dimen/text_size_small" android:textColor="?attr_item_subtitle" android:ellipsize="end" android:id="@id/tv_message_body" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="3.0dip" android:layout_marginTop="-2.0dip" android:layout_marginBottom="-2.0dip" android:maxLines="2" android:lineSpacingExtra="2.0dip" />
+                <com.perm.kate.ScaleTextView android:textSize="@dimen/text_size_small" android:textColor="?attr_item_subtitle" android:ellipsize="end" android:id="@id/tv_message_attachment" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="3.0dip" android:layout_marginTop="-2.0dip" android:layout_marginBottom="-2.0dip" android:maxLines="2" android:lineSpacingExtra="2.0dip" />
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

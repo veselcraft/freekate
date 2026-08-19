@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@id/settings" android:orderInCategory="4500" android:title="@string/label_menu_settings" />
+    <item android:id="@id/comments" android:orderInCategory="3000" android:title="@string/replies" />
+    <item android:id="@id/birthdays" android:orderInCategory="4000" android:title="@string/label_birthdays" />
+    <item android:id="@id/accounts" android:orderInCategory="5000" android:title="@string/accounts" />
+    <item android:id="@id/block" android:orderInCategory="8500" android:title="@string/label_block" />
+    <item android:id="@id/exit" android:orderInCategory="9000" android:title="@string/exit" />
+    <item android:id="@id/games" android:orderInCategory="7000" android:title="@string/title_games" />
+    <item android:id="@id/history" android:orderInCategory="7500" android:title="@string/label_history" />
+    <item android:id="@id/open_link" android:orderInCategory="7800" android:title="@string/open_link" />
+</menu>

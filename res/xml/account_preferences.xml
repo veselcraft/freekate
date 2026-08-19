@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <PreferenceCategory android:title="@string/general_settings" />
+    <PreferenceScreen android:title="@string/account_settings" android:key="account_settings" android:summary="">
+        <intent android:targetPackage="@string/package_name" android:action="android.intent.action.VIEW" android:targetClass="com.perm.kate.SyncActivity" />
+    </PreferenceScreen>
+</PreferenceScreen>

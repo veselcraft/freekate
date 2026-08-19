@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:layout_width="140.0dip" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <EditText android:id="@id/et_message" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/edittext_marginLeft" android:layout_marginTop="@dimen/edittext_marginLeft" android:layout_marginRight="@dimen/edittext_marginLeft" android:hint="@string/message" />
+    <CheckBox android:id="@id/checkBox1" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/edittext_marginLeft" android:layout_marginTop="@dimen/edittext_marginLeft" android:checked="false" android:text="@string/label_timer" />
+    <LinearLayout android:id="@id/layout1" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/edittext_marginLeft" android:layout_marginTop="@dimen/edittext_marginLeft">
+        <Button android:id="@id/button1" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+        <Button android:id="@id/button2" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/edittext_marginLeft" />
+    </LinearLayout>
+</LinearLayout>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="horizontal" android:background="?attr_item_bg" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <FrameLayout android:id="@id/fl_select" android:background="?attr_select_message" android:visibility="gone" android:layout_width="5.0dip" android:layout_height="fill_parent" android:contentDescription="@string/selected" />
+    <ImageView android:layout_gravity="center_vertical" android:id="@id/img_group_photo" android:layout_width="50.0dip" android:layout_height="50.0dip" android:layout_marginLeft="16.0dip" android:layout_marginTop="7.0dip" android:layout_marginRight="16.0dip" android:layout_marginBottom="7.0dip" android:scaleType="centerCrop" />
+    <LinearLayout android:layout_gravity="center_vertical" android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <com.perm.kate.ScaleTextView android:textSize="@dimen/text_size_normal" android:textColor="?attr_cs_item_title" android:id="@id/tv_group_name" android:layout_width="fill_parent" android:layout_height="wrap_content" />
+        <com.perm.kate.ScaleTextView android:textSize="@dimen/text_size_small" android:textColor="?attr_item_subtitle" android:id="@id/tv_group_type" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="2.0dip" />
+        <com.perm.kate.ScaleTextView android:textSize="@dimen/text_size_small" android:textColor="?attr_item_subtitle" android:id="@id/tv_start_date" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="2.0dip" />
+        <com.perm.kate.ScaleTextView android:textSize="@dimen/text_size_small" android:textColor="?attr_item_subtitle" android:id="@id/tv_members_count" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="2.0dip" />
+    </LinearLayout>
+</LinearLayout>

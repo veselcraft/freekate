@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:background="?activity_background" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <ScrollView android:layout_width="fill_parent" android:layout_height="0.0dip" android:fillViewport="true" android:layout_weight="1.0">
+        <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content">
+            <include layout="@layout/header" />
+            <TextView android:textSize="@dimen/text_size_small" android:textColor="?attr_item_subtitle" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/label_marginLeft" android:layout_marginTop="18.0dip" android:layout_marginRight="@dimen/label_marginLeft" android:layout_marginBottom="0.0dip" android:text="@string/title" />
+            <EditText android:id="@id/title" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/edittext_marginLeft" android:layout_marginTop="3.0dip" android:layout_marginRight="@dimen/edittext_marginLeft" android:layout_marginBottom="3.0dip" />
+            <TextView android:textSize="@dimen/text_size_small" android:textColor="?attr_item_subtitle" android:id="@id/tv_privacy" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/label_marginLeft" android:layout_marginTop="12.0dip" android:layout_marginRight="@dimen/label_marginLeft" android:layout_marginBottom="0.0dip" android:text="@string/label_album_privacy" />
+            <Spinner android:entries="@array/privacy_values" android:id="@id/sp_privacy" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="7.0dip" android:layout_marginTop="3.0dip" android:layout_marginRight="7.0dip" android:layout_marginBottom="3.0dip" />
+        </LinearLayout>
+    </ScrollView>
+    <include layout="@layout/footer" />
+</LinearLayout>

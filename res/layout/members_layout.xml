@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:background="?activity_background" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <include layout="@layout/header" />
+    <FrameLayout android:layout_width="fill_parent" android:layout_height="0.0dip" android:layout_weight="1.0">
+        <androidx.viewpager.widget.ViewPager android:id="@id/pager" android:layout_width="fill_parent" android:layout_height="fill_parent">
+            <androidx.viewpager.widget.PagerTitleStrip android:layout_gravity="top" android:id="@id/pagerTitleStrip" android:background="?attr_tab_bg" android:layout_width="wrap_content" android:layout_height="38.0dip" />
+        </androidx.viewpager.widget.ViewPager>
+        <ImageView android:layout_gravity="top" android:id="@id/img1" android:background="?attr_tabs_shadow" android:layout_width="fill_parent" android:layout_height="4.0dip" android:layout_marginTop="38.0dip" />
+        <ImageView android:layout_gravity="top" android:id="@id/img2" android:background="?attr_tabs_hor_divider" android:layout_width="fill_parent" android:layout_height="1.0px" android:layout_marginTop="38.0dip" />
+    </FrameLayout>
+    <FrameLayout android:id="@id/fl_button_bg" android:background="?attr_button_bg" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="44.0dip" android:layout_margin="10.0dip">
+        <Button android:textColor="@color/cs_button_text_white" android:id="@id/share" android:background="@drawable/ds_button_bg" android:paddingBottom="2.0dip" android:layout_width="fill_parent" android:layout_height="fill_parent" android:text="@string/label_new_message_send" />
+    </FrameLayout>
+</LinearLayout>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@id/upload" android:title="@string/upload" />
+    <item android:icon="@drawable/ic_action_edit" android:id="@id/album_edit" android:title="@string/label_edit" />
+    <item android:id="@id/start_with_new" android:title="@string/start_with_new" />
+    <item android:id="@id/start_with_old" android:title="@string/start_with_old" />
+    <item android:id="@id/download_all" android:title="@string/label_save_all" />
+    <item android:id="@id/album_comments" android:title="@string/album_comments" />
+</menu>

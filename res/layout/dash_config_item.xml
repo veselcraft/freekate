@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="horizontal" android:background="?attr_item_bg" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <ImageView android:id="@id/img_user_photo" android:layout_width="60.0dip" android:layout_height="60.0dip" android:layout_marginLeft="10.0dip" android:layout_marginTop="0.0dip" android:layout_marginRight="10.0dip" android:layout_marginBottom="0.0dip" android:scaleType="centerCrop" android:contentDescription="@string/label_photo" />
+    <com.perm.kate.ScaleTextView android:textSize="@dimen/text_size_normal" android:textColor="?attr_cs_item_title" android:layout_gravity="center_vertical" android:id="@id/tv_user_name" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_weight="1.0" />
+    <ImageView android:layout_gravity="center_vertical" android:id="@id/remove" android:background="?attr_item_bg" android:layout_width="48.0dip" android:layout_height="48.0dip" android:src="?attr_close_mini_player_button" android:scaleType="centerInside" android:contentDescription="@string/close" />
+</LinearLayout>

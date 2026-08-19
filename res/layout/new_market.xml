@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:background="?activity_background" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <ScrollView android:layout_width="fill_parent" android:layout_height="0.0dip" android:fillViewport="true" android:layout_weight="1.0">
+        <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content">
+            <include layout="@layout/header" />
+            <EditText android:id="@id/ed_name" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/edittext_marginLeft" android:layout_marginTop="18.0dip" android:layout_marginRight="@dimen/edittext_marginLeft" android:layout_marginBottom="3.0dip" android:hint="@string/title" />
+            <EditText android:id="@id/ed_description" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/edittext_marginLeft" android:layout_marginTop="12.0dip" android:layout_marginRight="@dimen/edittext_marginLeft" android:layout_marginBottom="3.0dip" android:hint="@string/label_description" />
+            <HorizontalScrollView android:scrollbars="none" android:layout_width="fill_parent" android:layout_height="wrap_content" android:fillViewport="true">
+                <LinearLayout android:orientation="horizontal" android:id="@id/ll_images" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="16.0dip">
+                    <ImageView android:id="@id/iv_main_photo" android:layout_width="150.0dip" android:layout_height="130.0dip" android:layout_marginLeft="16.0dip" android:layout_marginTop="5.0dip" android:layout_marginRight="0.0dip" android:layout_marginBottom="5.0dip" android:src="@drawable/no_photo2" android:contentDescription="@string/title_photos_info" />
+                </LinearLayout>
+            </HorizontalScrollView>
+            <LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginBottom="15.0dip" android:baselineAligned="false">
+                <FrameLayout android:id="@id/fl_button_bg" android:background="?attr_button_bg" android:layout_width="0.0dip" android:layout_height="44.0dip" android:layout_marginLeft="16.0dip" android:layout_marginTop="5.0dip" android:layout_marginRight="8.0dip" android:layout_weight="1.0">
+                    <Button android:textStyle="bold" android:textColor="@color/cs_button_text_white" android:ellipsize="end" android:id="@id/btn_add_main_image" android:background="@drawable/ds_button_bg" android:paddingLeft="10.0dip" android:paddingRight="10.0dip" android:layout_width="fill_parent" android:layout_height="fill_parent" android:text="@string/choose_cover" android:singleLine="true" />
+                </FrameLayout>
+                <FrameLayout android:id="@id/fl_button_bg2" android:background="?attr_button_bg" android:layout_width="0.0dip" android:layout_height="44.0dip" android:layout_marginLeft="8.0dip" android:layout_marginTop="5.0dip" android:layout_marginRight="16.0dip" android:layout_weight="1.0">
+                    <Button android:textStyle="bold" android:textColor="@color/cs_button_text_white" android:ellipsize="end" android:id="@id/btn_add_image" android:background="@drawable/ds_button_bg" android:paddingLeft="10.0dip" android:paddingRight="10.0dip" android:layout_width="fill_parent" android:layout_height="fill_parent" android:text="@string/choose_photo" android:singleLine="true" />
+                </FrameLayout>
+            </LinearLayout>
+            <TextView android:textSize="17.0sp" android:textColor="?attr_item_subtitle" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="16.0dip" android:text="@string/label_category" />
+            <Spinner android:id="@id/sp_categories" android:layout_width="fill_parent" android:layout_height="48.0dip" android:layout_marginLeft="7.0dip" android:layout_marginTop="3.0dip" android:layout_marginRight="7.0dip" android:layout_marginBottom="3.0dip" />
+            <TextView android:textSize="17.0sp" android:textColor="?attr_item_subtitle" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="16.0dip" android:text="@string/price" />
+            <EditText android:id="@id/ed_price" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/edittext_marginLeft" android:layout_marginTop="12.0dip" android:layout_marginRight="@dimen/edittext_marginLeft" android:layout_marginBottom="3.0dip" android:hint="0.00" android:inputType="numberDecimal" />
+        </LinearLayout>
+    </ScrollView>
+    <include layout="@layout/footer" />
+</LinearLayout>

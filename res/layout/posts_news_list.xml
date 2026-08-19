@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout android:id="@id/swipeRefreshLayout" android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <ListView android:scrollbarStyle="insideOverlay" android:id="@id/lv_posts_news_list" android:layout_width="fill_parent" android:layout_height="fill_parent" android:cacheColorHint="#00000000" />
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+    <com.perm.kate.MiniPlayer android:layout_gravity="bottom" android:id="@id/mini_player" android:clickable="true" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="-5.0dip" />
+    <TextView android:textSize="14.0sp" android:textColor="#ffeeeeee" android:gravity="left|center" android:layout_gravity="bottom" android:id="@id/snackbar" android:background="#ff323232" android:paddingLeft="24.0dip" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="48.0dip" android:text="@string/new_posts" />
+</FrameLayout>

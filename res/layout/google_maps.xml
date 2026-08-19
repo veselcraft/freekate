@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:background="?activity_background" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <include layout="@layout/header" />
+    <fragment android:name="com.google.android.gms.maps.SupportMapFragment" android:id="@id/map" android:layout_width="fill_parent" android:layout_height="0.0dip" android:layout_weight="1.0" map:uiZoomControls="true" xmlns:map="http://schemas.android.com/apk/res-auto" />
+    <LinearLayout android:orientation="vertical" android:id="@id/ll_bottom" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <View android:background="?attr_footer_divider_color" android:layout_width="fill_parent" android:layout_height="1.0px" />
+        <Button android:textSize="@dimen/text_size_small" android:textStyle="bold" android:textColor="?attr_footer_text_color" android:id="@id/btn_choose_location" android:background="?attr_holo_button_bg" android:layout_width="fill_parent" android:layout_height="@dimen/footer_layout_height" android:text="@string/str_choose_location" />
+    </LinearLayout>
+</LinearLayout>

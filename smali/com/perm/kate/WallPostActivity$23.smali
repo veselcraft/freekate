@@ -1,0 +1,49 @@
+.class Lcom/perm/kate/WallPostActivity$23;
+.super Ljava/lang/Object;
+.source "WallPostActivity.java"
+
+# interfaces
+.implements Landroid/content/DialogInterface$OnClickListener;
+
+
+# annotations
+.annotation system Ldalvik/annotation/EnclosingMethod;
+    value = Lcom/perm/kate/WallPostActivity;->showCopyrightLinkDialog()V
+.end annotation
+
+.annotation system Ldalvik/annotation/InnerClass;
+    accessFlags = 0x0
+    name = null
+.end annotation
+
+
+# instance fields
+.field final synthetic this$0:Lcom/perm/kate/WallPostActivity;
+
+
+# direct methods
+.method constructor <init>(Lcom/perm/kate/WallPostActivity;)V
+    .locals 0
+
+    .line 1243
+    iput-object p1, p0, Lcom/perm/kate/WallPostActivity$23;->this$0:Lcom/perm/kate/WallPostActivity;
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    return-void
+.end method
+
+
+# virtual methods
+.method public onClick(Landroid/content/DialogInterface;I)V
+    .locals 0
+
+    .line 1245
+    iget-object p1, p0, Lcom/perm/kate/WallPostActivity$23;->this$0:Lcom/perm/kate/WallPostActivity;
+
+    const/4 p2, 0x0
+
+    invoke-static {p1, p2}, Lcom/perm/kate/WallPostActivity;->access$902(Lcom/perm/kate/WallPostActivity;Ljava/lang/String;)Ljava/lang/String;
+
+    return-void
+.end method

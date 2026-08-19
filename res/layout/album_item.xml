@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout android:layout_width="fill_parent" android:layout_height="130.0dip"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <ImageView android:id="@id/img_album_photo" android:layout_width="fill_parent" android:layout_height="130.0dip" android:scaleType="centerCrop" />
+    <LinearLayout android:layout_gravity="bottom" android:orientation="horizontal" android:id="@id/ll_texts_content" android:background="@drawable/profile_padding" android:padding="4.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <com.perm.kate.ScaleTextView android:textSize="@dimen/text_size_normal" android:textColor="#ffffffff" android:id="@id/tv_album_name" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_weight="1.0" />
+        <com.perm.kate.ScaleTextView android:textSize="@dimen/text_size_normal" android:textColor="#ffb0b0b0" android:layout_gravity="bottom" android:id="@id/tv_album_size" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="4.0dip" />
+    </LinearLayout>
+</FrameLayout>

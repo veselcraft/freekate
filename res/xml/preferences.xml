@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:example="http://schemas.android.com/apk/res-auto">
+    <PreferenceScreen android:title="@string/notifications_screen">
+        <CheckBoxPreference android:title="@string/push_title" android:key="@string/key_push_notifications" android:summary="@string/push_summary" android:defaultValue="true" />
+        <PreferenceScreen android:title="@string/silent_mode_title" android:key="key_silent_mode" android:summary="@string/str_silent_mode_on_summary" />
+        <PreferenceScreen android:title="@string/notify_autoupdate" android:summary="@string/notify_autoupdate_summary">
+            <CheckBoxPreference android:title="@string/notify_autoupdate" android:key="@string/key_autoupdate" android:defaultValue="false" />
+            <ListPreference android:entries="@array/notify_interval_values" android:title="@string/notify_interval" android:key="key_notify_interval" android:dependency="@string/key_autoupdate" android:defaultValue="6" android:entryValues="@array/notify_interval_keys" />
+            <CheckBoxPreference android:title="@string/refresh_wifi" android:key="@string/key_wifi" android:summary="@string/refresh_wifi_summary" android:dependency="@string/key_autoupdate" android:defaultValue="false" />
+            <CheckBoxPreference android:title="@string/notify_news" android:key="key_notify_news" android:dependency="@string/key_autoupdate" android:defaultValue="true" />
+            <CheckBoxPreference android:title="@string/notify_messages" android:key="key_notify_messages" android:dependency="@string/key_autoupdate" android:defaultValue="true" />
+            <CheckBoxPreference android:title="@string/notify_replies" android:key="key_notify_replies" android:dependency="@string/key_autoupdate" android:defaultValue="true" />
+        </PreferenceScreen>
+        <PreferenceScreen android:title="@string/on_application_start" android:summary="@string/on_application_start_summary">
+            <CheckBoxPreference android:title="@string/replies" android:key="key_start_replies_notifications" android:defaultValue="true" />
+            <CheckBoxPreference android:title="@string/friend_requests" android:key="key_start_friends_notifications" android:defaultValue="true" />
+            <CheckBoxPreference android:title="@string/title_groups_invites" android:key="key_start_groups_invites_notifications" android:defaultValue="true" />
+            <CheckBoxPreference android:title="@string/label_photo_tags" android:key="key_start_photo_tag_notifications" android:defaultValue="true" />
+            <CheckBoxPreference android:title="@string/grop_messages_notif_title" android:key="key_group_message_notif" android:summary="@string/grop_messages_notif_summary" android:defaultValue="true" />
+        </PreferenceScreen>
+        <CheckBoxPreference android:title="@string/notify_birthdays_title" android:key="@string/key_notify_birthdays" android:summary="@string/notify_birthdays" android:defaultValue="true" />
+        <PreferenceScreen android:title="@string/notifications" android:key="key_customize_notifications" android:summary="@string/summary_settings_in_system">
+            <CheckBoxPreference android:title="@string/message_in_notification" android:key="@string/key_message_in_notification" android:summary="@string/message_in_notification_summary" android:defaultValue="true" />
+            <CheckBoxPreference android:title="@string/notify_vibration" android:key="key_notify_vibration" android:defaultValue="false" />
+            <EditTextPreference android:maxLength="3" android:numeric="integer" android:title="@string/vibration_length" android:key="@string/key_vibration_length" android:defaultValue="300" />
+            <CheckBoxPreference android:title="@string/notify_led" android:key="key_notify_led" android:defaultValue="true" />
+            <PreferenceScreen android:title="@string/label_led_color" android:key="@string/key_notify_led_color" />
+            <CheckBoxPreference android:title="@string/notify_sound" android:key="@string/key_notify_sound" android:defaultValue="true" />
+            <CheckBoxPreference android:title="@string/notify_sound_default" android:key="@string/key_notify_sound_default" android:dependency="@string/key_notify_sound" android:defaultValue="true" />
+            <RingtonePreference android:title="@string/notify_ringtone" android:key="@string/key_notify_ringtone" android:ringtoneType="notification" android:showDefault="true" android:showSilent="false" />
+            <CheckBoxPreference android:title="@string/headsup_title" android:key="headsup_notifications" android:summary="@string/headsup_summary" android:defaultValue="true" />
+            <PreferenceScreen android:title="@string/notification_channels" android:key="key_notification_channels" android:summary="@string/summary_settings_in_system" />
+            <PreferenceScreen android:title="@string/reset_notifications" android:key="key_notifications_reset" />
+        </PreferenceScreen>
+        <PreferenceScreen android:title="@string/popup_reply_title" android:summary="@string/popup_reply_summary">
+            <CheckBoxPreference android:title="@string/popup_reply_title" android:key="key_popup_reply" android:defaultValue="false" />
+            <CheckBoxPreference android:title="@string/screen_light_up" android:key="key_screen_light_up" android:summary="@string/screen_light_up_summary" android:dependency="key_popup_reply" android:defaultValue="true" />
+            <CheckBoxPreference android:title="@string/show_popup_always" android:key="key_show_popup_always" android:summary="@string/show_popup_always_summary" android:dependency="key_popup_reply" android:defaultValue="true" />
+        </PreferenceScreen>
+        <PreferenceScreen android:title="@string/label_sleep_mode_customize">
+            <CheckBoxPreference android:title="@string/label_sleep_mode" android:key="@string/key_sleep_mode" android:defaultValue="false" />
+            <PreferenceScreen android:title="@string/label_sleep_mode_start" android:key="@string/key_sleep_mode_start" android:dependency="@string/key_sleep_mode" />
+            <PreferenceScreen android:title="@string/label_sleep_mode_end" android:key="@string/key_sleep_mode_end" android:dependency="@string/key_sleep_mode" />
+        </PreferenceScreen>
+        <CheckBoxPreference android:title="@string/running_title" android:key="running_notification" android:summary="@string/running_summary" android:defaultValue="false" />
+        <CheckBoxPreference android:title="@string/title_open_dialog_sound" android:key="open_dialog_notification" android:summary="@string/summary_open_dialog_sound" android:defaultValue="false" />
+        <CheckBoxPreference android:title="@string/instant_notification_title" android:key="longpoll_notifications" android:summary="@string/instant_notification_summary" android:defaultValue="true" />
+    </PreferenceScreen>
+    <PreferenceScreen android:title="@string/customize_ui" android:key="key_ui">
+        <ListPreference android:entries="@array/themes" android:title="@string/label_themes" android:key="key_theme" android:defaultValue="11" android:entryValues="@array/themes_value" />
+        <PreferenceScreen android:title="@string/title_custom_theme_colors" android:key="key_custom_theme_colors">
+            <com.perm.kate.color_picker.widget.ColorPickerPreference android:title="@string/title_header_color" android:key="key_theme_general_color1" android:defaultValue="0xFF000000" />
+            <com.perm.kate.color_picker.widget.ColorPickerPreference android:title="@string/title_second_color" android:key="key_theme_general_color2" android:summary="@string/summary_second_color" android:defaultValue="0xFF000000" />
+            <PreferenceScreen android:title="@string/title_reset_colors" android:key="key_custom_theme_colors_reset" android:summary="@string/summary_reset_colors" />
+        </PreferenceScreen>
+        <PreferenceScreen android:title="@string/app_backgroung" android:summary="@string/add_background_summary">
+            <CheckBoxPreference android:title="@string/app_backgroung" android:key="key_use_background" android:defaultValue="false" />
+            <PreferenceScreen android:title="@string/choose_photo" android:key="key_background" android:dependency="key_use_background" />
+            <CheckBoxPreference android:title="@string/blur" android:key="background_blur" android:dependency="key_use_background" android:defaultValue="false" />
+        </PreferenceScreen>
+        <PreferenceScreen android:title="@string/night_theme">
+            <CheckBoxPreference android:title="@string/night_theme" android:key="key_night_theme_on" android:defaultValue="false" />
+            <ListPreference android:entries="@array/themes" android:title="@string/label_themes" android:key="key_night_theme" android:dependency="key_night_theme_on" android:defaultValue="11" android:entryValues="@array/themes_value" />
+            <PreferenceScreen android:title="@string/label_sleep_mode_start" android:key="key_night_start" android:dependency="key_night_theme_on" />
+            <PreferenceScreen android:title="@string/label_sleep_mode_end" android:key="key_night_end" android:dependency="key_night_theme_on" />
+        </PreferenceScreen>
+        <CheckBoxPreference android:title="@string/big_ava" android:key="key_wide_ava" android:defaultValue="true" />
+        <CheckBoxPreference android:title="@string/round_avatar" android:key="key_round_ava" android:defaultValue="true" />
+        <com.perm.kate.preference.SeekBarPreference android:title="@string/font_size" android:key="@string/key_font_size" android:defaultValue="100" example:maxValue="250" example:minValue="50" />
+        <CheckBoxPreference android:title="@string/old_notifications_icon_title" android:key="key_old_notifications_icon" android:summary="@string/old_notifications_icon_summary" android:defaultValue="false" />
+        <CheckBoxPreference android:title="@string/title_fullscreen" android:key="key_fullscreen" android:summary="@string/summary_fullscreen" android:defaultValue="false" />
+        <CheckBoxPreference android:title="@string/phone_ui_title" android:key="key_force_phone_ui" android:summary="@string/phone_ui_summary" android:defaultValue="false" />
+        <CheckBoxPreference android:title="@string/old_profile" android:key="key_old_profile" android:defaultValue="false" />
+        <CheckBoxPreference android:title="@string/old_group" android:key="old_group_1" android:defaultValue="false" />
+        <CheckBoxPreference android:title="@string/translucent_status_title" android:key="translucent_status" android:summary="@string/translucent_status_summary" android:defaultValue="true" />
+        <CheckBoxPreference android:title="@string/old_smiles" android:key="smiles_vk" android:defaultValue="false" />
+        <ListPreference android:entries="@array/language" android:title="@string/language" android:key="key_language" android:defaultValue="0" android:entryValues="@array/language_values" />
+    </PreferenceScreen>
+    <PreferenceScreen android:title="@string/online_title" android:summary="@string/invisibility_settings_summary">
+        <ListPreference android:entries="@array/online_values" android:title="@string/online_title" android:key="@string/key_online" android:defaultValue="0" android:entryValues="@array/online_keys" />
+        <CheckBoxPreference android:title="@string/label_close_unread" android:key="key_close_unread" android:summary="@string/close_unread_summary" android:defaultValue="false" />
+        <CheckBoxPreference android:title="@string/typing_status" android:key="key_typing_status" android:summary="@string/typing_status_summary" android:defaultValue="true" />
+    </PreferenceScreen>
+    <PreferenceScreen android:title="@string/profile_settings">
+        <PreferenceScreen android:title="@string/change_password" android:key="change_password" />
+        <PreferenceScreen android:title="@string/label_black_list" android:key="black_list" />
+        <PreferenceScreen android:title="@string/label_hidden_news" android:key="key_banned_news2" />
+        <PreferenceScreen android:title="@string/privacy_settings" android:key="key_privacy_settings" />
+    </PreferenceScreen>
+    <PreferenceScreen android:title="@string/main_screen">
+        <PreferenceScreen android:title="@string/links" android:key="dash_links" android:summary="@string/dashboard_config_summary" />
+        <ListPreference android:entries="@array/first_tab_values" android:title="@string/first_tab" android:key="@string/key_first_tab" android:defaultValue="0" android:entryValues="@array/first_tab_keys" />
+        <PreferenceScreen android:title="@string/main_screen_tabs" android:key="key_main_tabs" android:summary="@string/main_screen_tabs_summary">
+            <CheckBoxPreference android:title="@string/news" android:key="key_news_tab" android:summary="@string/show_news_tab" android:defaultValue="true" />
+            <CheckBoxPreference android:title="@string/friends_button_title" android:key="@string/key_friends_button" android:summary="@string/friends_button_summary" android:defaultValue="false" />
+            <ListPreference android:entries="@array/profile_types" android:title="@string/profile_tab_setting_title" android:key="key_profile_tab" android:summary="@string/profile_tab_setting_summary" android:defaultValue="0" android:entryValues="@array/profile_types_values" />
+            <CheckBoxPreference android:title="@string/tabs" android:key="key_show_tabs" android:summary="@string/tabs_summary" android:defaultValue="true" />
+        </PreferenceScreen>
+        <CheckBoxPreference android:title="@string/close_confirm_title" android:key="key_confirm_close" android:summary="@string/close_confirm_summary" android:defaultValue="false" />
+    </PreferenceScreen>
+    <PreferenceScreen android:title="@string/label_menu_messages">
+        <CheckBoxPreference android:title="@string/transcript" android:key="transcript" android:defaultValue="true" />
+        <PreferenceScreen android:title="@string/title_chat_background" android:key="key_chat_background_screen" android:dependency="key_messages_in_bubbles_2">
+            <CheckBoxPreference android:title="@string/title_chat_background" android:key="key_use_chat_background" android:defaultValue="false" />
+            <PreferenceScreen android:title="@string/title_select_chat_background" android:key="key_chat_background" android:dependency="key_use_chat_background" />
+        </PreferenceScreen>
+        <CheckBoxPreference android:title="@string/instant_read" android:key="instant_read" android:summary="@string/instant_read_sumary" android:defaultValue="false" />
+        <CheckBoxPreference android:title="@string/rtt" android:key="rtt" android:summary="@string/rtt_summary" android:defaultValue="false" />
+        <CheckBoxPreference android:title="@string/messages_ava" android:key="key_messages_ava" android:dependency="key_messages_in_bubbles_2" android:defaultValue="true" />
+        <CheckBoxPreference android:title="@string/voice_speaker" android:key="voice_speakerphone" android:summary="@string/voice_speaker_summary" android:defaultValue="false" />
+        <PreferenceScreen android:title="@string/hidden_dialogs">
+            <PreferenceScreen android:title="@string/change_pin" android:key="hidden_mess_change_pass" />
+        </PreferenceScreen>
+        <CheckBoxPreference android:title="@string/scroll_to_unread" android:key="key_messages_scroll_to_unread" android:summary="@string/scroll_to_unread_summary" android:defaultValue="true" />
+        <CheckBoxPreference android:title="@string/record_audio" android:key="voice_button" android:summary="@string/voice_button_summary" android:defaultValue="true" />
+        <CheckBoxPreference android:title="@string/voice_auto_send" android:key="voice_auto_send" android:defaultValue="true" />
+        <CheckBoxPreference android:title="@string/voice_quality_title" android:key="voice_quality" android:summary="@string/voice_quality_summary" android:defaultValue="false" />
+        <ListPreference android:entries="@array/messages_order_titles" android:title="@string/messages_order" android:key="key_messages_reverse_2" android:summary="@string/messages_order_summary" android:defaultValue="1" android:entryValues="@array/messages_order_values" />
+        <CheckBoxPreference android:title="@string/messages_in_bubbles_title" android:key="key_messages_in_bubbles_2" android:defaultValue="true" />
+        <CheckBoxPreference android:title="@string/my_messages_title" android:key="key_reverse_message_2" android:summary="@string/my_messages_summary" android:defaultValue="true" />
+    </PreferenceScreen>
+    <PreferenceScreen android:title="@string/news" android:key="key_news">
+        <CheckBoxPreference android:title="@string/refresh_news_on_start" android:key="key_refresh_news" android:summary="@string/refresh_news_on_start_summary" android:defaultValue="true" />
+        <CheckBoxPreference android:title="@string/card_style_title" android:key="@string/key_card_style_news" android:summary="@string/card_style_summary" android:defaultValue="true" />
+        <CheckBoxPreference android:title="@string/hide_spam_title" android:key="key_hide_news_spam" android:summary="@string/hide_spam_summary" android:defaultValue="true" />
+        <EditTextPreference android:title="@string/spam_words_title" android:key="new_spam_words" android:summary="@string/spam_words_summary" android:dependency="key_hide_news_spam" />
+        <CheckBoxPreference android:title="@string/hide_header_title" android:key="key_header_scroll" android:summary="@string/hide_header_summary" android:defaultValue="true" />
+        <PreferenceScreen android:title="@string/label_hidden_news" android:key="key_banned_news" />
+        <PreferenceScreen android:title="@string/news_filter" android:summary="@string/news_filter_summary">
+            <CheckBoxPreference android:title="@string/news_post" android:key="@string/key_news_post" android:defaultValue="true" />
+            <CheckBoxPreference android:title="@string/news_photo" android:key="@string/key_news_photo" android:defaultValue="true" />
+            <CheckBoxPreference android:title="@string/news_photo_tag" android:key="@string/key_news_photo_tag" android:defaultValue="true" />
+            <CheckBoxPreference android:title="@string/news_friend" android:key="@string/key_news_friend" android:defaultValue="true" />
+        </PreferenceScreen>
+        <CheckBoxPreference android:title="@string/new_posts_title" android:key="key_show_new_posts" android:summary="@string/new_posts_summary" android:dependency="key_refresh_news" android:defaultValue="false" />
+        <ListPreference android:entries="@array/news_click_values" android:title="@string/news_click_title" android:key="news_click_key_4" android:defaultValue="0" android:entryValues="@array/news_click_keys" />
+        <CheckBoxPreference android:title="@string/collapse_news" android:key="key_collapse_news" android:summary="@string/collapse_news_summary" android:defaultValue="true" />
+        <CheckBoxPreference android:title="@string/label_old_style_news" android:key="@string/key_old_style_news" android:summary="@string/old_style_news_summary" android:defaultValue="false" />
+    </PreferenceScreen>
+    <PreferenceScreen android:title="@string/label_photo">
+        <ListPreference android:entries="@array/photo_size_values" android:title="@string/photo_size" android:key="@string/key_photo_size" android:summary="@string/photo_size_summary" android:defaultValue="0" android:entryValues="@array/photo_size_keys" />
+        <CheckBoxPreference android:title="@string/download_images" android:key="@string/key_images" android:defaultValue="true" />
+        <ListPreference android:entries="@array/quality_photo_values" android:title="@string/photo_quality" android:key="@string/key_photo_view_quality" android:summary="@string/photo_quality_summary" android:defaultValue="0" android:entryValues="@array/quality_photo_keys" />
+        <ListPreference android:entries="@array/photo_size_values4" android:title="@string/size_saved_photo" android:key="key_size_saved_photo" android:summary="@string/size_saved_photo_summary" android:defaultValue="0" android:entryValues="@array/photo_size_keys2" />
+        <CheckBoxPreference android:title="@string/internal_gallery" android:key="key_internal_gallery" android:summary="@string/internal_gallery_summary" android:defaultValue="true" />
+        <CheckBoxPreference android:title="@string/photo_click" android:key="key_photo_click" android:summary="@string/photo_click_summary" android:defaultValue="true" />
+        <CheckBoxPreference android:title="@string/photo_swipe_close_title" android:key="photo_swipe_close" android:summary="@string/photo_swipe_close_summary" android:defaultValue="true" />
+        <CheckBoxPreference android:title="@string/photo_mosaic_title" android:key="key_mosaic" android:summary="@string/photo_mosaic_summary" android:defaultValue="true" />
+        <CheckBoxPreference android:title="@string/label_menu_zoom" android:key="key2_show_zoom_buttons" android:summary="@string/menu_zoom_summary" android:defaultValue="false" />
+        <CheckBoxPreference android:title="@string/camera_save_title" android:key="camera_save_1" android:summary="@string/camera_save_summary" android:defaultValue="false" />
+    </PreferenceScreen>
+    <ListPreference android:entries="@array/quality_video_values" android:title="@string/label_quality_video" android:key="@string/key_hd_quality_video" android:defaultValue="0" android:entryValues="@array/quality_video_keys" />
+    <PreferenceScreen android:title="@string/sync_contacts" android:key="sync_contacts" />
+    <PreferenceScreen android:title="@string/label_block_settings" android:key="block_screen_pref">
+        <PreferenceScreen android:title="@string/label_change_block_password" android:key="change_block_password" />
+        <CheckBoxPreference android:title="@string/label_always_unblock" android:key="@string/key_always_unblock" android:summary="@string/label_always_unblock_summary" android:defaultValue="false" />
+        <CheckBoxPreference android:title="@string/label_unblock_by_fingerprint" android:key="key_unblock_by_fingerprint" android:defaultValue="false" />
+    </PreferenceScreen>
+    <CheckBoxPreference android:title="@string/send_on_enter" android:key="key_send_on_enter" android:summary="@string/send_on_enter_summary" android:defaultValue="false" />
+    <CheckBoxPreference android:title="@string/internal_filemanager" android:key="key_internal_filemanager" android:summary="@string/internal_filemanager_summary" android:defaultValue="true" />
+    <CheckBoxPreference android:title="@string/internal_browser" android:key="key_internal_browser" android:summary="@string/internal_browser_summary" android:defaultValue="false" />
+    <EditTextPreference android:maxLength="3" android:numeric="integer" android:title="@string/audio_timer" android:key="key_audio_timer" android:defaultValue="30" />
+    <PreferenceScreen android:title="@string/settings_backup_title" android:summary="@string/settings_backup_summary">
+        <PreferenceScreen android:title="@string/backup_settings" android:key="export" />
+        <PreferenceScreen android:title="@string/restore_settings" android:key="import" />
+    </PreferenceScreen>
+    <PreferenceScreen android:title="@string/advanced" android:key="advanced">
+        <PreferenceScreen android:title="@string/clear_file_cache" android:key="clear_file_cache" android:summary="@string/clear_file_cache_summary" />
+        <ListPreference android:entries="@array/cache_size_titles" android:title="@string/image_cache_size_pref_title" android:key="image_cache_size_2" android:defaultValue="1" android:entryValues="@array/cache_size_values" />
+        <PreferenceScreen android:title="@string/clear_data_cache" android:key="clear_data_cache" android:summary="@string/clear_data_cache_summary" />
+        <ListPreference android:entries="@array/long_pull_values" android:title="@string/long_pull_title" android:key="@string/key_long_pull" android:summary="@string/long_poll_summary" android:defaultValue="0" android:entryValues="@array/long_pull_keys" />
+        <PreferenceScreen android:title="@string/photo_save_dir_title" android:key="photo_save_dir_virtual" android:summary="@string/photo_save_dir_summary" />
+        <PreferenceScreen android:title="@string/audio_cache_dir_title" android:key="audio_cache_dir_virtual" android:summary="@string/audio_cache_dir_summary" />
+        <PreferenceScreen android:title="@string/video_cache_dir_title" android:key="video_cache_dir_virtual" android:summary="@string/video_cache_dir_summary" />
+        <CheckBoxPreference android:title="@string/music_over_https" android:key="audio_https" android:defaultValue="@bool/audio_https_default" />
+        <CheckBoxPreference android:title="@string/video_over_https" android:key="video_https" android:defaultValue="true" />
+        <CheckBoxPreference android:title="@string/gif_optimization" android:key="gif_opimization" android:defaultValue="true" />
+        <CheckBoxPreference android:title="@string/save_searches" android:key="save_searches" android:defaultValue="true" />
+        <PreferenceScreen android:title="@string/proxy" android:key="proxy" />
+        <CheckBoxPreference android:title="@string/download_voice_title" android:key="download_voice" android:summary="@string/download_voice_summary" android:defaultValue="false" />
+        <CheckBoxPreference android:title="@string/read_smiles_title" android:key="replace_smiles" android:summary="@string/read_smiles_summary" android:defaultValue="true" />
+        <CheckBoxPreference android:title="ExoPlayer" android:key="exo" android:defaultValue="true" />
+        <PreferenceScreen android:title="Микрофон для голосовых" android:key="mic_pref" />
+    </PreferenceScreen>
+    <PreferenceScreen android:title="@string/feedback_title">
+        <PreferenceScreen android:title="@string/faq" android:key="feedback_faq" android:summary="@string/read_first" />
+        <PreferenceScreen android:title="@string/wishes" android:key="feedback_reformal" android:summary="@string/wishes_summary" />
+        <PreferenceScreen android:title="@string/our_group" android:key="feedback_group" android:summary="@string/our_group_summary" />
+        <PreferenceScreen android:title="@string/send_log" android:key="feedback_log" android:summary="@string/send_log_summary" />
+    </PreferenceScreen>
+    <PreferenceScreen android:title="@string/label_menu_about" android:key="about" />
+    <PreferenceScreen android:title="@string/check_for_updates" android:key="key_update" />
+</PreferenceScreen>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:background="@drawable/d_widget_med_bg_holo" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_margin="@dimen/widget_margin"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <TextView android:textSize="16.0sp" android:textStyle="bold" android:textColor="@color/solid_white" android:id="@id/tv_account_name" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_marginLeft="15.0dip" android:layout_marginTop="8.0dip" android:layout_weight="1.0" />
+        <ImageView android:id="@id/iv_new_message" android:layout_width="24.0dip" android:layout_height="24.0dip" android:layout_marginLeft="5.0dip" android:layout_marginTop="10.0dip" android:layout_marginRight="10.0dip" android:src="@drawable/wg_new_message_icon" android:scaleType="fitXY" />
+        <ImageView android:id="@id/iv_refresh" android:layout_width="24.0dip" android:layout_height="24.0dip" android:layout_marginLeft="5.0dip" android:layout_marginTop="10.0dip" android:layout_marginRight="10.0dip" android:src="@drawable/ic_action_refresh" android:scaleType="fitXY" />
+    </LinearLayout>
+    <ListView android:id="@id/lv_dialogs" android:layout_width="fill_parent" android:layout_height="0.0dip" android:layout_marginTop="7.0dip" android:layout_marginBottom="3.0dip" android:divider="@drawable/d_empty" android:dividerHeight="0.0dip" android:layout_weight="1.0" />
+</LinearLayout>

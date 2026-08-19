@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:drawable="@drawable/item_transparent_bg_active" android:left="0.0dip" android:top="0.0dip" android:right="0.0dip" android:bottom="0.0dip" />
+    <item android:drawable="@drawable/d_card_active_bg_transparent" android:left="10.0dip" android:top="10.0dip" android:right="10.0dip" android:bottom="4.0dip" />
+</layer-list>

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:background="@color/solid_black" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <GridView android:id="@id/PhoneImageGrid" android:layout_width="fill_parent" android:layout_height="0.0dip" android:horizontalSpacing="1.0dip" android:verticalSpacing="1.0dip" android:stretchMode="columnWidth" android:columnWidth="106.0dip" android:numColumns="auto_fit" android:layout_weight="1.0" />
+    <View android:background="@color/material_footer_divider_dark" android:layout_width="fill_parent" android:layout_height="1.0px" />
+    <Button android:textSize="17.0sp" android:textStyle="bold" android:textColor="@color/solid_footer_text_color_dark" android:ellipsize="end" android:id="@id/btn_done" android:background="@drawable/ds_footer_button_bg" android:layout_width="fill_parent" android:layout_height="@dimen/footer_layout_height" android:text="@string/upload" />
+</LinearLayout>

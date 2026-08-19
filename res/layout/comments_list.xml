@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:id="@id/list_parent" android:background="?activity_background" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <include layout="@layout/header" />
+    <ListView android:scrollbarStyle="insideOverlay" android:id="@id/lv_comment_list" android:layout_width="fill_parent" android:layout_height="0.0dip" android:cacheColorHint="#00000000" android:divider="@null" android:layout_weight="1.0" android:fadeScrollbars="false" />
+    <ImageView android:layout_width="fill_parent" android:layout_height="1.0px" android:src="?attr_compose_footer_hor_divider" android:scaleType="fitXY" />
+    <LinearLayout android:orientation="horizontal" android:id="@id/add_comment_view" android:background="?attr_holo_compose_bg" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <ImageButton android:id="@id/smile_button" android:background="?attr_holo_button_bg" android:layout_width="48.0dip" android:layout_height="fill_parent" android:src="?attr_smile_icon" android:scaleType="centerInside" android:contentDescription="@string/smiles" />
+        <ImageButton android:id="@id/btn_add_attachment" android:background="?attr_holo_button_bg" android:layout_width="48.0dip" android:layout_height="fill_parent" android:src="?attr_add_attachment_icon" android:scaleType="centerInside" android:contentDescription="@string/attach" />
+        <EditText android:textColor="?attr_item_text_color" android:textColorHint="?attr_color_hint" android:id="@id/et_new_message" android:background="?attr_holo_compose_bg" android:paddingLeft="2.0dip" android:paddingTop="10.0dip" android:paddingRight="2.0dip" android:paddingBottom="10.0dip" android:layout_width="0.0dip" android:layout_height="wrap_content" android:hint="@string/new_message_hint" android:maxLines="6" android:layout_weight="1.0" android:inputType="textCapSentences|textMultiLine" />
+        <ImageButton android:id="@id/btn_new_message" android:background="?attr_holo_button_bg" android:layout_width="48.0dip" android:layout_height="fill_parent" android:src="?attr_send_icon" android:scaleType="centerInside" android:contentDescription="@string/label_new_message_send" />
+    </LinearLayout>
+    <LinearLayout android:id="@id/footer_for_emoticons" android:background="@android:color/transparent" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="230.0dip" />
+</LinearLayout>

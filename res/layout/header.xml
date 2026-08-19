@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout android:id="@id/header" android:layout_width="fill_parent" android:layout_height="@dimen/header_layout_height" app:layout_scrollFlags="scroll|enterAlways"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <LinearLayout android:orientation="horizontal" android:id="@id/ll_header" android:background="?attr_header_bg" android:layout_width="fill_parent" android:layout_height="@dimen/header_layout_height">
+        <FrameLayout android:id="@id/ll_home_button" android:layout_width="@dimen/header_layout_height" android:layout_height="@dimen/header_layout_height" android:layout_marginLeft="4.0dip" android:contentDescription="@string/home">
+            <ImageView android:layout_gravity="center" android:layout_width="@dimen/header_button_icon_size_small" android:layout_height="@dimen/header_button_icon_size_small" android:layout_marginBottom="1.0dip" android:src="@drawable/action_home_icon" android:scaleType="centerInside" />
+        </FrameLayout>
+        <TextView android:textSize="@dimen/header_text_size" android:textColor="@color/solid_white" android:ellipsize="end" android:layout_gravity="center_vertical" android:id="@id/header_text" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_marginLeft="0.0dip" android:layout_marginRight="5.0dip" android:layout_marginBottom="1.0dip" android:text="@string/app_name" android:maxLines="1" android:singleLine="true" android:shadowColor="#bf000000" android:shadowDx="0.0" android:shadowDy="0.0" android:shadowRadius="0.2" android:layout_weight="1.0" />
+        <LinearLayout android:layout_gravity="center_vertical" android:orientation="vertical" android:id="@id/spinner_placeholder" android:visibility="gone" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_marginBottom="@dimen/filter_header_bottom_margin" android:layout_weight="1.0" />
+        <FrameLayout android:layout_width="@dimen/header_button_width" android:layout_height="fill_parent">
+            <ProgressBar android:layout_gravity="center" android:id="@id/pb_header_progress" android:visibility="gone" android:layout_width="@dimen/header_progress_size" android:layout_height="@dimen/header_progress_size" />
+            <FrameLayout android:id="@id/fl_refresh_button" android:background="@drawable/ds_footer_button_bg" android:visibility="gone" android:layout_width="@dimen/header_button_width" android:layout_height="fill_parent" android:contentDescription="@string/refresh">
+                <ImageView android:layout_gravity="center" android:layout_width="@dimen/header_button_icon_size_small" android:layout_height="@dimen/header_button_icon_size_small" android:src="@drawable/ic_action_refresh" android:scaleType="centerInside" />
+            </FrameLayout>
+        </FrameLayout>
+        <FrameLayout android:id="@id/fl_button_add" android:background="@drawable/ds_footer_button_bg" android:visibility="gone" android:layout_width="@dimen/header_button_width" android:layout_height="fill_parent" android:contentDescription="@string/add">
+            <ImageView android:layout_gravity="center" android:layout_width="@dimen/header_button_icon_size_small" android:layout_height="@dimen/header_button_icon_size_small" android:src="@drawable/ic_action_new_white" android:scaleType="centerInside" />
+        </FrameLayout>
+        <FrameLayout android:id="@id/fl_button_search" android:background="@drawable/ds_footer_button_bg" android:visibility="gone" android:layout_width="@dimen/header_button_width" android:layout_height="fill_parent" android:contentDescription="@string/label_menu_search">
+            <ImageView android:layout_gravity="center" android:layout_width="@dimen/header_button_icon_size_small" android:layout_height="@dimen/header_button_icon_size_small" android:src="@drawable/ic_action_search" android:scaleType="centerInside" />
+        </FrameLayout>
+        <FrameLayout android:id="@id/fl_button_player" android:background="@drawable/ds_footer_button_bg" android:visibility="gone" android:layout_width="@dimen/header_button_width" android:layout_height="fill_parent" android:contentDescription="@string/title_audio_player">
+            <ImageView android:layout_gravity="center" android:layout_width="@dimen/header_button_icon_size_small" android:layout_height="@dimen/header_button_icon_size_small" android:src="@drawable/ic_action_player" android:scaleType="fitXY" />
+        </FrameLayout>
+        <FrameLayout android:id="@id/fl_albums_button" android:background="@drawable/ds_footer_button_bg" android:visibility="gone" android:layout_width="@dimen/header_button_width" android:layout_height="fill_parent" android:contentDescription="@string/albums">
+            <ImageView android:layout_gravity="center" android:layout_width="@dimen/header_button_icon_size_small" android:layout_height="@dimen/header_button_icon_size_small" android:src="@drawable/ic_action_albums" android:scaleType="centerInside" />
+        </FrameLayout>
+        <FrameLayout android:id="@id/fl_button_compose" android:background="@drawable/ds_footer_button_bg" android:visibility="gone" android:layout_width="@dimen/header_button_width" android:layout_height="fill_parent" android:contentDescription="@string/add_wall_post">
+            <ImageView android:layout_gravity="center" android:layout_width="@dimen/header_button_icon_size_small" android:layout_height="@dimen/header_button_icon_size_small" android:src="@drawable/ic_action_edit" android:scaleType="centerInside" />
+        </FrameLayout>
+        <FrameLayout android:id="@id/fl_button_menu" android:background="@drawable/ds_footer_button_bg" android:visibility="gone" android:layout_width="@dimen/header_button_width" android:layout_height="fill_parent" android:contentDescription="@string/menu">
+            <ImageView android:layout_gravity="center" android:layout_width="@dimen/header_button_icon_size_small" android:layout_height="@dimen/header_button_icon_size_small" android:src="@drawable/ic_action_overflow" android:scaleType="centerInside" />
+        </FrameLayout>
+    </LinearLayout>
+    <ImageView android:layout_gravity="bottom" android:id="@id/iv_header_bottom_line" android:layout_width="fill_parent" android:layout_height="1.0px" android:src="?attr_header_bottom_line" android:scaleType="fitXY" />
+</FrameLayout>

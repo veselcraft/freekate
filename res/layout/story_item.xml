@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout android:background="?attr_item_bg" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <ImageView android:id="@id/img_game_icon" android:layout_width="fill_parent" android:layout_height="130.0dip" android:layout_marginLeft="1.0dip" android:layout_marginTop="1.0dip" android:layout_marginRight="1.0dip" android:layout_marginBottom="1.0dip" android:scaleType="centerCrop" />
+    <ImageView android:layout_gravity="center|bottom" android:id="@id/ava" android:layout_width="41.0dip" android:layout_height="41.0dip" android:layout_marginLeft="6.0dip" android:layout_marginTop="6.0dip" android:layout_marginRight="6.0dip" android:layout_marginBottom="6.0dip" android:scaleType="centerCrop" android:contentDescription="@string/label_photo" />
+</FrameLayout>

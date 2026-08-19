@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:background="?activity_background" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <include layout="@layout/header" />
+    <ListView android:scrollbarStyle="insideOverlay" android:id="@id/lv_members_list" android:layout_width="fill_parent" android:layout_height="0.0dip" android:cacheColorHint="#00000000" android:layout_weight="1.0" />
+    <LinearLayout android:orientation="vertical" android:id="@id/ll_buttons" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <TextView android:gravity="center_horizontal" android:layout_gravity="center_horizontal" android:id="@id/tv_chat_name" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="30.0dip" android:layout_marginTop="14.0dip" android:layout_marginRight="30.0dip" android:layout_marginBottom="5.0dip" />
+        <FrameLayout android:id="@id/fl_button_bg" android:background="?attr_button_bg" android:layout_width="fill_parent" android:layout_height="44.0dip" android:layout_marginLeft="26.0dip" android:layout_marginTop="5.0dip" android:layout_marginRight="26.0dip">
+            <Button android:textStyle="bold" android:textColor="@color/cs_button_text_white" android:ellipsize="end" android:id="@id/btn_chat_edit" android:background="@drawable/ds_button_bg" android:paddingLeft="10.0dip" android:paddingRight="10.0dip" android:layout_width="fill_parent" android:layout_height="fill_parent" android:text="@string/str_change_chat" android:singleLine="true" />
+        </FrameLayout>
+        <FrameLayout android:id="@id/fl_button_bg5" android:background="?attr_button_bg" android:layout_width="fill_parent" android:layout_height="44.0dip" android:layout_marginLeft="26.0dip" android:layout_marginTop="10.0dip" android:layout_marginRight="26.0dip" android:layout_marginBottom="0.0dip">
+            <Button android:textStyle="bold" android:textColor="@color/cs_button_text_white" android:ellipsize="end" android:id="@id/btn_change_photo" android:background="@drawable/ds_button_bg" android:paddingLeft="10.0dip" android:paddingRight="10.0dip" android:layout_width="fill_parent" android:layout_height="fill_parent" android:text="@string/label_change_conversation_cover" android:singleLine="true" />
+        </FrameLayout>
+        <FrameLayout android:id="@id/fl_button_bg3" android:background="?attr_button_bg" android:layout_width="fill_parent" android:layout_height="44.0dip" android:layout_marginLeft="26.0dip" android:layout_marginTop="10.0dip" android:layout_marginRight="26.0dip" android:layout_marginBottom="10.0dip">
+            <Button android:textStyle="bold" android:textColor="@color/cs_button_text_white" android:ellipsize="end" android:id="@id/btn_add_member" android:background="@drawable/ds_button_bg" android:paddingLeft="10.0dip" android:paddingRight="10.0dip" android:layout_width="fill_parent" android:layout_height="fill_parent" android:text="@string/str_add_person" android:singleLine="true" />
+        </FrameLayout>
+    </LinearLayout>
+    <LinearLayout android:orientation="vertical" android:id="@id/ll_buttons2" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="0.0dip" android:layout_weight="1.0">
+        <FrameLayout android:id="@id/fl_button_bg4" android:background="?attr_button_bg" android:layout_width="fill_parent" android:layout_height="44.0dip" android:layout_marginLeft="26.0dip" android:layout_marginTop="20.0dip" android:layout_marginRight="26.0dip" android:layout_marginBottom="20.0dip">
+            <Button android:textStyle="bold" android:textColor="@color/cs_button_text_white" android:ellipsize="end" android:id="@id/btn_return_to_conversation" android:background="@drawable/ds_button_bg" android:paddingLeft="10.0dip" android:paddingRight="10.0dip" android:layout_width="fill_parent" android:layout_height="fill_parent" android:text="@string/label_return_conversation" android:singleLine="true" />
+        </FrameLayout>
+    </LinearLayout>
+</LinearLayout>

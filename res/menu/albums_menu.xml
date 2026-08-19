@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@id/create_album" android:orderInCategory="1001" android:title="@string/label_create_album" />
+    <item android:id="@id/albums_comments" android:title="@string/albums_comments" />
+</menu>

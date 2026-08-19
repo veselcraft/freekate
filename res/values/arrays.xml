@@ -1,0 +1,486 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="ad_complain_report_values">
+        <item>@string/label_ban_reason1</item>
+        <item>@string/report_reason6</item>
+        <item>@string/report_reason5</item>
+        <item>@string/fraud</item>
+        <item>@string/label_ban_reason0</item>
+    </string-array>
+    <string-array name="audio_genre_keys">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+        <item>6</item>
+        <item>7</item>
+        <item>21</item>
+        <item>8</item>
+        <item>1001</item>
+        <item>10</item>
+        <item>11</item>
+        <item>12</item>
+        <item>13</item>
+        <item>14</item>
+        <item>15</item>
+        <item>16</item>
+        <item>17</item>
+        <item>19</item>
+        <item>22</item>
+        <item>18</item>
+    </string-array>
+    <string-array name="audio_genre_values">
+        <item>Rock</item>
+        <item>Pop</item>
+        <item>Rap &amp; Hip-Hop</item>
+        <item>Easy Listening</item>
+        <item>Dance &amp; House</item>
+        <item>Instrumental</item>
+        <item>Metal</item>
+        <item>Alternative</item>
+        <item>Dubstep</item>
+        <item>Jazz &amp; Blues</item>
+        <item>Drum &amp; Bass</item>
+        <item>Trance</item>
+        <item>Chanson</item>
+        <item>Ethnic</item>
+        <item>Acoustic &amp; Vocal</item>
+        <item>Reggae</item>
+        <item>Classical</item>
+        <item>Indie Pop</item>
+        <item>Speech</item>
+        <item>Electropop &amp; Disco</item>
+        <item>Other</item>
+    </string-array>
+    <string-array name="ban_end_date_values">
+        <item>@string/label_end_date0</item>
+        <item>@string/label_end_date1</item>
+        <item>@string/label_end_date2</item>
+        <item>@string/label_end_date3</item>
+        <item>@string/label_end_date4</item>
+        <item>@string/label_end_date5</item>
+    </string-array>
+    <string-array name="ban_reason_values">
+        <item>@string/label_ban_reason0</item>
+        <item>@string/label_ban_reason1</item>
+        <item>@string/label_ban_reason2</item>
+        <item>@string/label_ban_reason3</item>
+        <item>@string/label_ban_reason4</item>
+    </string-array>
+    <string-array name="bdate_visibility_values">
+        <item>@string/bdate_visibility_item_0</item>
+        <item>@string/bdate_visibility_item_1</item>
+        <item>@string/bdate_visibility_item_2</item>
+    </string-array>
+    <string-array name="cache_size_titles">
+        <item>30 MB</item>
+        <item>60 MB</item>
+        <item>150 MB</item>
+    </string-array>
+    <string-array name="cache_size_values">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+    </string-array>
+    <string-array name="communities_access_values">
+        <item>@string/label_open_group</item>
+        <item>@string/label_closed_group</item>
+        <item>@string/label_private_group</item>
+    </string-array>
+    <string-array name="communities_types_keys">
+        <item>group</item>
+        <item>event</item>
+        <item>public</item>
+    </string-array>
+    <string-array name="communities_types_values">
+        <item>@string/group</item>
+        <item>@string/label_event</item>
+        <item>@string/label_public</item>
+    </string-array>
+    <string-array name="complain_report_values">
+        <item>@string/report_reason0</item>
+        <item>@string/report_reason1</item>
+        <item>@string/report_reason2</item>
+        <item>@string/report_reason3</item>
+        <item>@string/report_reason4</item>
+        <item>@string/report_reason5</item>
+        <item>@string/report_reason6</item>
+    </string-array>
+    <string-array name="dialog_attachment_types">
+        <item>@string/all_photos</item>
+        <item>@string/label_photo</item>
+        <item>@string/title_videos_info</item>
+        <item>@string/title_audio_info</item>
+        <item>@string/docs</item>
+        <item>@string/links</item>
+        <item>@string/news_post</item>
+        <item>@string/forwarded_messages</item>
+        <item>@string/record_audio</item>
+    </string-array>
+    <string-array name="events_access_values">
+        <item>@string/label_open_event</item>
+        <item>@string/label_closed_event</item>
+    </string-array>
+    <string-array name="first_tab_keys">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+    </string-array>
+    <string-array name="first_tab_values">
+        <item>@string/news</item>
+        <item>@string/label_menu_friends</item>
+        <item>@string/label_menu_profile</item>
+        <item>@string/label_menu_messages</item>
+    </string-array>
+    <string-array name="friends_lists_values">
+        <item>@string/label_best_friends</item>
+        <item>@string/label_family</item>
+        <item>@string/label_co_workers</item>
+        <item>@string/label_university_friends</item>
+        <item>@string/label_school_friends</item>
+    </string-array>
+    <string-array name="group_members_filter">
+        <item>@string/label_all_members</item>
+        <item>@string/label_menu_friends</item>
+    </string-array>
+    <string-array name="group_members_filter2">
+        <item>@string/label_all_members</item>
+        <item>@string/label_menu_friends</item>
+        <item>@string/label_unsure_members</item>
+    </string-array>
+    <string-array name="groups_filter">
+        <item>@string/all</item>
+        <item>@string/label_events</item>
+    </string-array>
+    <string-array name="groups_filter2">
+        <item>@string/all</item>
+        <item>@string/label_events</item>
+        <item>@string/label_my_groups</item>
+    </string-array>
+    <string-array name="items_values1">
+        <item>@string/item_off</item>
+        <item>@string/item_on</item>
+    </string-array>
+    <string-array name="items_values2">
+        <item>@string/item_off</item>
+        <item>@string/item_open</item>
+    </string-array>
+    <string-array name="items_values3">
+        <item>@string/item_off</item>
+        <item>@string/item_open</item>
+        <item>@string/item_limited</item>
+    </string-array>
+    <string-array name="items_values4">
+        <item>@string/item_off</item>
+        <item>@string/item_open</item>
+        <item>@string/item_limited</item>
+        <item>@string/item_close</item>
+    </string-array>
+    <string-array name="language">
+        <item>@string/system_language</item>
+        <item>Русский</item>
+        <item>Українська</item>
+        <item>Беларуская</item>
+        <item>Қазақ</item>
+        <item>Татарча</item>
+        <item>Türk</item>
+        <item>Башҡортса</item>
+        <item>Italian</item>
+        <item>Português (Brasil)</item>
+        <item>English</item>
+    </string-array>
+    <string-array name="language_values">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+        <item>4</item>
+        <item>9</item>
+        <item>5</item>
+        <item>6</item>
+        <item>7</item>
+        <item>8</item>
+        <item>10</item>
+        <item>3</item>
+    </string-array>
+    <string-array name="long_pull_keys">
+        <item>0</item>
+        <item>1</item>
+    </string-array>
+    <string-array name="long_pull_values">
+        <item>@string/long_pull_option1</item>
+        <item>@string/long_pull_option2</item>
+    </string-array>
+    <string-array name="members_sort">
+        <item>@string/label_sort_id_asc</item>
+        <item>@string/label_sort_id_desc</item>
+        <item>@string/label_sort_time_asc</item>
+        <item>@string/label_sort_time_desc</item>
+    </string-array>
+    <string-array name="members_sort_value">
+        <item>id_asc</item>
+        <item>id_desc</item>
+        <item>time_asc</item>
+        <item>time_desc</item>
+    </string-array>
+    <string-array name="messages_order_titles">
+        <item>@string/messages_from_top</item>
+        <item>@string/messages_from_bottom</item>
+    </string-array>
+    <string-array name="messages_order_values">
+        <item>0</item>
+        <item>1</item>
+    </string-array>
+    <string-array name="news_click_keys">
+        <item>0</item>
+        <item>1</item>
+    </string-array>
+    <string-array name="news_click_values">
+        <item>@string/opens_news</item>
+        <item>@string/opens_menu</item>
+    </string-array>
+    <string-array name="notify_interval_keys">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+        <item>6</item>
+        <item>7</item>
+        <item>8</item>
+        <item>9</item>
+        <item>10</item>
+        <item>11</item>
+        <item>12</item>
+        <item>13</item>
+    </string-array>
+    <string-array name="notify_interval_values">
+        <item>@string/item_timer1</item>
+        <item>@string/item_timer2</item>
+        <item>@string/item_timer3</item>
+        <item>@string/item_timer4</item>
+        <item>@string/item_timer5</item>
+        <item>@string/item_timer6</item>
+        <item>@string/item_timer7</item>
+        <item>@string/item_timer8</item>
+        <item>@string/item_timer9</item>
+        <item>@string/item_timer10</item>
+        <item>@string/item_timer11</item>
+        <item>@string/item_timer12</item>
+        <item>@string/item_timer13</item>
+        <item>@string/item_timer14</item>
+    </string-array>
+    <string-array name="online_keys">
+        <item>0</item>
+        <item>1</item>
+    </string-array>
+    <string-array name="online_values">
+        <item>@string/online_option1</item>
+        <item>@string/online_option2</item>
+    </string-array>
+    <string-array name="photo_size_keys">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+    </string-array>
+    <string-array name="photo_size_keys2">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+    </string-array>
+    <string-array name="photo_size_values">
+        <item>@string/photo_size_option0</item>
+        <item>@string/photo_size_option1</item>
+        <item>@string/photo_size_option2</item>
+    </string-array>
+    <string-array name="photo_size_values1">
+        <item>@string/label_photo_size_0</item>
+        <item>@string/label_photo_size_1</item>
+        <item>@string/label_photo_size_2</item>
+    </string-array>
+    <string-array name="photo_size_values2">
+        <item>@string/label_photo_size_0</item>
+        <item>@string/label_photo_size_1</item>
+    </string-array>
+    <string-array name="photo_size_values3">
+        <item>@string/label_photo_size_0</item>
+        <item>@string/label_photo_size_1</item>
+        <item>@string/label_photo_size_2</item>
+        <item>@string/label_photo_size_3</item>
+    </string-array>
+    <string-array name="photo_size_values4">
+        <item>@string/label_photo_size_0</item>
+        <item>@string/label_photo_size_1</item>
+        <item>@string/label_photo_size_2</item>
+        <item>@string/label_photo_size_3</item>
+        <item>@string/label_select</item>
+    </string-array>
+    <string-array name="privacy_values">
+        <item>@string/label_all_users_privacy</item>
+        <item>@string/privacy_friends</item>
+        <item>@string/label_friends_of_friends_privacy</item>
+        <item>@string/label_only_i_privacy</item>
+    </string-array>
+    <string-array name="profile_types">
+        <item>@string/setting_profile_short</item>
+        <item>@string/setting_profile_full</item>
+    </string-array>
+    <string-array name="profile_types_values">
+        <item>0</item>
+        <item>1</item>
+    </string-array>
+    <string-array name="public_page_types_values">
+        <item>@string/label_public_page_type1</item>
+        <item>@string/label_public_page_type2</item>
+        <item>@string/label_public_page_type3</item>
+        <item>@string/label_public_page_type4</item>
+    </string-array>
+    <string-array name="quality_photo_keys">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+    </string-array>
+    <string-array name="quality_photo_values">
+        <item>@string/photo_quality_option_0</item>
+        <item>@string/photo_quality_option_1</item>
+        <item>@string/photo_quality_option_2</item>
+    </string-array>
+    <string-array name="quality_video_keys">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+    </string-array>
+    <string-array name="quality_video_values">
+        <item>@string/quality_video_option1</item>
+        <item>@string/quality_video_option2</item>
+        <item>@string/quality_video_option3</item>
+        <item>@string/quality_video_option4</item>
+        <item>@string/quality_video_option5</item>
+    </string-array>
+    <string-array name="relation_status_values">
+        <item>@string/str_no_specified</item>
+        <item>@string/label_relation1</item>
+        <item>@string/label_relation2</item>
+        <item>@string/label_relation3</item>
+        <item>@string/label_relation4</item>
+        <item>@string/label_relation5</item>
+        <item>@string/label_relation6</item>
+        <item>@string/label_relation7</item>
+        <item>@string/label_relation8</item>
+    </string-array>
+    <string-array name="resize_values">
+        <item>@string/dont_resize</item>
+        <item>@string/resize_960</item>
+        <item>@string/resize_450</item>
+    </string-array>
+    <string-array name="search_status_values">
+        <item></item>
+        <item>@string/label_relation1</item>
+        <item>@string/label_relation2</item>
+        <item>@string/label_relation3</item>
+        <item>@string/label_relation4</item>
+        <item>@string/label_relation5</item>
+        <item>@string/label_relation6</item>
+        <item>@string/label_relation7</item>
+        <item>@string/label_relation8</item>
+    </string-array>
+    <string-array name="str_countries_base_values">
+        <item></item>
+        <item>@string/label_russia</item>
+        <item>@string/label_ukraine</item>
+        <item>@string/label_belarus</item>
+        <item>@string/label_another_country</item>
+    </string-array>
+    <string-array name="str_sex_values">
+        <item>@string/str_sex0</item>
+        <item>@string/str_sex1</item>
+        <item>@string/str_sex2</item>
+    </string-array>
+    <string-array name="str_sex_values2">
+        <item>@string/str_no_specified</item>
+        <item>@string/str_sex1</item>
+        <item>@string/str_sex2</item>
+    </string-array>
+    <string-array name="str_sort_values">
+        <item>@string/label_sort0</item>
+        <item>@string/label_sort1</item>
+    </string-array>
+    <string-array name="themes">
+        <item>@string/indigo_dark</item>
+        <item>@string/indigo</item>
+        <item>@string/label_theme_transparent</item>
+        <item>@string/label_theme_light</item>
+        <item>@string/label_theme_holo</item>
+        <item>@string/label_theme_black</item>
+        <item>@string/label_theme_pink</item>
+        <item>@string/label_theme_orange</item>
+        <item>@string/label_theme_metal</item>
+        <item>@string/label_theme_coffee</item>
+        <item>@string/label_theme_old_light</item>
+        <item>@string/label_theme_light_green</item>
+        <item>@string/label_theme_green</item>
+    </string-array>
+    <string-array name="themes_value">
+        <item>11</item>
+        <item>10</item>
+        <item>12</item>
+        <item>0</item>
+        <item>8</item>
+        <item>1</item>
+        <item>2</item>
+        <item>5</item>
+        <item>6</item>
+        <item>7</item>
+        <item>9</item>
+        <item>4</item>
+        <item>3</item>
+    </string-array>
+    <integer-array name="timer_values">
+        <item>30</item>
+        <item>60</item>
+        <item>120</item>
+        <item>180</item>
+        <item>300</item>
+        <item>600</item>
+        <item>900</item>
+        <item>1800</item>
+        <item>3600</item>
+        <item>7200</item>
+        <item>10800</item>
+        <item>28800</item>
+        <item>43200</item>
+        <item>86400</item>
+    </integer-array>
+    <string-array name="user_complain_report_values">
+        <item>@string/user_report_reason0</item>
+        <item>@string/user_report_reason1</item>
+        <item>@string/user_report_reason2</item>
+        <item>@string/fraud</item>
+    </string-array>
+    <string-array name="video_duration_values">
+        <item>@string/label_all_filter2</item>
+        <item>@string/label_short_filter</item>
+        <item>@string/label_long_filter</item>
+    </string-array>
+    <string-array name="video_sort_values">
+        <item>@string/label_by_relevance</item>
+        <item>@string/label_by_date_uploaded</item>
+        <item>@string/label_by_duration</item>
+    </string-array>
+    <string-array name="video_type_values">
+        <item>@string/label_all_filter</item>
+        <item>@string/label_mp4_filter</item>
+        <item>@string/label_youtube_filter</item>
+        <item>@string/label_vimeo_filter</item>
+    </string-array>
+    <string-array name="wear_replies">
+        <item>@string/yes</item>
+        <item>@string/no</item>
+    </string-array>
+</resources>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:id="@id/list_parent" android:background="?activity_background" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <include layout="@layout/header" />
+    <EditText android:textColor="?attr_item_text_color" android:gravity="left|top" android:id="@id/tb_status" android:background="?edittext_background" android:layout_width="fill_parent" android:layout_height="0.0dip" android:layout_marginLeft="@dimen/edittext_marginLeft" android:layout_marginTop="16.0dip" android:layout_marginRight="@dimen/edittext_marginLeft" android:layout_marginBottom="16.0dip" android:layout_weight="1.0" android:inputType="textCapSentences|textMultiLine" />
+    <View android:background="?attr_footer_divider_color" android:layout_width="fill_parent" android:layout_height="1.0px" />
+    <LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="@dimen/footer_layout_height">
+        <ImageButton android:id="@id/add_smile" android:background="?attr_holo_button_bg" android:layout_width="48.0dip" android:layout_height="48.0dip" android:src="?attr_smile_icon" android:scaleType="centerInside" android:contentDescription="@string/smiles" />
+        <View android:background="?attr_footer_divider_color" android:layout_width="1.0px" android:layout_height="fill_parent" android:layout_marginTop="0.0dip" android:layout_marginBottom="0.0dip" />
+        <Button android:textColor="?attr_footer_text_color" android:id="@id/btn_status_clear" android:background="?attr_holo_button_bg" android:layout_width="0.0dip" android:layout_height="@dimen/footer_layout_height" android:text="@string/label_clear" android:layout_weight="1.0" />
+        <View android:background="?attr_footer_divider_color" android:layout_width="1.0px" android:layout_height="fill_parent" android:layout_marginTop="0.0dip" android:layout_marginBottom="0.0dip" />
+        <Button android:textColor="?attr_footer_text_color" android:id="@id/btn_status_save" android:background="?attr_holo_button_bg" android:layout_width="0.0dip" android:layout_height="@dimen/footer_layout_height" android:text="@string/label_save" android:layout_weight="1.0" />
+    </LinearLayout>
+    <LinearLayout android:id="@id/footer_for_emoticons" android:background="@android:color/transparent" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="230.0dip" />
+</LinearLayout>

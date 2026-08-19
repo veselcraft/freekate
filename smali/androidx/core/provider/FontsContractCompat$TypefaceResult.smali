@@ -1,0 +1,26 @@
+.class final Landroidx/core/provider/FontsContractCompat$TypefaceResult;
+.super Ljava/lang/Object;
+.source "FontsContractCompat.java"
+
+
+# instance fields
+.field final mResult:I
+
+.field final mTypeface:Landroid/graphics/Typeface;
+
+
+# direct methods
+.method constructor <init>(Landroid/graphics/Typeface;I)V
+    .locals 0
+
+    .line 213
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    .line 214
+    iput-object p1, p0, Landroidx/core/provider/FontsContractCompat$TypefaceResult;->mTypeface:Landroid/graphics/Typeface;
+
+    .line 215
+    iput p2, p0, Landroidx/core/provider/FontsContractCompat$TypefaceResult;->mResult:I
+
+    return-void
+.end method

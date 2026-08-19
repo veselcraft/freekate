@@ -1,0 +1,343 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" android:compileSdkVersion="30" android:compileSdkVersionCodename="11" android:installLocation="auto" package="com.perm.kate" platformBuildVersionCode="30" platformBuildVersionName="11">
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.VIBRATE"/>
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:maxSdkVersion="22" android:name="android.permission.READ_PHONE_STATE"/>
+    <uses-permission android:name="android.permission.RECORD_AUDIO"/>
+    <uses-permission android:name="android.permission.READ_CONTACTS"/>
+    <uses-permission android:name="android.permission.WRITE_CONTACTS"/>
+    <uses-permission android:name="android.permission.AUTHENTICATE_ACCOUNTS"/>
+    <uses-permission android:name="android.permission.MANAGE_ACCOUNTS"/>
+    <uses-permission android:name="android.permission.GET_ACCOUNTS"/>
+    <uses-permission android:name="android.permission.READ_SYNC_SETTINGS"/>
+    <uses-permission android:name="android.permission.WRITE_SYNC_SETTINGS"/>
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/>
+    <uses-permission android:name="android.permission.WAKE_LOCK"/>
+    <uses-permission android:name="com.android.launcher.permission.INSTALL_SHORTCUT"/>
+    <uses-permission android:name="android.permission.USE_FINGERPRINT"/>
+    <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS"/>
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE"/>
+    <uses-permission android:name="android.permission.REQUEST_INSTALL_PACKAGES"/>
+    <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE"/>
+    <uses-feature android:name="android.hardware.touchscreen" android:required="false"/>
+    <uses-feature android:name="android.hardware.location" android:required="false"/>
+    <uses-feature android:name="android.hardware.location.network" android:required="false"/>
+    <uses-feature android:name="android.hardware.telephony" android:required="false"/>
+    <uses-feature android:name="android.hardware.microphone" android:required="false"/>
+    <uses-feature android:name="android.hardware.screen.portrait" android:required="false"/>
+    <uses-feature android:name="android.hardware.screen.landscape" android:required="false"/>
+    <uses-feature android:name="android.hardware.fingerprint" android:required="false"/>
+    <supports-screens android:anyDensity="true" android:largeScreens="true" android:normalScreens="true" android:resizeable="true" android:smallScreens="true" android:xlargeScreens="true"/>
+    <uses-feature android:glEsVersion="0x00020000" android:required="true"/>
+    <queries>
+        <package android:name="com.google.android.apps.maps"/>
+    </queries>
+    <application android:allowBackup="false" android:appComponentFactory="androidx.core.app.CoreComponentFactory" android:hardwareAccelerated="true" android:icon="@drawable/icon" android:label="@string/app_name" android:name="com.perm.kate.KApplication" android:preserveLegacyExternalStorage="true" android:requestLegacyExternalStorage="true" android:resizeableActivity="true" android:roundIcon="@drawable/icon_round" android:theme="@style/KateLight" android:usesCleartextTraffic="true">
+        <meta-data android:name="com.sec.android.support.multiwindow" android:value="true"/>
+        <meta-data android:name="com.sec.android.multiwindow.DEFAULT_SIZE_W" android:resource="@dimen/app_defaultsize_w"/>
+        <meta-data android:name="com.sec.android.multiwindow.DEFAULT_SIZE_H" android:resource="@dimen/app_defaultsize_h"/>
+        <meta-data android:name="com.sec.android.multiwindow.MINIMUM_SIZE_W" android:resource="@dimen/app_minimumsize_w"/>
+        <meta-data android:name="com.sec.android.multiwindow.MINIMUM_SIZE_H" android:resource="@dimen/app_minimumsize_h"/>
+        <meta-data android:name="com.google.android.gms.version" android:value="@integer/google_play_services_version"/>
+        <meta-data android:name="com.google.android.geo.API_KEY" android:value="@string/google_maps_key"/>
+        <meta-data android:name="firebase_analytics_collection_deactivated" android:value="true"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:label="@string/app_name" android:launchMode="singleTask" android:name="com.perm.kate.MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+            </intent-filter>
+        </activity>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:label="@string/app_name" android:name="com.perm.kate.InitialActivity" android:theme="@style/Splash">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+                <category android:name="android.intent.category.MULTIWINDOW_LAUNCHER"/>
+            </intent-filter>
+            <meta-data android:name="com.sec.minimode.icon.portrait.normal" android:resource="@drawable/icon"/>
+            <meta-data android:name="com.sec.minimode.icon.landscape.normal" android:resource="@drawable/icon"/>
+            <meta-data android:name="android.app.shortcuts" android:resource="@xml/shortcuts"/>
+        </activity>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:label="@string/app_name" android:name="com.perm.kate.LoginActivity"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:label="@string/app_name" android:name="com.perm.kate.LoginActivity2"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.perm.kate.ProfileInfoActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <data android:mimeType="vnd.android.cursor.item/vnd.com.perm.kate.profile"/>
+            </intent-filter>
+        </activity>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:exported="true" android:name="com.perm.kate.FriendsActivity2" android:windowSoftInputMode="stateHidden"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.perm.kate.FollowersActivity2"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.perm.kate.BirthdaysActivity"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.perm.kate.NewsActivity"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.perm.kate.WallActivity2"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.perm.kate.NewsCommentsActivity"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:exported="true" android:name="com.perm.kate.MessageThreadActivity"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.perm.kate.NewMessageActivity" android:windowSoftInputMode="stateVisible|adjustResize"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.perm.kate.AlbumsActivity2" android:windowSoftInputMode="stateHidden">
+            <intent-filter android:label="@string/share_album">
+                <action android:name="android.intent.action.SEND"/>
+                <data android:mimeType="image/*"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+            <intent-filter android:label="@string/share_album">
+                <action android:name="android.intent.action.SEND_MULTIPLE"/>
+                <data android:mimeType="image/*"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.perm.kate.PhotosActivity"/>
+        <activity android:name="com.perm.kate.PhotoViewerActrivity"/>
+        <activity android:name="com.perm.kate.SinglePhotoViewer"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.perm.kate.CommentsActivity" android:windowSoftInputMode="stateHidden"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.perm.kate.CommentsSearchActivity"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:exported="true" android:name="com.perm.kate.AudioActivity2" android:windowSoftInputMode="stateHidden"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.perm.kate.SearchWallActivity"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.perm.kate.SearchActivity"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.perm.kate.SearchParamsActivity" android:windowSoftInputMode="stateHidden"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.perm.kate.SearchVideoParamsActivity"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.perm.kate.SearchAudioParamsActivity"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.perm.kate.VideoActivity2" android:windowSoftInputMode="stateHidden"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.perm.kate.VideoUploadActivity"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.perm.kate.StatusActivity" android:windowSoftInputMode="stateVisible|adjustResize"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.perm.kate.PhotoEditActivity" android:windowSoftInputMode="stateVisible|adjustResize"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.perm.kate.NewAlbumActivity" android:windowSoftInputMode="stateVisible|adjustResize"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.perm.kate.NoteActivity"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.perm.kate.FavesActivity2" android:windowSoftInputMode="stateHidden"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.perm.kate.EditChatActivity"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.perm.kate.MembersActivity">
+            <intent-filter android:label="@string/share_message">
+                <action android:name="android.intent.action.SEND"/>
+                <data android:mimeType="text/plain"/>
+                <data android:mimeType="image/*"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+            <intent-filter android:label="@string/share_message">
+                <action android:name="android.intent.action.SEND_MULTIPLE"/>
+                <data android:mimeType="image/*"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.perm.kate.CheckMembersActivity" android:windowSoftInputMode="stateHidden"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.perm.kate.CreateChatActivity" android:windowSoftInputMode="stateVisible|adjustResize"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.perm.kate.NewCommentActivity" android:windowSoftInputMode="stateVisible|adjustResize"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.perm.kate.WallPostActivity" android:windowSoftInputMode="stateVisible|adjustResize">
+            <intent-filter android:label="@string/share_wall">
+                <action android:name="android.intent.action.SEND"/>
+                <data android:mimeType="text/plain"/>
+                <data android:mimeType="image/*"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.perm.kate.AttachmentsActivity"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.perm.kate.Settings" android:theme="@android:style/Theme.Holo"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:exported="true" android:name="com.perm.kate.GroupsActivity2" android:windowSoftInputMode="stateHidden"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:exported="true" android:name="com.perm.kate.GroupActivity"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.perm.kate.GroupsInvitesActivity"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.perm.kate.GroupTopicsActivity" android:windowSoftInputMode="stateHidden"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.perm.kate.GroupMembersActivity"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.perm.kate.GroupLinksActivity"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.perm.kate.GroupContactsActivity"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.perm.kate.GroupManagementActivity"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.perm.kate.EditGroupManagerActivity" android:windowSoftInputMode="stateHidden"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.perm.kate.VideoViewActivity"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.perm.kate.NotesActivity2"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.perm.kate.EditAudioActivity"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.perm.kate.LyricsActivity"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.perm.kate.NewNoteActivity"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.perm.kate.NewGroupTopicActivity"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.perm.kate.SendLogActivity" android:windowSoftInputMode="stateVisible|adjustResize"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.perm.kate.PlayerActivity"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.perm.kate.AccountsActivity"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.perm.kate.UpdateActivity"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.perm.kate.LikesActivity"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.perm.kate.RecordEpisodeActivity"/>
+        <activity android:configChanges="keyboardHidden" android:name="com.perm.kate.PaintActivity" android:screenOrientation="landscape"/>
+        <activity android:configChanges="keyboardHidden" android:name="com.perm.kate.SettingsPaint" android:screenOrientation="landscape"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.perm.kate.ColorPickerActivity"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.perm.kate.PollActivity"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.perm.kate.PollVotersActivity"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.perm.kate.PollCreateActivity"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.perm.kate.SyncActivity"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.perm.kate.SyncSelectionActivity"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.perm.kate.PhotoDetailsActivity"/>
+        <service android:name="com.perm.kate.UpdateService"/>
+        <service android:name="com.perm.kate.PlaybackService"/>
+        <service android:name="com.perm.kate.BirthdayService"/>
+        <service android:name="com.perm.kate.CleanupService"/>
+        <service android:name="com.perm.kate.push.PushService"/>
+        <service android:exported="true" android:name="com.perm.kate.sync.AccountAuthenticatorService" android:process=":auth">
+            <intent-filter>
+                <action android:name="android.accounts.AccountAuthenticator"/>
+            </intent-filter>
+            <meta-data android:name="android.accounts.AccountAuthenticator" android:resource="@xml/authenticator"/>
+        </service>
+        <service android:exported="true" android:name="com.perm.kate.sync.mySyncService">
+            <intent-filter>
+                <action android:name="android.content.SyncAdapter"/>
+            </intent-filter>
+            <meta-data android:name="android.content.SyncAdapter" android:resource="@xml/sync_myapp"/>
+            <meta-data android:name="android.provider.CONTACTS_STRUCTURE" android:resource="@xml/contacts"/>
+        </service>
+        <receiver android:name="com.perm.kate.music.MusicIntentReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.MEDIA_BUTTON"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:name="com.perm.kate.BootReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:label="@string/label_wg_mini_name" android:name="com.perm.kate.KateWidgetMini">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE"/>
+            </intent-filter>
+            <meta-data android:name="android.appwidget.provider" android:resource="@xml/widget_mini"/>
+        </receiver>
+        <receiver android:label="@string/label_wg_med_name" android:name="com.perm.kate.KateWidgetMed">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE"/>
+            </intent-filter>
+            <meta-data android:name="android.appwidget.provider" android:resource="@xml/widget_med"/>
+        </receiver>
+        <service android:name="com.perm.kate.KateWidgetMed$WgUpdateService"/>
+        <receiver android:label="@string/label_wg_audio_name" android:name="com.perm.kate.KateWidgetAudio">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE"/>
+            </intent-filter>
+            <meta-data android:name="android.appwidget.provider" android:resource="@xml/widget_audio"/>
+        </receiver>
+        <receiver android:label="@string/label_wg_messages_name" android:name="com.perm.kate.KateWidgetMessages">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE"/>
+            </intent-filter>
+            <meta-data android:name="android.appwidget.provider" android:resource="@xml/widget_messages"/>
+        </receiver>
+        <receiver android:exported="false" android:name="com.perm.kate.MessagesReceiver">
+            <intent-filter>
+                <action android:name="com.perm.kate.intent.action.new_messages"/>
+            </intent-filter>
+        </receiver>
+        <service android:exported="false" android:name="com.perm.kate.MessagesWidgetService" android:permission="android.permission.BIND_REMOTEVIEWS"/>
+        <service android:name="com.perm.kate.push.C2DMReceiver">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT"/>
+            </intent-filter>
+        </service>
+        <activity android:label="@string/app_name" android:name="com.perm.kate.GoogleMapsActivity" android:theme="@android:style/Theme.Holo.NoActionBar"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.perm.kate.AudioAlbumsActivity" android:windowSoftInputMode="stateHidden"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.perm.kate.VideoAlbumsActivity" android:windowSoftInputMode="stateHidden"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.perm.kate.PhotoUploadOptionsActivity" android:windowSoftInputMode="stateHidden"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.perm.kate.WallMessageActivity"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.perm.kate.ForwardedMessagesActivity"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.perm.kate.BlockActivity"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.perm.kate.GroupBanActivity" android:windowSoftInputMode="stateHidden"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.perm.kate.GroupBannedActivity"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.perm.kate.DocsActivity2" android:windowSoftInputMode="stateHidden">
+            <intent-filter android:label="@string/share_docs">
+                <action android:name="android.intent.action.SEND"/>
+                <data android:mimeType="*/*"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.perm.kate.FileManager"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.perm.kate.DeactivatedActivity"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.perm.kate.BannedActivity"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.perm.kate.BlackListActivity"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.perm.kate.ExtraProfileActivity2"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:exported="true" android:name="com.perm.kate.DialogsActivity"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.perm.kate.PhotoChooserActivity"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.perm.kate.PhotoChooserBucketsActivity"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.perm.kate.AudioAlbumActivity"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.perm.kate.VideoAlbumActivity"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.perm.kate.WebActivity"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.perm.kate.WebActivity2"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.perm.kate.GifViewActivity"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:label="@string/app_name" android:name="com.perm.kate.LinkActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:scheme="http"/>
+                <data android:scheme="https"/>
+                <data android:host="vk.com"/>
+                <data android:host="vkontakte.ru"/>
+                <data android:host="m.vk.com"/>
+                <data android:host="new.vk.com"/>
+                <data android:host="vk.me"/>
+            </intent-filter>
+        </activity>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.perm.kate.PublishDateActivity"/>
+        <service android:name="com.perm.kate.OnlineService"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.perm.kate.MessageSaveActivity" android:windowSoftInputMode="stateHidden"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.perm.kate.DialogAttachmentsActivity"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.perm.kate.EditProfileActivity" android:windowSoftInputMode="stateHidden"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.perm.kate.GamesActivity"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.perm.kate.StoriesActivity"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.perm.kate.NewGroupActivity"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.perm.kate.StatsActivity"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.perm.kate.EditGroupActivity" android:windowSoftInputMode="stateHidden"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.perm.kate.history.HistoryActivity"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.perm.kate.RequestsToGroupActivity"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.perm.kate.GiftsActivity"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.perm.kate.MyStickersActivity"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.perm.kate.AddStickersActivity"/>
+        <service android:name="com.perm.kate.video_cache.VideoCacheService"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.perm.kate.video_cache.VideoCacheActivity" android:windowSoftInputMode="stateHidden"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.perm.kate.VideoDetailsActivity"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.perm.kate.ChangePasswordActivity"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.perm.kate.PrivacyActivity"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.perm.kate.PrivacyItemActivity"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.perm.kate.FriendsListsActivity"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.perm.kate.EditGroupLinkActivity"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:launchMode="singleInstance" android:name="com.perm.kate.PopupActivity" android:noHistory="true" android:theme="@style/KatePopup" android:windowSoftInputMode="stateAlwaysHidden|adjustPan"/>
+        <service android:name="com.perm.kate.MessageNotificationService"/>
+        <receiver android:name="com.perm.kate.WearReceiver"/>
+        <receiver android:name="com.perm.kate.VoiceAssistantReceiver">
+            <intent-filter>
+                <action android:name="VK_MUSIC_PLAY_ALL"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="VK_MUSIC_PLAY_LIST"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="VK_MUSIC_PLAY_SEARCH"/>
+            </intent-filter>
+        </receiver>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.perm.kate.DashConfigActivity"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.perm.kate.MarketAlbumsActivity"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.perm.kate.MarketItemsActivity"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.perm.kate.MarketItemActivity"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.perm.kate.NewMarketActivity"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.perm.kate.NewMarketAlbumActivity"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.perm.kate.AlbumCommentsActivity"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.perm.kate.CommentRepliesActivity" android:windowSoftInputMode="stateHidden"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.perm.kate.ProxyActivity" android:windowSoftInputMode="stateHidden"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.perm.kate.PhotoChooserPreviewActivity"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.perm.kate.PodcastsActivity" android:windowSoftInputMode="stateHidden"/>
+        <provider android:authorities="com.perm.kate.provider" android:exported="false" android:grantUriPermissions="true" android:name="androidx.core.content.FileProvider">
+            <meta-data android:name="android.support.FILE_PROVIDER_PATHS" android:resource="@xml/provider_paths"/>
+        </provider>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.perm.kate.ChatInviteActivity"/>
+        <service android:exported="false" android:name="com.google.firebase.messaging.FirebaseMessagingService">
+            <intent-filter android:priority="-500">
+                <action android:name="com.google.firebase.MESSAGING_EVENT"/>
+            </intent-filter>
+        </service>
+        <uses-library android:name="org.apache.http.legacy" android:required="false"/>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize" android:name="com.my.target.common.MyTargetActivity"/>
+        <service android:exported="false" android:name="com.google.firebase.components.ComponentDiscoveryService">
+            <meta-data android:name="com.google.firebase.components:com.google.firebase.iid.Registrar" android:value="com.google.firebase.components.ComponentRegistrar"/>
+        </service>
+        <receiver android:exported="true" android:name="com.google.firebase.iid.FirebaseInstanceIdReceiver" android:permission="com.google.android.c2dm.permission.SEND">
+            <intent-filter>
+                <action android:name="com.google.android.c2dm.intent.RECEIVE"/>
+            </intent-filter>
+        </receiver>
+        <provider android:authorities="com.perm.kate.firebaseinitprovider" android:exported="false" android:initOrder="100" android:name="com.google.firebase.provider.FirebaseInitProvider"/>
+        <activity android:exported="false" android:name="com.google.android.gms.common.api.GoogleApiActivity" android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+    </application>
+</manifest>

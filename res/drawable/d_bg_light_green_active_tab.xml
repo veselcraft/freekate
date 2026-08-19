@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:drawable="@drawable/d_bg_light_green_active_tab_layer" />
+    <item android:drawable="@drawable/d_bg_light_green_normal_tab_layer" android:bottom="6.0dip" />
+</layer-list>
