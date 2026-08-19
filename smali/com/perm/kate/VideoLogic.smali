@@ -1547,10 +1547,55 @@
     .line 194
     .end local v1    # "url":Ljava/lang/String;
     :cond_6
+    iget-object v2, p0, Lcom/perm/kate/api/Video;->mp4_480:Ljava/lang/String;
+
+    invoke-static {v2}, Lcom/perm/kate/Helper;->empty(Ljava/lang/String;)Z
+
+    move-result v2
+
+    if-nez v2, :cond_up720
+
+    iget-object v1, p0, Lcom/perm/kate/api/Video;->mp4_480:Ljava/lang/String;
+
+    .restart local v1    # "url":Ljava/lang/String;
+    goto/16 :goto_0
+
+    .end local v1    # "url":Ljava/lang/String;
+    :cond_up720
+    iget-object v2, p0, Lcom/perm/kate/api/Video;->mp4_720:Ljava/lang/String;
+
+    invoke-static {v2}, Lcom/perm/kate/Helper;->empty(Ljava/lang/String;)Z
+
+    move-result v2
+
+    if-nez v2, :cond_up1080
+
+    iget-object v1, p0, Lcom/perm/kate/api/Video;->mp4_720:Ljava/lang/String;
+
+    .restart local v1    # "url":Ljava/lang/String;
+    goto/16 :goto_0
+
+    .end local v1    # "url":Ljava/lang/String;
+    :cond_up1080
+    iget-object v2, p0, Lcom/perm/kate/api/Video;->mp4_1080:Ljava/lang/String;
+
+    invoke-static {v2}, Lcom/perm/kate/Helper;->empty(Ljava/lang/String;)Z
+
+    move-result v2
+
+    if-nez v2, :cond_ext
+
+    iget-object v1, p0, Lcom/perm/kate/api/Video;->mp4_1080:Ljava/lang/String;
+
+    .restart local v1    # "url":Ljava/lang/String;
+    goto/16 :goto_0
+
+    .end local v1    # "url":Ljava/lang/String;
+    :cond_ext
     iget-object v1, p0, Lcom/perm/kate/api/Video;->external:Ljava/lang/String;
 
     .restart local v1    # "url":Ljava/lang/String;
-    goto :goto_0
+    goto/16 :goto_0
 .end method
 
 .method private static guessVideoType(Ljava/lang/String;)Ljava/lang/String;
