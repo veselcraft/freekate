@@ -941,7 +941,7 @@ Please keep in mind this directory will be removed on application uninstall."</s
     <string name="read_first">Read this first</string>
     <string name="read_more">Read more</string>
     <string name="recent">Recent</string>
-    <string name="recommendations">Recommendations</string>
+    <string name="recommendations">Global feed</string>
     <string name="record_audio">Voice message</string>
     <string name="refresh">Refresh</string>
     <string name="refresh_news_on_start">Refresh on start</string>
