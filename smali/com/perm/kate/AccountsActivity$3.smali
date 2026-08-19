@@ -36,7 +36,7 @@
 
 # virtual methods
 .method public onItemClick(Landroid/widget/AdapterView;Landroid/view/View;IJ)V
-    .locals 0
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -53,10 +53,6 @@
     if-eqz p1, :cond_0
 
     .line 112
-    invoke-virtual {p1}, Lcom/perm/kate/session/Session;->getMid()Ljava/lang/String;
-
-    move-result-object p1
-
     sget-object p2, Lcom/perm/kate/KApplication;->accountManager:Lcom/perm/kate/account/AccountManager;
 
     iget-object p2, p2, Lcom/perm/kate/account/AccountManager;->accounts:Ljava/util/ArrayList;
@@ -67,13 +63,29 @@
 
     check-cast p2, Lcom/perm/kate/account/Account;
 
-    iget-object p2, p2, Lcom/perm/kate/account/Account;->mid:Ljava/lang/String;
+    invoke-virtual {p1}, Lcom/perm/kate/session/Session;->getMid()Ljava/lang/String;
 
-    invoke-virtual {p1, p2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    move-result-object v0
 
-    move-result p1
+    iget-object v1, p2, Lcom/perm/kate/account/Account;->mid:Ljava/lang/String;
 
-    if-eqz p1, :cond_0
+    invoke-static {v0, v1}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    invoke-virtual {p1}, Lcom/perm/kate/session/Session;->getDomain()Ljava/lang/String;
+
+    move-result-object v0
+
+    iget-object v1, p2, Lcom/perm/kate/account/Account;->instance_domain:Ljava/lang/String;
+
+    invoke-static {v0, v1}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
 
     .line 114
     iget-object p1, p0, Lcom/perm/kate/AccountsActivity$3;->this$0:Lcom/perm/kate/AccountsActivity;

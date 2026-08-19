@@ -148,17 +148,9 @@
 
     .line 121
     :cond_1
-    sget-object v1, Lcom/perm/kate/api/Auth;->redirect_url:Ljava/lang/String;
+    const-string v1, "/blank.html"
 
-    invoke-virtual {p1, v1}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
-
-    move-result v1
-
-    if-nez v1, :cond_2
-
-    const-string v1, "http://api.vk.com/blank.html"
-
-    invoke-virtual {p1, v1}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
+    invoke-virtual {p1, v1}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
 
     move-result v1
 
@@ -234,9 +226,27 @@
     iput-object v6, v4, Lcom/perm/kate/account/Account;->access_token:Ljava/lang/String;
 
     .line 135
-    aget-object v5, v5, v2
+    aget-object v6, v5, v2
 
-    iput-object v5, v4, Lcom/perm/kate/account/Account;->mid:Ljava/lang/String;
+    iput-object v6, v4, Lcom/perm/kate/account/Account;->mid:Ljava/lang/String;
+
+    const/4 v6, 0x2
+
+    aget-object v6, v5, v6
+
+    iput-object v6, v4, Lcom/perm/kate/account/Account;->instance_domain:Ljava/lang/String;
+
+    const/4 v6, 0x3
+
+    aget-object v6, v5, v6
+
+    const-string v5, "true"
+
+    invoke-static {v6, v5}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
+
+    move-result v6
+
+    iput-boolean v6, v4, Lcom/perm/kate/account/Account;->use_tls:Z
 
     .line 136
     invoke-static {v4}, Lcom/perm/kate/KApplication;->addAccount(Lcom/perm/kate/account/Account;)V
@@ -288,6 +298,31 @@
 
     if-eqz v4, :cond_6
 
+    const/4 v6, 0x2
+
+    aget-object v6, v1, v6
+
+    invoke-static {v6}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
+
+    move-result v7
+
+    if-nez v7, :cond_keep_domain
+
+    invoke-virtual {v4, v6}, Lcom/perm/kate/session/Session;->setDomain(Ljava/lang/String;)V
+
+    const/4 v6, 0x3
+
+    aget-object v6, v1, v6
+
+    const-string v7, "true"
+
+    invoke-static {v6, v7}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
+
+    move-result v6
+
+    invoke-virtual {v4, v6}, Lcom/perm/kate/session/Session;->setTLS(Z)V
+
+    :cond_keep_domain
     .line 153
     aget-object v1, v1, v3
 
@@ -312,9 +347,27 @@
     iput-object v5, v4, Lcom/perm/kate/account/Account;->access_token:Ljava/lang/String;
 
     .line 160
-    aget-object v1, v1, v2
+    aget-object v5, v1, v2
 
-    iput-object v1, v4, Lcom/perm/kate/account/Account;->mid:Ljava/lang/String;
+    iput-object v5, v4, Lcom/perm/kate/account/Account;->mid:Ljava/lang/String;
+
+    const/4 v6, 0x2
+
+    aget-object v6, v1, v6
+
+    iput-object v6, v4, Lcom/perm/kate/account/Account;->instance_domain:Ljava/lang/String;
+
+    const/4 v6, 0x3
+
+    aget-object v6, v1, v6
+
+    const-string v7, "true"
+
+    invoke-static {v6, v7}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
+
+    move-result v6
+
+    iput-boolean v6, v4, Lcom/perm/kate/account/Account;->use_tls:Z
 
     .line 161
     invoke-static {v4}, Lcom/perm/kate/KApplication;->addAccount(Lcom/perm/kate/account/Account;)V

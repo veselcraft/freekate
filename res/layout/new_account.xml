@@ -5,6 +5,8 @@
     <ScrollView android:layout_width="fill_parent" android:layout_height="fill_parent" android:fillViewport="true">
         <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content">
             <LinearLayout android:orientation="vertical" android:id="@id/login_view" android:layout_width="fill_parent" android:layout_height="wrap_content">
+                <EditText android:id="@id/instance" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="10.0dip" android:layout_marginTop="10.0dip" android:layout_marginRight="10.0dip" android:hint="@string/label_instance" android:text="api.openvk.org" android:inputType="textUri" />
+                <CheckBox android:id="@id/use_tls" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="10.0dip" android:layout_marginTop="10.0dip" android:layout_marginRight="10.0dip" android:checked="true" android:text="@string/label_use_tls" />
                 <EditText android:id="@id/username" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="10.0dip" android:layout_marginTop="10.0dip" android:layout_marginRight="10.0dip" android:hint="@string/label_username">
                     <requestFocus />
                 </EditText>

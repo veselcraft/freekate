@@ -95,7 +95,7 @@
 .end method
 
 .method private removeAccount(I)V
-    .locals 3
+    .locals 4
 
     .line 156
     sget-object v0, Lcom/perm/kate/KApplication;->accountManager:Lcom/perm/kate/account/AccountManager;
@@ -115,15 +115,27 @@
 
     invoke-virtual {v1}, Lcom/perm/kate/session/Session;->getMid()Ljava/lang/String;
 
-    move-result-object v1
+    move-result-object v2
 
-    iget-object v2, v0, Lcom/perm/kate/account/Account;->mid:Ljava/lang/String;
+    iget-object v3, v0, Lcom/perm/kate/account/Account;->mid:Ljava/lang/String;
 
-    invoke-virtual {v1, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-static {v2, v3}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
 
-    move-result v1
+    move-result v2
 
-    if-eqz v1, :cond_0
+    if-eqz v2, :cond_0
+
+    invoke-virtual {v1}, Lcom/perm/kate/session/Session;->getDomain()Ljava/lang/String;
+
+    move-result-object v2
+
+    iget-object v3, v0, Lcom/perm/kate/account/Account;->instance_domain:Ljava/lang/String;
+
+    invoke-static {v2, v3}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
+
+    move-result v2
+
+    if-eqz v2, :cond_0
 
     .line 158
     sget-object v1, Lcom/perm/kate/KApplication;->longPoll:Lcom/perm/kate/LongPoll;

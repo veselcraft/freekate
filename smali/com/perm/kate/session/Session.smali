@@ -23,7 +23,7 @@
 .end method
 
 .method public constructor <init>(Landroid/content/Context;Lcom/perm/kate/account/Account;)V
-    .locals 1
+    .locals 5
 
     .line 43
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -41,13 +41,77 @@
 
     iget-object p2, p0, Lcom/perm/kate/session/Session;->account:Lcom/perm/kate/account/Account;
 
-    iget-object p2, p2, Lcom/perm/kate/account/Account;->access_token:Ljava/lang/String;
+    iget-object v0, p2, Lcom/perm/kate/account/Account;->access_token:Ljava/lang/String;
 
-    sget-object v0, Lcom/perm/kate/KateConstants;->API_ID:Ljava/lang/String;
+    sget-object v1, Lcom/perm/kate/KateConstants;->API_ID:Ljava/lang/String;
 
-    invoke-direct {p1, p2, v0}, Lcom/perm/kate/api/Api;-><init>(Ljava/lang/String;Ljava/lang/String;)V
+    iget-object v2, p2, Lcom/perm/kate/account/Account;->instance_domain:Ljava/lang/String;
+
+    iget-boolean v3, p2, Lcom/perm/kate/account/Account;->use_tls:Z
+
+    invoke-direct {p1, v0, v1, v2, v3}, Lcom/perm/kate/api/Api;-><init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Z)V
 
     iput-object p1, p0, Lcom/perm/kate/session/Session;->api:Lcom/perm/kate/api/Api;
+
+    return-void
+.end method
+
+.method public getDomain()Ljava/lang/String;
+    .locals 1
+
+    iget-object v0, p0, Lcom/perm/kate/session/Session;->account:Lcom/perm/kate/account/Account;
+
+    iget-object v0, v0, Lcom/perm/kate/account/Account;->instance_domain:Ljava/lang/String;
+
+    return-object v0
+.end method
+
+.method public isTLS()Z
+    .locals 1
+
+    iget-object v0, p0, Lcom/perm/kate/session/Session;->account:Lcom/perm/kate/account/Account;
+
+    iget-boolean v0, v0, Lcom/perm/kate/account/Account;->use_tls:Z
+
+    return v0
+.end method
+
+.method public getInstanceUrl()Ljava/lang/String;
+    .locals 1
+
+    iget-object v0, p0, Lcom/perm/kate/session/Session;->api:Lcom/perm/kate/api/Api;
+
+    invoke-virtual {v0}, Lcom/perm/kate/api/Api;->getInstanceUrl()Ljava/lang/String;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method public setDomain(Ljava/lang/String;)V
+    .locals 1
+
+    iget-object v0, p0, Lcom/perm/kate/session/Session;->account:Lcom/perm/kate/account/Account;
+
+    iput-object p1, v0, Lcom/perm/kate/account/Account;->instance_domain:Ljava/lang/String;
+
+    iget-object v0, p0, Lcom/perm/kate/session/Session;->api:Lcom/perm/kate/api/Api;
+
+    invoke-virtual {v0, p1}, Lcom/perm/kate/api/Api;->setDomain(Ljava/lang/String;)V
+
+    return-void
+.end method
+
+.method public setTLS(Z)V
+    .locals 1
+
+    iget-object v0, p0, Lcom/perm/kate/session/Session;->account:Lcom/perm/kate/account/Account;
+
+    iput-boolean p1, v0, Lcom/perm/kate/account/Account;->use_tls:Z
+
+    iget-object v0, p0, Lcom/perm/kate/session/Session;->api:Lcom/perm/kate/api/Api;
+
+    invoke-virtual {v0, p1}, Lcom/perm/kate/api/Api;->setTLS(Z)V
 
     return-void
 .end method

@@ -194,7 +194,9 @@
     .line 383
     iget-object v0, p0, Lcom/perm/kate/account/Account;->mid:Ljava/lang/String;
 
-    invoke-static {v0}, Lcom/perm/kate/KApplication;->removeOldAccountIfExists(Ljava/lang/String;)V
+    iget-object v1, p0, Lcom/perm/kate/account/Account;->instance_domain:Ljava/lang/String;
+
+    invoke-static {v0, v1}, Lcom/perm/kate/KApplication;->removeOldAccountIfExists(Ljava/lang/String;Ljava/lang/String;)V
 
     .line 384
     sget-object v0, Lcom/perm/kate/KApplication;->accountManager:Lcom/perm/kate/account/AccountManager;
@@ -506,7 +508,7 @@
 .end method
 
 .method private findActiveSession()V
-    .locals 4
+    .locals 6
 
     .line 302
     invoke-static {p0}, Landroid/preference/PreferenceManager;->getDefaultSharedPreferences(Landroid/content/Context;)Landroid/content/SharedPreferences;
@@ -520,7 +522,15 @@
     .line 303
     invoke-interface {v0, v1, v2}, Landroid/content/SharedPreferences;->getString(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
-    move-result-object v0
+    move-result-object v4
+
+    const-string v1, "current_instance"
+
+    invoke-interface {v0, v1, v2}, Landroid/content/SharedPreferences;->getString(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v5
+
+    move-object v0, v4
 
     if-eqz v0, :cond_1
 
@@ -549,7 +559,17 @@
 
     move-result-object v3
 
-    invoke-virtual {v3, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-static {v3, v0}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
+
+    move-result v3
+
+    if-eqz v3, :cond_0
+
+    invoke-virtual {v2}, Lcom/perm/kate/session/Session;->getDomain()Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-static {v3, v5}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
 
     move-result v3
 
@@ -1270,8 +1290,8 @@
     return-void
 .end method
 
-.method private static removeOldAccountIfExists(Ljava/lang/String;)V
-    .locals 2
+.method private static removeOldAccountIfExists(Ljava/lang/String;Ljava/lang/String;)V
+    .locals 3
 
     const/4 v0, 0x0
 
@@ -1300,13 +1320,21 @@
     check-cast v1, Lcom/perm/kate/account/Account;
 
     .line 400
-    iget-object v1, v1, Lcom/perm/kate/account/Account;->mid:Ljava/lang/String;
+    iget-object v2, v1, Lcom/perm/kate/account/Account;->mid:Ljava/lang/String;
 
-    invoke-virtual {v1, p0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-static {v2, p0}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
 
-    move-result v1
+    move-result v2
 
-    if-eqz v1, :cond_0
+    if-eqz v2, :cond_0
+
+    iget-object v2, v1, Lcom/perm/kate/account/Account;->instance_domain:Ljava/lang/String;
+
+    invoke-static {v2, p1}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
+
+    move-result v2
+
+    if-eqz v2, :cond_0
 
     .line 403
     sget-object p0, Lcom/perm/kate/KApplication;->sessions:Ljava/util/ArrayList;
@@ -1382,11 +1410,21 @@
     .line 426
     invoke-virtual {v1}, Lcom/perm/kate/session/Session;->getMid()Ljava/lang/String;
 
-    move-result-object v1
+    move-result-object v2
 
-    const-string v2, "current_account"
+    const-string v1, "current_account"
 
-    invoke-interface {v0, v2, v1}, Landroid/content/SharedPreferences$Editor;->putString(Ljava/lang/String;Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;
+    invoke-interface {v0, v1, v2}, Landroid/content/SharedPreferences$Editor;->putString(Ljava/lang/String;Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;
+
+    sget-object v1, Lcom/perm/kate/KApplication;->session:Lcom/perm/kate/session/Session;
+
+    invoke-virtual {v1}, Lcom/perm/kate/session/Session;->getDomain()Ljava/lang/String;
+
+    move-result-object v2
+
+    const-string v1, "current_instance"
+
+    invoke-interface {v0, v1, v2}, Landroid/content/SharedPreferences$Editor;->putString(Ljava/lang/String;Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;
 
     .line 427
     :cond_0
@@ -1481,21 +1519,6 @@
 
     sput-object v0, Lcom/perm/kate/KateConstants;->tmp:Ljava/lang/String;
 
-    .line 184
-    new-instance v0, Lcom/perm/kate/db/DataHelper;
-
-    invoke-direct {v0, p0}, Lcom/perm/kate/db/DataHelper;-><init>(Landroid/content/Context;)V
-
-    sput-object v0, Lcom/perm/kate/KApplication;->db:Lcom/perm/kate/db/DataHelper;
-
-    .line 185
-    invoke-virtual {v0}, Lcom/perm/kate/db/DataHelper;->open()V
-
-    .line 188
-    sget-object v0, Lcom/perm/kate/KApplication;->db:Lcom/perm/kate/db/DataHelper;
-
-    invoke-virtual {v0}, Lcom/perm/kate/db/DataHelper;->setPragmaSync()V
-
     .line 189
     sget-object v0, Lcom/perm/kate/KApplication;->accountManager:Lcom/perm/kate/account/AccountManager;
 
@@ -1586,6 +1609,19 @@
     .line 196
     :cond_1
     invoke-direct {p0}, Lcom/perm/kate/KApplication;->findActiveSession()V
+
+    .line 184
+    new-instance v0, Lcom/perm/kate/db/DataHelper;
+
+    invoke-direct {v0, p0}, Lcom/perm/kate/db/DataHelper;-><init>(Landroid/content/Context;)V
+
+    sput-object v0, Lcom/perm/kate/KApplication;->db:Lcom/perm/kate/db/DataHelper;
+
+    .line 185
+    invoke-virtual {v0}, Lcom/perm/kate/db/DataHelper;->open()V
+
+    .line 188
+    invoke-virtual {v0}, Lcom/perm/kate/db/DataHelper;->setPragmaSync()V
 
     .line 198
     invoke-static {p0}, Lcom/perm/kate/Helper;->getScreenSize(Landroid/content/Context;)I

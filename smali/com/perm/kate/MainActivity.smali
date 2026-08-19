@@ -3365,6 +3365,10 @@
     :try_start_0
     invoke-direct {p0}, Lcom/perm/kate/MainActivity;->logOut()V
 
+    sget-object v0, Lcom/perm/kate/KApplication;->db:Lcom/perm/kate/db/DataHelper;
+
+    invoke-virtual {v0}, Lcom/perm/kate/db/DataHelper;->reopenIfNeeded()V
+
     .line 465
     iget-boolean v0, p0, Lcom/perm/kate/MainActivity;->isTabletUi:Z
 

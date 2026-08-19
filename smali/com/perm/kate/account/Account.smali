@@ -18,6 +18,10 @@
 
 .field public user_name:Ljava/lang/String;
 
+.field public instance_domain:Ljava/lang/String;
+
+.field public use_tls:Z
+
 
 # direct methods
 .method public constructor <init>()V
@@ -107,6 +111,22 @@
     move-result v1
 
     iput-boolean v1, v0, Lcom/perm/kate/account/Account;->is_fcm:Z
+
+    const-string v1, "instance_domain"
+
+    invoke-virtual {p0, v1}, Lorg/json/JSONObject;->optString(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v1
+
+    iput-object v1, v0, Lcom/perm/kate/account/Account;->instance_domain:Ljava/lang/String;
+
+    const-string v1, "use_tls"
+
+    invoke-virtual {p0, v1}, Lorg/json/JSONObject;->optBoolean(Ljava/lang/String;)Z
+
+    move-result v1
+
+    iput-boolean v1, v0, Lcom/perm/kate/account/Account;->use_tls:Z
 
     const-string v1, "group_tokens"
 
@@ -212,6 +232,18 @@
     iget-boolean v1, p0, Lcom/perm/kate/account/Account;->is_fcm:Z
 
     const-string v2, "is_fcm"
+
+    invoke-virtual {v0, v2, v1}, Lorg/json/JSONObject;->put(Ljava/lang/String;Z)Lorg/json/JSONObject;
+
+    iget-object v1, p0, Lcom/perm/kate/account/Account;->instance_domain:Ljava/lang/String;
+
+    const-string v2, "instance_domain"
+
+    invoke-virtual {v0, v2, v1}, Lorg/json/JSONObject;->put(Ljava/lang/String;Ljava/lang/Object;)Lorg/json/JSONObject;
+
+    iget-boolean v1, p0, Lcom/perm/kate/account/Account;->use_tls:Z
+
+    const-string v2, "use_tls"
 
     invoke-virtual {v0, v2, v1}, Lorg/json/JSONObject;->put(Ljava/lang/String;Z)Lorg/json/JSONObject;
 

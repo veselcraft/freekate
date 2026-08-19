@@ -54,7 +54,7 @@
 
 
 # virtual methods
-.method public logInDirect(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)[Ljava/lang/Object;
+.method public logInDirect(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Z)[Ljava/lang/Object;
     .locals 23
 
     move-object/from16 v1, p0
@@ -117,7 +117,25 @@
     move-object/from16 v21, v8
 
     :try_start_2
-    const-string v8, "https://oauth.vk.com/token?grant_type=password&client_id="
+    move/from16 v8, p7
+
+    if-eqz v8, :cond_scheme_plain
+
+    const-string v8, "https://"
+
+    goto :goto_scheme_done
+
+    :cond_scheme_plain
+    const-string v8, "http://"
+
+    :goto_scheme_done
+    invoke-virtual {v5, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-object/from16 v8, p6
+
+    invoke-virtual {v5, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const-string v8, "/token?grant_type=password&client_id="
 
     invoke-virtual {v5, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 

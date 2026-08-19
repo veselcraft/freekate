@@ -10,6 +10,14 @@
 
 .field private instructionsClick:Landroid/content/DialogInterface$OnClickListener;
 
+.field instance:Landroid/widget/EditText;
+
+.field instanceDomain:Ljava/lang/String;
+
+.field useTlsCheckBox:Landroid/widget/CheckBox;
+
+.field use_tls:Z
+
 .field private listener:Landroid/view/View$OnClickListener;
 
 .field login:Landroid/widget/EditText;
@@ -258,6 +266,14 @@
 
     iput-object p1, v0, Lcom/perm/kate/account/Account;->access_token:Ljava/lang/String;
 
+    iget-object p1, p0, Lcom/perm/kate/LoginActivity2;->instanceDomain:Ljava/lang/String;
+
+    iput-object p1, v0, Lcom/perm/kate/account/Account;->instance_domain:Ljava/lang/String;
+
+    iget-boolean p1, p0, Lcom/perm/kate/LoginActivity2;->use_tls:Z
+
+    iput-boolean p1, v0, Lcom/perm/kate/account/Account;->use_tls:Z
+
     .line 156
     invoke-static {v0}, Lcom/perm/kate/KApplication;->addAccount(Lcom/perm/kate/account/Account;)V
 
@@ -319,7 +335,7 @@
 .end method
 
 .method private logIn(Ljava/lang/String;Ljava/lang/String;Z)V
-    .locals 7
+    .locals 9
 
     .line 162
     iget-object v0, p0, Lcom/perm/kate/LoginActivity2;->login:Landroid/widget/EditText;
@@ -356,8 +372,32 @@
 
     iput-object v0, p0, Lcom/perm/kate/LoginActivity2;->password:Ljava/lang/String;
 
-    .line 166
     :cond_0
+    iget-object v0, p0, Lcom/perm/kate/LoginActivity2;->instance:Landroid/widget/EditText;
+
+    invoke-virtual {v0}, Landroid/widget/EditText;->getText()Landroid/text/Editable;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljava/lang/Object;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljava/lang/String;->trim()Ljava/lang/String;
+
+    move-result-object v0
+
+    iput-object v0, p0, Lcom/perm/kate/LoginActivity2;->instanceDomain:Ljava/lang/String;
+
+    iget-object v0, p0, Lcom/perm/kate/LoginActivity2;->useTlsCheckBox:Landroid/widget/CheckBox;
+
+    invoke-virtual {v0}, Landroid/widget/CheckBox;->isChecked()Z
+
+    move-result v0
+
+    iput-boolean v0, p0, Lcom/perm/kate/LoginActivity2;->use_tls:Z
+
+    .line 166
     new-instance v1, Lcom/perm/kate/api/LoginLogic;
 
     invoke-direct {v1}, Lcom/perm/kate/api/LoginLogic;-><init>()V
@@ -375,7 +415,11 @@
 
     move-object v5, p2
 
-    invoke-virtual/range {v1 .. v6}, Lcom/perm/kate/api/LoginLogic;->logInDirect(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)[Ljava/lang/Object;
+    iget-object v7, p0, Lcom/perm/kate/LoginActivity2;->instanceDomain:Ljava/lang/String;
+
+    iget-boolean v8, p0, Lcom/perm/kate/LoginActivity2;->use_tls:Z
+
+    invoke-virtual/range {v1 .. v8}, Lcom/perm/kate/api/LoginLogic;->logInDirect(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Z)[Ljava/lang/Object;
 
     move-result-object p1
 
@@ -912,6 +956,26 @@
     check-cast p1, Landroid/widget/EditText;
 
     iput-object p1, p0, Lcom/perm/kate/LoginActivity2;->pass:Landroid/widget/EditText;
+
+    const p1, 0x7f090428
+
+    invoke-virtual {p0, p1}, Landroidx/appcompat/app/AppCompatActivity;->findViewById(I)Landroid/view/View;
+
+    move-result-object p1
+
+    check-cast p1, Landroid/widget/EditText;
+
+    iput-object p1, p0, Lcom/perm/kate/LoginActivity2;->instance:Landroid/widget/EditText;
+
+    const p1, 0x7f09042a
+
+    invoke-virtual {p0, p1}, Landroidx/appcompat/app/AppCompatActivity;->findViewById(I)Landroid/view/View;
+
+    move-result-object p1
+
+    check-cast p1, Landroid/widget/CheckBox;
+
+    iput-object p1, p0, Lcom/perm/kate/LoginActivity2;->useTlsCheckBox:Landroid/widget/CheckBox;
 
     const p1, 0x7f090205
 

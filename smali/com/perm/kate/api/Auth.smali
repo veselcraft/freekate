@@ -186,7 +186,19 @@
 .end method
 
 .method public static parseRedirectUrl(Ljava/lang/String;)[Ljava/lang/String;
-    .locals 5
+    .locals 7
+
+    const-string v5, "//([a-zA-Z0-9.:-]+)/"
+
+    invoke-static {p0, v5}, Lcom/perm/utils/Utils;->extractPattern(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v5
+
+    const-string v6, "https:"
+
+    invoke-virtual {p0, v6}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
+
+    move-result v6
 
     const-string v0, "access_token=(.*?)&"
 
@@ -261,7 +273,7 @@
 
     if-eqz v2, :cond_1
 
-    const/4 p0, 0x2
+    const/4 p0, 0x4
 
     new-array p0, p0, [Ljava/lang/String;
 
@@ -272,6 +284,18 @@
     const/4 v0, 0x1
 
     aput-object v1, p0, v0
+
+    const/4 v0, 0x2
+
+    aput-object v5, p0, v0
+
+    invoke-static {v6}, Ljava/lang/Boolean;->toString(Z)Ljava/lang/String;
+
+    move-result-object v5
+
+    const/4 v0, 0x3
+
+    aput-object v5, p0, v0
 
     return-object p0
 

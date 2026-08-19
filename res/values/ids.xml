@@ -354,6 +354,9 @@
     <item type="id" name="img_wg_posts_news_user_photo" />
     <item type="id" name="imv_profile_info_user_photo" />
     <item type="id" name="info" />
+    <item type="id" name="instance" />
+    <item type="id" name="instance_domain" />
+    <item type="id" name="use_tls" />
     <item type="id" name="itemCheckBox" />
     <item type="id" name="item_touch_helper_previous_elevation" />
     <item type="id" name="items_container" />

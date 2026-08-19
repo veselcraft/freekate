@@ -119,6 +119,18 @@
 
     invoke-virtual {v1, v2}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
+    const v1, 0x7f090429
+
+    invoke-virtual {p2, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
+
+    move-result-object v1
+
+    check-cast v1, Landroid/widget/TextView;
+
+    iget-object v2, p3, Lcom/perm/kate/account/Account;->instance_domain:Ljava/lang/String;
+
+    invoke-virtual {v1, v2}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
+
     const v1, 0x7f090188
 
     .line 47
@@ -165,17 +177,29 @@
 
     if-eqz v2, :cond_1
 
-    iget-object p3, p3, Lcom/perm/kate/account/Account;->mid:Ljava/lang/String;
+    iget-object v3, p3, Lcom/perm/kate/account/Account;->mid:Ljava/lang/String;
 
     invoke-virtual {v2}, Lcom/perm/kate/session/Session;->getMid()Ljava/lang/String;
 
-    move-result-object v2
+    move-result-object v4
 
-    invoke-virtual {p3, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-static {v3, v4}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
 
-    move-result p3
+    move-result v3
 
-    if-eqz p3, :cond_1
+    if-eqz v3, :cond_1
+
+    iget-object v3, p3, Lcom/perm/kate/account/Account;->instance_domain:Ljava/lang/String;
+
+    invoke-virtual {v2}, Lcom/perm/kate/session/Session;->getDomain()Ljava/lang/String;
+
+    move-result-object v4
+
+    invoke-static {v3, v4}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
+
+    move-result v3
+
+    if-eqz v3, :cond_1
 
     const p3, 0x7f0f002e
 
