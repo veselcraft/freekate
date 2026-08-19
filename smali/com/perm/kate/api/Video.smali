@@ -82,7 +82,9 @@
 
     .line 95
     .local v1, "res":Ljava/lang/String;
-    const-string v0, "http://vk.com/"
+    invoke-static {}, Lcom/perm/kate/KApplication;->getInstanceUrl()Ljava/lang/String;
+
+    move-result-object v0
 
     .line 96
     .local v0, "base_url":Ljava/lang/String;

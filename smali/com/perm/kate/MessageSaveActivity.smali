@@ -664,7 +664,11 @@
 
     move-result-object v5
 
-    const-string v6, "http://vk.com/photo"
+    const-string v6, "photo"
+
+    invoke-static {v6}, Lcom/perm/kate/KApplication;->instanceLink(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v6
 
     invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -757,7 +761,11 @@
 
     move-result-object v5
 
-    const-string v6, "http://vk.com/video"
+    const-string v6, "video"
+
+    invoke-static {v6}, Lcom/perm/kate/KApplication;->instanceLink(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v6
 
     invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -837,7 +845,11 @@
 
     move-result-object v5
 
-    const-string v6, "http://vk.com/doc"
+    const-string v6, "doc"
+
+    invoke-static {v6}, Lcom/perm/kate/KApplication;->instanceLink(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v6
 
     invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -917,7 +929,11 @@
 
     move-result-object v5
 
-    const-string v6, "http://vk.com/audio?id="
+    const-string v6, "audio?id="
+
+    invoke-static {v6}, Lcom/perm/kate/KApplication;->instanceLink(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v6
 
     invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -1115,7 +1131,11 @@
 
     move-result-object v5
 
-    const-string v6, "http://vk.com/wall"
+    const-string v6, "wall"
+
+    invoke-static {v6}, Lcom/perm/kate/KApplication;->instanceLink(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v6
 
     invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 

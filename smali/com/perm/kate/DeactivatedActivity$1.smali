@@ -43,7 +43,9 @@
 
     .prologue
     .line 28
-    const-string v0, "http://vk.com"
+    invoke-static {}, Lcom/perm/kate/KApplication;->getInstanceUrl()Ljava/lang/String;
+
+    move-result-object v0
 
     iget-object v1, p0, Lcom/perm/kate/DeactivatedActivity$1;->this$0:Lcom/perm/kate/DeactivatedActivity;
 
