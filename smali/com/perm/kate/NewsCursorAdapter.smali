@@ -4329,6 +4329,49 @@
     .line 300
     :cond_7
     :goto_a
+    const-string v8, "is_explicit"
+
+    move-object/from16 v0, p3
+
+    invoke-interface {v0, v8}, Landroid/database/Cursor;->getColumnIndex(Ljava/lang/String;)I
+
+    move-result v8
+
+    const/4 v9, -0x1
+
+    if-eq v8, v9, :cond_explicit_no
+
+    move-object/from16 v0, p3
+
+    invoke-interface {v0, v8}, Landroid/database/Cursor;->getInt(I)I
+
+    move-result v8
+
+    const/4 v9, 0x1
+
+    if-ne v8, v9, :cond_explicit_no
+
+    const/4 v8, 0x1
+
+    goto :cond_explicit_set
+
+    :cond_explicit_no
+    const/4 v8, 0x0
+
+    :cond_explicit_set
+    iput-boolean v8, v14, Lcom/perm/kate/NewsItemTag;->is_explicit:Z
+
+    if-eqz v8, :cond_explicit_end
+
+    sget v8, Lcom/perm/kate/KApplication;->nsfw_tolerance:I
+
+    const/4 v9, 0x2
+
+    if-eq v8, v9, :cond_explicit_end
+
+    const/16 v47, 0x1
+
+    :cond_explicit_end
     const-string v8, "post_id"
 
     move-object/from16 v0, p3

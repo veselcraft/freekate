@@ -341,7 +341,7 @@
 
 # virtual methods
 .method public bindView(Landroid/view/View;Landroid/content/Context;Landroid/database/Cursor;)V
-    .locals 59
+    .locals 60
     .param p1, "vi"    # Landroid/view/View;
     .param p2, "context"    # Landroid/content/Context;
     .param p3, "cursor"    # Landroid/database/Cursor;
@@ -484,6 +484,40 @@
 
     move-result-object v15
 
+    .line 88
+    .local v53, "text":Ljava/lang/String;
+    const-string v6, "is_explicit"
+
+    move-object/from16 v0, p3
+
+    invoke-interface {v0, v6}, Landroid/database/Cursor;->getColumnIndex(Ljava/lang/String;)I
+
+    move-result v6
+
+    const/4 v7, -0x1
+
+    if-eq v6, v7, :cond_explicit_no
+
+    move-object/from16 v0, p3
+
+    invoke-interface {v0, v6}, Landroid/database/Cursor;->getInt(I)I
+
+    move-result v6
+
+    const/4 v7, 0x1
+
+    if-ne v6, v7, :cond_explicit_no
+
+    const/4 v6, 0x1
+
+    goto :cond_explicit_set
+
+    :cond_explicit_no
+    const/4 v6, 0x0
+
+    :cond_explicit_set
+    iput-boolean v6, v14, Lcom/perm/kate/NewsItemTag;->is_explicit:Z
+
     .line 93
     .local v15, "copy_text":Ljava/lang/String;
     const/16 v43, 0x0
@@ -515,6 +549,20 @@
     .line 98
     :cond_3
     :goto_1
+    iget-boolean v6, v14, Lcom/perm/kate/NewsItemTag;->is_explicit:Z
+
+    if-eqz v6, :cond_afternsfw
+
+    sget v6, Lcom/perm/kate/KApplication;->nsfw_tolerance:I
+
+    const/4 v7, 0x2
+
+    if-eq v6, v7, :cond_afternsfw
+
+    const/16 v43, 0x1
+
+    :cond_afternsfw
+
     move-wide/from16 v0, v46
 
     iput-wide v0, v14, Lcom/perm/kate/NewsItemTag;->date:J

@@ -30,6 +30,8 @@
 
 .field public is_pinned:Z
 
+.field public is_explicit:Z
+
 .field public is_suggested:Z
 
 .field public photo_id:Ljava/lang/Long;

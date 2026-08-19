@@ -55,6 +55,8 @@
 
 .field public is_pinned:Z
 
+.field public is_explicit:Z
+
 .field public like_can_publish:Z
 
 .field public like_count:I
@@ -642,8 +644,31 @@
     :goto_8
     iput-boolean v13, v12, Lcom/perm/kate/api/WallMessage;->is_pinned:Z
 
-    .line 100
+    .line 99
     :cond_a
+    const-string v2, "is_explicit"
+
+    invoke-virtual {p0, v2}, Lorg/json/JSONObject;->optInt(Ljava/lang/String;)I
+
+    move-result v2
+
+    if-gtz v2, :cond_explicit
+
+    const-string v2, "is_explicit"
+
+    invoke-virtual {p0, v2}, Lorg/json/JSONObject;->optBoolean(Ljava/lang/String;)Z
+
+    move-result v2
+
+    if-eqz v2, :cond_explicit_end
+
+    :cond_explicit
+    const/4 v2, 0x1
+
+    iput-boolean v2, v12, Lcom/perm/kate/api/WallMessage;->is_explicit:Z
+
+    :cond_explicit_end
+    .line 100
     const-string v2, "views"
 
     invoke-virtual {p0, v2}, Lorg/json/JSONObject;->optJSONObject(Ljava/lang/String;)Lorg/json/JSONObject;

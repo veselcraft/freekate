@@ -75,6 +75,8 @@
     .end annotation
 .end field
 
+.field public static nsfw_tolerance:I
+
 .field public static newMessageCounter:Lcom/perm/kate/Counter;
 
 .field public static online:Lcom/perm/kate/Online;
@@ -111,6 +113,10 @@
     const/4 v2, 0x0
 
     const/4 v1, 0x0
+
+    const/4 v0, 0x1
+
+    sput v0, Lcom/perm/kate/KApplication;->nsfw_tolerance:I
 
     .line 70
     new-instance v0, Lcom/perm/kate/LongPoll;
@@ -1719,6 +1725,8 @@
 
     invoke-static {}, Lcom/perm/utils/MirrorsHelper;->refresh()V
 
+    invoke-static {}, Lcom/perm/utils/OvkSettingsHelper;->refresh()V
+
     .line 414
     return-void
 .end method
@@ -2005,6 +2013,8 @@
     invoke-direct {p0}, Lcom/perm/kate/KApplication;->findActiveSession()V
 
     invoke-static {}, Lcom/perm/utils/MirrorsHelper;->refresh()V
+
+    invoke-static {}, Lcom/perm/utils/OvkSettingsHelper;->refresh()V
     
     new-instance v2, Lcom/perm/kate/db/DataHelper;
 

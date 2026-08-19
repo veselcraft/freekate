@@ -55,6 +55,8 @@
 
 .field public from_id:J
 
+.field public is_explicit:Z
+
 .field public like_count:I
 
 .field public notes:Ljava/util/ArrayList;
@@ -582,6 +584,34 @@
     .line 99
     .end local v16    # "jlikes":Lorg/json/JSONObject;
     :cond_4
+    const-string v4, "is_explicit"
+
+    move-object/from16 v0, p0
+
+    invoke-virtual {v0, v4}, Lorg/json/JSONObject;->optInt(Ljava/lang/String;)I
+
+    move-result v4
+
+    if-gtz v4, :cond_explicit
+
+    const-string v4, "is_explicit"
+
+    move-object/from16 v0, p0
+
+    invoke-virtual {v0, v4}, Lorg/json/JSONObject;->optBoolean(Ljava/lang/String;)Z
+
+    move-result v4
+
+    if-eqz v4, :cond_explicit_end
+
+    :cond_explicit
+    const/4 v4, 0x1
+
+    move-object/from16 v0, v23
+
+    iput-boolean v4, v0, Lcom/perm/kate/api/NewsItem;->is_explicit:Z
+
+    :cond_explicit_end
     const-string v4, "photo_tags"
 
     move-object/from16 v0, p0

@@ -6642,6 +6642,16 @@
 
     invoke-virtual {v2, v4, v5}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/Boolean;)V
 
+    const-string v4, "is_explicit"
+
+    iget-boolean v5, p1, Lcom/perm/kate/api/NewsItem;->is_explicit:Z
+
+    invoke-static {v5}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+
+    move-result-object v5
+
+    invoke-virtual {v2, v4, v5}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/Boolean;)V
+
     .line 3032
     iget-object v4, p1, Lcom/perm/kate/api/NewsItem;->views:Ljava/lang/Integer;
 
@@ -9908,6 +9918,22 @@
 
     invoke-virtual {v0, v2, v1}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/Integer;)V
 
+
+    const-string v2, "is_explicit"
+
+    iget-boolean v1, p1, Lcom/perm/kate/api/WallMessage;->is_explicit:Z
+
+    if-eqz v1, :cond_2
+
+    const/4 v1, 0x1
+
+    :goto_3
+    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v1
+
+    invoke-virtual {v0, v2, v1}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/Integer;)V
+
     .line 4548
     iget-object v1, p0, Lcom/perm/kate/db/DataHelper;->mDbHelper:Lcom/perm/kate/db/DataHelper$OpenHelper;
 
@@ -9943,6 +9969,11 @@
     const/4 v1, 0x0
 
     goto :goto_0
+
+    :cond_2
+    const/4 v1, 0x0
+
+    goto :goto_3
 .end method
 
 .method public deleteAlbum(J)Z
@@ -19736,7 +19767,7 @@
 
     invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v4, "SELECT n._id as _id, n.type as type, n.post_id as post_id, n.source_id as source_id, n.text as text, n.date as date, n.comment_count as comment_count, n.comment_can_post as comment_can_post, n.like_count as like_count, n.user_like as user_like, n.from_id as from_id, n.comments as comments_json, n.is_comments as is_comments, n.reposts_count as reposts_count, n.copy_owner_id as copy_owner_id, n.copy_text as copy_text, n.signer_id as signer_id, n.views as views, group_concat(p.photo_id) as photo_ids, group_concat(p.src) as photo_srcs, group_concat(p.src_big) as photo_srcs_big, group_concat(p.album_id) as album_ids, group_concat(p2.photo_id) as photo_ids_tag, group_concat(p.width) as photo_widths, group_concat(p.height) as photo_heights, group_concat(p2.src) as photo_srcs_tag, group_concat(p2.src_big) as phototag_srcs_big, group_concat(p2.album_id) as album_ids_tag, u.first_name as first_name, u.last_name as last_name, group_concat(p2.width) as photo_tag_widths, group_concat(p2.height) as photo_tag_heights, u.photo as photo, u.photo_big as photo_big, u.online as online, group_concat(p.owner_id) as owner_ids, group_concat(p2.owner_id) as owner_ids_tag, group_concat(f.first_name) as friend_first_names, group_concat(f.last_name) as friend_last_names, group_concat(f._id) as friend_ids, group_concat(no._id) as note_ids, group_concat(no.title) as note_titles FROM news as n left join news_photo as np on n._id=np.news_id left join photos as p on np.photo_id=p.photo_id AND np.photo_owner_id=p.owner_id left join news_phototags as npt on n._id=npt.news_id left join photos as p2 on npt.photo_id=p2.photo_id AND npt.photo_owner_id=p2.owner_id left join news_friend as nf on n._id=nf.news_id left join users as f on nf.user_id=f._id left join news_note as nn on n._id=nn.news_id left join notes as no on nn.note_id=no._id left join users as u on n.source_id=u._id where n.account_id=? AND n.is_comments=?"
+    const-string v4, "SELECT n._id as _id, n.type as type, n.post_id as post_id, n.source_id as source_id, n.text as text, n.date as date, n.comment_count as comment_count, n.comment_can_post as comment_can_post, n.like_count as like_count, n.user_like as user_like, n.from_id as from_id, n.comments as comments_json, n.is_comments as is_comments, n.reposts_count as reposts_count, n.copy_owner_id as copy_owner_id, n.copy_text as copy_text, n.signer_id as signer_id, n.views as views, n.is_explicit as is_explicit, group_concat(p.photo_id) as photo_ids, group_concat(p.src) as photo_srcs, group_concat(p.src_big) as photo_srcs_big, group_concat(p.album_id) as album_ids, group_concat(p2.photo_id) as photo_ids_tag, group_concat(p.width) as photo_widths, group_concat(p.height) as photo_heights, group_concat(p2.src) as photo_srcs_tag, group_concat(p2.src_big) as phototag_srcs_big, group_concat(p2.album_id) as album_ids_tag, u.first_name as first_name, u.last_name as last_name, group_concat(p2.width) as photo_tag_widths, group_concat(p2.height) as photo_tag_heights, u.photo as photo, u.photo_big as photo_big, u.online as online, group_concat(p.owner_id) as owner_ids, group_concat(p2.owner_id) as owner_ids_tag, group_concat(f.first_name) as friend_first_names, group_concat(f.last_name) as friend_last_names, group_concat(f._id) as friend_ids, group_concat(no._id) as note_ids, group_concat(no.title) as note_titles FROM news as n left join news_photo as np on n._id=np.news_id left join photos as p on np.photo_id=p.photo_id AND np.photo_owner_id=p.owner_id left join news_phototags as npt on n._id=npt.news_id left join photos as p2 on npt.photo_id=p2.photo_id AND npt.photo_owner_id=p2.owner_id left join news_friend as nf on n._id=nf.news_id left join users as f on nf.user_id=f._id left join news_note as nn on n._id=nn.news_id left join notes as no on nn.note_id=no._id left join users as u on n.source_id=u._id where n.account_id=? AND n.is_comments=?"
 
     invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -23803,7 +23834,7 @@
 
     .prologue
     .line 4615
-    const-string v1, "select w._id as _id, w.post_id as post_id, w.date as date, w.from_id as from_id, w.text as text, w.to_id as to_id, w.likes_count as likes_count, wl.like as like, w.signer_id as signer_id, w.reposts_count as reposts_count,w.comments_count as comments_count, w.copy_owner_id as copy_owner_id, w.copy_text as copy_text, w.post_type as post_type, w.is_pinned as is_pinned, u.first_name as first_name, u.last_name as last_name, u.photo_medium_rec as photo_medium_rec, u.online as online, w.views as views from wall as w left join users as u on w.from_id=u._id left join wall_like as wl on wl.wall_owner_id=? AND wl.post_id=w.post_id AND wl.account_id=? AND wl.type=0 where w.to_id=? order by w._id"
+    const-string v1, "select w._id as _id, w.post_id as post_id, w.date as date, w.from_id as from_id, w.text as text, w.to_id as to_id, w.likes_count as likes_count, wl.like as like, w.signer_id as signer_id, w.reposts_count as reposts_count,w.comments_count as comments_count, w.copy_owner_id as copy_owner_id, w.copy_text as copy_text, w.post_type as post_type, w.is_pinned as is_pinned, w.is_explicit as is_explicit, u.first_name as first_name, u.last_name as last_name, u.photo_medium_rec as photo_medium_rec, u.online as online, w.views as views from wall as w left join users as u on w.from_id=u._id left join wall_like as wl on wl.wall_owner_id=? AND wl.post_id=w.post_id AND wl.account_id=? AND wl.type=0 where w.to_id=? order by w._id"
 
     .line 4625
     .local v1, "sql":Ljava/lang/String;
@@ -31315,6 +31346,16 @@
     move-result-object v3
 
     invoke-virtual {v2, v4, v3}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/Integer;)V
+
+    const-string v4, "is_explicit"
+
+    iget-boolean v3, p1, Lcom/perm/kate/api/WallMessage;->is_explicit:Z
+
+    invoke-static {v3}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+
+    move-result-object v3
+
+    invoke-virtual {v2, v4, v3}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/Boolean;)V
 
     .line 4568
     iget-object v3, p1, Lcom/perm/kate/api/WallMessage;->views:Ljava/lang/Integer;

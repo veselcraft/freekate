@@ -25,7 +25,7 @@
 
     const/4 v1, 0x0
 
-    const/16 v2, 0x95
+    const/16 v2, 0x96
 
     invoke-direct {p0, p1, p2, v1, v2}, Landroid/database/sqlite/SQLiteOpenHelper;-><init>(Landroid/content/Context;Ljava/lang/String;Landroid/database/sqlite/SQLiteDatabase$CursorFactory;I)V
 
@@ -392,7 +392,7 @@
 
     .prologue
     .line 734
-    const-string v0, "create table news(_id integer primary key, account_id integer, type text, source_id integer, from_id integer, date integer, post_id integer, copy_owner_id integer, copy_post_id integer, copy_text text, text text, signer_id integer, like_count integer, user_like integer, comment_count integer, comment_can_post integer, is_comments integer not null default 0, comments text, reposts_count integer, views integer, user_reposted integer );"
+    const-string v0, "create table news(_id integer primary key, account_id integer, type text, source_id integer, from_id integer, date integer, post_id integer, copy_owner_id integer, copy_post_id integer, copy_text text, text text, signer_id integer, like_count integer, user_like integer, comment_count integer, comment_can_post integer, is_comments integer not null default 0, comments text, reposts_count integer, views integer, user_reposted integer, is_explicit integer );"
 
     .line 758
     .local v0, "DATABASE_CREATE":Ljava/lang/String;
@@ -582,7 +582,7 @@
 
     .prologue
     .line 845
-    const-string v0, "create table wall(_id integer primary key, post_id integer, to_id integer, from_id integer, date integer, text text, comments_count integer, likes_count integer, signer_id integer, copy_owner_id integer, copy_post_id integer, copy_text text, reposts_count integer, post_type integer, views integer, is_pinned integer );"
+    const-string v0, "create table wall(_id integer primary key, post_id integer, to_id integer, from_id integer, date integer, text text, comments_count integer, likes_count integer, signer_id integer, copy_owner_id integer, copy_post_id integer, copy_text text, reposts_count integer, post_type integer, views integer, is_pinned integer, is_explicit integer );"
 
     .line 864
     .local v0, "DATABASE_CREATE":Ljava/lang/String;
@@ -2286,6 +2286,19 @@
 
     .line 1734
     :cond_6c
+    const/16 v1, 0x95
+
+    if-ne p2, v1, :cond_6d
+
+    const-string v1, "ALTER TABLE wall ADD is_explicit integer"
+
+    invoke-virtual {p1, v1}, Landroid/database/sqlite/SQLiteDatabase;->execSQL(Ljava/lang/String;)V
+
+    const-string v1, "ALTER TABLE news ADD is_explicit integer"
+
+    invoke-virtual {p1, v1}, Landroid/database/sqlite/SQLiteDatabase;->execSQL(Ljava/lang/String;)V
+
+    :cond_6d
     return-void
 
     .line 1621
