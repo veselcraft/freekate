@@ -76,7 +76,8 @@
     <string name="allow_messages">Allow messages</string>
     <string name="already_blacklisted">The user is blacklisted.</string>
     <string name="app_backgroung">Background image</string>
-    <string name="app_name">Kate Mobile</string>
+    <!-- TODO: Let user change the name of app -->
+    <string name="app_name">FreeKate</string>
     <string name="appbar_scrolling_view_behavior">com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior</string>
     <string name="approved_wall_post">Approved your wall post</string>
     <string name="archive_post">Add to archive</string>
