@@ -53,6 +53,8 @@
 
 .field public static newMessageCounter:Lcom/perm/kate/Counter;
 
+.field public static nsfw_tolerance:I
+
 .field public static online:Lcom/perm/kate/Online;
 
 .field public static screenSize:I
@@ -79,6 +81,10 @@
 
 .method static constructor <clinit>()V
     .locals 2
+
+    const/4 v0, 0x1
+
+    sput v0, Lcom/perm/kate/KApplication;->nsfw_tolerance:I
 
     .line 69
     new-instance v0, Lcom/perm/kate/LongPoll;
@@ -1502,6 +1508,8 @@
 
     invoke-static {}, Lcom/perm/utils/MirrorsHelper;->refresh()V
 
+    invoke-static {}, Lcom/perm/utils/OvkSettingsHelper;->refresh()V
+
     return-void
 .end method
 
@@ -1683,6 +1691,8 @@
     invoke-direct {p0}, Lcom/perm/kate/KApplication;->findActiveSession()V
 
     invoke-static {}, Lcom/perm/utils/MirrorsHelper;->refresh()V
+
+    invoke-static {}, Lcom/perm/utils/OvkSettingsHelper;->refresh()V
 
     .line 184
     new-instance v0, Lcom/perm/kate/db/DataHelper;

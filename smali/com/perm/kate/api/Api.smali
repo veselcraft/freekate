@@ -13733,6 +13733,42 @@
     return-object v0
 .end method
 
+.method public getOvkSettings()Lorg/json/JSONObject;
+    .locals 3
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;,
+            Lorg/json/JSONException;,
+            Lcom/perm/kate/api/KException;
+        }
+    .end annotation
+
+    new-instance v0, Lcom/perm/kate/api/Params;
+
+    const-string v2, "account.getOvkSettings"
+
+    invoke-direct {v0, v2}, Lcom/perm/kate/api/Params;-><init>(Ljava/lang/String;)V
+
+    invoke-direct {p0, v0}, Lcom/perm/kate/api/Api;->sendRequest(Lcom/perm/kate/api/Params;)Lorg/json/JSONObject;
+
+    move-result-object v1
+
+    if-nez v1, :cond_0
+
+    const/4 v2, 0x0
+
+    return-object v2
+
+    :cond_0
+    const-string v2, "response"
+
+    invoke-virtual {v1, v2}, Lorg/json/JSONObject;->optJSONObject(Ljava/lang/String;)Lorg/json/JSONObject;
+
+    move-result-object v2
+
+    return-object v2
+.end method
+
 .method public getPageUrl(JLjava/lang/Long;Ljava/lang/String;)Ljava/lang/String;
     .locals 2
 

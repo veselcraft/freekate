@@ -3438,6 +3438,29 @@
     const/16 v34, 0x0
 
     :goto_3
+    const-string v3, "is_explicit"
+
+    invoke-interface {v13, v3}, Landroid/database/Cursor;->getColumnIndex(Ljava/lang/String;)I
+
+    move-result v3
+
+    if-ltz v3, :cond_explicit_end
+
+    invoke-interface {v13, v3}, Landroid/database/Cursor;->getInt(I)I
+
+    move-result v3
+
+    if-eqz v3, :cond_explicit_end
+
+    sget v3, Lcom/perm/kate/KApplication;->nsfw_tolerance:I
+
+    add-int/lit8 v3, v3, -0x2
+
+    if-eqz v3, :cond_explicit_end
+
+    const/16 v34, 0x1
+
+    :cond_explicit_end
     const-string v3, "_id"
 
     .line 184

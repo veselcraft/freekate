@@ -7198,6 +7198,16 @@
 
     invoke-virtual {v0, p3, p2}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/Boolean;)V
 
+    iget-boolean p2, p1, Lcom/perm/kate/api/NewsItem;->is_explicit:Z
+
+    invoke-static {p2}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+
+    move-result-object p2
+
+    const-string p3, "is_explicit"
+
+    invoke-virtual {v0, p3, p2}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/Boolean;)V
+
     .line 2948
     iget-object p2, p1, Lcom/perm/kate/api/NewsItem;->views:Ljava/lang/Integer;
 
@@ -10279,6 +10289,16 @@
     move-result-object v0
 
     const-string v1, "is_pinned"
+
+    invoke-virtual {v12, v1, v0}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/Integer;)V
+
+    iget-boolean v0, v11, Lcom/perm/kate/api/WallMessage;->is_explicit:Z
+
+    invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v0
+
+    const-string v1, "is_explicit"
 
     invoke-virtual {v12, v1, v0}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/Integer;)V
 
@@ -14466,7 +14486,7 @@
 
     aput-object p2, v2, p1
 
-    const-string p1, "select w._id as _id, w.post_id as post_id, w.date as date, w.from_id as from_id, w.text as text, w.to_id as to_id, w.likes_count as likes_count, wl.[like] as [like], wl.reposted as reposted, w.reposts_count as reposts_count, w.comments_count as comments_count, w.copy_owner_id as copy_owner_id, w.copy_text as copy_text, w.signer_id as signer_id, w.views as views, w.copyright_name as copyright_name, g.photo_medium as photo_medium, g.name as name, w.attachments as attachments, u.first_name as first_name, u.last_name as last_name, u.photo_medium_rec as photo_medium_rec from fave_posts as fp left join wall as w on fp.post_id=w.post_id AND w.to_id=fp.owner_id left join users as u on w.from_id=u._id left join groups as g on -w.from_id=g._id left join wall_like as wl on wl.wall_owner_id=w.to_id AND wl.post_id=w.post_id AND wl.account_id=? AND wl.type=0 where fp.account_id=? order by fp._id"
+    const-string p1, "select w._id as _id, w.post_id as post_id, w.date as date, w.from_id as from_id, w.text as text, w.to_id as to_id, w.likes_count as likes_count, wl.[like] as [like], wl.reposted as reposted, w.reposts_count as reposts_count, w.comments_count as comments_count, w.copy_owner_id as copy_owner_id, w.copy_text as copy_text, w.signer_id as signer_id, w.views as views, w.copyright_name as copyright_name, w.is_explicit as is_explicit, g.photo_medium as photo_medium, g.name as name, w.attachments as attachments, u.first_name as first_name, u.last_name as last_name, u.photo_medium_rec as photo_medium_rec from fave_posts as fp left join wall as w on fp.post_id=w.post_id AND w.to_id=fp.owner_id left join users as u on w.from_id=u._id left join groups as g on -w.from_id=g._id left join wall_like as wl on wl.wall_owner_id=w.to_id AND wl.post_id=w.post_id AND wl.account_id=? AND wl.type=0 where fp.account_id=? order by fp._id"
 
     invoke-virtual {p3, p1, v2}, Landroid/database/sqlite/SQLiteDatabase;->rawQuery(Ljava/lang/String;[Ljava/lang/String;)Landroid/database/Cursor;
 
@@ -17345,7 +17365,7 @@
 
     aput-object p1, v1, p2
 
-    const-string p1, "SELECT n._id as _id, n.type as type, n.post_id as post_id, n.source_id as source_id, n.text as text, n.date as date, n.comment_count as comment_count, n.comment_can_post as comment_can_post, n.like_count as like_count, n.user_like as user_like, n.from_id as from_id, n.comments as comments_json, n.is_comments as is_comments, n.reposts_count as reposts_count, n.copy_owner_id as copy_owner_id, n.copy_text as copy_text, n.signer_id as signer_id, n.views as views, n.user_reposted as user_reposted, n.attachments as attachments, n.copyright_name as copyright_name, group_concat(p.photo_id) as photo_ids, group_concat(p.src) as photo_srcs, group_concat(p.src_big) as photo_srcs_big, group_concat(p.album_id) as album_ids, group_concat(p2.photo_id) as photo_ids_tag, group_concat(p.width) as photo_widths, group_concat(p.height) as photo_heights, group_concat(p2.src) as photo_srcs_tag, group_concat(p2.src_big) as phototag_srcs_big, group_concat(p2.album_id) as album_ids_tag, u.first_name as first_name, u.last_name as last_name, group_concat(p2.width) as photo_tag_widths, group_concat(p2.height) as photo_tag_heights, u.photo as photo, u.photo_big as photo_big, u.online as online, g.photo_medium as photo_medium, g.name as name, group_concat(p.owner_id) as owner_ids, group_concat(p2.owner_id) as owner_ids_tag, group_concat(f.first_name) as friend_first_names, group_concat(f.last_name) as friend_last_names, group_concat(f._id) as friend_ids, n.ads_title as ads_title, n.age_restriction as age_restriction, n.ad_data as ad_data, n.ad_data_impression as ad_data_impression, n.statistics as statistics, n.track_code as track_code, n.ads_id1 as ads_id1, n.ads_id2 as ads_id2 FROM news as n left join news_photo as np on n._id=np.news_id left join photos as p on np.photo_id=p.photo_id AND np.photo_owner_id=p.owner_id left join news_phototags as npt on n._id=npt.news_id left join photos as p2 on npt.photo_id=p2.photo_id AND npt.photo_owner_id=p2.owner_id left join news_friend as nf on n._id=nf.news_id left join users as f on nf.user_id=f._id left join users as u on n.source_id=u._id left join groups as g on -n.source_id=g._id where n.account_id=? AND n.is_comments=? group by n._id order by n._id"
+    const-string p1, "SELECT n._id as _id, n.type as type, n.post_id as post_id, n.source_id as source_id, n.text as text, n.date as date, n.comment_count as comment_count, n.comment_can_post as comment_can_post, n.like_count as like_count, n.user_like as user_like, n.from_id as from_id, n.comments as comments_json, n.is_comments as is_comments, n.reposts_count as reposts_count, n.copy_owner_id as copy_owner_id, n.copy_text as copy_text, n.signer_id as signer_id, n.views as views, n.user_reposted as user_reposted, n.is_explicit as is_explicit, n.attachments as attachments, n.copyright_name as copyright_name, group_concat(p.photo_id) as photo_ids, group_concat(p.src) as photo_srcs, group_concat(p.src_big) as photo_srcs_big, group_concat(p.album_id) as album_ids, group_concat(p2.photo_id) as photo_ids_tag, group_concat(p.width) as photo_widths, group_concat(p.height) as photo_heights, group_concat(p2.src) as photo_srcs_tag, group_concat(p2.src_big) as phototag_srcs_big, group_concat(p2.album_id) as album_ids_tag, u.first_name as first_name, u.last_name as last_name, group_concat(p2.width) as photo_tag_widths, group_concat(p2.height) as photo_tag_heights, u.photo as photo, u.photo_big as photo_big, u.online as online, g.photo_medium as photo_medium, g.name as name, group_concat(p.owner_id) as owner_ids, group_concat(p2.owner_id) as owner_ids_tag, group_concat(f.first_name) as friend_first_names, group_concat(f.last_name) as friend_last_names, group_concat(f._id) as friend_ids, n.ads_title as ads_title, n.age_restriction as age_restriction, n.ad_data as ad_data, n.ad_data_impression as ad_data_impression, n.statistics as statistics, n.track_code as track_code, n.ads_id1 as ads_id1, n.ads_id2 as ads_id2 FROM news as n left join news_photo as np on n._id=np.news_id left join photos as p on np.photo_id=p.photo_id AND np.photo_owner_id=p.owner_id left join news_phototags as npt on n._id=npt.news_id left join photos as p2 on npt.photo_id=p2.photo_id AND npt.photo_owner_id=p2.owner_id left join news_friend as nf on n._id=nf.news_id left join users as f on nf.user_id=f._id left join users as u on n.source_id=u._id left join groups as g on -n.source_id=g._id where n.account_id=? AND n.is_comments=? group by n._id order by n._id"
 
     invoke-virtual {v0, p1, v1}, Landroid/database/sqlite/SQLiteDatabase;->rawQuery(Ljava/lang/String;[Ljava/lang/String;)Landroid/database/Cursor;
 
@@ -21118,7 +21138,7 @@
 
     aput-object p1, v1, p2
 
-    const-string p1, "select w._id as _id, w.post_id as post_id, w.date as date, w.from_id as from_id, w.text as text, w.to_id as to_id, w.likes_count as likes_count, wl.[like] as [like], wl.reposted as reposted, w.signer_id as signer_id, w.reposts_count as reposts_count,w.comments_count as comments_count, w.copy_owner_id as copy_owner_id, w.copy_text as copy_text, w.post_type as post_type, w.is_pinned as is_pinned, w.copyright_name as copyright_name, w.copyright_link as copyright_link, g.photo_medium as photo_medium, g.name as name, w.attachments as attachments, u.first_name as first_name, u.last_name as last_name, u.photo_medium_rec as photo_medium_rec, w.views as views from wall as w left join users as u on w.from_id=u._id left join groups as g on -w.from_id=g._id left join wall_like as wl on wl.wall_owner_id=? AND wl.post_id=w.post_id AND wl.account_id=? AND wl.type=0 where w.to_id=? order by w._id"
+    const-string p1, "select w._id as _id, w.post_id as post_id, w.date as date, w.from_id as from_id, w.text as text, w.to_id as to_id, w.likes_count as likes_count, wl.[like] as [like], wl.reposted as reposted, w.signer_id as signer_id, w.reposts_count as reposts_count,w.comments_count as comments_count, w.copy_owner_id as copy_owner_id, w.copy_text as copy_text, w.post_type as post_type, w.is_pinned as is_pinned, w.is_explicit as is_explicit, w.copyright_name as copyright_name, w.copyright_link as copyright_link, g.photo_medium as photo_medium, g.name as name, w.attachments as attachments, u.first_name as first_name, u.last_name as last_name, u.photo_medium_rec as photo_medium_rec, w.views as views from wall as w left join users as u on w.from_id=u._id left join groups as g on -w.from_id=g._id left join wall_like as wl on wl.wall_owner_id=? AND wl.post_id=w.post_id AND wl.account_id=? AND wl.type=0 where w.to_id=? order by w._id"
 
     invoke-virtual {v0, p1, v1}, Landroid/database/sqlite/SQLiteDatabase;->rawQuery(Ljava/lang/String;[Ljava/lang/String;)Landroid/database/Cursor;
 
@@ -27366,6 +27386,16 @@
     move-result-object v0
 
     const-string v1, "is_pinned"
+
+    invoke-virtual {v12, v1, v0}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/Integer;)V
+
+    iget-boolean v0, v11, Lcom/perm/kate/api/WallMessage;->is_explicit:Z
+
+    invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v0
+
+    const-string v1, "is_explicit"
 
     invoke-virtual {v12, v1, v0}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/Integer;)V
 

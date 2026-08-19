@@ -9,7 +9,7 @@
 
     const/4 v1, 0x0
 
-    const/16 v2, 0xaf
+    const/16 v2, 0xb0
 
     .line 651
     invoke-direct {p0, p1, p2, v1, v2}, Landroid/database/sqlite/SQLiteOpenHelper;-><init>(Landroid/content/Context;Ljava/lang/String;Landroid/database/sqlite/SQLiteDatabase$CursorFactory;I)V
@@ -303,7 +303,7 @@
 .method private createNewsTable(Landroid/database/sqlite/SQLiteDatabase;)V
     .locals 1
 
-    const-string v0, "create table news(_id integer primary key, account_id integer, type text, source_id integer, from_id integer, date integer, post_id integer, copy_owner_id integer, copy_post_id integer, copy_text text, text text, signer_id integer, like_count integer, user_like integer, comment_count integer, comment_can_post integer, is_comments integer not null default 0, comments text, reposts_count integer, views integer, ads_title text, ads_id1 integer, ads_id2 integer, ad_data text, ad_data_impression text, age_restriction text, statistics blob, track_code text, attachments blob, user_reposted integer, copyright_link text, copyright_name text );"
+    const-string v0, "create table news(_id integer primary key, account_id integer, type text, source_id integer, from_id integer, date integer, post_id integer, copy_owner_id integer, copy_post_id integer, copy_text text, text text, signer_id integer, like_count integer, user_like integer, comment_count integer, comment_can_post integer, is_comments integer not null default 0, comments text, reposts_count integer, views integer, ads_title text, ads_id1 integer, ads_id2 integer, ad_data text, ad_data_impression text, age_restriction text, statistics blob, track_code text, attachments blob, user_reposted integer, copyright_link text, copyright_name text, is_explicit integer );"
 
     .line 832
     invoke-virtual {p1, v0}, Landroid/database/sqlite/SQLiteDatabase;->execSQL(Ljava/lang/String;)V
@@ -459,7 +459,7 @@
 .method private createWallTable(Landroid/database/sqlite/SQLiteDatabase;)V
     .locals 1
 
-    const-string v0, "create table wall(_id integer primary key, post_id integer, to_id integer, from_id integer, date integer, text text, comments_count integer, likes_count integer, signer_id integer, copy_owner_id integer, copy_post_id integer, copy_text text, reposts_count integer, post_type integer, views integer, is_pinned integer, copyright_link text, attachments blob, copyright_name text, created_by integer );"
+    const-string v0, "create table wall(_id integer primary key, post_id integer, to_id integer, from_id integer, date integer, text text, comments_count integer, likes_count integer, signer_id integer, copy_owner_id integer, copy_post_id integer, copy_text text, reposts_count integer, post_type integer, views integer, is_pinned integer, copyright_link text, attachments blob, copyright_name text, created_by integer, is_explicit integer );"
 
     .line 944
     invoke-virtual {p1, v0}, Landroid/database/sqlite/SQLiteDatabase;->execSQL(Ljava/lang/String;)V
@@ -1242,6 +1242,19 @@
     invoke-virtual {p0, p1}, Lcom/perm/kate/db/DataHelper$OpenHelper;->createIndexMessages2(Landroid/database/sqlite/SQLiteDatabase;)V
 
     :cond_2e
+    const/16 v0, 0xaf
+
+    if-ne p2, v0, :cond_2f
+
+    const-string v0, "ALTER TABLE wall ADD is_explicit integer"
+
+    invoke-virtual {p1, v0}, Landroid/database/sqlite/SQLiteDatabase;->execSQL(Ljava/lang/String;)V
+
+    const-string v0, "ALTER TABLE news ADD is_explicit integer"
+
+    invoke-virtual {p1, v0}, Landroid/database/sqlite/SQLiteDatabase;->execSQL(Ljava/lang/String;)V
+
+    :cond_2f
     return-void
 .end method
 

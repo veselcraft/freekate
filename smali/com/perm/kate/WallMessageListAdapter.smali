@@ -495,6 +495,31 @@
 
     .line 103
     :goto_1
+    move-object/from16 v2, v10
+
+    const-string v4, "is_explicit"
+
+    invoke-interface {v2, v4}, Landroid/database/Cursor;->getColumnIndex(Ljava/lang/String;)I
+
+    move-result v4
+
+    if-ltz v4, :cond_explicit_end
+
+    invoke-interface {v2, v4}, Landroid/database/Cursor;->getInt(I)I
+
+    move-result v4
+
+    if-eqz v4, :cond_explicit_end
+
+    sget v4, Lcom/perm/kate/KApplication;->nsfw_tolerance:I
+
+    add-int/lit8 v4, v4, -0x2
+
+    if-eqz v4, :cond_explicit_end
+
+    const/16 v29, 0x1
+
+    :cond_explicit_end
     iput-object v13, v15, Lcom/perm/kate/NewsItemTag;->post_id:Ljava/lang/String;
 
     .line 104

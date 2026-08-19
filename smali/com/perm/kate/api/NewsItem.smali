@@ -44,6 +44,8 @@
 
 .field public from_id:J
 
+.field public is_explicit:Z
+
 .field public like_count:I
 
 .field public photo_tags:Ljava/util/ArrayList;
@@ -594,6 +596,28 @@
     iput-boolean v5, v0, Lcom/perm/kate/api/NewsItem;->user_reposted:Z
 
     :cond_b
+    const-string v1, "is_explicit"
+
+    invoke-virtual {p0, v1}, Lorg/json/JSONObject;->optInt(Ljava/lang/String;)I
+
+    move-result v1
+
+    if-gtz v1, :cond_explicit
+
+    const-string v1, "is_explicit"
+
+    invoke-virtual {p0, v1}, Lorg/json/JSONObject;->optBoolean(Ljava/lang/String;)Z
+
+    move-result v1
+
+    if-eqz v1, :cond_explicit_end
+
+    :cond_explicit
+    const/4 v1, 0x1
+
+    iput-boolean v1, v0, Lcom/perm/kate/api/NewsItem;->is_explicit:Z
+
+    :cond_explicit_end
     const-string v1, "photo_tags"
 
     .line 137
