@@ -1001,7 +1001,7 @@
     <string name="read_smiles_summary">Для людей с проблемами зрения: озвучивать смайлы средствами приложения если ваш телефон не умеет это делать сам.</string>
     <string name="read_smiles_title">Озвучивать смайлы</string>
     <string name="recent">Недавние</string>
-    <string name="recommendations">Рекомендации</string>
+    <string name="recommendations">Глобальная лента</string>
     <string name="record_audio">Голосовое сообщение</string>
     <string name="refresh">Обновить</string>
     <string name="refresh_news_on_start">Обновлять при запуске</string>
