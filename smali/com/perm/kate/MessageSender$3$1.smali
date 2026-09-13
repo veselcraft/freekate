@@ -32,7 +32,11 @@
 
     iget-object p1, p1, Lcom/perm/kate/MessageSender$3;->val$a:Landroid/app/Activity;
 
-    const-string p2, "https://m.vk.com/stickers?tab=free"
+    const-string p2, "stickers?tab=free"
+
+    invoke-static {p2}, Lcom/perm/kate/KApplication;->instanceLink(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object p2
 
     invoke-static {p2, p1}, Lcom/perm/kate/Helper;->openUrlInBrowser(Ljava/lang/String;Landroid/content/Context;)V
 
