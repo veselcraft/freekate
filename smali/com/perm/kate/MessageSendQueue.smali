@@ -1024,7 +1024,11 @@
 
     invoke-direct/range {v23 .. v23}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v24, "http://vk.com/images/stickers/"
+    const-string v24, "images/stickers/"
+
+    invoke-static/range {v24 .. v24}, Lcom/perm/kate/KApplication;->instanceLink(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v24
 
     invoke-virtual/range {v23 .. v24}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -1063,7 +1067,11 @@
 
     invoke-direct/range {v23 .. v23}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v24, "http://vk.com/images/stickers/"
+    const-string v24, "images/stickers/"
+
+    invoke-static/range {v24 .. v24}, Lcom/perm/kate/KApplication;->instanceLink(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v24
 
     invoke-virtual/range {v23 .. v24}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -1102,7 +1110,11 @@
 
     invoke-direct/range {v23 .. v23}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v24, "http://vk.com/images/stickers/"
+    const-string v24, "images/stickers/"
+
+    invoke-static/range {v24 .. v24}, Lcom/perm/kate/KApplication;->instanceLink(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v24
 
     invoke-virtual/range {v23 .. v24}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 

@@ -313,7 +313,11 @@
 
     invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v5, "http://vk.com/images/stickers/"
+    const-string v5, "images/stickers/"
+
+    invoke-static {v5}, Lcom/perm/kate/KApplication;->instanceLink(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v5
 
     invoke-virtual {v2, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 

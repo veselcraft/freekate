@@ -44,7 +44,11 @@
 
     .prologue
     .line 147
-    const-string v0, "https://m.vk.com/stickers?tab=free"
+    const-string v0, "stickers?tab=free"
+
+    invoke-static {v0}, Lcom/perm/kate/KApplication;->instanceLink(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v0
 
     iget-object v1, p0, Lcom/perm/kate/MessageSender$3$1;->this$1:Lcom/perm/kate/MessageSender$3;
 

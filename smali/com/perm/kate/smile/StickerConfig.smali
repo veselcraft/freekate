@@ -146,7 +146,7 @@
 .end method
 
 .method private static makeDefaults()Ljava/util/ArrayList;
-    .locals 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -163,22 +163,7 @@
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
-    .line 33
     .local v0, "products":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Lcom/perm/kate/api/Product;>;"
-    invoke-static {}, Lcom/perm/kate/smile/StickerConfig;->makeSmileStickers()Lcom/perm/kate/api/Product;
-
-    move-result-object v1
-
-    invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
-
-    .line 34
-    invoke-static {}, Lcom/perm/kate/smile/StickerConfig;->makeFruitStickers()Lcom/perm/kate/api/Product;
-
-    move-result-object v1
-
-    invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
-
-    .line 35
     return-object v0
 .end method
 
