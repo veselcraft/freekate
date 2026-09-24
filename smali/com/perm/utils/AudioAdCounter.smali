@@ -287,76 +287,7 @@
 
 .method public static shouldPlayAd()Z
     .locals 8
-
-    .line 42
-    sget-object v0, Lcom/perm/utils/AudioAdCounter;->listens:Ljava/util/ArrayList;
-
-    if-nez v0, :cond_0
-
-    .line 43
-    invoke-static {}, Lcom/perm/utils/AudioAdCounter;->readFromDisk()Ljava/util/ArrayList;
-
-    move-result-object v0
-
-    sput-object v0, Lcom/perm/utils/AudioAdCounter;->listens:Ljava/util/ArrayList;
-
-    .line 47
-    :cond_0
-    sget-object v0, Lcom/perm/utils/AudioAdCounter;->listens:Ljava/util/ArrayList;
-
-    invoke-virtual {v0}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
-
-    move-result-object v0
-
     const/4 v1, 0x0
 
-    const/4 v2, 0x0
-
-    :cond_1
-    :goto_0
-    invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v3
-
-    if-eqz v3, :cond_2
-
-    invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v3
-
-    check-cast v3, Ljava/lang/Long;
-
-    .line 48
-    invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
-
-    move-result-wide v4
-
-    invoke-virtual {v3}, Ljava/lang/Long;->longValue()J
-
-    move-result-wide v6
-
-    sub-long/2addr v4, v6
-
-    const-wide/32 v6, 0x5265c00
-
-    cmp-long v3, v4, v6
-
-    if-gez v3, :cond_1
-
-    add-int/lit8 v2, v2, 0x1
-
-    goto :goto_0
-
-    .line 51
-    :cond_2
-    invoke-static {}, Lcom/perm/utils/AudioAdCounter;->getLimit()I
-
-    move-result v0
-
-    if-ge v2, v0, :cond_3
-
-    const/4 v1, 0x1
-
-    :cond_3
     return v1
 .end method

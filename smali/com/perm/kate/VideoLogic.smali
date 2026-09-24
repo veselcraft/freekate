@@ -320,7 +320,7 @@
 
     move-result v1
 
-    const/4 v2, 0x1
+    const/4 v2, 0x0
 
     if-gt v1, v2, :cond_5
 
