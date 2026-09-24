@@ -29,7 +29,7 @@
     .line 57
     .local v3, "connection":Ljava/net/HttpURLConnection;
     :try_start_0
-    const-string v19, "http://s3-us-west-2.amazonaws.com/katemob/version.json"
+    const-string v19, "http://veselcraft.cc/freekate/version40.json"
 
     .line 58
     .local v19, "url":Ljava/lang/String;

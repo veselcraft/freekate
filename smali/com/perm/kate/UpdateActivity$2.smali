@@ -113,7 +113,7 @@
 
     invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v6, "http://katemobile.ru/dl/"
+    const-string v6, "http://veselcraft.cc/freekate/dl40/"
 
     invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
