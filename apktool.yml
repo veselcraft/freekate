@@ -9,7 +9,7 @@ sdkInfo:
 packageInfo:
   forcedPackageId: 127
 versionInfo:
-  versionCode: 387
+  versionCode: 388
   versionName: 40
 doNotCompress:
 - arsc
